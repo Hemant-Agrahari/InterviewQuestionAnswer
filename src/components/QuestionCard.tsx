@@ -32,41 +32,48 @@ export default function QuestionCard({ question, index }: QuestionCardProps) {
   return (
     <div 
       className={`
-        border-l-4 rounded-lg p-6 transition-all duration-300 cursor-pointer
+        border-l-4 rounded-xl p-6 transition-all duration-300 cursor-pointer
         ${categoryColors[question.category]}
-        hover:shadow-lg
+        hover:shadow-2xl hover:scale-[1.01] hover:-translate-y-1
+        backdrop-blur-sm
       `}
       onClick={() => setIsExpanded(!isExpanded)}
     >
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1">
-          <div className="flex items-center gap-3 mb-2">
-            <span className={`text-sm font-bold ${categoryTextColors[question.category]}`}>
+          <div className="flex items-center gap-3 mb-3">
+            <span className={`
+              text-sm font-bold px-3 py-1 rounded-full
+              ${categoryTextColors[question.category]}
+              bg-white dark:bg-gray-800 shadow-sm
+            `}>
               Q{index + 1}
             </span>
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100">
+            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100" style={{ fontFamily: 'var(--font-poppins)' }}>
               {question.question}
             </h3>
           </div>
           
           <div className={`
-            overflow-hidden transition-all duration-300
+            overflow-hidden transition-all duration-500 ease-in-out
             ${isExpanded ? 'max-h-[1000px] opacity-100 mt-4' : 'max-h-0 opacity-0'}
           `}>
-            <div className="text-gray-700 dark:text-gray-300 leading-relaxed space-y-2">
-              {question.answer.split('\n').map((line, idx) => (
-                line.trim() && <p key={idx}>{line}</p>
-              ))}
+            <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+              <div className="text-gray-700 dark:text-gray-300 leading-relaxed space-y-3 text-[15px]">
+                {question.answer.split('\n').map((line, idx) => (
+                  line.trim() && <p key={idx} className="animate-fade-in">{line}</p>
+                ))}
+              </div>
             </div>
           </div>
         </div>
         
         <div className={`
-          transition-transform duration-300 text-gray-500
-          ${isExpanded ? 'rotate-180' : 'rotate-0'}
+          transition-all duration-300 flex-shrink-0
+          ${isExpanded ? 'rotate-180 text-indigo-500' : 'rotate-0 text-gray-400'}
         `}>
           <svg 
-            className="w-6 h-6" 
+            className="w-7 h-7" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
@@ -74,14 +81,18 @@ export default function QuestionCard({ question, index }: QuestionCardProps) {
             <path 
               strokeLinecap="round" 
               strokeLinejoin="round" 
-              strokeWidth={2} 
+              strokeWidth={2.5} 
               d="M19 9l-7 7-7-7" 
             />
           </svg>
         </div>
       </div>
       
-      <div className="mt-3 text-xs text-gray-500 dark:text-gray-400">
+      <div className="mt-3 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+        <span className={`
+          inline-block w-2 h-2 rounded-full
+          ${isExpanded ? 'bg-green-500 animate-pulse' : 'bg-gray-400'}
+        `}></span>
         {isExpanded ? 'Click to collapse' : 'Click to expand answer'}
       </div>
     </div>
