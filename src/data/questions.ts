@@ -116,12 +116,13 @@ export const questions: Question[] = [
     category: "html",
   },
   {
-    id: 15,
+    id: 15.1,
     question: "What are the difference between table row and table data?",
     answer:
       "Table row is used to create a row in a table, while table data is used to create a cell in a row. Table row is represented by the <tr> tag, while table data is represented by the <td> tag.",
     category: "html",
   },
+  
 
   // CSS Questions
   {
@@ -611,10 +612,66 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 76,
+    id: 76.1,
     question: "Explain ES6 new features?",
     answer:
-      "ES6 introduce the following new features: \n\n 1.Arrow Function \n\n2.nav tag",
+      "ES6 (ES2015) introduced many important features that modernized JavaScript:\n\n1. **let and const**: Block-scoped variable declarations\n\n2. **Arrow Functions**: Shorter syntax with lexical 'this' binding (=>)\n\n3. **Template Literals**: String interpolation using backticks (`Hello ${name}`)\n\n4. **Destructuring**: Extract values from arrays/objects ({name, age} = obj)\n\n5. **Default Parameters**: function greet(name = 'Guest')\n\n6. **Spread Operator**: Expand arrays/objects (...array, ...obj)\n\n7. **Rest Parameters**: Collect remaining arguments (...args)\n\n8. **Classes**: Syntactic sugar for constructor functions\n\n9. **Promises**: Better async handling\n\n10. **Modules**: import/export for code organization\n\n11. **Enhanced Object Literals**: Shorthand properties, computed keys\n\n12. **for...of Loop**: Iterate over iterable objects\n\n13. **Map and Set**: New data structures\n\n14. **Symbol**: New primitive type for unique identifiers\n\n15. **Iterators and Generators**: Custom iteration with function*",
+    category: "javascript",
+  },
+  {
+    id: 76.2,
+    question: "What are array methods in JavaScript?",
+    answer:
+      "Array methods in JavaScript are built-in functions that operate on arrays to perform various operations like sorting, filtering, mapping, and more. Some common array methods are:\n\n1. **map**: Creates a new array with the results of calling a function on every element in the original array\n\n2. **filter**: Creates a new array with all elements that pass the test implemented by the provided function\n\n3. **reduce**: Executes a reducer function on each element of the array, resulting in a single output value\n\n4. **forEach**: Executes a provided function once for each array element\n\n5. **find**: Returns the value of the first element in the array that satisfies the provided testing function\n\n6. **some**: Tests whether at least one element in the array passes the test implemented by the provided function\n\n7. **every**: Tests whether all elements in the array pass the test implemented by the provided function\n\n8. **sort**: Sorts the elements of an array in place and returns the sorted array\n\n9. **concat**: Merges two or more arrays. This method does not change the existing arrays, but instead returns a new array",
+    category: "javascript",
+  },
+  {
+    id: 76.3,
+    question: "What are object methods in JavaScript?",
+    answer:
+      "Object methods in JavaScript are built-in functions that operate on objects to perform various operations like creating, updating, and deleting properties, and more. Some common object methods are:\n\n1. **Object.keys**: Returns an array of a given object's own enumerable property names\n\n2. **Object.values**: Returns an array of a given object's own enumerable property values\n\n3. **Object.entries**: Returns an array of a given object's own enumerable property [key, value] pairs\n\n4. **Object.assign**: Copies all enumerable own properties from one or more source objects to a target object\n\n5. **Object.freeze**: Freezes an object: prevents new properties from being added, existing properties from being removed or changed, and existing properties from being set to writable\n\n6. **Object.seal**: Seals an object: prevents new properties from being added, and existing properties from being removed or changed",
+    category: "javascript",
+  },
+  {
+    id: 76.4,
+    question: "What are string methods in JavaScript?",
+    answer:
+      "String methods in JavaScript are built-in functions that operate on strings to perform various operations like finding, replacing, and manipulating strings. Some common string methods are:\n\n1. **charAt**: Returns the character at the specified index\n\n2. **charCodeAt**: Returns the Unicode of the character at the specified index\n\n3. **concat**: Combines the text of two or more strings and returns a new string\n\n4. **indexOf**: Returns the index within the calling string object of the first occurrence of the specified value, starting the search at fromIndex\n\n5. **lastIndexOf**: Returns the index within the calling string object of the last occurrence of the specified value, searching backwards from fromIndex\n\n6. **replace**: Returns a new string with some or all matches of a pattern replaced by a replacement string\n\n7. **slice**: Extracts a section of a string and returns it as a new string, without modifying the original string\n\n8. **split**: Splits a string into an array of strings by separating the string into substrings\n\n9. **substring**: Returns the characters in a string between two indices, or to the end of the string",
+    category: "javascript",
+  },
+  {
+    id: 76.5,
+    question: "What are number methods in JavaScript?",
+    answer:
+      "Number methods in JavaScript are built-in functions that operate on numbers to perform various operations like rounding, formatting, and more. Some common number methods are:\n\n1. **toFixed**: Formats a number using fixed-point notation\n\n2. **toExponential**: Formats a number using exponential notation\n\n3. **toPrecision**: Formats a number to a specified length\n\n4. **toString**: Converts a number to a string, using a specified radix\n\n5. **isNaN**: Determines whether a value is NaN\n\n6. **isFinite**: Determines whether a value is a finite number",
+    category: "javascript",
+  },
+  {
+    id: 76.6,
+    question: "What are date methods in JavaScript?",
+    answer:
+      "Date methods in JavaScript are built-in functions that operate on dates to perform various operations like getting, setting, and manipulating dates. Some common date methods are:\n\n1. **getDate**: Returns the day of the month (1-31)\n\n2. **getDay**: Returns the day of the week (0-6)\n\n3. **getFullYear**: Returns the year (4 digits)\n\n4. **getHours**: Returns the hour (0-23)\n\n5. **getMinutes**: Returns the minute (0-59)\n\n6. **getSeconds**: Returns the second (0-59)\n\n7. **getMilliseconds**: Returns the millisecond (0-999)\n\n8. **getTime**: Returns the number of milliseconds since January 1, 1970, 00:00:00 UTC\n\n9. **setDate**: Sets the day of the month\n\n10. **setFullYear**: Sets the year\n\n11. **setHours**: Sets the hour\n\n12. **setMinutes**: Sets the minute\n\n13. **setSeconds**: Sets the second\n\n14. **setMilliseconds**: Sets the millisecond",
+    category: "javascript",
+  },
+  {
+    id: 76.7,
+    question: "What are math methods in JavaScript?",
+    answer:
+      "Math methods in JavaScript are built-in functions that operate on numbers to perform various operations like rounding, formatting, and more. Some common math methods are:\n\n1. **abs**: Returns the absolute value of a number\n\n2. **ceil**: Returns the smallest integer greater than or equal to a number\n\n3. **floor**: Returns the largest integer less than or equal to a number\n\n4. **round**: Rounds a number to the nearest integer\n\n5. **random**: Returns a random number between 0 and 1\n\n6. **max**: Returns the largest of zero or more numbers\n\n7. **min**: Returns the smallest of zero or more numbers\n\n8. **pow**: Returns the base to the exponent power\n\n9. **sqrt**: Returns the square root of a number",
+    category: "javascript",
+  },
+  {
+    id: 76.8,
+    question: "What are regular expression methods in JavaScript?",
+    answer:
+      "Regular expression methods in JavaScript are built-in functions that operate on regular expressions to perform various operations like finding, replacing, and manipulating strings. Some common regular expression methods are:\n\n1. **test**: Tests for a match in a string\n\n2. **exec**: Executes a search for a match in a specified string\n\n3. **match**: Finds matches of a regular expression in a string\n\n4. **replace**: Replaces matched substrings with a replacement string\n\n5. **search**: Tests for a match in a string\n\n6. **split**: Splits a string into an array of strings by separating the string into substrings",
+    category: "javascript",
+  },
+  {
+    id: 76.9,
+    question: "Whay do we use use strict in JavaScript?",
+    answer:
+      "use strict is a directive that instructs the JavaScript engine to enforce strict mode in the current scope. It helps catch common coding mistakes, prevent accidental global variables, and improve performance. To use it, simply add 'use strict' at the top of your script or function. This is particularly useful in large projects to ensure consistent coding practices and avoid unexpected behavior. \n\n Strict mode is a feature that helps catch common coding mistakes, prevent accidental global variables, and improve performance. To use it, simply add 'use strict' at the top of your script or function.Main Reason to use it is to prevent accidental global variables, and improve performance.",
     category: "javascript",
   },
   {
