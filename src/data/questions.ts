@@ -194,39 +194,38 @@ export const questions: Question[] = [
     answer:
       "We use semantic elements instead of generic <div>s because semantic tags add meaning to the structure of a webpage. Benefits include: \n\n 1.Readability - Semantic tags like <header>, <nav>, <article>, and <footer> clearly describe their purpose, making the code easier to read and maintain for developers. \n\n 2.Accessibility - Screen readers and assistive technologies can better interpret the page structure, improving accessibility for users with disabilities. \n\n 3.SEO Benefits - Search engines use semantic elements to better understand page content, which can improve search rankings. \n\n 4.Best Practices - Reduces the overuse of <div>s (also called 'div soup') and leads to cleaner, more organized markup.",
     category: "css",
-  },{
+  },
+  {
     id: 23.1,
     question: "What are the default property of flex-direction?",
-    answer:
-      "The default property of flex-direction is row.",
+    answer: "The default property of flex-direction is row.",
     category: "css",
   },
   {
     id: 23.2,
     question: "What are the default property of flex-wrap?",
-    answer:
-      "The default property of flex-wrap is nowrap.",
-    category: "css",
-  },{
-    id: 23.3,
-    question: "What are the default property of justify-content?",
-    answer:
-      "The default property of justify-content is flex-start.",
-    category: "css",
-  },{
-    id: 23.4,
-    question: "What are the default property of align-items?",
-    answer:
-      "The default property of align-items is stretch.",
+    answer: "The default property of flex-wrap is nowrap.",
     category: "css",
   },
-  {id:23.5,
+  {
+    id: 23.3,
+    question: "What are the default property of justify-content?",
+    answer: "The default property of justify-content is flex-start.",
+    category: "css",
+  },
+  {
+    id: 23.4,
+    question: "What are the default property of align-items?",
+    answer: "The default property of align-items is stretch.",
+    category: "css",
+  },
+  {
+    id: 23.5,
     question: "What is iframe?",
     answer:
       "iFrame is a HTML tag that allows you to embed another HTML page within a page.",
     category: "css",
   },
-  
 
   // JavaScript Questions
   {
@@ -609,6 +608,13 @@ export const questions: Question[] = [
     question: "What is the difference between shallow copy and deep copy?",
     answer:
       "Shallow copy creates a new object but only copies top-level properties. Nested objects/arrays still refer to the same reference in memory - changes in nested data affect both objects. Methods: spread operator {...obj}, Object.assign(), array.slice(). Deep copy creates a completely new object with all nested objects and arrays duplicated. Changes in the copy don't affect the original. Methods: JSON.parse(JSON.stringify(obj)) (has limitations - no functions, dates, undefined), structuredClone() (modern), or libraries like Lodash cloneDeep(). Use shallow copy for simple objects, deep copy for nested structures.",
+    category: "javascript",
+  },
+  {
+    id: 76,
+    question: "Explain ES6 new features?",
+    answer:
+      "ES6 introduce the following new features: \n\n 1.Arrow Function \n\n2.nav tag",
     category: "javascript",
   },
   {
@@ -1000,23 +1006,127 @@ export const questions: Question[] = [
       "Next.js uses a file-based routing system, which is super convenient. You simply create a file within the pages directory, and Next.js automatically creates a route based on the file name. For instance, if you create a file called about.js in the pages directory, it automatically sets up a route at /about.Dynamic routing is also straightforward in Next.js. You can create dynamic routes by using square brackets in the file name. For example, a file named [id].js will match any route that has a dynamic segment, like /product/1, /product/2, etc., and you can access that dynamic part in your code using the useRouter hook from next/router.This method makes setting up and understanding routes very intuitive because you spend less time configuring and more time building your app.",
     category: "nextjs",
   },
-  { id: 130, question: "How can you optimize images in a Next.js application?", answer: "Next.js provides the Image component that automatically optimizes images through lazy loading, responsive sizing, modern formats (WebP/AVIF), blur placeholders, and on-demand optimization. It significantly improves performance and Core Web Vitals without manual configuration.", category: "nextjs" },
-  { id: 131, question: "How do you handle errors and error pages in Next.js?", answer: "Next.js provides a built-in error page that can be customized to handle different types of errors. You can create a custom error page by creating a 404.js file in the pages directory. This file will be rendered when a user visits a page that doesn't exist. You can also create a custom error page for specific errors by creating a error.js file in the pages directory. This file will be rendered when a specific error occurs.", category: "nextjs" },
-  { id: 132, question: " How does Next.js handle CSS and styling?", answer: "Next.js provides a built-in CSS and styling solution that allows you to use CSS modules, global styles, and CSS-in-JS libraries like styled-components. You can use CSS modules by creating a .module.css file and importing it in your component. You can use global styles by creating a global.css file and importing it in your component. You can use CSS-in-JS libraries like styled-components by creating a styled.ts file and importing it in your component.", category: "nextjs" },
-  { id: 133, question: "Explain the concept of dynamic imports in Next.js.", answer: "Dynamic imports in Next.js allow you to load modules on demand, which can improve performance by reducing the initial bundle size. You can use dynamic imports by creating a function that returns a promise to the module you want to import. For example, you can create a function called getModule that returns a promise to the module you want to import. You can then use the dynamic import in your component by calling the getModule function. This will return a promise to the module you want to import, and you can then use the module in your component.You use the import() function to dynamically load the module when it's needed, which can help with things like code splitting. Next.js even has a special next/dynamic module that provides more advanced features like server-side rendering support and loading states for dynamic imports.", category: "nextjs" },
-  { id: 134, question: " How would you handle authentication in a Next.js application?", answer: "You can use the next/auth package to handle authentication in a Next.js application. You can create a custom authentication page by creating a auth.js file in the pages directory. This file will be rendered when a user visits the authentication page. You can also create a custom authentication page for specific errors by creating a error.js file in the pages directory. This file will be rendered when a specific error occurs.", category: "nextjs" },
-  { id: 135, question: "How do you handle internationalization in a Next.js application?", answer: "You can use the next/i18n package to handle internationalization in a Next.js application. You can create a custom internationalization page by creating a i18n.js file in the pages directory. This file will be rendered when a user visits the internationalization page. You can also create a custom internationalization page for specific errors by creating a error.js file in the pages directory. This file will be rendered when a specific error occurs.", category: "nextjs" },
-  { id: 136, question: "How do you handle API routes in a Next.js application?", answer: "You can use the next/api package to handle API routes in a Next.js application. You can create a custom API route by creating a api.js file in the pages directory. This file will be rendered when a user visits the API route. You can also create a custom API route for specific errors by creating a error.js file in the pages directory. This file will be rendered when a specific error occurs.", category: "nextjs" },
-  { id: 137, question: "what are the difference between App route and page route?", answer: "Page Routes are the traditional pages/-based routes in Next.js, whereas App Routes in app/ support React Server Components, nested layouts, and more flexible data fetching for modern applications. Page routes are suitable for small projects, while App routes are suitable for large projects.", category: "nextjs" },
-  { id: 138, question: "How do you handle SEO in a Next.js application?", answer: "You can use the next/seo package to handle SEO in a Next.js application. You can create a custom SEO page by creating a seo.js file in the pages directory. This file will be rendered when a user visits the SEO page. You can also create a custom SEO page for specific errors by creating a error.js file in the pages directory. This file will be rendered when a specific error occurs.", category: "nextjs" },
-  { id: 139, question: "How would you handle environment variables in a Next.js application?", answer: "Environment variables in Next.js can be managed by creating a .env file at the root of your project. Prefix the variable names with NEXT_PUBLIC_ if they need to be available on the client-side as well as the server-side. For example, to create a variable called API_URL, you can define it in your .env file like this:NEXT_PUBLIC_API_URL=https://api.example.com\n\nThen, you can access these variables in your code using process.env.NEXT_PUBLIC_API_URL. Using these prefixed variables ensures that they are embedded into the client-side bundle, which is key for any frontend integrations. Also, remember to add your .env file to .gitignore to keep it out of your version control for security reasons.Then, you can access these variables in your code using process.env.NEXT_PUBLIC_API_URL. Using these prefixed variables ensures that they are embedded into the client-side bundle, which is key for any frontend integrations. Also, remember to add your .env file to .gitignore to keep it out of your version control for security reasons.", category: "nextjs" },
-  { id: 140, question: "How do you handle API routes in a Next.js application?", answer: "You can use the next/api package to handle API routes in a Next.js application. You can create a custom API route by creating a api.js file in the pages directory. This file will be rendered when a user visits the API route. You can also create a custom API route for specific errors by creating a error.js file in the pages directory. This file will be rendered when a specific error occurs.", category: "nextjs" },
-  { id: 141, question: "Explain the role of the Link component in Next.js", answer: "The Link component in Next.js is used for client-side navigation between pages of the app. Instead of triggering a full page reload, it leverages the power of the Next.js router to perform navigation dynamically, resulting in faster transitions. You wrap your anchor tag with Link, providing the href attribute to indicate the path you want to navigate to, like this:import Link from 'next/link';<Link href='/about'>About</Link>", category: "nextjs" },
-  { id: 142, question: "How does code splitting work in Next.js?", answer: "In Next.js, code splitting is handled automatically. When you create a new page in the pages directory, Next.js automatically splits each page into its own bundle. This means that when a user navigates to a different page, only the necessary JavaScript for that page is loaded, making the initial load faster. You can also manually implement dynamic imports using the next/dynamic module for components that you want to load lazily. This further optimizes performance by ensuring that parts of your application are only loaded when they are actually needed, instead of bundling everything together.", category: "nextjs" },
-  { id: 142.1, question: "Can you explain the usage of the Head component in Next.js?", answer: "The Head component in Next.js is used to modify the head section of your HTML document, allowing you to customize elements like the title, meta tags, and link tags on a per-page basis. It's particularly useful for setting meta tags for SEO, adding stylesheet links, or inserting any other element that would usually go inside the tag of an HTML document. You simply import Head from 'next/head' and then wrap your head elements within the Head component inside your component's render method. This way, each page can have its own unique head content, making your application more flexible and enhancing its SEO performance.", category: "nextjs" },
-  { id: 143, question: "Describe the file-based routing system in Next.js.", answer: "Next.js uses a file-based routing system, which is super convenient. You simply create a file within the pages directory, and Next.js automatically creates a route based on the file name. For instance, if you create a file called about.js in the pages directory, it automatically sets up a route at /about.Dynamic routing is also straightforward in Next.js. You can create dynamic routes by using square brackets in the file name. For example, a file named [id].js will match any route that has a dynamic segment, like /product/1, /product/2, etc., and you can access that dynamic part in your code using the useRouter hook from next/router.This method makes setting up and understanding routes very intuitive because you spend less time configuring and more time building your app.", category: "nextjs" },
-  { id: 144, question: "What are the differences between Link and NavLink in Next.js?", answer: "Link is for client-side navigation in Next.js, while NavLink is a React Router component that adds active styling to the current route", category: "nextjs" },
-  { id: 145, question: "How do you handle form validation and submission in Next.js?", answer: "You can use the next/form package to handle form validation and submission in Next.js. You can create a custom form by creating a form.js file in the pages directory. This file will be rendered when a user visits the form page. You can also create a custom form for specific errors by creating a error.js file in the pages directory. This file will be rendered when a specific error occurs.", category: "nextjs" },
+  {
+    id: 130,
+    question: "How can you optimize images in a Next.js application?",
+    answer:
+      "Next.js provides the Image component that automatically optimizes images through lazy loading, responsive sizing, modern formats (WebP/AVIF), blur placeholders, and on-demand optimization. It significantly improves performance and Core Web Vitals without manual configuration.",
+    category: "nextjs",
+  },
+  {
+    id: 131,
+    question: "How do you handle errors and error pages in Next.js?",
+    answer:
+      "Next.js provides a built-in error page that can be customized to handle different types of errors. You can create a custom error page by creating a 404.js file in the pages directory. This file will be rendered when a user visits a page that doesn't exist. You can also create a custom error page for specific errors by creating a error.js file in the pages directory. This file will be rendered when a specific error occurs.",
+    category: "nextjs",
+  },
+  {
+    id: 132,
+    question: " How does Next.js handle CSS and styling?",
+    answer:
+      "Next.js provides a built-in CSS and styling solution that allows you to use CSS modules, global styles, and CSS-in-JS libraries like styled-components. You can use CSS modules by creating a .module.css file and importing it in your component. You can use global styles by creating a global.css file and importing it in your component. You can use CSS-in-JS libraries like styled-components by creating a styled.ts file and importing it in your component.",
+    category: "nextjs",
+  },
+  {
+    id: 133,
+    question: "Explain the concept of dynamic imports in Next.js.",
+    answer:
+      "Dynamic imports in Next.js allow you to load modules on demand, which can improve performance by reducing the initial bundle size. You can use dynamic imports by creating a function that returns a promise to the module you want to import. For example, you can create a function called getModule that returns a promise to the module you want to import. You can then use the dynamic import in your component by calling the getModule function. This will return a promise to the module you want to import, and you can then use the module in your component.You use the import() function to dynamically load the module when it's needed, which can help with things like code splitting. Next.js even has a special next/dynamic module that provides more advanced features like server-side rendering support and loading states for dynamic imports.",
+    category: "nextjs",
+  },
+  {
+    id: 134,
+    question: " How would you handle authentication in a Next.js application?",
+    answer:
+      "You can use the next/auth package to handle authentication in a Next.js application. You can create a custom authentication page by creating a auth.js file in the pages directory. This file will be rendered when a user visits the authentication page. You can also create a custom authentication page for specific errors by creating a error.js file in the pages directory. This file will be rendered when a specific error occurs.",
+    category: "nextjs",
+  },
+  {
+    id: 135,
+    question:
+      "How do you handle internationalization in a Next.js application?",
+    answer:
+      "You can use the next/i18n package to handle internationalization in a Next.js application. You can create a custom internationalization page by creating a i18n.js file in the pages directory. This file will be rendered when a user visits the internationalization page. You can also create a custom internationalization page for specific errors by creating a error.js file in the pages directory. This file will be rendered when a specific error occurs.",
+    category: "nextjs",
+  },
+  {
+    id: 136,
+    question: "How do you handle API routes in a Next.js application?",
+    answer:
+      "You can use the next/api package to handle API routes in a Next.js application. You can create a custom API route by creating a api.js file in the pages directory. This file will be rendered when a user visits the API route. You can also create a custom API route for specific errors by creating a error.js file in the pages directory. This file will be rendered when a specific error occurs.",
+    category: "nextjs",
+  },
+  {
+    id: 137,
+    question: "what are the difference between App route and page route?",
+    answer:
+      "Page Routes are the traditional pages/-based routes in Next.js, whereas App Routes in app/ support React Server Components, nested layouts, and more flexible data fetching for modern applications. Page routes are suitable for small projects, while App routes are suitable for large projects.",
+    category: "nextjs",
+  },
+  {
+    id: 138,
+    question: "How do you handle SEO in a Next.js application?",
+    answer:
+      "You can use the next/seo package to handle SEO in a Next.js application. You can create a custom SEO page by creating a seo.js file in the pages directory. This file will be rendered when a user visits the SEO page. You can also create a custom SEO page for specific errors by creating a error.js file in the pages directory. This file will be rendered when a specific error occurs.",
+    category: "nextjs",
+  },
+  {
+    id: 139,
+    question:
+      "How would you handle environment variables in a Next.js application?",
+    answer:
+      "Environment variables in Next.js can be managed by creating a .env file at the root of your project. Prefix the variable names with NEXT_PUBLIC_ if they need to be available on the client-side as well as the server-side. For example, to create a variable called API_URL, you can define it in your .env file like this:NEXT_PUBLIC_API_URL=https://api.example.com\n\nThen, you can access these variables in your code using process.env.NEXT_PUBLIC_API_URL. Using these prefixed variables ensures that they are embedded into the client-side bundle, which is key for any frontend integrations. Also, remember to add your .env file to .gitignore to keep it out of your version control for security reasons.Then, you can access these variables in your code using process.env.NEXT_PUBLIC_API_URL. Using these prefixed variables ensures that they are embedded into the client-side bundle, which is key for any frontend integrations. Also, remember to add your .env file to .gitignore to keep it out of your version control for security reasons.",
+    category: "nextjs",
+  },
+  {
+    id: 140,
+    question: "How do you handle API routes in a Next.js application?",
+    answer:
+      "You can use the next/api package to handle API routes in a Next.js application. You can create a custom API route by creating a api.js file in the pages directory. This file will be rendered when a user visits the API route. You can also create a custom API route for specific errors by creating a error.js file in the pages directory. This file will be rendered when a specific error occurs.",
+    category: "nextjs",
+  },
+  {
+    id: 141,
+    question: "Explain the role of the Link component in Next.js",
+    answer:
+      "The Link component in Next.js is used for client-side navigation between pages of the app. Instead of triggering a full page reload, it leverages the power of the Next.js router to perform navigation dynamically, resulting in faster transitions. You wrap your anchor tag with Link, providing the href attribute to indicate the path you want to navigate to, like this:import Link from 'next/link';<Link href='/about'>About</Link>",
+    category: "nextjs",
+  },
+  {
+    id: 142,
+    question: "How does code splitting work in Next.js?",
+    answer:
+      "In Next.js, code splitting is handled automatically. When you create a new page in the pages directory, Next.js automatically splits each page into its own bundle. This means that when a user navigates to a different page, only the necessary JavaScript for that page is loaded, making the initial load faster. You can also manually implement dynamic imports using the next/dynamic module for components that you want to load lazily. This further optimizes performance by ensuring that parts of your application are only loaded when they are actually needed, instead of bundling everything together.",
+    category: "nextjs",
+  },
+  {
+    id: 142.1,
+    question: "Can you explain the usage of the Head component in Next.js?",
+    answer:
+      "The Head component in Next.js is used to modify the head section of your HTML document, allowing you to customize elements like the title, meta tags, and link tags on a per-page basis. It's particularly useful for setting meta tags for SEO, adding stylesheet links, or inserting any other element that would usually go inside the tag of an HTML document. You simply import Head from 'next/head' and then wrap your head elements within the Head component inside your component's render method. This way, each page can have its own unique head content, making your application more flexible and enhancing its SEO performance.",
+    category: "nextjs",
+  },
+  {
+    id: 143,
+    question: "Describe the file-based routing system in Next.js.",
+    answer:
+      "Next.js uses a file-based routing system, which is super convenient. You simply create a file within the pages directory, and Next.js automatically creates a route based on the file name. For instance, if you create a file called about.js in the pages directory, it automatically sets up a route at /about.Dynamic routing is also straightforward in Next.js. You can create dynamic routes by using square brackets in the file name. For example, a file named [id].js will match any route that has a dynamic segment, like /product/1, /product/2, etc., and you can access that dynamic part in your code using the useRouter hook from next/router.This method makes setting up and understanding routes very intuitive because you spend less time configuring and more time building your app.",
+    category: "nextjs",
+  },
+  {
+    id: 144,
+    question: "What are the differences between Link and NavLink in Next.js?",
+    answer:
+      "Link is for client-side navigation in Next.js, while NavLink is a React Router component that adds active styling to the current route",
+    category: "nextjs",
+  },
+  {
+    id: 145,
+    question: "How do you handle form validation and submission in Next.js?",
+    answer:
+      "You can use the next/form package to handle form validation and submission in Next.js. You can create a custom form by creating a form.js file in the pages directory. This file will be rendered when a user visits the form page. You can also create a custom form for specific errors by creating a error.js file in the pages directory. This file will be rendered when a specific error occurs.",
+    category: "nextjs",
+  },
 ];
 
 export const getCategoryQuestions = (
