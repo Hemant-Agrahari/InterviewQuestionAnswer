@@ -17,6 +17,7 @@ export default function QuestionCard({ question, index }: QuestionCardProps) {
     javascript: 'border-yellow-500 bg-yellow-50 dark:bg-yellow-950/20',
     nextjs: 'border-black dark:border-gray-400 bg-gray-50 dark:bg-gray-900/20',
     react: 'border-cyan-500 bg-cyan-50 dark:bg-cyan-950/20',
+    'output-based': 'border-green-500 bg-green-50 dark:bg-green-950/20',
   };
 
   const categoryTextColors = {
@@ -25,6 +26,7 @@ export default function QuestionCard({ question, index }: QuestionCardProps) {
     javascript: 'text-yellow-700 dark:text-yellow-300',
     nextjs: 'text-gray-900 dark:text-gray-100',
     react: 'text-cyan-700 dark:text-cyan-300',
+    'output-based': 'text-green-700 dark:text-green-300',
   };
 
   return (
@@ -49,11 +51,13 @@ export default function QuestionCard({ question, index }: QuestionCardProps) {
           
           <div className={`
             overflow-hidden transition-all duration-300
-            ${isExpanded ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'}
+            ${isExpanded ? 'max-h-[1000px] opacity-100 mt-4' : 'max-h-0 opacity-0'}
           `}>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              {question.answer}
-            </p>
+            <div className="text-gray-700 dark:text-gray-300 leading-relaxed space-y-2">
+              {question.answer.split('\n').map((line, idx) => (
+                line.trim() && <p key={idx}>{line}</p>
+              ))}
+            </div>
           </div>
         </div>
         
