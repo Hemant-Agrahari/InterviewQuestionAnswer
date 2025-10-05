@@ -1014,7 +1014,56 @@ export const questions: Question[] = [
       "You shouldn't use map for filtering - use filter instead. map returns an array with the same length, just transformed. Correct approach: const result = people.filter(person => person.age > 20).map(person => person.name). This first filters people over 20, then maps to their names. Remember: filter() for filtering data, map() for transforming data. map always returns an array of the same length as input.",
     category: "output-based",
   },
-
+  {id: 106,
+    question: "What is the output of console.log(typeof NaN)?",
+    answer:
+      "Output: 'number'. Explanation: NaN is a special value in JavaScript that represents 'Not a Number'. It's a number type, not a string or boolean.",
+    category: "output-based",
+  },
+  {id: 107,
+    question: "What is the output of console.log(typeof Infinity)?",
+    answer:
+      "Output: 'number'. Explanation: Infinity is a special value in JavaScript that represents positive infinity. It's a number type, not a string or boolean.",
+    category: "output-based",
+  },
+  {id: 108,
+    question: "What is the output of console.log(typeof -Infinity)?",
+    answer:
+      "Output: 'number'. Explanation: -Infinity is a special value in JavaScript that represents negative infinity. It's a number type, not a string or boolean.",
+    category: "output-based",
+  },
+  {id: 109,
+    question: "What is the output of console.log(typeof undefined)?",
+    answer:
+      "Output: 'undefined'. Explanation: undefined is a special value in JavaScript that represents a variable that has been declared but not assigned a value. It's a undefined type, not a string or boolean.",
+    category: "output-based",
+  },
+  {id: 2898110,
+    question: "What is the output of let a =10 ;console.log(a * 10) and console.log(a ** 10)?",
+    answer:
+      "Output: \nconsole.log(a * 10) → 100\nconsole.log(a ** 10) → 10000000000\n\nExplanation: The * operator performs multiplication, so 10 * 10 = 100. The ** operator is the exponentiation operator (power), so 10 ** 10 means 10 raised to the power of 10, which equals 10,000,000,000 (10 billion). The single asterisk (*) is for multiplication, while the double asterisk (**) is for exponentiation in JavaScript.",
+    category: "output-based",
+  },
+  {
+    id: 2898111,
+    question: "What is the output of function test(){salary=1200; console.log(salary);} test();?",
+    answer:
+      "Output: 1200\n\nExplanation: When the function test() is called, it creates a global variable salary (because it's not declared with var, let, or const) and assigns it the value 1200. Then console.log(salary) prints 1200. Note: This creates an implicit global variable, which is bad practice. In strict mode ('use strict'), this would throw a ReferenceError.",
+    category: "output-based",
+  },
+  {
+    id: 2898112,
+    question: "What is the output of: function test() { console.log(test.abc); } test(); test.abc = 200; test.abc = 300; test();?",
+    answer:
+      "Output: \nFirst test() → undefined\nSecond test() → 300\n\nExplanation: In JavaScript, functions are objects and can have properties. Initially, test.abc doesn't exist, so the first test() call logs undefined. Then we assign test.abc = 200, but immediately overwrite it with test.abc = 300. When we call test() again, it logs 300 because that's the current value of the test.abc property. Functions as objects can store properties just like regular objects.",
+    category: "output-based",
+  },  
+  {id: 2898113,
+    question: "What is the output of: let a = { name: 'Hemant' };let b = { ...a };b.name = 'Agrahari';console.log(a.name);console.log(b.name);",
+    answer:
+      "Output: \nHemant\nAgrahari\n\n. Explanation: The ...a is a spread operator that copies the properties of the a object to the b object. So b.name = 'Agrahari' changes the name property of the b object to 'Agrahari', but it does not change the name property of the a object. So a.name = 'Hemant' and b.name = 'Agrahari' are two different objects.",
+    category: "output-based",
+  },
   // Next.js Questions
   {
     id: 106,
