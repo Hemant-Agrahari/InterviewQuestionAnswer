@@ -310,7 +310,47 @@ export const questions: Question[] = [
       "iFrame is a HTML tag that allows you to embed another HTML page within a page.",
     category: "css",
   },
-
+  {id: 23.6,
+    question: "How many ways to access class and id in CSS?",
+    answer:
+      "1. Class: .class-name \n2. Id: #id-name \n3. Tag: tag-name \n4. Universal: * \n5. Attribute: [attribute-name] \n6. Pseudo-class: :pseudo-class-name \n7. Pseudo-element: ::pseudo-element-name",
+    category: "css",
+  },{id: 23.7,
+    question: "What are the css selectors?",
+    answer:
+      "1. Class: .class-name \n2. Id: #id-name \n3. Tag: tag-name \n4. Universal: * \n5. Attribute: [attribute-name] \n6. Pseudo-class: :pseudo-class-name \n7. Pseudo-element: ::pseudo-element-name",
+    category: "css",
+  },
+ {id: 23.8,
+    question: "What is the difference between querySelector and querySelectorAll?",
+    answer:
+      "querySelector: querySelector method returns the first element that satisfies the condition, stops searching after finding first match, returns undefined if no match found, returns a single element. \n\n querySelectorAll: querySelectorAll method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use querySelector to get one specific element, querySelectorAll to get all matching elements.",
+    category: "css",
+  },
+  {id: 23.9,
+    question: "What is the difference between getElementById and getElementsByClassName?",
+    answer:
+      "getElementById: getElementById method returns the first element that satisfies the condition, stops searching after finding first match, returns undefined if no match found, returns a single element. \n\n getElementsByClassName: getElementsByClassName method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use getElementById to get one specific element, getElementsByClassName to get all matching elements.",
+    category: "css",
+  },
+  {id: 223.10,
+    question: "What is the difference between getElementsByTagName and getElementsByClassName?",
+    answer:
+      "getElementsByTagName: getElementsByTagName method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use getElementsByTagName to get all matching elements. \n\n getElementsByClassName: getElementsByClassName method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use getElementsByClassName to get all matching elements.",
+    category: "css",
+  },
+  {id: 230.11,
+    question: "What is the difference between getElementsByTagName and getElementsByClassName?",
+    answer:
+      "getElementsByTagName: getElementsByTagName method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use getElementsByTagName to get all matching elements. \n\n getElementsByClassName: getElementsByClassName method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use getElementsByClassName to get all matching elements.",
+    category: "css",
+  },
+  {id: 230.12,
+    question: "How many ways we have to center a div?",
+    answer:
+      "1. Using margin: auto; \n2. Using flexbox: display: flex; justify-content: center; align-items: center; \n3. Using grid: display: grid; place-items: center; \n4. Using text-align: center; \n5. Using transform: translate(-50%, -50%);",
+    category: "css",
+  },
   // JavaScript Questions
   {
     id: 24,
