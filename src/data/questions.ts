@@ -416,7 +416,7 @@ export const questions: Question[] = [
     id: 38,
     question: "What is the difference between map() and forEach()?",
     answer:
-      "Map:map() creates and returns a new array with transformed values based on the callback function, doesn't modify the original array. \n\n forEach() executes a function on each element for side effects, returns undefined, doesn't create a new array. \n\n Use map() when you need a transformed result array, use forEach() for side effects like logging or updating external variables.",
+      "Map:map() creates and returns a new array with transformed values based on the callback function, doesn't modify the original array Syntax: array.map(callback(currentValue, index, array)) \n\n forEach() executes a function on each element for side effects, returns undefined, doesn't create a new array. Syntax: array.forEach(callback(currentValue, index, array)) \n\n Use map() when you need a transformed result array, use forEach() for side effects like logging or updating external variables.",
     category: "javascript",
   },
   {
@@ -505,7 +505,7 @@ export const questions: Question[] = [
     id: 50,
     question: "What is the difference between find() and filter()?",
     answer:
-      "find(): returns the first element that satisfies the condition, stops searching after finding first match, returns undefined if no match found, returns a single element. filter(): returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use find() to get one specific element, filter() to get all matching elements.",
+      "find(): find method returns the first element that satisfies the condition, stops searching after finding first match, returns undefined if no match found, returns a single element. \n\n filter(): filter method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use find() to get one specific element, filter() to get all matching elements.",
     category: "javascript",
   },
   {
@@ -519,7 +519,7 @@ export const questions: Question[] = [
     id: 52,
     question: "What is a prototype in JavaScript?",
     answer:
-      "A prototype is an object that every function and object has by default. It's used to add properties and methods that can be shared across instances. This is how JavaScript implements inheritance. When you access a property on an object, JavaScript first looks at the object itself, then looks up the prototype chain until it finds the property or reaches null. Methods defined on a prototype are shared by all instances, saving memory.",
+      "A prototype is an object that every function and object has by default. It's used to add properties and methods that can be shared across instances. This is how JavaScript implements inheritance. When you access a property on an object, JavaScript first looks at the object itself, then looks up the prototype chain until it finds the property or reaches null. Methods defined on a prototype are shared by all instances, saving memory. syntax: Object.getPrototypeOf(object)",
     category: "javascript",
   },
   {
@@ -678,6 +678,19 @@ export const questions: Question[] = [
     question: "What is a higher-order function?",
     answer:
       "A higher-order function is a function that either takes another function as an argument, returns a function as its result, or both. It's a fundamental concept in functional programming that helps make code more reusable and composable. Common examples: map(), filter(), reduce() (take functions as arguments), function factories (return functions). They enable powerful patterns like callbacks, closures, and function composition.",
+    category: "javascript",
+  },
+  {
+    id: 75.21,
+    question: "What is a callback function?",
+    answer:
+      "A callback function is a function that is passed as an argument to another function. It is a way to handle asynchronous operations in JavaScript. It is a way to handle asynchronous operations in JavaScript. It is a way to handle asynchronous operations in JavaScript.",
+    category: "javascript",
+  },{
+    id: 75.22,
+    question: "List out type of function in JavaScript?",
+    answer:
+      " \n\n1. Anonymous function example: function() { console.log('Hello'); } \n2. Arrow function example: () => { console.log('Hello'); } \n3. Named function example: function myFunction() { console.log('Hello'); } \n4. Constructor function example: function MyConstructor() { this.name = 'John'; } \n5. Generator function example: function* myGenerator() { yield 1; yield 2; yield 3; } \n6. Async function example: async function myAsyncFunction() { await new Promise(resolve => setTimeout(resolve, 1000)); console.log('Hello'); }",
     category: "javascript",
   },
   {
