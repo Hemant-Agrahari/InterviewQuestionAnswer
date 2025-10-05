@@ -1211,6 +1211,24 @@ export const questions: Question[] = [
 
     category: "react",
   },
+  {id: 124.1,
+    question: "What are the differences between props and states?",
+    answer:
+      "Props are immutable and passed from parent to child components. States are mutable and managed within the component. Props are used to pass data from parent to child components, while states are used to manage data within the component. Props are used to pass data from parent to child components, while states are used to manage data within the component.",
+    category: "react",
+  },
+  {id: 124.2,
+    question: "How can we pass data from child to parent component and pass data from parent to child component?",
+    answer:
+      "We can pass data from child to parent component using props. We can pass data from parent to child component using props. We can pass data from child to parent component using props. We can pass data from parent to child component using props.",
+    category: "react",
+  },
+  {id: 124.3,
+    question: "What are the differences between functional and class components?",
+    answer:
+      "Functional components are simple functions that return JSX. Class components are ES6 classes that extend React.Component and return JSX. Functional components are simpler and easier to understand, while class components are more complex and harder to understand. Functional components are used for simple components, while class components are used for complex components.",
+    category: "react",
+  },
   {
     id: 125,
     question: "What is the difference between Next.js and React?",
