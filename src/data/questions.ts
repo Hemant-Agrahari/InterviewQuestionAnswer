@@ -25,9 +25,92 @@ export const questions: Question[] = [
     id: 3,
     question: "What is the difference between HTML and HTML5?",
     answer:
-      "HTML : HTML (older versions, like HTML 4.01) was primarily focused on structuring content with limited support for multimedia, semantic elements, and modern web APIs, more reliant on external plugins (like Flash) for audio, video, and interactive content.\n HTML5 : HTML5 is designed for modern web development with rich features. It introduces semantic tags like <header>, <nav>, <section>, <article>, <footer> for better structure. HTML5 natively supports audio, video, canvas, SVG, and offline storage without plugins. It includes new APIs like Geolocation, Web Storage, Web Workers, and Drag & Drop. HTML5 focuses on performance, accessibility, and cross-device compatibility. In short: HTML = basic structure, HTML5 = modern, semantic, multimedia-rich, and API-enabled web standard.",
+      "Aspect\tHTML\tHTML5\nDoctype\tLong & complex\tSimple: <!DOCTYPE html>\nMultimedia\tNeeds plugins (Flash)\t<audio>, <video>\nGraphics\tNo native support\t<canvas>, <svg>\nForms\tBasic inputs\tNew inputs: email, date, etc.\nSemantic Tags\tUses <div> mostly\t<header>, <footer>, <article>\nAPIs\tNone\tGeolocation, Web Storage, etc.",
     category: "html",
   },
+  {
+    id: 3.112,
+    question: "What are the new input types in HTML5?",
+    answer:
+      "New input types in HTML5 include: \n1.email, \n2.date, \n3.time, \n4.number, \n5.range, \n6.color, and \n7.search. These provide more specific input validation and better user experience for specific data types.",
+    category: "html",
+  },
+  {
+    id: 3.2,
+    question: "What are the new semantic tags in HTML5?",
+    answer:
+      "New semantic tags in HTML5 include: \n1.header, \n2.footer, \n3.article, \n4.section, \n5.aside, and \n6.nav. These tags provide more meaning to the structure of the web page and improve accessibility and SEO.",
+    category: "html",
+  },
+  {
+    id: 3.3,
+    question: "What is HTML tag?",
+    answer:
+      "HTML tag is used to define the structure of the web page. It is a container for the content of the web page. It is a pair of opening and closing tags. The opening tag is used to define the start of the content and the closing tag is used to define the end of the content. The content is the text that is displayed on the web page. \n\nExample: <html> <body> <h1>Hello World</h1> </body> </html>",
+    category: "html",
+  },
+  {
+    id: 3.4,
+    question: "What is HTML attribute?",
+    answer:
+      "HTML attribute is used to define the extra information or properties of the HTML tag. It is a pair of name and value. The name is the property of the HTML tag and the value is the value of the property. \n\nExample: <img src='image.jpg' alt='My Image'> src and alt are attributes of the img tag. \n\nExample: <a href='https://www.google.com'>Google</a> href is an attribute of the a tag.",
+    category: "html",
+  },
+  {
+    id: 3.5,
+    question: "What is HTML element?",
+    answer:
+      "HTML element is used to define the structure of the web page. It is a pair of opening and closing tags. The opening tag is used to define the start of the content and the closing tag is used to define the end of the content. The content is the text that is displayed on the web page. \n\nExample: <html> <body> <h1>Hello World</h1> </body> </html> html, body, h1 are elements of the html tag.",
+    category: "html",
+  },{
+    id: 3.6,
+    question: "What is HTML comment?",
+    answer:
+      "HTML comment is used to define the comment of the web page. It is a pair of opening and closing tags. The opening tag is used to define the start of the comment and the closing tag is used to define the end of the comment. The comment is the text that is displayed on the web page. \n\nExample: <!-- This is a comment -->",
+    category: "html",
+  },
+  {
+    id: 3.7,
+    question: "What is HTML form?",
+    answer:
+      "HTML form is used to define the form of the web page. It is a pair of opening and closing tags. The opening tag is used to define the start of the form and the closing tag is used to define the end of the form. The form is the text that is displayed on the web page. \n\nExample: <form> <input type='text' name='username'> <input type='password' name='password'> </form>",
+    category: "html",
+  },{
+    id: 3.8,
+    question: "What is HTML table?",
+    answer:
+      "HTML table is used to define the table of the web page. It is a pair of opening and closing tags. The opening tag is used to define the start of the table and the closing tag is used to define the end of the table. The table is the text that is displayed on the web page. \n\nExample: <table> <tr> <td>Hello</td> <td>World</td> </tr> </table> tr and td are elements of the table tag.",
+    category: "html",
+  },
+  {
+    id: 3.9,
+    question: "What is HTML list?",
+    answer:
+      "HTML list is used to define the list of the web page. It is a pair of opening and closing tags. The opening tag is used to define the start of the list and the closing tag is used to define the end of the list. The list is the text that is displayed on the web page. \n\nExample: <ul> <li>Hello</li> <li>World</li> </ul> ul and li are elements of the list tag.",
+    category: "html",
+  },
+  {
+    id: 3.10,
+    question: "What is HTML link?",
+    answer:
+      "HTML link is used to define the link of the web page. It is a pair of opening and closing tags. The opening tag is used to define the start of the link and the closing tag is used to define the end of the link. The link is the text that is displayed on the web page. \n\nExample: <a href='https://www.google.com'>Google</a> a and href are elements of the link tag.",
+    category: "html",
+  },
+  {
+    id: 3.12,
+    question: "List out 10 inline elements in HTML and 10 block elements in HTML?",
+    answer:
+      "Inline elements: \n1.span, \n2.a, \n3.strong, \n4.em, \n5.img, \n6.small, \n7.sup, \n8.sub, \n9.input, \n10.label. \n\nBlock elements: \n1.div, \n2.p, \n3.h1, \n4.h2, \n5.h3, \n6.h4, \n7.h5, \n8.h6, \n9.ul, \n10.ol.",
+    category: "html",
+  },
+  {
+    id: 3.13,
+    question: "What are the difference between strong and em tag?",
+    answer:
+      "strong: \n1.It is used to define the important text. \n2.It is a block element. \n3.It is used to define the important text. \n4.It is used to define the important text. \n5.It is used to define the important text. \n6.It is used to define the important text. \n7.It is used to define the important text. \n8.It is used to define the important text. \n9.It is used to define the important text. \n10.It is used to define the important text. \n\nem: \n1.It is used to define the emphasized text. \n2.It is a inline element. \n3.It is used to define the emphasized text. \n4.It is used to define the emphasized text. \n5.It is used to define the emphasized text. \n6.It is used to define the emphasized text. \n7.It is used to define the emphasized text. \n8.It is used to define the emphasized text. \n9.It is used to define the emphasized text. \n10.It is used to define the emphasized text.",
+    category: "html",
+  },
+  
   {
     id: 4,
     question: "What is the use of head tag?",

@@ -60,9 +60,46 @@ export default function QuestionCard({ question, index }: QuestionCardProps) {
           `}>
             <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
               <div className="text-gray-700 dark:text-gray-300 leading-relaxed space-y-3 text-[15px]">
-                {question.answer.split('\n').map((line, idx) => (
-                  line.trim() && <p key={idx} className="animate-fade-in">{line}</p>
-                ))}
+                {(() => {
+                  const lines = question.answer.split('\n');
+                  // Check if this is a tab-separated table (first line contains tabs)
+                  if (lines[0] && lines[0].includes('\t')) {
+                    const rows = lines.map(line => line.split('\t'));
+                    const headers = rows[0];
+                    const dataRows = rows.slice(1);
+                    return (
+                      <div className="overflow-x-auto animate-fade-in">
+                        <table className="min-w-full border-collapse border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden shadow-sm">
+                          <thead className="bg-gradient-to-r from-indigo-500 to-purple-600">
+                            <tr>
+                              {headers.map((header, idx) => (
+                                <th key={idx} className="border border-gray-300 dark:border-gray-600 px-4 py-3 text-left font-semibold text-white">
+                                  {header}
+                                </th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {dataRows.map((row, rowIdx) => (
+                              <tr key={rowIdx} className={rowIdx % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50 dark:bg-gray-700'}>
+                                {row.map((cell, cellIdx) => (
+                                  <td key={cellIdx} className="border border-gray-300 dark:border-gray-600 px-4 py-3">
+                                    {cell}
+                                  </td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    );
+                  }
+                  
+                  // Regular text rendering
+                  return lines.map((line, idx) => (
+                    line.trim() && <p key={idx} className="animate-fade-in">{line}</p>
+                  ));
+                })()}
               </div>
             </div>
           </div>
