@@ -62,7 +62,7 @@ export const questions: Question[] = [
     answer:
       "HTML element is used to define the structure of the web page. It is a pair of opening and closing tags. The opening tag is used to define the start of the content and the closing tag is used to define the end of the content. The content is the text that is displayed on the web page. \n\nExample: <html> <body> <h1>Hello World</h1> </body> </html> html, body, h1 are elements of the html tag.",
     category: "html",
-  },{
+  }, {
     id: 3.6,
     question: "What is HTML comment?",
     answer:
@@ -75,7 +75,7 @@ export const questions: Question[] = [
     answer:
       "HTML form is used to define the form of the web page. It is a pair of opening and closing tags. The opening tag is used to define the start of the form and the closing tag is used to define the end of the form. The form is the text that is displayed on the web page. \n\nExample: <form> <input type='text' name='username'> <input type='password' name='password'> </form>",
     category: "html",
-  },{
+  }, {
     id: 3.8,
     question: "What is HTML table?",
     answer:
@@ -110,7 +110,7 @@ export const questions: Question[] = [
       "strong: \n1.It is used to define the important text. \n2.It is a block element. \n3.It is used to define the important text. \n4.It is used to define the important text. \n5.It is used to define the important text. \n6.It is used to define the important text. \n7.It is used to define the important text. \n8.It is used to define the important text. \n9.It is used to define the important text. \n10.It is used to define the important text. \n\nem: \n1.It is used to define the emphasized text. \n2.It is a inline element. \n3.It is used to define the emphasized text. \n4.It is used to define the emphasized text. \n5.It is used to define the emphasized text. \n6.It is used to define the emphasized text. \n7.It is used to define the emphasized text. \n8.It is used to define the emphasized text. \n9.It is used to define the emphasized text. \n10.It is used to define the emphasized text.",
     category: "html",
   },
-  
+
   {
     id: 4,
     question: "What is the use of head tag?",
@@ -205,7 +205,7 @@ export const questions: Question[] = [
       "Table row is used to create a row in a table, while table data is used to create a cell in a row. Table row is represented by the <tr> tag, while table data is represented by the <td> tag.",
     category: "html",
   },
-  
+
 
   // CSS Questions
   {
@@ -310,42 +310,49 @@ export const questions: Question[] = [
       "iFrame is a HTML tag that allows you to embed another HTML page within a page.",
     category: "css",
   },
-  {id: 23.6,
+  {
+    id: 23.6,
     question: "How many ways to access class and id in CSS?",
     answer:
       "1. Class: .class-name \n2. Id: #id-name \n3. Tag: tag-name \n4. Universal: * \n5. Attribute: [attribute-name] \n6. Pseudo-class: :pseudo-class-name \n7. Pseudo-element: ::pseudo-element-name",
     category: "css",
-  },{id: 23.7,
+  }, {
+    id: 23.7,
     question: "What are the css selectors?",
     answer:
       "1. Class: .class-name \n2. Id: #id-name \n3. Tag: tag-name \n4. Universal: * \n5. Attribute: [attribute-name] \n6. Pseudo-class: :pseudo-class-name \n7. Pseudo-element: ::pseudo-element-name",
     category: "css",
   },
- {id: 23.8,
+  {
+    id: 23.8,
     question: "What is the difference between querySelector and querySelectorAll?",
     answer:
       "querySelector: querySelector method returns the first element that satisfies the condition, stops searching after finding first match, returns undefined if no match found, returns a single element. \n\n querySelectorAll: querySelectorAll method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use querySelector to get one specific element, querySelectorAll to get all matching elements.",
     category: "css",
   },
-  {id: 23.9,
+  {
+    id: 23.9,
     question: "What is the difference between getElementById and getElementsByClassName?",
     answer:
       "getElementById: getElementById method returns the first element that satisfies the condition, stops searching after finding first match, returns undefined if no match found, returns a single element. \n\n getElementsByClassName: getElementsByClassName method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use getElementById to get one specific element, getElementsByClassName to get all matching elements.",
     category: "css",
   },
-  {id: 223.10,
+  {
+    id: 223.10,
     question: "What is the difference between getElementsByTagName and getElementsByClassName?",
     answer:
       "getElementsByTagName: getElementsByTagName method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use getElementsByTagName to get all matching elements. \n\n getElementsByClassName: getElementsByClassName method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use getElementsByClassName to get all matching elements.",
     category: "css",
   },
-  {id: 230.11,
+  {
+    id: 230.11,
     question: "What is the difference between getElementsByTagName and getElementsByClassName?",
     answer:
       "getElementsByTagName: getElementsByTagName method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use getElementsByTagName to get all matching elements. \n\n getElementsByClassName: getElementsByClassName method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use getElementsByClassName to get all matching elements.",
     category: "css",
   },
-  {id: 230.12,
+  {
+    id: 230.12,
     question: "How many ways we have to center a div?",
     answer:
       "1. Using margin: auto; \n2. Using flexbox: display: flex; justify-content: center; align-items: center; \n3. Using grid: display: grid; place-items: center; \n4. Using text-align: center; \n5. Using transform: translate(-50%, -50%);",
@@ -726,7 +733,7 @@ export const questions: Question[] = [
     answer:
       "A callback function is a function that is passed as an argument to another function. It is a way to handle asynchronous operations in JavaScript. It is a way to handle asynchronous operations in JavaScript. It is a way to handle asynchronous operations in JavaScript.",
     category: "javascript",
-  },{
+  }, {
     id: 75.22,
     question: "List out type of function in JavaScript?",
     answer:
@@ -1014,31 +1021,36 @@ export const questions: Question[] = [
       "You shouldn't use map for filtering - use filter instead. map returns an array with the same length, just transformed. Correct approach: const result = people.filter(person => person.age > 20).map(person => person.name). This first filters people over 20, then maps to their names. Remember: filter() for filtering data, map() for transforming data. map always returns an array of the same length as input.",
     category: "output-based",
   },
-  {id: 106,
+  {
+    id: 106,
     question: "What is the output of console.log(typeof NaN)?",
     answer:
       "Output: 'number'. Explanation: NaN is a special value in JavaScript that represents 'Not a Number'. It's a number type, not a string or boolean.",
     category: "output-based",
   },
-  {id: 107,
+  {
+    id: 107,
     question: "What is the output of console.log(typeof Infinity)?",
     answer:
       "Output: 'number'. Explanation: Infinity is a special value in JavaScript that represents positive infinity. It's a number type, not a string or boolean.",
     category: "output-based",
   },
-  {id: 108,
+  {
+    id: 108,
     question: "What is the output of console.log(typeof -Infinity)?",
     answer:
       "Output: 'number'. Explanation: -Infinity is a special value in JavaScript that represents negative infinity. It's a number type, not a string or boolean.",
     category: "output-based",
   },
-  {id: 109,
+  {
+    id: 109,
     question: "What is the output of console.log(typeof undefined)?",
     answer:
       "Output: 'undefined'. Explanation: undefined is a special value in JavaScript that represents a variable that has been declared but not assigned a value. It's a undefined type, not a string or boolean.",
     category: "output-based",
   },
-  {id: 2898110,
+  {
+    id: 2898110,
     question: "What is the output of let a =10 ;console.log(a * 10) and console.log(a ** 10)?",
     answer:
       "Output: \nconsole.log(a * 10) → 100\nconsole.log(a ** 10) → 10000000000\n\nExplanation: The * operator performs multiplication, so 10 * 10 = 100. The ** operator is the exponentiation operator (power), so 10 ** 10 means 10 raised to the power of 10, which equals 10,000,000,000 (10 billion). The single asterisk (*) is for multiplication, while the double asterisk (**) is for exponentiation in JavaScript.",
@@ -1057,8 +1069,9 @@ export const questions: Question[] = [
     answer:
       "Output: \nFirst test() → undefined\nSecond test() → 300\n\nExplanation: In JavaScript, functions are objects and can have properties. Initially, test.abc doesn't exist, so the first test() call logs undefined. Then we assign test.abc = 200, but immediately overwrite it with test.abc = 300. When we call test() again, it logs 300 because that's the current value of the test.abc property. Functions as objects can store properties just like regular objects.",
     category: "output-based",
-  },  
-  {id: 2898113,
+  },
+  {
+    id: 2898113,
     question: "What is the output of: let a = { name: 'Hemant' };let b = { ...a };b.name = 'Agrahari';console.log(a.name);console.log(b.name);",
     answer:
       "Output: \nHemant\nAgrahari\n\n. Explanation: The ...a is a spread operator that copies the properties of the a object to the b object. So b.name = 'Agrahari' changes the name property of the b object to 'Agrahari', but it does not change the name property of the a object. So a.name = 'Hemant' and b.name = 'Agrahari' are two different objects.",
@@ -1211,19 +1224,22 @@ export const questions: Question[] = [
 
     category: "react",
   },
-  {id: 124.1,
+  {
+    id: 124.1,
     question: "What are the differences between props and states?",
     answer:
       "Props are immutable and passed from parent to child components. States are mutable and managed within the component. Props are used to pass data from parent to child components, while states are used to manage data within the component. Props are used to pass data from parent to child components, while states are used to manage data within the component.",
     category: "react",
   },
-  {id: 124.2,
+  {
+    id: 124.2,
     question: "How can we pass data from child to parent component and pass data from parent to child component?",
     answer:
       "We can pass data from child to parent component using props. We can pass data from parent to child component using props. We can pass data from child to parent component using props. We can pass data from parent to child component using props.",
     category: "react",
   },
-  {id: 124.3,
+  {
+    id: 124.3,
     question: "What are the differences between functional and class components?",
     answer:
       "Functional components are simple functions that return JSX. Class components are ES6 classes that extend React.Component and return JSX. Functional components are simpler and easier to understand, while class components are more complex and harder to understand. Functional components are used for simple components, while class components are used for complex components.",
@@ -1387,6 +1403,74 @@ export const questions: Question[] = [
       "You can use the next/form package to handle form validation and submission in Next.js. You can create a custom form by creating a form.js file in the pages directory. This file will be rendered when a user visits the form page. You can also create a custom form for specific errors by creating a error.js file in the pages directory. This file will be rendered when a specific error occurs.",
     category: "nextjs",
   },
+  {
+    id: 146,
+    question: "What is the key difference between next/router and next/navigation?",
+    answer:
+      "next/navigation is used on the client side for navigating between pages or reading URL data using hooks like useRouter, usePathname, and useSearchParams — it allows smooth navigation without a full page reload, just like a SPA. On the other hand, \n\n next/route (used in route handlers under app/api/.../route.ts) works on the server side to handle API requests, responses, and server-side redirects using NextResponse",
+    category: "nextjs",
+  },
+  {
+    id: 147,
+    question: "How can I fetch the pathname from a URL that contains query parameters in Next.js?",
+    answer:
+      "To fetch the pathname from a URL that includes query parameters in Next.js, you can use the built-in JavaScript URL object. By passing the full URL string to new URL(), you can easily access its components, including the pathname. For example, calling new URL('https://example.com/profile?id=123').pathname will return '/profile'. If you are working inside a Next.js App Router component and want to get the current page's pathname directly, you can use the usePathname() hook from next/navigation. This hook returns the current route path (e.g., '/profile'), making it ideal for client components that need to know the active route.",
+    category: "nextjs",
+  },
+  {
+    id: 148,
+    question: "What is the difference between usePathname() and useSearchParams()?",
+    answer:
+      "In Next.js App Router, both usePathname() and useSearchParams() are hooks from next/navigation used to read information about the current URL. The usePathname() hook returns the current route path (for example, '/dashboard' or '/profile/settings'), making it useful when you need to know which page or route is active. On the other hand, the useSearchParams() hook allows you to read and manage the query parameters in the URL (for example, ?id=123 or ?filter=active). You can use methods like get() on the returned object to access specific parameters. In short, usePathname() is for the path part of the URL, while useSearchParams() is for the query string part.",
+    category: "nextjs",
+  }, {
+    id: 149,
+    question: "Can you use useSearchParams() in server components? Why or why not?",
+    answer:
+      "No, you cannot use the useSearchParams() hook directly in server components because it is a client-side hook that relies on React state and browser APIs to track URL changes. Server components are rendered on the server and do not have access to client-side features like the browser's URL or navigation state. Instead, in server components, you can access search parameters using the searchParams prop available in the page or layout component's function signature, which Next.js automatically provides during server-side rendering.",
+    category: "nextjs",
+  },
+  {
+    id: 150,
+    question: "How would you display query parameters like /profile?id=10&ref=google on a page?",
+    answer:
+      "In Next.js App Router, you can display query parameters from the URL using the useSearchParams() hook from next/navigation. This hook lets you read the values of query parameters in a client component. For example, you can use const searchParams = useSearchParams(); and then access them with searchParams.get('id') or searchParams.get('ref'). If the URL is /profile?id=10&ref=google, calling searchParams.get('id') will return '10' and searchParams.get('ref') will return 'google'. You can then render these values directly on the page.",
+    category: "nextjs",
+  },
+  {
+    id: 151,
+    question: "What is the difference between route parameters and query parameters?",
+    answer:
+      "In Next.js, route parameters and query parameters are two ways to pass data through the URL, but they serve different purposes. Route parameters are part of the URL path itself and are defined in dynamic routes using brackets, such as /profile/[id], where 'id' is the route parameter. They are typically used to identify a specific resource or page. Query parameters, on the other hand, appear after the '?' in the URL, like /profile?id=10&ref=google, and are used to pass optional data, filters, or additional information to the page. In summary, route parameters are part of the path and usually required, while query parameters are part of the URL string and usually optional.",
+    category: "nextjs",
+  }, {
+    id: 152,
+    question: "What’s the best way to handle missing or invalid query parameters in Next.js?",
+    answer:
+      "The best way to handle missing or invalid query parameters in Next.js depends on whether you are using the Pages Router or App Router. In the App Router, you can check query parameters using the useSearchParams() hook in client components or the searchParams prop in server components. If a required parameter is missing or invalid, you can use the redirect() function from next/navigation to redirect the user to a fallback page, or use notFound() to show a 404 page. In client components, you can also render a friendly error message or fallback UI. Validating and handling query parameters proactively ensures better user experience and prevents unexpected errors.",
+    category: "nextjs",
+  },
+  {
+    id: 153,
+    question: "How can you share query parameters across multiple components efficiently?",
+    answer:
+      "To share query parameters across multiple components efficiently in Next.js, you can use a combination of React state or context with the useSearchParams() hook from next/navigation. For client components, you can read the parameters once using useSearchParams() and then provide them through a React Context or a state management solution like Redux or Zustand. This avoids reading the URL multiple times and ensures that all components have consistent access to the query data. In server components, you can pass the searchParams prop down to child components as props, allowing multiple components to access the parameters without repeatedly reading the URL.",
+    category: "nextjs",
+  },
+  {
+    id: 154,
+    question: "How can you update query parameters without reloading the page?",
+    answer:
+      "In Next.js App Router, you can update query parameters without reloading the page using the useRouter() hook from next/navigation. The router object provides methods like router.replace() or router.push() that let you modify the URL and query parameters client-side while staying on the same page. For example, calling router.push(`/profile?id=20&ref=google`) will update the URL and the page state without a full reload. This is useful for maintaining client-side state, filters, or pagination while providing a smooth user experience.",
+    category: "nextjs",
+  },
+  {
+    id: 155,
+    question: "How do you sync the UI state (like filters or tabs) with URL query parameters in Next.js?",
+    answer:
+      "To sync UI state with URL query parameters in Next.js, you can use the useSearchParams() and useRouter() hooks from next/navigation in client components. First, read the current query parameters using useSearchParams() and initialize your UI state (like active tab or selected filter) based on these values. Then, whenever the UI state changes, update the URL using router.push() or router.replace() with the new query parameters. This approach keeps the UI in sync with the URL, allowing users to share or bookmark the current state without triggering a full page reload.",
+    category: "nextjs",
+  }
 ];
 
 export const getCategoryQuestions = (
