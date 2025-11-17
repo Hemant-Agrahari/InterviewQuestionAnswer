@@ -1086,26 +1086,42 @@ export const questions: Question[] = [
     category: "nextjs",
   },
   {
-    id: 107,
-    question: "What is the difference between SSR, SSG, and ISR in Next.js?",
+    id: 201,
+    question: "What is SSR in Next.js?",
     answer:
-      "SSR (Server-Side Rendering): generates HTML on each request.\n\nSSG (Static Site Generation): pre-renders pages at build time.\n\nISR (Incremental Static Regeneration): allows updating static content after build without rebuilding the entire site.\n\nChoose based on content update frequency and personalization needs.",
+      "SSR (Server-Side Rendering) means the page is generated on every request. When a user visits the page, the server fetches the data and sends fresh HTML each time. It’s perfect for personalized pages, dashboards, or content that changes very frequently.",
     category: "nextjs",
   },
   {
-    id: 108,
+    id: 202,
+    question: "What is SSG in Next.js?",
+    answer:
+      "SSG (Static Site Generation) generates the HTML once at build time. The content is fixed and extremely fast because it’s served from the CDN. It’s great for content that rarely changes, such as marketing pages, documentation, or blogs that don’t update often.",
+    category: "nextjs",
+  },
+  {
+    id: 203,
+    question: "What is ISR in Next.js?",
+    answer:
+      "ISR (Incremental Static Regeneration) sits between SSR and SSG. It creates static pages at build time but can re-generate or update them in the background after a set interval. You get the speed of SSG with the flexibility of dynamic updates. It’s ideal for blogs, product pages, or dashboards where data changes but doesn't need real-time updates.",
+    category: "nextjs",
+  },
+  
+  {
+    id: 30156576476,
     question: "Explain the App Router vs Pages Router in Next.js.",
     answer:
-      "Pages Router (legacy): uses the /pages directory with file-based routing.\n\nApp Router (Next.js 13+): uses /app directory with React Server Components, improved layouts, nested routing, and streaming.\n\nApp Router offers better performance and more flexibility, representing the future of Next.js.",
+      "Next.js has two routing systems: the Pages Router and the App Router. The Pages Router is the older system that uses the /pages folder. It renders everything as client components and uses getStaticProps, getServerSideProps, and getStaticPaths for data fetching. It is simple and stable but does not support modern features like nested layouts or server components.\n\nThe App Router was introduced in Next.js 13 and uses the /app folder. It supports React Server Components by default, which improves performance because heavy logic runs on the server. It also introduces nested layouts, loading states, streaming, and more flexible routing like parallel and intercepting routes. Data fetching becomes simpler using async functions and built-in caching. Overall, the App Router is more modern, scalable, and better for large applications, while the Pages Router is easier for small projects and beginners.",
     category: "nextjs",
   },
   {
-    id: 109,
+    id: 3022345,
     question: "What are Server Components and Client Components in Next.js?",
     answer:
-      "Server Components: render on the server, reducing JavaScript bundle size and improving performance. They can't use hooks or browser APIs.\n\nClient Components ('use client'): render on the client, support interactivity and hooks.\n\nBy default, components in the App Router are Server Components.",
+      "In Next.js, Server Components run on the server by default. They never ship JavaScript to the browser, so they load faster and improve performance. They are perfect for data fetching, heavy calculations, and rendering UI that doesn’t need interactivity.\n\nClient Components run in the browser and include JavaScript. These are used when you need interactivity, such as buttons, forms, modals, inputs, and hooks like useState or useEffect. To make a component a Client Component, we add 'use client' at the top.\n\nIn short: Server Components are fast and ideal for static or data-driven UI, while Client Components handle anything interactive.",
     category: "nextjs",
-  },
+  }
+  ,
   {
     id: 110,
     question: "How does Next.js handle image optimization?",
@@ -1127,6 +1143,13 @@ export const questions: Question[] = [
     question: "What is React and what makes it popular?",
     answer:
       "React is a JavaScript library for building user interfaces, developed by Facebook. Its popularity comes from: component-based architecture, virtual DOM for efficient updates, one-way data flow, strong ecosystem, large community, and ability to build both web and mobile apps (React Native).",
+    category: "react",
+  },
+  {
+    id: 30453,
+    question: "What is an Error Boundary in React?",
+    answer:
+      "An Error Boundary is a special React component that catches JavaScript errors in the UI during rendering. Instead of the whole app crashing, it shows a fallback UI. Error Boundaries catch errors in child components, lifecycle methods, and rendering, but not in event handlers. They are created using class components with componentDidCatch and getDerivedStateFromError. In short, Error Boundaries help prevent the entire React app from breaking when one part has an error, and allow us to show a safe fallback message.",
     category: "react",
   },
   {
