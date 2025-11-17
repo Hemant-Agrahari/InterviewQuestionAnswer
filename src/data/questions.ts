@@ -1286,7 +1286,7 @@ export const questions: Question[] = [
     category: "react",
   },
   {
-    id: 124.2,
+    id: 124.2666666666,
     question:
       "How can we pass data from child to parent component and pass data from parent to child component?",
     answer:
