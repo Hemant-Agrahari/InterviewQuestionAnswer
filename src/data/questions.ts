@@ -434,9 +434,9 @@ export const questions: Question[] = [
     id: 31,
     question: "What is hoisting in JavaScript?",
     answer:
-      "Hoisting is JavaScript's behavior of moving declarations to the top of their scope during compilation. \n\n var declarations are hoisted as undefined. \n\n let/const declarations are hoisted but placed in Temporal Dead Zone (TDZ) until initialized. \n\n Function declarations are fully hoisted (both declaration and definition). \n\n Function expressions only have their variable declaration hoisted. \n\n Only declarations are hoisted, not initializations.",
+      "Hoisting is JavaScript’s behavior where variable and function declarations are moved to the top of their scope during the compilation phase, before the code actually runs. Because of this, variables or functions can technically be accessed before they appear in the code, but with different rules.\n\nvar is hoisted and initialized with undefined.\n\nlet and const are hoisted but stay in the Temporal Dead Zone (TDZ) until they are initialized.\n\nFunction declarations are fully hoisted, so they can be called before their definition.\n\nFunction expressions only hoist the variable, not the function value.\n\nIn simple terms, JavaScript reads declarations first but does not hoist the actual value or initialization.",
     category: "javascript",
-  },
+  },  
   {
     id: 32,
     question: "Explain scope in JavaScript (global, function, block)",
