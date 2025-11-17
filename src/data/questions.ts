@@ -1230,7 +1230,7 @@ export const questions: Question[] = [
     id: 118,
     question: "What are the differences between useCallback and useMemo?",
     answer:
-      "useCallback is used to memoize callbacks - it caches the function and only recalculates when dependencies change. useMemo is used to memoize the result of an expensive calculation. It caches the value and only recalculates when dependencies change. Use memo for component-level optimization, useMemo for value/calculation optimization within a component.",
+      "useCallback and useMemo are both React hooks used for optimization, but they solve different problems. useCallback is used to memoize a function, meaning it returns the same function instance unless its dependencies change. This is helpful when passing functions to child components, preventing unnecessary re-renders. useMemo, on the other hand, memoizes the result of an expensive calculation. Instead of recalculating a heavy value on every render, useMemo returns a cached value unless the dependencies change. In simple terms: useCallback returns a memoized function, while useMemo returns a memoized value. Use useCallback when you want to avoid re-creating functions, and useMemo when you want to avoid re-running expensive computations. Both help improve performance when used correctly.",
     category: "react",
   },
   {
