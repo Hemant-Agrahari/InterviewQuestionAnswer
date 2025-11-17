@@ -367,14 +367,36 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 25,
+    id: 32304,
+    question: "What is the Event Loop in JavaScript?",
+    answer:
+      "The Event Loop is how JavaScript handles asynchronous operations. Since JavaScript is single-threaded, the Event Loop continuously checks the Call Stack and the Task Queues. If the Call Stack is empty, it pushes the next task into it. This is how JavaScript processes async code without blocking, enabling features like setTimeout, promises, and API calls to run smoothly.",
+    category: "javascript",
+  },
+  {
+    id: 33405,
+    question: "What is the Macrotask Queue in JavaScript?",
+    answer:
+      "The Macrotask Queue stores tasks like setTimeout, setInterval, setImmediate, and DOM events. These tasks run only after the current call stack is empty. Compared to the microtask queue, macrotasks run slower and are processed after all microtasks finish. This helps JavaScript maintain correct timing, scheduling, and async behavior.",
+    category: "javascript",
+  },
+  {
+    id: 30346,
+    question: "What is Event Delegation in JavaScript?",
+    answer:
+      "Event Delegation is a technique where instead of adding event listeners to many child elements, we add a single listener to a common parent. The event bubbles up from the child to the parent, and the parent decides which element triggered it. This improves performance, reduces memory usage, and makes handling dynamic elements easier.",
+    category: "javascript",
+  }
+,  
+  {
+    id: 2345,
     question: "What does 'interpreted' mean in JavaScript?",
     answer:
       "Interpreted means the code is executed line by line at runtime by an interpreter (like the browser's JavaScript engine), instead of being fully translated into machine code beforehand like compiled languages such as C++ or Java. This makes JavaScript flexible and platform-independent.",
     category: "javascript",
   },
   {
-    id: 26,
+    id: 232216,
     question: "What is prototype-based programming?",
     answer:
       "It means that objects in JavaScript can inherit properties and methods directly from other objects through a prototype chain, instead of using classes like in classical OOP. For example, when you create an object with a constructor function, methods added to the constructor's prototype are inherited by all instances without being stored in each instance separately.",
