@@ -254,19 +254,21 @@ export const questions: Question[] = [
 }
 ,
   {
-    id: 20,
-    question: "What are CSS preprocessors and name some examples?",
-    answer:
-      "CSS preprocessors are scripting languages that extend CSS with features like variables, nesting, mixins, and functions. They compile to standard CSS. Examples include Sass (SCSS), Less, and Stylus. They help write more maintainable and DRY (Don't Repeat Yourself) CSS code.",
-    category: "css",
-  },
+  id: 20,
+  question: "What are CSS preprocessors and name some examples?",
+  answer:
+    "CSS preprocessors are tools that add advanced features to CSS, such as variables, nesting, mixins, functions, and reusable code patterns. They help write cleaner, more organized, and maintainable styles, especially in large projects. The preprocessor code is compiled into standard CSS before being sent to the browser.\n\nCommon examples include Sass (SCSS), Less, and Stylus. Sass/SCSS is the most widely used due to its powerful features and strong community support.",
+  category: "css",
+}
+,
   {
-    id: 21,
-    question: "What is the difference between px, em, %, and rem?",
-    answer:
-      "Pixels (px) are absolute units with fixed size that does not change relative to anything else (e.g., font-size: 16px is always 16 pixels). \n\n Ems (em) are relative units relative to the font size of the parent element (if parent font is 16px, 2em = 32px), useful for scalable and responsive text sizing. \n\n Percentage (%) is a relative unit relative to the parent element's size (width, height, or font size depending on the property), very useful for fluid layouts and responsiveness (e.g., width: 50% is half the width of the parent container). \n\n Rem (root em) is relative to the root element's (html) font size, making it more predictable than em.",
-    category: "css",
-  },
+  id: 21,
+  question: "What is the difference between px, em, %, and rem?",
+  answer:
+    "px is an absolute unit — its size is fixed and does not scale with the parent or root font size.\n\nem is a relative unit based on the parent element’s font size (e.g., if parent is 16px, then 2em = 32px). It can compound, so nesting affects the final size.\n\n% is relative to the parent’s size and is commonly used for responsive widths, heights, and layout calculations.\n\nrem is relative to the root html font size, making it more predictable than em. It is widely used for responsive typography because it keeps scaling consistent across the whole application.",
+  category: "css",
+}
+,
   {
     id: 22,
     question: "What is the difference between CSS Grid and Flexbox?",
