@@ -431,13 +431,7 @@ export const questions: Question[] = [
       "Event Delegation is a technique where instead of adding event listeners to many child elements, we add a single listener to a common parent. The event bubbles up from the child to the parent, and the parent decides which element triggered it. This improves performance, reduces memory usage, and makes handling dynamic elements easier.",
     category: "javascript",
   },
-  {
-    id: 232216,
-    question: "What is prototype-based programming?",
-    answer:
-      "It means that objects in JavaScript can inherit properties and methods directly from other objects through a prototype chain, instead of using classes like in classical OOP. For example, when you create an object with a constructor function, methods added to the constructor's prototype are inherited by all instances without being stored in each instance separately.",
-    category: "javascript",
-  },
+  
   {
     id: 27,
     question: "What are the different data types in JavaScript?",
