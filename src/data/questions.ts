@@ -1181,19 +1181,25 @@ export const questions: Question[] = [
     category: "react",
   },
   {
-    id: 113,
-    question: "Explain the Virtual DOM and how React uses it.",
-    answer:
-      "The Virtual DOM is a lightweight JavaScript representation of the actual DOM. When state changes, React creates a new Virtual DOM tree, compares it with the previous one (diffing), calculates the minimal changes needed, and updates only those parts in the real DOM. This makes updates efficient.",
+  id: 113,
+  question: "Explain the Virtual DOM and how React uses it.",
+  answer:
+    "The Virtual DOM is a lightweight in-memory representation of the real DOM. When a component’s state or props change, React creates a new Virtual DOM tree and compares it with the previous one using a diffing algorithm. Based on this comparison, React calculates the minimal set of changes needed and updates only those specific parts of the real DOM, instead of re-rendering the entire UI.\n\nThis process, known as reconciliation, makes UI updates faster and more efficient because manipulating the real DOM is expensive, while working with the Virtual DOM is much cheaper. React’s Virtual DOM helps achieve high performance by batching updates and applying only the necessary changes.",
+  category: "react",
+}
+,
+ {
+  id: 124.2,
+  question: "What are controlled and uncontrolled components in React?",
+  answer:
+    "Controlled components are form inputs whose values are fully managed by React state. Every change triggers an onChange handler, updating state and re-rendering the UI. This makes the input’s value predictable, enables real-time validation, formatting, and ensures React is the single source of truth.\n\nUncontrolled components store their values directly in the DOM instead of React state. Their current values are accessed using refs, typically during form submission. They require less code and behave like traditional HTML form elements but offer less control for validation or dynamic updates.\n\nIn short: controlled components keep form data in React state for maximum control, while uncontrolled components rely on the DOM for simplicity but reduced flexibility.",
+  category: "react",
+},  {
+    id: 114,
+    question: "What is reconciliation in React?",
+    answer:"",
     category: "react",
-  },
-  {
-    id: 124.2,
-    question: "What are controlled and uncontrolled components in React?",
-    answer:
-      "Controlled components are form elements whose values are fully controlled by React state. Whenever a user types something, the onChange handler updates the state, and the state updates the UI. This gives complete control over validation, formatting, conditional rendering, and makes the behavior predictable because React is the single source of truth.\n\nUncontrolled components, on the other hand, store their values inside the DOM instead of React state. We usually read their values using refs when needed, like during form submission. They require less code and behave like traditional HTML forms but offer less control for real-time validation or dynamic changes.\n\nIn simple terms: controlled components keep all form data in React state, giving maximum control, while uncontrolled components let the browser manage the data, making them simpler but less flexible.",
-    category: "react",
-  },
+},
   {
     id: 115,
     question: "What is prop drilling and how can you avoid it?",
