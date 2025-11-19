@@ -594,72 +594,68 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-  id: 51,
-  question: "What is the Event Loop?",
-  answer:
-    "The Event Loop is the mechanism that enables JavaScript to handle asynchronous operations while remaining single-threaded. It continuously checks the call stack and, when the stack is empty, it processes pending callbacks from the task queues.\n\nJavaScript has two important queues:\n\n• Microtask Queue: contains high-priority tasks like Promise callbacks, queueMicrotask(), and MutationObserver. Microtasks run immediately after the currently executing script, before any rendering or macrotasks.\n\n• Macrotask Queue: contains lower-priority tasks such as setTimeout, setInterval, setImmediate, I/O callbacks, and event callbacks. Macrotasks run after all microtasks finish.\n\nThe Event Loop ensures that JavaScript executes synchronous code first, then processes all microtasks, and finally moves on to macrotasks, enabling non-blocking asynchronous behavior.",
-  category: "javascript",
-}
-,
+    id: 51,
+    question: "What is the Event Loop?",
+    answer:
+      "The Event Loop is the mechanism that enables JavaScript to handle asynchronous operations while remaining single-threaded. It continuously checks the call stack and, when the stack is empty, it processes pending callbacks from the task queues.\n\nJavaScript has two important queues:\n\n• Microtask Queue: contains high-priority tasks like Promise callbacks, queueMicrotask(), and MutationObserver. Microtasks run immediately after the currently executing script, before any rendering or macrotasks.\n\n• Macrotask Queue: contains lower-priority tasks such as setTimeout, setInterval, setImmediate, I/O callbacks, and event callbacks. Macrotasks run after all microtasks finish.\n\nThe Event Loop ensures that JavaScript executes synchronous code first, then processes all microtasks, and finally moves on to macrotasks, enabling non-blocking asynchronous behavior.",
+    category: "javascript",
+  },
   {
-  id: 53,
-  question: "What is the Temporal Dead Zone (TDZ)?",
-  answer:
-    "The Temporal Dead Zone (TDZ) is the period between entering a block scope and reaching the declaration of a let or const variable. In this phase, the variable is hoisted but not initialized, so any access to it results in a ReferenceError. TDZ ensures predictable behavior by preventing the use of variables before their declaration, unlike var which is initialized to undefined. This helps avoid accidental bugs and makes block-scoped variables more reliable.",
-  category: "javascript",
-}
-,
+    id: 53,
+    question: "What is the Temporal Dead Zone (TDZ)?",
+    answer:
+      "The Temporal Dead Zone (TDZ) is the period between entering a block scope and reaching the declaration of a let or const variable. In this phase, the variable is hoisted but not initialized, so any access to it results in a ReferenceError. TDZ ensures predictable behavior by preventing the use of variables before their declaration, unlike var which is initialized to undefined. This helps avoid accidental bugs and makes block-scoped variables more reliable.",
+    category: "javascript",
+  },
   {
-  id: 54,
-  question: "What is the difference between the spread and rest operator?",
-  answer:
-    "Both use the ... syntax but are used for opposite purposes.\n\nThe spread operator expands an array or object into individual elements. It is commonly used for copying or merging arrays and objects, and for passing array values as function arguments.\n\nThe rest operator collects multiple values into a single array or object. It is used in function parameters to gather remaining arguments, and in destructuring to group leftover elements.\n\nIn short: spread expands values, rest gathers values.",
-  category: "javascript",
-}
-,
+    id: 54,
+    question: "What is the difference between the spread and rest operator?",
+    answer:
+      "Both use the ... syntax but are used for opposite purposes.\n\nThe spread operator expands an array or object into individual elements. It is commonly used for copying or merging arrays and objects, and for passing array values as function arguments.\n\nThe rest operator collects multiple values into a single array or object. It is used in function parameters to gather remaining arguments, and in destructuring to group leftover elements.\n\nIn short: spread expands values, rest gathers values.",
+    category: "javascript",
+  },
   {
-  id: 56,
-  question: "What is the difference between debouncing and throttling?",
-  answer:
-    "Debouncing ensures a function runs only after a specified delay has passed without the event being triggered again. It waits for the user's pause before executing. This is ideal for actions like search inputs, auto-suggestions, and form validations where you only want to execute after the user stops typing.\n\nThrottling limits how often a function can run by ensuring it executes at most once in a defined interval, even if the event fires repeatedly. This is useful for performance-heavy events like scroll, resize, and mouse movement.\n\nIn short: Debouncing waits for a pause before running the function, while throttling enforces a fixed execution rate.",
-  category: "javascript",
-}
-,{
-  id: 57,
-  question: "What is the difference between every() and find()?",
-  answer:
-    "every() tests whether all elements in an array satisfy a given condition. It returns true only if every element passes and stops early as soon as one element fails.\n\nfind() returns the first element that matches a given condition and stops once a match is found. If no element satisfies the condition, it returns undefined.\n\nIn short: every() validates all elements, find() locates a single matching element.",
-  category: "javascript",
-},
-{
-  id: 58,
-  question: "What is the difference between shift() and unshift()?",
-  answer:
-    "shift() removes the first element of an array, mutates the original array, and returns the removed element.\n\nunshift() adds one or more elements to the beginning of an array, mutates the original array, and returns the new length.\n\nIn short: shift() removes from the start, unshift() adds to the start. They are the opposite of pop() and push() which work at the end.",
-  category: "javascript",
-},
-{
-  id: 59,
-  question: "What is split() in JavaScript?",
-  answer:
-    "split() is a string method that divides a string into an array of substrings based on a given separator. The separator can be a character, string, or regular expression. If the separator is not found, it returns an array with the original string. Using an empty string ('') splits the string into characters. An optional limit parameter restricts the number of elements returned. It is commonly used for parsing text, tokenizing sentences, or handling formatted data.",
-  category: "javascript",
-},
-{
-  id: 60,
-  question: "What is the difference between indexOf() and findIndex()?",
-  answer:
-    "indexOf() searches for an exact value in an array using strict equality (===) and returns the index, or -1 if not found. It cannot use custom logic.\n\nfindIndex() executes a callback function and returns the index of the first element that satisfies the condition, or -1 if none match.\n\nIn short: indexOf() is for direct value lookup, findIndex() is for condition-based searches.",
-  category: "javascript",
-},
-{
-  id: 61,
-  question: "What are Promises in JavaScript?",
-  answer:
-    "A Promise is an object representing the eventual completion or failure of an asynchronous operation. It has three states: pending, fulfilled, and rejected. Promises help manage asynchronous code and avoid callback hell.\n\nA Promise is created using new Promise((resolve, reject) => {}). You handle results with .then() for fulfillment, .catch() for errors, and .finally() for cleanup. Promises are also the basis of async/await in modern JavaScript.",
-  category: "javascript",
-}
-,
+    id: 56,
+    question: "What is the difference between debouncing and throttling?",
+    answer:
+      "Debouncing ensures a function runs only after a specified delay has passed without the event being triggered again. It waits for the user's pause before executing. This is ideal for actions like search inputs, auto-suggestions, and form validations where you only want to execute after the user stops typing.\n\nThrottling limits how often a function can run by ensuring it executes at most once in a defined interval, even if the event fires repeatedly. This is useful for performance-heavy events like scroll, resize, and mouse movement.\n\nIn short: Debouncing waits for a pause before running the function, while throttling enforces a fixed execution rate.",
+    category: "javascript",
+  },
+  {
+    id: 57,
+    question: "What is the difference between every() and find()?",
+    answer:
+      "every() tests whether all elements in an array satisfy a given condition. It returns true only if every element passes and stops early as soon as one element fails.\n\nfind() returns the first element that matches a given condition and stops once a match is found. If no element satisfies the condition, it returns undefined.\n\nIn short: every() validates all elements, find() locates a single matching element.",
+    category: "javascript",
+  },
+  {
+    id: 58,
+    question: "What is the difference between shift() and unshift()?",
+    answer:
+      "shift() removes the first element of an array, mutates the original array, and returns the removed element.\n\nunshift() adds one or more elements to the beginning of an array, mutates the original array, and returns the new length.\n\nIn short: shift() removes from the start, unshift() adds to the start. They are the opposite of pop() and push() which work at the end.",
+    category: "javascript",
+  },
+  {
+    id: 59,
+    question: "What is split() in JavaScript?",
+    answer:
+      "split() is a string method that divides a string into an array of substrings based on a given separator. The separator can be a character, string, or regular expression. If the separator is not found, it returns an array with the original string. Using an empty string ('') splits the string into characters. An optional limit parameter restricts the number of elements returned. It is commonly used for parsing text, tokenizing sentences, or handling formatted data.",
+    category: "javascript",
+  },
+  {
+    id: 60,
+    question: "What is the difference between indexOf() and findIndex()?",
+    answer:
+      "indexOf() searches for an exact value in an array using strict equality (===) and returns the index, or -1 if not found. It cannot use custom logic.\n\nfindIndex() executes a callback function and returns the index of the first element that satisfies the condition, or -1 if none match.\n\nIn short: indexOf() is for direct value lookup, findIndex() is for condition-based searches.",
+    category: "javascript",
+  },
+  {
+    id: 61,
+    question: "What are Promises in JavaScript?",
+    answer:
+      "A Promise is an object representing the eventual completion or failure of an asynchronous operation. It has three states: pending, fulfilled, and rejected. Promises help manage asynchronous code and avoid callback hell.\n\nA Promise is created using new Promise((resolve, reject) => {}). You handle results with .then() for fulfillment, .catch() for errors, and .finally() for cleanup. Promises are also the basis of async/await in modern JavaScript.",
+    category: "javascript",
+  },
   {
     id: 62,
     question: "What is Promise chaining and how does it work?",
@@ -713,12 +709,13 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-  id: 69,
-  question: "What is the difference between the microtask queue (Promises) and the macrotask queue (setTimeout)?",
-  answer:
-    "The microtask queue contains high-priority tasks such as Promise callbacks, queueMicrotask(), and MutationObserver. The macrotask queue contains lower-priority tasks like setTimeout, setInterval, DOM events, and network callbacks.\n\nMicrotasks always run before macrotasks. After the call stack becomes empty, the event loop first processes all microtasks, and only then picks the next macrotask. This is why Promise.then() executes before setTimeout, even with a 0 ms delay.\n\nOrder of execution: Call Stack → Microtasks → Macrotasks.",
-  category: "javascript",
-},
+    id: 69,
+    question:
+      "What is the difference between the microtask queue (Promises) and the macrotask queue (setTimeout)?",
+    answer:
+      "The microtask queue contains high-priority tasks such as Promise callbacks, queueMicrotask(), and MutationObserver. The macrotask queue contains lower-priority tasks like setTimeout, setInterval, DOM events, and network callbacks.\n\nMicrotasks always run before macrotasks. After the call stack becomes empty, the event loop first processes all microtasks, and only then picks the next macrotask. This is why Promise.then() executes before setTimeout, even with a 0 ms delay.\n\nOrder of execution: Call Stack → Microtasks → Macrotasks.",
+    category: "javascript",
+  },
   {
     id: 70,
     question: "How does error propagation work in Promise chains?",
@@ -748,21 +745,19 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-  id: 74,
-  question: "What is a higher-order function?",
-  answer:
-    "A higher-order function is a function that either takes another function as an argument, returns a function, or does both. It enables reusable logic, functional composition, and more expressive code. Common examples include array methods like map(), filter(), and reduce(), which accept callback functions. Higher-order functions are widely used in callbacks, event handlers, closures, and functional programming patterns.",
-  category: "javascript",
-}
-,
+    id: 74,
+    question: "What is a higher-order function?",
+    answer:
+      "A higher-order function is a function that either takes another function as an argument, returns a function, or does both. It enables reusable logic, functional composition, and more expressive code. Common examples include array methods like map(), filter(), and reduce(), which accept callback functions. Higher-order functions are widely used in callbacks, event handlers, closures, and functional programming patterns.",
+    category: "javascript",
+  },
   {
-  id: 75.21,
-  question: "What is a callback function?",
-  answer:
-    "A callback function is a function passed as an argument to another function to be executed later, usually after a task completes. Callbacks allow functions to run asynchronously, letting JavaScript continue executing without blocking. They are commonly used in event handling, timers, and asynchronous operations like network requests. Callbacks form the foundation for Promises and async/await.",
-  category: "javascript",
-}
-,
+    id: 75.21,
+    question: "What is a callback function?",
+    answer:
+      "A callback function is a function passed as an argument to another function to be executed later, usually after a task completes. Callbacks allow functions to run asynchronously, letting JavaScript continue executing without blocking. They are commonly used in event handling, timers, and asynchronous operations like network requests. Callbacks form the foundation for Promises and async/await.",
+    category: "javascript",
+  },
   {
     id: 75.22,
     question: "List out type of function in JavaScript?",
@@ -835,9 +830,9 @@ export const questions: Question[] = [
   },
   {
     id: 76.9,
-    question: "Whay do we use use strict in JavaScript?",
+    question: "Why do we use 'use strict' in JavaScript?",
     answer:
-      "use strict is a directive that instructs the JavaScript engine to enforce strict mode in the current scope. It helps catch common coding mistakes, prevent accidental global variables, and improve performance. To use it, simply add 'use strict' at the top of your script or function. This is particularly useful in large projects to ensure consistent coding practices and avoid unexpected behavior. \n\n Strict mode is a feature that helps catch common coding mistakes, prevent accidental global variables, and improve performance. To use it, simply add 'use strict' at the top of your script or function.Main Reason to use it is to prevent accidental global variables, and improve performance.",
+      "'use strict' enables strict mode and helps write cleaner and safer JavaScript code. It prevents accidental global variables, disallows unsafe actions, throws errors for silent failures, and makes debugging easier. For a 3-year experienced developer, it ensures more predictable and maintainable code in larger projects.",
     category: "javascript",
   },
   {
