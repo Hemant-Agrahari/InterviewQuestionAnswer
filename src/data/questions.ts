@@ -488,13 +488,13 @@ export const questions: Question[] = [
       "In JavaScript, every value is either truthy (treated as true) or falsy (treated as false) in Boolean contexts. \n\n Falsy values (8): \n\n 1.false, \n\n 2.0, \n\n 3.-0, \n\n 4.0n (BigInt zero), \n\n 5.'' (empty string), \n\n 6.null, \n\n 7.undefined, \n\n 8.NaN. \n\n Everything else is truthy, including: '0', 'false', [], {}, and any non-zero number.",
     category: "javascript",
   },
-  {
-    id: 35,
-    question: "What is a closure and why is it used?",
-    answer:
-      "A closure is when an inner function has access to variables from its outer function's scope even after the outer function has finished executing. The inner function 'remembers' the environment where it was created. Closures are used for: data privacy (private variables), creating factory functions, maintaining state, callbacks, and event handlers. They're fundamental to JavaScript's functional programming capabilities.",
-    category: "javascript",
-  },
+ {
+  id: 35,
+  question: "What is a closure and why is it used?",
+  answer:
+    "A closure is a function that remembers and can access variables from its outer function’s scope even after the outer function has finished executing.\n\nIt happens because JavaScript stores both the function and the surrounding lexical environment together.\n\nClosures are used for:\n\n• Data privacy (private variables)\n• State management\n• Function factories\n• Callbacks & event handlers",
+  category: "javascript",
+},
   {
     id: 36,
     question:
