@@ -225,6 +225,14 @@ export const questions: Question[] = [
     category: "css",
   },
   {
+    id: 23.9,
+    question:
+      "What is the difference between getElementById and getElementsByClassName?",
+    answer:
+      "getElementById returns a single DOM element whose id matches the given string. Since IDs are unique in HTML, this method always returns one element or null if no match is found. It is also one of the fastest DOM selection methods.\n\ngetElementsByClassName returns a live HTMLCollection of all elements that have the specified class name. Even if only one element matches, it still returns a collection. If no elements match, it returns an empty collection. You can loop through it to access each element.\n\nIn short: getElementById → returns one unique element, getElementsByClassName → returns a live collection of multiple elements.",
+    category: "css",
+  },
+  {
     id: 18,
     question: "Explain Flexbox and its main properties.",
     answer:
@@ -246,45 +254,40 @@ export const questions: Question[] = [
     category: "css",
   },
   {
-  id: 19,
-  question: "What is CSS Grid and when would you use it?",
-  answer:
-    "CSS Grid is a powerful two-dimensional layout system in CSS that lets you design layouts using rows and columns at the same time. It provides precise control over spacing, alignment, and complex layouts that are difficult to achieve with Flexbox alone. Grid is ideal for structured page layouts like dashboards, galleries, landing pages, and any UI that requires both row and column alignment.\n\nIn short: use CSS Grid for full-page or complex 2D layouts, and use Flexbox when arranging elements in a single direction.",
-  category: "css",
-}
-,
+    id: 19,
+    question: "What is CSS Grid and when would you use it?",
+    answer:
+      "CSS Grid is a powerful two-dimensional layout system in CSS that lets you design layouts using rows and columns at the same time. It provides precise control over spacing, alignment, and complex layouts that are difficult to achieve with Flexbox alone. Grid is ideal for structured page layouts like dashboards, galleries, landing pages, and any UI that requires both row and column alignment.\n\nIn short: use CSS Grid for full-page or complex 2D layouts, and use Flexbox when arranging elements in a single direction.",
+    category: "css",
+  },
   {
-  id: 20,
-  question: "What are CSS preprocessors and name some examples?",
-  answer:
-    "CSS preprocessors are tools that add advanced features to CSS, such as variables, nesting, mixins, functions, and reusable code patterns. They help write cleaner, more organized, and maintainable styles, especially in large projects. The preprocessor code is compiled into standard CSS before being sent to the browser.\n\nCommon examples include Sass (SCSS), Less, and Stylus. Sass/SCSS is the most widely used due to its powerful features and strong community support.",
-  category: "css",
-}
-,
+    id: 20,
+    question: "What are CSS preprocessors and name some examples?",
+    answer:
+      "CSS preprocessors are tools that add advanced features to CSS, such as variables, nesting, mixins, functions, and reusable code patterns. They help write cleaner, more organized, and maintainable styles, especially in large projects. The preprocessor code is compiled into standard CSS before being sent to the browser.\n\nCommon examples include Sass (SCSS), Less, and Stylus. Sass/SCSS is the most widely used due to its powerful features and strong community support.",
+    category: "css",
+  },
   {
-  id: 21,
-  question: "What is the difference between px, em, %, and rem?",
-  answer:
-    "px is an absolute unit — its size is fixed and does not scale with the parent or root font size.\n\nem is a relative unit based on the parent element’s font size (e.g., if parent is 16px, then 2em = 32px). It can compound, so nesting affects the final size.\n\n% is relative to the parent’s size and is commonly used for responsive widths, heights, and layout calculations.\n\nrem is relative to the root html font size, making it more predictable than em. It is widely used for responsive typography because it keeps scaling consistent across the whole application.",
-  category: "css",
-}
-,
-{
-  id: 22,
-  question: "What is the difference between CSS Grid and Flexbox?",
-  answer:
-    "Flexbox is a one-dimensional layout system used to align items in a single row or a single column. It is ideal for UI components like navigation bars, button groups, cards, or centering elements. Flexbox focuses on content flow and alignment.\n\nCSS Grid is a two-dimensional layout system that lets you control rows and columns at the same time. It is better suited for full-page layouts, dashboards, galleries, and complex components where both horizontal and vertical control are needed.\n\nIn short: Flexbox is best for 1D layouts (row OR column), while CSS Grid is best for 2D layouts (rows AND columns).",
-  category: "css",
-}
-,
+    id: 21,
+    question: "What is the difference between px, em, %, and rem?",
+    answer:
+      "px is an absolute unit — its size is fixed and does not scale with the parent or root font size.\n\nem is a relative unit based on the parent element’s font size (e.g., if parent is 16px, then 2em = 32px). It can compound, so nesting affects the final size.\n\n% is relative to the parent’s size and is commonly used for responsive widths, heights, and layout calculations.\n\nrem is relative to the root html font size, making it more predictable than em. It is widely used for responsive typography because it keeps scaling consistent across the whole application.",
+    category: "css",
+  },
   {
-  id: 23,
-  question: "Why do we use semantic elements instead of div?",
-  answer:
-    "Semantic elements provide meaningful structure to a webpage, unlike generic <div> tags which do not convey any purpose. Using elements like <header>, <nav>, <main>, <section>, <article>, and <footer> improves code readability, makes the layout easier to understand, and reduces 'div soup'.\n\nSemantic HTML also improves accessibility because screen readers can better interpret the document structure, helping users with disabilities navigate the page. Additionally, search engines use semantic tags to understand content hierarchy, which can positively impact SEO.\n\nIn short: semantic elements add clarity, accessibility, and SEO benefits, while <div> only provides structure with no meaning.",
-  category: "css",
-}
-,
+    id: 22,
+    question: "What is the difference between CSS Grid and Flexbox?",
+    answer:
+      "Flexbox is a one-dimensional layout system used to align items in a single row or a single column. It is ideal for UI components like navigation bars, button groups, cards, or centering elements. Flexbox focuses on content flow and alignment.\n\nCSS Grid is a two-dimensional layout system that lets you control rows and columns at the same time. It is better suited for full-page layouts, dashboards, galleries, and complex components where both horizontal and vertical control are needed.\n\nIn short: Flexbox is best for 1D layouts (row OR column), while CSS Grid is best for 2D layouts (rows AND columns).",
+    category: "css",
+  },
+  {
+    id: 23,
+    question: "Why do we use semantic elements instead of div?",
+    answer:
+      "Semantic elements provide meaningful structure to a webpage, unlike generic <div> tags which do not convey any purpose. Using elements like <header>, <nav>, <main>, <section>, <article>, and <footer> improves code readability, makes the layout easier to understand, and reduces 'div soup'.\n\nSemantic HTML also improves accessibility because screen readers can better interpret the document structure, helping users with disabilities navigate the page. Additionally, search engines use semantic tags to understand content hierarchy, which can positively impact SEO.\n\nIn short: semantic elements add clarity, accessibility, and SEO benefits, while <div> only provides structure with no meaning.",
+    category: "css",
+  },
   {
     id: 23.1,
     question: "What are the default property of flex-direction?",
@@ -335,15 +338,7 @@ export const questions: Question[] = [
     question:
       "What is the difference between querySelector and querySelectorAll?",
     answer:
-      "querySelector: querySelector method returns the first element that satisfies the condition, stops searching after finding first match, returns undefined if no match found, returns a single element. \n\n querySelectorAll: querySelectorAll method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use querySelector to get one specific element, querySelectorAll to get all matching elements.",
-    category: "css",
-  },
-  {
-    id: 23.9,
-    question:
-      "What is the difference between getElementById and getElementsByClassName?",
-    answer:
-      "getElementById: getElementById method returns the first element that satisfies the condition, stops searching after finding first match, returns undefined if no match found, returns a single element. \n\n getElementsByClassName: getElementsByClassName method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use getElementById to get one specific element, getElementsByClassName to get all matching elements.",
+      "querySelector selects and returns the first DOM element that matches the given CSS selector. If no element matches, it returns null. It is useful when you need only a single element.\n\nquerySelectorAll returns a static NodeList of all elements matching the selector. Even if multiple elements match, it returns a collection, not just the first one. If there are no matches, it returns an empty NodeList.\n\nIn short: querySelector → first matching element, querySelectorAll → all matching elements as a NodeList.",
     category: "css",
   },
   {
@@ -1186,25 +1181,25 @@ export const questions: Question[] = [
     category: "react",
   },
   {
-  id: 113,
-  question: "Explain the Virtual DOM and how React uses it.",
-  answer:
-    "The Virtual DOM is a lightweight in-memory representation of the real DOM. When a component’s state or props change, React creates a new Virtual DOM tree and compares it with the previous one using a diffing algorithm. Based on this comparison, React calculates the minimal set of changes needed and updates only those specific parts of the real DOM, instead of re-rendering the entire UI.\n\nThis process, known as reconciliation, makes UI updates faster and more efficient because manipulating the real DOM is expensive, while working with the Virtual DOM is much cheaper. React’s Virtual DOM helps achieve high performance by batching updates and applying only the necessary changes.",
-  category: "react",
-}
-,
- {
-  id: 124.2,
-  question: "What are controlled and uncontrolled components in React?",
-  answer:
-    "Controlled components are form inputs whose values are fully managed by React state. Every change triggers an onChange handler, updating state and re-rendering the UI. This makes the input’s value predictable, enables real-time validation, formatting, and ensures React is the single source of truth.\n\nUncontrolled components store their values directly in the DOM instead of React state. Their current values are accessed using refs, typically during form submission. They require less code and behave like traditional HTML form elements but offer less control for validation or dynamic updates.\n\nIn short: controlled components keep form data in React state for maximum control, while uncontrolled components rely on the DOM for simplicity but reduced flexibility.",
-  category: "react",
-},  {
+    id: 113,
+    question: "Explain the Virtual DOM and how React uses it.",
+    answer:
+      "The Virtual DOM is a lightweight in-memory representation of the real DOM. When a component’s state or props change, React creates a new Virtual DOM tree and compares it with the previous one using a diffing algorithm. Based on this comparison, React calculates the minimal set of changes needed and updates only those specific parts of the real DOM, instead of re-rendering the entire UI.\n\nThis process, known as reconciliation, makes UI updates faster and more efficient because manipulating the real DOM is expensive, while working with the Virtual DOM is much cheaper. React’s Virtual DOM helps achieve high performance by batching updates and applying only the necessary changes.",
+    category: "react",
+  },
+  {
+    id: 124.2,
+    question: "What are controlled and uncontrolled components in React?",
+    answer:
+      "Controlled components are form inputs whose values are fully managed by React state. Every change triggers an onChange handler, updating state and re-rendering the UI. This makes the input’s value predictable, enables real-time validation, formatting, and ensures React is the single source of truth.\n\nUncontrolled components store their values directly in the DOM instead of React state. Their current values are accessed using refs, typically during form submission. They require less code and behave like traditional HTML form elements but offer less control for validation or dynamic updates.\n\nIn short: controlled components keep form data in React state for maximum control, while uncontrolled components rely on the DOM for simplicity but reduced flexibility.",
+    category: "react",
+  },
+  {
     id: 114,
     question: "What is reconciliation in React?",
-    answer:"",
+    answer: "",
     category: "react",
-},
+  },
   {
     id: 115,
     question: "What is prop drilling and how can you avoid it?",
