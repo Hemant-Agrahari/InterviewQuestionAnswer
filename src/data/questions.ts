@@ -246,12 +246,13 @@ export const questions: Question[] = [
     category: "css",
   },
   {
-    id: 19,
-    question: "What is CSS Grid and when would you use it?",
-    answer:
-      "CSS Grid is a two-dimensional layout system for creating complex layouts with rows and columns. Use it when you need precise control over both horizontal and vertical layout, creating magazine-style layouts, or building complex responsive designs. It's more powerful than Flexbox for 2D layouts. \n\n Syntax: display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr;",
-    category: "css",
-  },
+  id: 19,
+  question: "What is CSS Grid and when would you use it?",
+  answer:
+    "CSS Grid is a powerful two-dimensional layout system in CSS that lets you design layouts using rows and columns at the same time. It provides precise control over spacing, alignment, and complex layouts that are difficult to achieve with Flexbox alone. Grid is ideal for structured page layouts like dashboards, galleries, landing pages, and any UI that requires both row and column alignment.\n\nIn short: use CSS Grid for full-page or complex 2D layouts, and use Flexbox when arranging elements in a single direction.",
+  category: "css",
+}
+,
   {
     id: 20,
     question: "What are CSS preprocessors and name some examples?",
