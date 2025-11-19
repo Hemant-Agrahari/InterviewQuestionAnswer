@@ -278,12 +278,13 @@ export const questions: Question[] = [
 }
 ,
   {
-    id: 23,
-    question: "Why do we use semantic elements instead of div?",
-    answer:
-      "We use semantic elements instead of generic <div>s because semantic tags add meaning to the structure of a webpage. Benefits include: \n\n 1.Readability - Semantic tags like <header>, <nav>, <article>, and <footer> clearly describe their purpose, making the code easier to read and maintain for developers. \n\n 2.Accessibility - Screen readers and assistive technologies can better interpret the page structure, improving accessibility for users with disabilities. \n\n 3.SEO Benefits - Search engines use semantic elements to better understand page content, which can improve search rankings. \n\n 4.Best Practices - Reduces the overuse of <div>s (also called 'div soup') and leads to cleaner, more organized markup.",
-    category: "css",
-  },
+  id: 23,
+  question: "Why do we use semantic elements instead of div?",
+  answer:
+    "Semantic elements provide meaningful structure to a webpage, unlike generic <div> tags which do not convey any purpose. Using elements like <header>, <nav>, <main>, <section>, <article>, and <footer> improves code readability, makes the layout easier to understand, and reduces 'div soup'.\n\nSemantic HTML also improves accessibility because screen readers can better interpret the document structure, helping users with disabilities navigate the page. Additionally, search engines use semantic tags to understand content hierarchy, which can positively impact SEO.\n\nIn short: semantic elements add clarity, accessibility, and SEO benefits, while <div> only provides structure with no meaning.",
+  category: "css",
+}
+,
   {
     id: 23.1,
     question: "What are the default property of flex-direction?",
