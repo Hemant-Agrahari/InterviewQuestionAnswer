@@ -18,7 +18,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Interview Questions & Answers | Frontend Development",
+  title: "Questions & Answers | Frontend Development",
   description: "Master HTML, CSS, JavaScript, React, and Next.js with curated interview questions and comprehensive answers.",
   icons: {
     icon: [

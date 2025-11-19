@@ -16,7 +16,7 @@ export default function Home() {
         <div className="text-center mb-12 animate-fade-in">
           <div className="inline-block mb-4">
             <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-              🎯 Ace Your Interview
+              🎯 Ace Your Goal
             </div>
           </div>
           <h1 className="text-6xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4 drop-shadow-sm" style={{ fontFamily: 'var(--font-poppins)' }}>
