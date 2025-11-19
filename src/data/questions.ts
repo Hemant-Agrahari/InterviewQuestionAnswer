@@ -608,82 +608,72 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 51,
-    question: "What is the Event Loop?",
-    answer:
-      "The Event Loop is a mechanism that allows JavaScript to handle asynchronous operations while being single-threaded. It works by: executing functions in the call stack, sending async operations (setTimeout, fetch) to Web APIs, adding completed async callbacks to task queue, checking if call stack is empty, moving callbacks from queue to stack for execution. This enables non-blocking behavior - JavaScript can continue executing code while waiting for async operations.",
-    category: "javascript",
-  },
+  id: 51,
+  question: "What is the Event Loop?",
+  answer:
+    "The Event Loop is the mechanism that enables JavaScript to handle asynchronous operations while remaining single-threaded. It continuously checks the call stack and, when the stack is empty, it processes pending callbacks from the task queues.\n\nJavaScript has two important queues:\n\n• Microtask Queue: contains high-priority tasks like Promise callbacks, queueMicrotask(), and MutationObserver. Microtasks run immediately after the currently executing script, before any rendering or macrotasks.\n\n• Macrotask Queue: contains lower-priority tasks such as setTimeout, setInterval, setImmediate, I/O callbacks, and event callbacks. Macrotasks run after all microtasks finish.\n\nThe Event Loop ensures that JavaScript executes synchronous code first, then processes all microtasks, and finally moves on to macrotasks, enabling non-blocking asynchronous behavior.",
+  category: "javascript",
+}
+,
   {
-    id: 52,
-    question: "What is a prototype in JavaScript?",
-    answer:
-      "A prototype is an object that every function and object has by default. It's used to add properties and methods that can be shared across instances. This is how JavaScript implements inheritance. When you access a property on an object, JavaScript first looks at the object itself, then looks up the prototype chain until it finds the property or reaches null. Methods defined on a prototype are shared by all instances, saving memory. syntax: Object.getPrototypeOf(object)",
-    category: "javascript",
-  },
+  id: 53,
+  question: "What is the Temporal Dead Zone (TDZ)?",
+  answer:
+    "The Temporal Dead Zone (TDZ) is the period between entering a block scope and reaching the declaration of a let or const variable. In this phase, the variable is hoisted but not initialized, so any access to it results in a ReferenceError. TDZ ensures predictable behavior by preventing the use of variables before their declaration, unlike var which is initialized to undefined. This helps avoid accidental bugs and makes block-scoped variables more reliable.",
+  category: "javascript",
+}
+,
   {
-    id: 53,
-    question: "What is the Temporal Dead Zone (TDZ)?",
-    answer:
-      "Temporal Dead Zone is the time between the start of a block and the point where a let/const variable is declared, during which the variable exists but cannot be accessed. Trying to access the variable in the TDZ throws a ReferenceError. This happens because let/const are hoisted but not initialized until their declaration line is executed. TDZ ensures variables are used only after proper declaration, preventing bugs.",
-    category: "javascript",
-  },
+  id: 54,
+  question: "What is the difference between the spread and rest operator?",
+  answer:
+    "Both use the ... syntax but are used for opposite purposes.\n\nThe spread operator expands an array or object into individual elements. It is commonly used for copying or merging arrays and objects, and for passing array values as function arguments.\n\nThe rest operator collects multiple values into a single array or object. It is used in function parameters to gather remaining arguments, and in destructuring to group leftover elements.\n\nIn short: spread expands values, rest gathers values.",
+  category: "javascript",
+}
+,
   {
-    id: 54,
-    question: "What is the difference between spread and rest operator?",
-    answer:
-      "Both use ... syntax but serve opposite purposes. \n\n Spread operator: expands/spreads elements of an array or object into individual elements, used when combining arrays ([...arr1, ...arr2]), copying objects ({...obj}), or passing arguments. \n\n Rest operator: collects multiple elements into a single array/object, used in function parameters (function(...args)) to gather remaining arguments, or in destructuring ([first, ...rest] = array) to collect remaining elements.",
-    category: "javascript",
-  },
-  {
-    id: 55,
-    question: "What is event delegation?",
-    answer:
-      "Event delegation is a technique where instead of attaching event handlers to multiple child elements, you attach a single handler to their parent element. The event bubbles up from the child to parent, and you handle it there using event.target to identify which child triggered it. Benefits: better performance (fewer event listeners), works for dynamically added elements, easier to manage. Commonly used for lists or tables with many interactive items.",
-    category: "javascript",
-  },
-  {
-    id: 56,
-    question: "What is the difference between debouncing and throttling?",
-    answer:
-      "Debouncing: delays function execution until after a certain time has passed without the event being triggered again. Function runs once after user stops triggering event. Used for: search input (wait until user stops typing). \n\n Throttling: limits function execution to run at most once every specified time interval, regardless of how many times event fires. Function runs at regular intervals. Used for: scroll events, window resize. Debouncing = wait for pause, Throttling = limit frequency.",
-    category: "javascript",
-  },
-  {
-    id: 57,
-    question: "What is the difference between every() and find()?",
-    answer:
-      "every(): checks if all elements in array satisfy a condition, returns true if all pass or false if any fail, stops checking when it finds an element that fails. \n\n find(): searches array and returns the first element that satisfies the condition, returns undefined if no match found, stops after finding first match. Use every() to validate all elements meet criteria, find() to locate a specific element.",
-    category: "javascript",
-  },
-  {
-    id: 58,
-    question: "What is the difference between shift() and unshift()?",
-    answer:
-      "shift(): removes the first element from an array, modifies original array, returns the removed element, decreases array length by 1.\n\nunshift(item1, item2...): adds one or more elements to the beginning of an array, modifies original array, returns new length of array.\n\nBoth work at the beginning of array.\nshift() removes, unshift() adds.\nBoth are opposite of pop() (removes last) and push() (adds last).",
-    category: "javascript",
-  },
-  {
-    id: 59,
-    question: "What is split() in JavaScript?",
-    answer:
-      "The split() method splits a string into an array of substrings based on a specified separator. The separator can be a character, word, or regular expression. If separator is not found, returns array with whole string. If separator is empty string '', splits into individual characters. Optionally takes a limit parameter to specify maximum array length. Commonly used for parsing CSV data, splitting sentences into words, or processing formatted strings.",
-    category: "javascript",
-  },
-  {
-    id: 60,
-    question: "What is the difference between indexOf() and findIndex()?",
-    answer:
-      "indexOf(value): finds the index of a specific value in an array using strict equality (===), returns -1 if not found, cannot use custom logic, only searches for exact values. findIndex(callback): finds the index of first element that satisfies a condition/logic in the callback function, returns -1 if not found, can use custom comparison logic. Use indexOf() for simple value search, findIndex() for complex condition-based search.",
-    category: "javascript",
-  },
-  {
-    id: 61,
-    question: "What are Promises in JavaScript?",
-    answer:
-      "A Promise is an object used to handle asynchronous tasks in JavaScript. It has three states: pending (initial state), fulfilled (operation completed successfully), and rejected (operation failed). Promises help write cleaner async code without callback hell. You create a Promise with new Promise((resolve, reject) => {}), then handle results with .then() for success, .catch() for errors, and .finally() for cleanup that runs regardless of outcome.",
-    category: "javascript",
-  },
+  id: 56,
+  question: "What is the difference between debouncing and throttling?",
+  answer:
+    "Debouncing ensures a function runs only after a specified delay has passed without the event being triggered again. It waits for the user's pause before executing. This is ideal for actions like search inputs, auto-suggestions, and form validations where you only want to execute after the user stops typing.\n\nThrottling limits how often a function can run by ensuring it executes at most once in a defined interval, even if the event fires repeatedly. This is useful for performance-heavy events like scroll, resize, and mouse movement.\n\nIn short: Debouncing waits for a pause before running the function, while throttling enforces a fixed execution rate.",
+  category: "javascript",
+}
+,{
+  id: 57,
+  question: "What is the difference between every() and find()?",
+  answer:
+    "every() tests whether all elements in an array satisfy a given condition. It returns true only if every element passes and stops early as soon as one element fails.\n\nfind() returns the first element that matches a given condition and stops once a match is found. If no element satisfies the condition, it returns undefined.\n\nIn short: every() validates all elements, find() locates a single matching element.",
+  category: "javascript",
+},
+{
+  id: 58,
+  question: "What is the difference between shift() and unshift()?",
+  answer:
+    "shift() removes the first element of an array, mutates the original array, and returns the removed element.\n\nunshift() adds one or more elements to the beginning of an array, mutates the original array, and returns the new length.\n\nIn short: shift() removes from the start, unshift() adds to the start. They are the opposite of pop() and push() which work at the end.",
+  category: "javascript",
+},
+{
+  id: 59,
+  question: "What is split() in JavaScript?",
+  answer:
+    "split() is a string method that divides a string into an array of substrings based on a given separator. The separator can be a character, string, or regular expression. If the separator is not found, it returns an array with the original string. Using an empty string ('') splits the string into characters. An optional limit parameter restricts the number of elements returned. It is commonly used for parsing text, tokenizing sentences, or handling formatted data.",
+  category: "javascript",
+},
+{
+  id: 60,
+  question: "What is the difference between indexOf() and findIndex()?",
+  answer:
+    "indexOf() searches for an exact value in an array using strict equality (===) and returns the index, or -1 if not found. It cannot use custom logic.\n\nfindIndex() executes a callback function and returns the index of the first element that satisfies the condition, or -1 if none match.\n\nIn short: indexOf() is for direct value lookup, findIndex() is for condition-based searches.",
+  category: "javascript",
+},
+{
+  id: 61,
+  question: "What are Promises in JavaScript?",
+  answer:
+    "A Promise is an object representing the eventual completion or failure of an asynchronous operation. It has three states: pending, fulfilled, and rejected. Promises help manage asynchronous code and avoid callback hell.\n\nA Promise is created using new Promise((resolve, reject) => {}). You handle results with .then() for fulfillment, .catch() for errors, and .finally() for cleanup. Promises are also the basis of async/await in modern JavaScript.",
+  category: "javascript",
+}
+,
   {
     id: 62,
     question: "What is Promise chaining and how does it work?",
@@ -737,13 +727,12 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 69,
-    question:
-      "What is the difference between microtask queue (Promises) and macrotask queue (setTimeout)?",
-    answer:
-      "Promises use the microtask queue, so their callbacks run before macrotasks like setTimeout, setInterval, or I/O operations. Microtasks have higher priority than macrotasks. After each macrotask, the event loop processes all microtasks before moving to the next macrotask. This means Promise.then() callbacks execute before setTimeout callbacks, even if setTimeout has zero delay. Order: Call stack → Microtasks (Promises) → Macrotasks (setTimeout).",
-    category: "javascript",
-  },
+  id: 69,
+  question: "What is the difference between the microtask queue (Promises) and the macrotask queue (setTimeout)?",
+  answer:
+    "The microtask queue contains high-priority tasks such as Promise callbacks, queueMicrotask(), and MutationObserver. The macrotask queue contains lower-priority tasks like setTimeout, setInterval, DOM events, and network callbacks.\n\nMicrotasks always run before macrotasks. After the call stack becomes empty, the event loop first processes all microtasks, and only then picks the next macrotask. This is why Promise.then() executes before setTimeout, even with a 0 ms delay.\n\nOrder of execution: Call Stack → Microtasks → Macrotasks.",
+  category: "javascript",
+},
   {
     id: 70,
     question: "How does error propagation work in Promise chains?",
@@ -773,19 +762,21 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 74,
-    question: "What is a higher-order function?",
-    answer:
-      "A higher-order function is a function that either takes another function as an argument, returns a function as its result, or both. It's a fundamental concept in functional programming that helps make code more reusable and composable. Common examples: map(), filter(), reduce() (take functions as arguments), function factories (return functions). They enable powerful patterns like callbacks, closures, and function composition.",
-    category: "javascript",
-  },
+  id: 74,
+  question: "What is a higher-order function?",
+  answer:
+    "A higher-order function is a function that either takes another function as an argument, returns a function, or does both. It enables reusable logic, functional composition, and more expressive code. Common examples include array methods like map(), filter(), and reduce(), which accept callback functions. Higher-order functions are widely used in callbacks, event handlers, closures, and functional programming patterns.",
+  category: "javascript",
+}
+,
   {
-    id: 75.21,
-    question: "What is a callback function?",
-    answer:
-      "A callback function is a function that is passed as an argument to another function. It is a way to handle asynchronous operations in JavaScript. It is a way to handle asynchronous operations in JavaScript. It is a way to handle asynchronous operations in JavaScript.",
-    category: "javascript",
-  },
+  id: 75.21,
+  question: "What is a callback function?",
+  answer:
+    "A callback function is a function passed as an argument to another function to be executed later, usually after a task completes. Callbacks allow functions to run asynchronously, letting JavaScript continue executing without blocking. They are commonly used in event handling, timers, and asynchronous operations like network requests. Callbacks form the foundation for Promises and async/await.",
+  category: "javascript",
+}
+,
   {
     id: 75.22,
     question: "List out type of function in JavaScript?",
@@ -798,13 +789,6 @@ export const questions: Question[] = [
     question: "What is the difference between React.memo and useMemo?",
     answer:
       "React.memo is a higher-order component that prevents unnecessary re-rendering of a component by comparing props - if props haven't changed, React skips rendering. It wraps the entire component (export default React.memo(MyComponent)). useMemo is a hook used inside a component to memoize the result of an expensive calculation. It caches the value and only recalculates when dependencies change. Use memo for component-level optimization, useMemo for value/calculation optimization within a component.",
-    category: "javascript",
-  },
-  {
-    id: 76,
-    question: "What is the difference between shallow copy and deep copy?",
-    answer:
-      "Shallow copy creates a new object but only copies top-level properties. Nested objects/arrays still refer to the same reference in memory - changes in nested data affect both objects. Methods: spread operator {...obj}, Object.assign(), array.slice(). Deep copy creates a completely new object with all nested objects and arrays duplicated. Changes in the copy don't affect the original. Methods: JSON.parse(JSON.stringify(obj)) (has limitations - no functions, dates, undefined), structuredClone() (modern), or libraries like Lodash cloneDeep(). Use shallow copy for simple objects, deep copy for nested structures.",
     category: "javascript",
   },
   {
