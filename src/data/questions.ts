@@ -359,9 +359,9 @@ export const questions: Question[] = [
   },
   {
     id: 230.12,
-    question: "How many ways we have to center a div?",
+    question: "How many ways do we have to center a div?",
     answer:
-      "1. Using margin: auto; \n2. Using flexbox: display: flex; justify-content: center; align-items: center; \n3. Using grid: display: grid; place-items: center; \n4. Using text-align: center; \n5. Using transform: translate(-50%, -50%);",
+      "There are multiple ways to center a div in CSS, both horizontally and vertically:\n\n1. **margin: auto** → Centers a block element horizontally when a width is set.\n   Example: margin: 0 auto;\n\n2. **Flexbox** → Most common modern approach. Centers both horizontally and vertically.\n   display: flex; justify-content: center; align-items: center;\n\n3. **CSS Grid** → Very simple way to center content in both directions.\n   display: grid; place-items: center;\n\n4. **Transform + absolute positioning** → Used for perfect centering in older layouts.\n   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);\n\n5. **text-align: center** → Centers inline or inline-block elements horizontally (not vertical centering).\n\nIn short: Flexbox and Grid are the simplest and most modern ways to center a div.",
     category: "css",
   },
   // JavaScript Questions
