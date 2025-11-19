@@ -534,13 +534,12 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-  id: 41,
-  question: "What is the difference between for...in and for...of loops?",
-  answer:
-    "for...in iterates over the enumerable property keys of an object. It is mainly used for objects, and when used on arrays it returns the index, not the actual value.\n\nfor...of iterates over the values of an iterable, such as arrays, strings, Maps, and Sets. It cannot iterate over plain objects because they are not iterable.\n\nIn short: use for...in to loop through object keys, and use for...of to loop through iterable values.",
-  category: "javascript",
-}
-,
+    id: 41,
+    question: "What is the difference between for...in and for...of loops?",
+    answer:
+      "for...in iterates over the enumerable property keys of an object. It is mainly used for objects, and when used on arrays it returns the index, not the actual value.\n\nfor...of iterates over the values of an iterable, such as arrays, strings, Maps, and Sets. It cannot iterate over plain objects because they are not iterable.\n\nIn short: use for...in to loop through object keys, and use for...of to loop through iterable values.",
+    category: "javascript",
+  },
   {
     id: 42,
     question: "What is the difference between call(), apply(), and bind()?",
@@ -564,21 +563,20 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-  id: 45,
-  question: "What is the difference between shallow copy and deep copy?",
-  answer:
-    "A shallow copy creates a new object but only copies the top-level properties. Any nested objects or arrays are still referenced, meaning changes in the nested structure affect both the original and the copy. Common methods include Object.assign(), the spread operator {...obj}, and array.slice().\n\nA deep copy recursively copies all levels of the object, creating a completely independent clone. Changes to the copy do not affect the original. Deep copying can be done using JSON.parse(JSON.stringify(obj)) for simple data, structuredClone() for modern browsers, or utility libraries like Lodash's cloneDeep().",
-  category: "javascript",
-}
-,
+    id: 45,
+    question: "What is the difference between shallow copy and deep copy?",
+    answer:
+      "A shallow copy creates a new object but only copies the top-level properties. Any nested objects or arrays are still referenced, meaning changes in the nested structure affect both the original and the copy. Common methods include Object.assign(), the spread operator {...obj}, and array.slice().\n\nA deep copy recursively copies all levels of the object, creating a completely independent clone. Changes to the copy do not affect the original. Deep copying can be done using JSON.parse(JSON.stringify(obj)) for simple data, structuredClone() for modern browsers, or utility libraries like Lodash's cloneDeep().",
+    category: "javascript",
+  },
   {
-  id: 46,
-  question: "What is the difference between event bubbling and event capturing?",
-  answer:
-    "Event capturing and event bubbling describe the two phases of event propagation in the DOM. In event capturing (top-down), the event travels from the window → document → parent elements → target. In event bubbling (bottom-up), the event starts at the target element and moves upward through its ancestors. Bubbling is JavaScript's default propagation phase.\n\nYou can choose the phase when attaching listeners using addEventListener: passing true listens during the capturing phase, and false (default) listens during the bubbling phase.",
-  category: "javascript",
-}
-,
+    id: 46,
+    question:
+      "What is the difference between event bubbling and event capturing?",
+    answer:
+      "Event capturing and event bubbling describe the two phases of event propagation in the DOM. In event capturing (top-down), the event travels from the window → document → parent elements → target. In event bubbling (bottom-up), the event starts at the target element and moves upward through its ancestors. Bubbling is JavaScript's default propagation phase.\n\nYou can choose the phase when attaching listeners using addEventListener: passing true listens during the capturing phase, and false (default) listens during the bubbling phase.",
+    category: "javascript",
+  },
   {
     id: 47,
     question: "What is the difference between slice() and splice() in arrays?",
@@ -595,18 +593,18 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-  id: 49,
-  question: "What is the difference between Promise.all(), Promise.race(), and Promise.allSettled()?",
-  answer:
-    "Promise.all() runs all promises in parallel and resolves only when every promise succeeds. If any one promise rejects, the entire Promise.all() rejects immediately. It returns an array of resolved values.\n\nPromise.race() settles as soon as the first promise resolves or rejects. It is commonly used for timeout logic or selecting the fastest response.\n\nPromise.allSettled() waits for all promises to finish, regardless of success or failure. It never rejects and returns an array of objects containing each promise's status and value or reason. It is useful when you need the outcome of all promises without stopping on errors.",
-  category: "javascript",
-}
-,
+    id: 49,
+    question:
+      "What is the difference between Promise.all(), Promise.race(), and Promise.allSettled()?",
+    answer:
+      "Promise.all() runs all promises in parallel and resolves only when every promise succeeds. If any one promise rejects, the entire Promise.all() rejects immediately. It returns an array of resolved values.\n\nPromise.race() settles as soon as the first promise resolves or rejects. It is commonly used for timeout logic or selecting the fastest response.\n\nPromise.allSettled() waits for all promises to finish, regardless of success or failure. It never rejects and returns an array of objects containing each promise's status and value or reason. It is useful when you need the outcome of all promises without stopping on errors.",
+    category: "javascript",
+  },
   {
     id: 50,
     question: "What is the difference between find() and filter()?",
     answer:
-      "find(): find method returns the first element that satisfies the condition, stops searching after finding first match, returns undefined if no match found, returns a single element. \n\n filter(): filter method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use find() to get one specific element, filter() to get all matching elements.",
+      "find() returns the first element in the array that satisfies the given condition. It stops execution as soon as a match is found and returns undefined if no element matches. It always returns a single value.\n\nfilter() returns all elements that satisfy the condition as a new array. It checks the entire array and returns an empty array if no matches are found. It always returns an array.\n\nIn short: use find() when you need only one matching element, and use filter() when you need multiple results.",
     category: "javascript",
   },
   {
