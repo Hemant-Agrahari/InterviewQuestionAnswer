@@ -488,21 +488,21 @@ export const questions: Question[] = [
       "In JavaScript, every value is either truthy (treated as true) or falsy (treated as false) in Boolean contexts. \n\n Falsy values (8): \n\n 1.false, \n\n 2.0, \n\n 3.-0, \n\n 4.0n (BigInt zero), \n\n 5.'' (empty string), \n\n 6.null, \n\n 7.undefined, \n\n 8.NaN. \n\n Everything else is truthy, including: '0', 'false', [], {}, and any non-zero number.",
     category: "javascript",
   },
- {
-  id: 35,
-  question: "What is a closure and why is it used?",
-  answer:
-    "A closure is a function that remembers and can access variables from its outer function’s scope even after the outer function has finished executing.\n\nIt happens because JavaScript stores both the function and the surrounding lexical environment together.\n\nClosures are used for:\n\n• Data privacy (private variables)\n• State management\n• Function factories\n• Callbacks & event handlers",
-  category: "javascript",
-},
   {
-  id: 36,
-  question: "What is the difference between function declaration and function expression?",
-  answer:
-    "A function declaration defines a named function using the 'function' keyword and is hoisted, meaning it can be called before its definition. A function expression assigns a function to a variable and is not hoisted, so it cannot be called before being defined. Function declarations are typically used for reusable named functions, while function expressions are commonly used for callbacks, closures, and anonymous functions.",
-  category: "javascript",
-}
-,
+    id: 35,
+    question: "What is a closure and why is it used?",
+    answer:
+      "A closure is a function that remembers and can access variables from its outer function’s scope even after the outer function has finished executing.\n\nIt happens because JavaScript stores both the function and the surrounding lexical environment together.\n\nClosures are used for:\n\n• Data privacy (private variables)\n• State management\n• Function factories\n• Callbacks & event handlers",
+    category: "javascript",
+  },
+  {
+    id: 36,
+    question:
+      "What is the difference between function declaration and function expression?",
+    answer:
+      "A function declaration defines a named function using the 'function' keyword and is hoisted, meaning it can be called before its definition. A function expression assigns a function to a variable and is not hoisted, so it cannot be called before being defined. Function declarations are typically used for reusable named functions, while function expressions are commonly used for callbacks, closures, and anonymous functions.",
+    category: "javascript",
+  },
   {
     id: 37,
     question:
@@ -515,7 +515,7 @@ export const questions: Question[] = [
     id: 38,
     question: "What is the difference between map() and forEach()?",
     answer:
-      "Map:map() creates and returns a new array with transformed values based on the callback function, doesn't modify the original array Syntax: array.map(callback(currentValue, index, array)) \n\n forEach() executes a function on each element for side effects, returns undefined, doesn't create a new array. Syntax: array.forEach(callback(currentValue, index, array)) \n\n Use map() when you need a transformed result array, use forEach() for side effects like logging or updating external variables.",
+      "map and forEach are both array iteration methods, but they serve different purposes.\n\nmap returns a new array by transforming each element using the callback function. It does not modify the original array and is used when you need a transformed output.\n\nforEach executes the callback for every element but does not return anything. It’s mainly used for side effects like logging, updating external variables, or modifying existing data. It cannot be chained because it returns undefined.",
     category: "javascript",
   },
   {
