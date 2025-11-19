@@ -496,13 +496,13 @@ export const questions: Question[] = [
   category: "javascript",
 },
   {
-    id: 36,
-    question:
-      "What is the difference between function declaration and function expression?",
-    answer:
-      "Function Declaration: defined with function keyword and name, fully hoisted (can be called before definition), syntax: function greet() {}. \n\n Function Expression: function assigned to a variable, not hoisted (can only be called after definition), can be anonymous or named, syntax: const greet = function() {}. Arrow functions are also function expressions.",
-    category: "javascript",
-  },
+  id: 36,
+  question: "What is the difference between function declaration and function expression?",
+  answer:
+    "A function declaration defines a named function using the 'function' keyword and is hoisted, meaning it can be called before its definition. A function expression assigns a function to a variable and is not hoisted, so it cannot be called before being defined. Function declarations are typically used for reusable named functions, while function expressions are commonly used for callbacks, closures, and anonymous functions.",
+  category: "javascript",
+}
+,
   {
     id: 37,
     question:
