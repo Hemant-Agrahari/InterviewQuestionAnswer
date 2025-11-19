@@ -410,13 +410,6 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 32304,
-    question: "What is the Event Loop in JavaScript?",
-    answer:
-      "The Event Loop is how JavaScript handles asynchronous operations. Since JavaScript is single-threaded, the Event Loop continuously checks the Call Stack and the Task Queues. If the Call Stack is empty, it pushes the next task into it. This is how JavaScript processes async code without blocking, enabling features like setTimeout, promises, and API calls to run smoothly.",
-    category: "javascript",
-  },
-  {
     id: 33405,
     question: "What is the Macrotask Queue in JavaScript?",
     answer:
