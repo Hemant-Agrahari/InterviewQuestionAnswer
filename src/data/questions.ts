@@ -534,12 +534,13 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 41,
-    question: "What is the difference between for...in and for...of loops?",
-    answer:
-      "for...in iterates over enumerable property names (keys) of an object, including inherited properties. Works with objects and arrays (but gives indices for arrays). \n\nfor...of iterates over iterable values (array elements, string characters, Map/Set values). Only works with iterables, not plain objects. Use for...in for object properties, for...of for array/string values.",
-    category: "javascript",
-  },
+  id: 41,
+  question: "What is the difference between for...in and for...of loops?",
+  answer:
+    "for...in iterates over the enumerable property keys of an object. It is mainly used for objects, and when used on arrays it returns the index, not the actual value.\n\nfor...of iterates over the values of an iterable, such as arrays, strings, Maps, and Sets. It cannot iterate over plain objects because they are not iterable.\n\nIn short: use for...in to loop through object keys, and use for...of to loop through iterable values.",
+  category: "javascript",
+}
+,
   {
     id: 42,
     question: "What is the difference between call(), apply(), and bind()?",
@@ -563,25 +564,26 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 45,
-    question: "What is the difference between shallow copy and deep copy?",
-    answer:
-      "Shallow copy copies only the top-level properties. Nested objects/arrays keep references to originals - changes in nested data affect both copies. Methods: Object.assign(), spread operator {...obj}, array.slice(). \n\n Deep copy duplicates everything recursively, creating completely independent copies. Changes don't affect the original. Methods: JSON.parse(JSON.stringify(obj)) (limited), structuredClone() (modern), or libraries like Lodash's cloneDeep().",
-    category: "javascript",
-  },
+  id: 45,
+  question: "What is the difference between shallow copy and deep copy?",
+  answer:
+    "A shallow copy creates a new object but only copies the top-level properties. Any nested objects or arrays are still referenced, meaning changes in the nested structure affect both the original and the copy. Common methods include Object.assign(), the spread operator {...obj}, and array.slice().\n\nA deep copy recursively copies all levels of the object, creating a completely independent clone. Changes to the copy do not affect the original. Deep copying can be done using JSON.parse(JSON.stringify(obj)) for simple data, structuredClone() for modern browsers, or utility libraries like Lodash's cloneDeep().",
+  category: "javascript",
+}
+,
   {
-    id: 46,
-    question:
-      "What is the difference between event bubbling and event capturing?",
-    answer:
-      "Event Capturing (trickling): event starts from outermost element (document) and travels down to the target element. \n\n Event Bubbling: event starts from target element and bubbles up through parent elements to the document. Bubbling is the default behavior. You can control which phase with addEventListener's third parameter: addEventListener('click', handler, true) for capturing, false/omitted for bubbling.",
-    category: "javascript",
-  },
+  id: 46,
+  question: "What is the difference between event bubbling and event capturing?",
+  answer:
+    "Event capturing and event bubbling describe the two phases of event propagation in the DOM. In event capturing (top-down), the event travels from the window → document → parent elements → target. In event bubbling (bottom-up), the event starts at the target element and moves upward through its ancestors. Bubbling is JavaScript's default propagation phase.\n\nYou can choose the phase when attaching listeners using addEventListener: passing true listens during the capturing phase, and false (default) listens during the bubbling phase.",
+  category: "javascript",
+}
+,
   {
     id: 47,
     question: "What is the difference between slice() and splice() in arrays?",
     answer:
-      "slice(start, end): creates a new array by copying elements, doesn't modify original array, end index is exclusive, returns selected elements. \n\n splice(start, deleteCount, item1, item2...): modifies the original array by removing/adding elements at specific index, returns array of removed elements. Use slice() to extract portions without changing original, splice() to add/remove elements and modify original.",
+      "slice() is used to create a shallow copy of a portion of an array. It does not modify the original array, and the end index is non-inclusive. It is mainly used for extracting or cloning data.\n\nsplice() is used to modify the original array by removing, replacing, or inserting elements at a specific index. It returns the removed elements and is commonly used when you need to update the actual array structure.\n\nIn short: slice() is non-mutating and returns a new array, while splice() is mutating and changes the original array.",
     category: "javascript",
   },
   {
@@ -593,13 +595,13 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 49,
-    question:
-      "What is the difference between Promise.all(), Promise.race(), and Promise.allSettled()?",
-    answer:
-      "Promise.all(): waits for all promises to resolve, rejects immediately if any promise rejects, returns array of all results. \n\n Promise.race(): returns result of first settled promise (resolved or rejected), useful for timeout scenarios. \n\n Promise.allSettled(): waits for all promises to settle (resolve or reject), returns array with status and value/reason for each, never rejects. Use all() when all must succeed, race() for first result, allSettled() to know all outcomes.",
-    category: "javascript",
-  },
+  id: 49,
+  question: "What is the difference between Promise.all(), Promise.race(), and Promise.allSettled()?",
+  answer:
+    "Promise.all() runs all promises in parallel and resolves only when every promise succeeds. If any one promise rejects, the entire Promise.all() rejects immediately. It returns an array of resolved values.\n\nPromise.race() settles as soon as the first promise resolves or rejects. It is commonly used for timeout logic or selecting the fastest response.\n\nPromise.allSettled() waits for all promises to finish, regardless of success or failure. It never rejects and returns an array of objects containing each promise's status and value or reason. It is useful when you need the outcome of all promises without stopping on errors.",
+  category: "javascript",
+}
+,
   {
     id: 50,
     question: "What is the difference between find() and filter()?",
