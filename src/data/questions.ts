@@ -410,15 +410,6 @@ export const questions: Question[] = [
       "JavaScript executes code on a single call stack, meaning only one instruction runs at a time. It cannot execute multiple lines simultaneously.",
     category: "javascript",
   },
-
-  {
-    id: 85920,
-    question: "What is the event loop in JavaScript?",
-    answer:
-      "The event loop allows JavaScript to handle asynchronous operations. It moves completed callbacks from the queue into the call stack when the stack becomes empty, enabling non-blocking execution.",
-    category: "javascript",
-  },
-
   {
     id: 32304,
     question: "What is the Event Loop in JavaScript?",
