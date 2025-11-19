@@ -370,9 +370,55 @@ export const questions: Question[] = [
     id: 24,
     question: "What is JavaScript?",
     answer:
-      "JavaScript is a lightweight, interpreted, prototype-based, single-threaded, and event-driven programming language that enables dynamic behavior and interactivity in web applications, making it the core of modern front-end development. It runs in the browser and can also run on servers using Node.js.",
+      "JavaScript is a prototype-based, multi-paradigm language that supports functional, object-oriented, and event-driven programming. It executes inside the browser using a single-threaded event loop but handles asynchronous tasks using callbacks, promises, and async/await. JavaScript enables dynamic UI updates, DOM manipulation, API communication, and real-time interactivity, making it essential for building modern web applications. With Node.js, it extends beyond the browser and enables full-stack development.",
     category: "javascript",
   },
+  {
+    id: 2345,
+    question: "What does 'interpreted' mean in JavaScript?",
+    answer:
+      "Interpreted means the code is executed line by line at runtime by an interpreter (like the browser's JavaScript engine), instead of being fully translated into machine code beforehand like compiled languages such as C++ or Java. This makes JavaScript flexible and platform-independent.",
+    category: "javascript",
+  },
+  {
+    id: 98341,
+    question: "What is prototype-based in JavaScript?",
+    answer:
+      "JavaScript uses prototypes instead of classical classes. Every object inherits properties and methods from another object called its prototype, forming a prototype chain.",
+    category: "javascript",
+  },
+  {
+    id: 52789,
+    question: "What is a multi-paradigm language?",
+    answer:
+      "JavaScript supports multiple programming styles such as functional, object-oriented, and procedural programming, allowing developers to choose the best approach for each problem.",
+    category: "javascript",
+  },
+
+  {
+    id: 67412,
+    question: "What is event-driven programming?",
+    answer:
+      "JavaScript executes code in response to events like clicks, API calls, timers, and user interactions. These events trigger callback functions that make applications interactive.",
+    category: "javascript",
+  },
+
+  {
+    id: 41357,
+    question: "Why is JavaScript called single-threaded?",
+    answer:
+      "JavaScript executes code on a single call stack, meaning only one instruction runs at a time. It cannot execute multiple lines simultaneously.",
+    category: "javascript",
+  },
+
+  {
+    id: 85920,
+    question: "What is the event loop in JavaScript?",
+    answer:
+      "The event loop allows JavaScript to handle asynchronous operations. It moves completed callbacks from the queue into the call stack when the stack becomes empty, enabling non-blocking execution.",
+    category: "javascript",
+  },
+
   {
     id: 32304,
     question: "What is the Event Loop in JavaScript?",
@@ -392,13 +438,6 @@ export const questions: Question[] = [
     question: "What is Event Delegation in JavaScript?",
     answer:
       "Event Delegation is a technique where instead of adding event listeners to many child elements, we add a single listener to a common parent. The event bubbles up from the child to the parent, and the parent decides which element triggered it. This improves performance, reduces memory usage, and makes handling dynamic elements easier.",
-    category: "javascript",
-  },
-  {
-    id: 2345,
-    question: "What does 'interpreted' mean in JavaScript?",
-    answer:
-      "Interpreted means the code is executed line by line at runtime by an interpreter (like the browser's JavaScript engine), instead of being fully translated into machine code beforehand like compiled languages such as C++ or Java. This makes JavaScript flexible and platform-independent.",
     category: "javascript",
   },
   {
