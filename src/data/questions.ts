@@ -108,12 +108,11 @@ export const questions: Question[] = [
   },
   {
     id: 3.13,
-    question: "What are the difference between strong and em tag?",
+    question: "What is the difference between <strong> and <em> tags?",
     answer:
-      "strong: \n1.It is used to define the important text. \n2.It is a block element. \n3.It is used to define the important text. \n4.It is used to define the important text. \n5.It is used to define the important text. \n6.It is used to define the important text. \n7.It is used to define the important text. \n8.It is used to define the important text. \n9.It is used to define the important text. \n10.It is used to define the important text. \n\nem: \n1.It is used to define the emphasized text. \n2.It is a inline element. \n3.It is used to define the emphasized text. \n4.It is used to define the emphasized text. \n5.It is used to define the emphasized text. \n6.It is used to define the emphasized text. \n7.It is used to define the emphasized text. \n8.It is used to define the emphasized text. \n9.It is used to define the emphasized text. \n10.It is used to define the emphasized text.",
+      "strong tag: \n1. Represents text with strong importance or seriousness. \n2. Browsers typically render it in bold. \n3. It conveys semantic meaning for screen readers and SEO. \n\nem tag: \n1. Represents emphasized text, usually stress or tone change. \n2. Browsers typically render it in italic. \n3. It also carries semantic meaning for screen readers and SEO.",
     category: "html",
   },
-
   {
     id: 4,
     question: "What is the use of head tag?",
@@ -431,7 +430,7 @@ export const questions: Question[] = [
       "Event Delegation is a technique where instead of adding event listeners to many child elements, we add a single listener to a common parent. The event bubbles up from the child to the parent, and the parent decides which element triggered it. This improves performance, reduces memory usage, and makes handling dynamic elements easier.",
     category: "javascript",
   },
-  
+
   {
     id: 27,
     question: "What are the different data types in JavaScript?",
@@ -447,12 +446,13 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 29,
+    id: 67291,
     question: "What is the difference between let, var, and const?",
     answer:
-      "var is function-scoped, hoisted as undefined, can be redeclared and reassigned. \n\n let is block-scoped, hoisted in Temporal Dead Zone, cannot be redeclared but can be reassigned. \n\n const is block-scoped, hoisted in TDZ, cannot be redeclared or reassigned (though object properties can be modified). \n\n Modern best practice: use const by default, let when reassignment is needed, avoid var.",
+      "var:var is function-scoped and hoisted as undefined. It can be redeclared and reassigned. let:let is block-scoped and hoisted but stays in the Temporal Dead Zone; it cannot be redeclared but can be reassigned. const:const is also block-scoped, cannot be redeclared or reassigned, but object properties can still be modified. Best practice is to use const by default, let when reassignment is required, and avoid var.",
     category: "javascript",
   },
+
   {
     id: 30,
     question: "What is the difference between declaration and initialization?",
@@ -478,7 +478,7 @@ export const questions: Question[] = [
     id: 33,
     question: "What is the difference between == and ===?",
     answer:
-      "== (loose equality) checks only value with type coercion - converts values to the same type before comparison (e.g., 5 == '5' is true). \n\n === (strict equality) checks both value and data type without conversion (e.g., 5 === '5' is false). \n\n Always prefer === to avoid unexpected behavior and bugs from automatic type conversion.",
+      "== (loose equality) Checks only value, not the data type. \n\n === (strict equality) checks both value and data type without conversion (e.g., 5 === '5' is false). \n\n Always prefer === to avoid unexpected behavior and bugs from automatic type conversion.",
     category: "javascript",
   },
   {
