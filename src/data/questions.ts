@@ -269,13 +269,14 @@ export const questions: Question[] = [
   category: "css",
 }
 ,
-  {
-    id: 22,
-    question: "What is the difference between CSS Grid and Flexbox?",
-    answer:
-      "Flexbox (Flexible Box Layout) is designed for one-dimensional layouts (either row or column), great for aligning and distributing space among items in a single line. \n\n Examples include navigation bars, buttons in a row, or vertically centering elements. It supports properties like justify-content, align-items, flex-wrap. \n\n CSS Grid is designed for two-dimensional layouts (rows and columns simultaneously), ideal for complex page layouts, like grids of cards or full web page layouts. It supports properties like grid-template-columns, grid-template-rows, grid-gap. In short: Flexbox = 1D (row or column), simpler alignment. Grid = 2D (rows + columns), complex layout control.",
-    category: "css",
-  },
+{
+  id: 22,
+  question: "What is the difference between CSS Grid and Flexbox?",
+  answer:
+    "Flexbox is a one-dimensional layout system used to align items in a single row or a single column. It is ideal for UI components like navigation bars, button groups, cards, or centering elements. Flexbox focuses on content flow and alignment.\n\nCSS Grid is a two-dimensional layout system that lets you control rows and columns at the same time. It is better suited for full-page layouts, dashboards, galleries, and complex components where both horizontal and vertical control are needed.\n\nIn short: Flexbox is best for 1D layouts (row OR column), while CSS Grid is best for 2D layouts (rows AND columns).",
+  category: "css",
+}
+,
   {
     id: 23,
     question: "Why do we use semantic elements instead of div?",
