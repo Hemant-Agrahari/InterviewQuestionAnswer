@@ -410,13 +410,6 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 33405,
-    question: "What is the Macrotask Queue in JavaScript?",
-    answer:
-      "The Macrotask Queue stores tasks like setTimeout, setInterval, setImmediate, and DOM events. These tasks run only after the current call stack is empty. Compared to the microtask queue, macrotasks run slower and are processed after all microtasks finish. This helps JavaScript maintain correct timing, scheduling, and async behavior.",
-    category: "javascript",
-  },
-  {
     id: 30346,
     question: "What is Event Delegation in JavaScript?",
     answer:
