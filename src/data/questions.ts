@@ -1399,6 +1399,47 @@ export const questions: Question[] = [
     category: "nextjs",
   },
   {
+    id: 138.45,
+    question: "What are React Server Components and why are they faster?",
+    answer:
+      "React Server Components (RSCs) are components that run entirely on the server and never ship their JavaScript to the browser. They allow the UI to be rendered on the server and send only the final HTML to the client.\n\n" +
+      "They are faster because:\n" +
+      "1. No client-side JavaScript is sent for server components, which reduces bundle size.\n" +
+      "2. Data fetching happens directly on the server, avoiding extra network calls from the browser.\n" +
+      "3. Less JavaScript means faster hydration and quicker page load time.\n" +
+      "4. Heavy operations run on the server, improving performance on low-end devices.\n\n" +
+      "Overall, React Server Components improve performance by keeping the UI lightweight and reducing the amount of work the browser needs to do.",
+    category: "react",
+  },
+  {
+    id: 139,
+    question: "How does caching work in Next.js?",
+    answer:
+      "Next.js uses a built-in caching system to speed up data fetching, reduce API calls, and improve performance.\n\n" +
+      "1. Data Caching → In the App Router, fetch() is cached by default. Next.js stores the API response and reuses it on future requests. You can control this using:\n" +
+      "   - cache: 'no-store' (always fetch fresh data)\n" +
+      "   - next: { revalidate: X } (revalidate data after X seconds)\n\n" +
+      "2. Route Caching → Static pages are cached as HTML and served instantly without rerendering on every request.\n\n" +
+      "3. Segment-Level Caching → Each layout and page in the app/ directory can have its own cache behavior depending on how data is fetched.\n\n" +
+      "4. Client-Side Navigation Cache → Next.js prefetches and caches routes in the browser, making navigation almost instant.\n\n" +
+      "5. Static Asset Caching → Images, fonts, and static files use long-term browser caching with hashed filenames.\n\n" +
+      "Overall, caching in Next.js improves performance by reducing network calls, minimizing re-renders, and delivering faster page loads.",
+    category: "nextjs",
+  },
+  {
+    id: 140,
+    question: "Why should we use Dynamic Route Segments in Next.js?",
+    answer:
+      "Dynamic Route Segments allow us to create flexible and reusable routes based on parameters such as IDs, slugs, or usernames. Instead of creating multiple pages manually, we can create a single dynamic file like [id] or [slug] to handle many dynamic URLs.\n\n" +
+      "They are useful because:\n" +
+      "1. They simplify routing for pages that depend on dynamic data (e.g., product details, blog posts).\n" +
+      "2. They reduce code duplication by using one component for many route variations.\n" +
+      "3. They make URL structures cleaner and more SEO-friendly.\n" +
+      "4. They allow us to fetch data based on dynamic parameters using functions like generateStaticParams or useParams.\n\n" +
+      "Overall, dynamic route segments help build scalable, data-driven pages without manually creating multiple route files.",
+    category: "nextjs",
+  },
+  {
     id: 135,
     question:
       "How do you handle internationalization in a Next.js application?",
@@ -1415,9 +1456,11 @@ export const questions: Question[] = [
   },
   {
     id: 137,
-    question: "what are the difference between App route and page route?",
+    question: "What are the differences between App Route and Page Route?",
     answer:
-      "Page Routes are the traditional pages/-based routes in Next.js, whereas App Routes in app/ support React Server Components, nested layouts, and more flexible data fetching for modern applications. Page routes are suitable for small projects, while App routes are suitable for large projects.",
+      "Page Routes (pages/) are the older routing system in Next.js where each file automatically becomes a route and components are fully client-side by default. It uses getStaticProps, getServerSideProps, and API routes for data fetching.\n\n" +
+      "App Routes (app/) are the modern routing system introduced in Next.js 13 that support React Server Components, nested layouts, loading UI, error boundaries, and colocated data fetching using fetch(), async components, and server actions.\n\n" +
+      "Page Routes are simple and good for smaller or legacy projects, while App Routes provide better performance, structured layouts, and are recommended for scalable and production-ready apps.",
     category: "nextjs",
   },
   {
