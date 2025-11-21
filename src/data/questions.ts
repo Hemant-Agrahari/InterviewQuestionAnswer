@@ -1175,9 +1175,38 @@ export const questions: Question[] = [
   },
   {
     id: 112,
-    question: "What are React Hooks and name the most common ones?",
+    question:
+      "What are React Hooks and name the most common ones and why were they introduced?",
     answer:
-      "Hooks are functions that let you use state and other React features in functional components. Most common: \n\n 1.useState (state management), \n\n 2.useEffect (side effects), \n\n 3.useContext (context consumption), \n\n 4.useRef (mutable refs), \n\n 5.useMemo (memoized values), \n\n 6.useCallback (memoized callbacks), and \n\n 7.useReducer (complex state logic).",
+      "Hooks are special functions that allow functional components to use state, lifecycle behavior, and other React features without writing class components. They make components easier to read, test, and reuse. \n\n" +
+      "Most common Hooks:\n\n" +
+      "1. useState – manages local component state.\n" +
+      "2. useEffect – handles side effects like API calls and event listeners.\n" +
+      "3. useContext – consumes values from React Context.\n" +
+      "4. useRef – stores mutable values and accesses DOM elements.\n" +
+      "5. useMemo – memoizes expensive computations.\n" +
+      "6. useCallback – memoizes functions to prevent unnecessary re-renders.\n" +
+      "7. useReducer – manages complex state logic using reducers.\n\n" +
+      "Hooks were introduced to solve issues with class components such as complex lifecycle logic, difficulty in reusing stateful logic, and large components becoming hard to maintain. Hooks make React more predictable, modular, and easier to scale.",
+    category: "react",
+  },
+  {
+    id: 134513,
+    question:
+      "Explain the React component lifecycle in both Class-Based and Functional components.",
+    answer:
+      "In React, both Class and Functional components follow a lifecycle, but they handle it differently. \n\n" +
+      "Class-Based Components have defined lifecycle methods:\n\n" +
+      "1. Mounting → constructor, render, componentDidMount (best place for API calls)\n" +
+      "2. Updating → shouldComponentUpdate, render, componentDidUpdate (runs after every update)\n" +
+      "3. Unmounting → componentWillUnmount (cleanup operations)\n" +
+      "4. Error Handling → componentDidCatch\n\n" +
+      "Functional Components use Hooks to represent lifecycle stages:\n\n" +
+      "1. Mounting → useEffect(() => { ... }, [])\n" +
+      "2. Updating → useEffect(() => { ... }, [dependencies])\n" +
+      "3. Unmounting → cleanup function inside useEffect\n" +
+      "4. Optimization → useMemo, useCallback, React.memo\n\n" +
+      "Overall: Class components rely on lifecycle methods, while Functional components use Hooks like useEffect to manage the same lifecycle more efficiently.",
     category: "react",
   },
   {
@@ -1319,6 +1348,7 @@ export const questions: Question[] = [
       "The next.config.js file in a Next.js project is used to customize the default configuration settings of your Next.js application. It allows you to do things like set environment variables, customize webpack configurations, set up redirects and rewrites, and enable experimental features. For example, you might use it to set up support for CSS modules or integrate with a CDN.Some common configurations include setting up custom headers, enabling image optimization settings, and configuring internationalization (i18n) settings. It's quite powerful and flexible, making it an essential part of optimizing and configuring your Next.js app to suit your specific needs.",
     category: "react",
   },
+  // {id:56775,question:"What ",answer:"",category:"react"},
   {
     id: 128,
     question:
