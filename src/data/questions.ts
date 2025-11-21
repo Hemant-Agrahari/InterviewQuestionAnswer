@@ -1500,6 +1500,19 @@ export const questions: Question[] = [
     category: "nextjs",
   },
   {
+    id: 1423441,
+    question: "What problem does useEffect solve in React?",
+    answer:
+      "useEffect solves the problem of handling side effects inside functional components. Before Hooks, side effects like API calls, event listeners, subscriptions, and timers could only be done using lifecycle methods in class components.\n\n" +
+      "useEffect helps by:\n" +
+      "1. Running code after the component renders (similar to componentDidMount).\n" +
+      "2. Running code when specific state or props change (similar to componentDidUpdate).\n" +
+      "3. Cleaning up listeners, timers, and subscriptions when the component unmounts (similar to componentWillUnmount).\n" +
+      "4. Keeping related logic together instead of splitting it across multiple lifecycle methods.\n\n" +
+      "Overall, useEffect gives functional components full lifecycle capabilities and makes managing side effects easier, cleaner, and more predictable.",
+    category: "nextjs",
+  },
+  {
     id: 142.1,
     question: "Can you explain the usage of the Head component in Next.js?",
     answer:
@@ -1551,6 +1564,33 @@ export const questions: Question[] = [
       "In Next.js App Router, both usePathname() and useSearchParams() are hooks from next/navigation used to read information about the current URL. The usePathname() hook returns the current route path (for example, '/dashboard' or '/profile/settings'), making it useful when you need to know which page or route is active. On the other hand, the useSearchParams() hook allows you to read and manage the query parameters in the URL (for example, ?id=123 or ?filter=active). You can use methods like get() on the returned object to access specific parameters. In short, usePathname() is for the path part of the URL, while useSearchParams() is for the query string part.",
     category: "nextjs",
   },
+  {
+    id: 1423412,
+    question: "What is memoization?",
+    answer:
+      "Memoization is a performance optimization technique where a function stores the result of its computation and returns the cached result when the same inputs are used again. This avoids recalculating the same work repeatedly and improves performance.\n\n" +
+      "In React, memoization is commonly used to prevent unnecessary re-renders and optimize expensive operations. React provides tools like:\n" +
+      "1. useMemo – memoizes values.\n" +
+      "2. useCallback – memoizes functions.\n" +
+      "3. React.memo – memoizes entire components.\n\n" +
+      "Overall, memoization makes applications faster by caching results and reducing redundant computations.",
+    category: "react",
+  },
+  {
+  id: 14343,
+  question: "When should you use useReducer over useState?",
+  answer:
+    "useReducer is preferred over useState when your state logic becomes complex or involves multiple related values. It helps manage state in a more structured and predictable way using actions and reducers.\n\n" +
+    "You should use useReducer when:\n" +
+    "1. The state has multiple fields that update together.\n" +
+    "2. The state transitions follow clear actions (like increment, decrement, toggle, add, remove).\n" +
+    "3. The logic becomes hard to manage with multiple useState calls.\n" +
+    "4. You want a cleaner state management pattern similar to Redux.\n" +
+    "5. The next state depends on the previous state.\n\n" +
+    "Overall, useReducer is ideal for complex or large components, while useState is better for simple and straightforward state updates.",
+  category: "react"
+}
+,
   {
     id: 149,
     question:
