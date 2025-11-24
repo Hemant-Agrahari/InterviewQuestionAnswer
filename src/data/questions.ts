@@ -2,7 +2,7 @@ export interface Question {
   id: number;
   question: string;
   answer: string;
-  category: "html" | "css" | "javascript" | "nextjs" | "react" | "output-based";
+  category: "html" | "css" | "javascript" | "nextjs" | "react" | "output-based" | "redux" | "socket";
 }
 
 export const questions: Question[] = [
@@ -1645,6 +1645,150 @@ export const questions: Question[] = [
     answer:
       "To sync UI state with URL query parameters in Next.js, you can use the useSearchParams() and useRouter() hooks from next/navigation in client components. First, read the current query parameters using useSearchParams() and initialize your UI state (like active tab or selected filter) based on these values. Then, whenever the UI state changes, update the URL using router.push() or router.replace() with the new query parameters. This approach keeps the UI in sync with the URL, allowing users to share or bookmark the current state without triggering a full page reload.",
     category: "nextjs",
+  },
+
+  // Redux Questions
+  {
+    id: 156,
+    question: "What is Redux and why do we use it?",
+    answer:
+      "Redux is a predictable state management library for JavaScript applications. It helps manage application state in a centralized store, making it easier to track changes and debug. Redux is commonly used in React applications when: \n1. Multiple components need to access the same state\n2. State needs to be shared across different parts of the application\n3. You need predictable state updates\n4. You want to implement features like undo/redo\n5. You need better debugging with tools like Redux DevTools\n\nRedux follows three core principles: single source of truth (one store), state is read-only (changes only through actions), and changes are made with pure functions (reducers).",
+    category: "redux",
+  },
+  {
+    id: 157,
+    question: "What are the core principles of Redux?",
+    answer:
+      "Redux has three fundamental principles:\n\n1. Single Source of Truth: The entire application state is stored in a single object tree within a single store. This makes it easier to track changes and debug the application.\n\n2. State is Read-Only: The only way to change the state is to emit an action, an object describing what happened. This ensures that neither views nor network callbacks can directly modify the state.\n\n3. Changes are Made with Pure Functions: To specify how the state tree is transformed by actions, you write pure reducers. Reducers are pure functions that take the previous state and an action, and return the next state without mutating the previous state.",
+    category: "redux",
+  },
+  {
+    id: 158,
+    question: "What are Actions, Reducers, and Store in Redux?",
+    answer:
+      "Actions: Plain JavaScript objects that describe what happened in the application. They must have a 'type' property and can optionally include a payload with additional data. Example: { type: 'ADD_TODO', payload: { text: 'Learn Redux' } }\n\nReducers: Pure functions that specify how the application's state changes in response to actions. They take the current state and an action as arguments, and return a new state. Example: (state = initialState, action) => { switch(action.type) { case 'ADD_TODO': return {...state, todos: [...state.todos, action.payload]} } }\n\nStore: The object that holds the entire application state. It has methods like getState() to access state, dispatch(action) to update state, and subscribe(listener) to register change listeners. Created using createStore(reducer).",
+    category: "redux",
+  },
+  {
+    id: 159,
+    question: "What is Redux Toolkit and why should we use it?",
+    answer:
+      "Redux Toolkit (RTK) is the official, recommended way to write Redux logic. It was created to address common concerns about Redux being too complex and requiring too much boilerplate code.\n\nKey benefits:\n1. Simplifies store setup with configureStore()\n2. Reduces boilerplate with createSlice() which generates actions and reducers\n3. Built-in Immer library allows 'mutating' syntax that safely creates immutable updates\n4. Includes Redux Thunk by default for async logic\n5. Provides createAsyncThunk for handling async operations\n6. Better TypeScript support\n7. Includes Redux DevTools Extension by default\n\nExample: createSlice() combines action creators and reducers in one place, making code more maintainable and easier to write.",
+    category: "redux",
+  },
+  {
+    id: 160,
+    question: "How do you handle async operations in Redux?",
+    answer:
+      "There are several ways to handle async operations in Redux:\n\n1. Redux Thunk (most common): Allows action creators to return functions instead of action objects. The function receives dispatch and getState as arguments.\nExample: const fetchUser = (id) => async (dispatch) => { dispatch({type: 'FETCH_START'}); const data = await api.getUser(id); dispatch({type: 'FETCH_SUCCESS', payload: data}); }\n\n2. Redux Toolkit's createAsyncThunk: Simplifies async logic by automatically dispatching pending, fulfilled, and rejected actions.\nExample: const fetchUser = createAsyncThunk('users/fetch', async (userId) => { return await api.getUser(userId); })\n\n3. Redux Saga: Uses generator functions for complex async flows with better testability.\n\n4. Redux Observable: Uses RxJS observables for handling async operations with powerful operators.\n\nRedux Thunk and createAsyncThunk are the most commonly used approaches.",
+    category: "redux",
+  },
+  {
+    id: 161,
+    question: "What is the difference between Redux and Context API?",
+    answer:
+      "Redux and Context API both manage state, but they have key differences:\n\nContext API:\n- Built into React\n- Simpler to set up\n- Good for small to medium apps\n- Can cause unnecessary re-renders if not optimized\n- No built-in middleware or dev tools\n- Best for passing data through component tree\n\nRedux:\n- External library\n- More boilerplate (especially without Redux Toolkit)\n- Better for large, complex applications\n- Optimized performance with selective subscriptions\n- Rich ecosystem (middleware, dev tools, time-travel debugging)\n- Strict unidirectional data flow\n- Better for complex state logic and side effects\n\nUse Context API for simple global state like themes or user info. Use Redux for complex state management with multiple sources of updates, middleware needs, or when you need powerful debugging tools.",
+    category: "redux",
+  },
+  {
+    id: 162,
+    question: "What are Redux middleware and when would you use them?",
+    answer:
+      "Redux middleware provides a third-party extension point between dispatching an action and the moment it reaches the reducer. Middleware can:\n- Intercept actions\n- Modify actions\n- Delay actions\n- Log actions\n- Make async calls\n- Dispatch additional actions\n\nCommon middleware:\n1. Redux Thunk: Handles async logic by allowing functions as actions\n2. Redux Saga: Handles complex async flows with generators\n3. Redux Logger: Logs every action and state change\n4. Redux Promise: Handles promises in actions\n\nExample use case: Authentication middleware that intercepts every action, checks if the user is authenticated, and redirects to login if not.\n\nMiddleware is applied when creating the store: const store = createStore(reducer, applyMiddleware(thunk, logger))",
+    category: "redux",
+  },
+  {
+    id: 163,
+    question: "How does Redux DevTools help in debugging?",
+    answer:
+      "Redux DevTools is a powerful debugging tool that provides:\n\n1. Action History: See all dispatched actions in chronological order with their payloads\n2. State Inspection: View the entire state tree at any point in time\n3. Time Travel Debugging: Jump back and forth between different states by selecting actions\n4. Action Replay: Replay actions to reproduce bugs\n5. State Diff: See exactly what changed between states\n6. Action Dispatch: Manually dispatch actions for testing\n7. Export/Import: Save and load state snapshots for testing\n8. Performance Monitoring: Track performance of actions and renders\n\nTo enable it, install the browser extension and use configureStore() from Redux Toolkit (includes it by default) or add devTools enhancer to your store configuration. It's invaluable for understanding state changes and debugging complex state logic.",
+    category: "redux",
+  },
+  {
+    id: 164,
+    question: "What are selectors in Redux and why are they important?",
+    answer:
+      "Selectors are functions that extract specific pieces of data from the Redux store state. They encapsulate the logic for reading data from the store.\n\nBenefits:\n1. Encapsulation: Hide the state structure from components\n2. Reusability: Use the same selector in multiple components\n3. Memoization: With libraries like Reselect, selectors can cache results for better performance\n4. Testability: Easy to test independently of components\n5. Maintainability: If state structure changes, only update selectors\n\nExample:\nBasic selector: const selectTodos = (state) => state.todos\nMemoized selector with Reselect: const selectCompletedTodos = createSelector([selectTodos], (todos) => todos.filter(t => t.completed))\n\nUsage in component: const todos = useSelector(selectTodos)\n\nMemoized selectors only recalculate when their inputs change, preventing unnecessary renders and computations.",
+    category: "redux",
+  },
+  {
+    id: 165,
+    question: "What is the difference between useSelector and connect in Redux?",
+    answer:
+      "Both useSelector and connect are used to access Redux state in React components, but they have different approaches:\n\nuseSelector (React-Redux Hooks):\n- Function component approach\n- More flexible and concise\n- Allows multiple selectors in one component\n- Returns specific piece of state directly\n- Component re-renders when selected state changes\n- Example: const user = useSelector(state => state.user)\n\nconnect (Higher-Order Component):\n- Class or function component approach\n- More boilerplate with mapStateToProps and mapDispatchToProps\n- Wraps component in HOC\n- Better for connecting multiple props\n- Example: connect(mapStateToProps, mapDispatchToProps)(MyComponent)\n\nModern Redux development favors hooks (useSelector with useDispatch) for their simplicity and better TypeScript support. However, connect is still valid and commonly seen in legacy codebases.",
+    category: "redux",
+  },
+
+  // Socket.IO / WebSocket Questions
+  {
+    id: 166,
+    question: "What is Socket.IO and how does it differ from WebSockets?",
+    answer:
+      "Socket.IO is a JavaScript library that enables real-time, bidirectional communication between web clients and servers. While it uses WebSocket as the underlying transport when possible, it has key differences:\n\nWebSocket:\n- Native browser API\n- Raw protocol for real-time communication\n- Requires manual implementation of features\n- Limited fallback options\n- Lower-level, more control\n\nSocket.IO:\n- Library built on top of WebSocket\n- Automatic reconnection\n- Built-in fallback (HTTP long-polling if WebSocket unavailable)\n- Room and namespace support\n- Automatic JSON parsing\n- Broadcast and event-based API\n- Works across all browsers and devices\n\nSocket.IO provides a higher-level abstraction with more features out of the box, making it easier to build production-ready real-time applications. Use raw WebSocket when you need minimal overhead and full control.",
+    category: "socket",
+  },
+  {
+    id: 167,
+    question: "How do you implement real-time chat using Socket.IO?",
+    answer:
+      "Implementing real-time chat with Socket.IO involves:\n\nServer (Node.js):\n```javascript\nconst io = require('socket.io')(server);\nio.on('connection', (socket) => {\n  console.log('User connected');\n  socket.on('chat message', (msg) => {\n    io.emit('chat message', msg); // Broadcast to all\n  });\n  socket.on('disconnect', () => {\n    console.log('User disconnected');\n  });\n});\n```\n\nClient (React):\n```javascript\nimport io from 'socket.io-client';\nconst socket = io('http://localhost:3000');\n\nfunction Chat() {\n  useEffect(() => {\n    socket.on('chat message', (msg) => {\n      setMessages(prev => [...prev, msg]);\n    });\n    return () => socket.off('chat message');\n  }, []);\n\n  const sendMessage = (text) => {\n    socket.emit('chat message', text);\n  };\n}\n```\n\nKey concepts: connection/disconnection events, emitting events, listening for events, and broadcasting messages.",
+    category: "socket",
+  },
+  {
+    id: 168,
+    question: "What are Socket.IO rooms and namespaces?",
+    answer:
+      "Rooms and namespaces are Socket.IO features for organizing and segmenting socket connections:\n\nRooms:\n- Arbitrary channels that sockets can join and leave\n- Server-side only concept\n- Used to broadcast events to subsets of clients\n- Example: chat rooms, game lobbies\n```javascript\nsocket.join('room1');\nio.to('room1').emit('message', 'Hello room1');\nsocket.leave('room1');\n```\n\nNamespaces:\n- Separate communication channels over single connection\n- Both server and client concept\n- Used to separate application logic\n- Example: different sections of app (/admin, /user)\n```javascript\nconst adminNsp = io.of('/admin');\nadminNsp.on('connection', socket => {});\n// Client: const adminSocket = io('/admin');\n```\n\nDifference: Namespaces are created explicitly and exist separately. Rooms are created dynamically within namespaces. Use namespaces for major application segments and rooms for temporary groupings.",
+    category: "socket",
+  },
+  {
+    id: 169,
+    question: "How do you handle authentication with Socket.IO?",
+    answer:
+      "Socket.IO authentication can be handled in several ways:\n\n1. Token-based (JWT) - Most Common:\nClient:\n```javascript\nconst socket = io('http://localhost:3000', {\n  auth: { token: 'your-jwt-token' }\n});\n```\n\nServer:\n```javascript\nio.use((socket, next) => {\n  const token = socket.handshake.auth.token;\n  try {\n    const decoded = jwt.verify(token, SECRET);\n    socket.user = decoded;\n    next();\n  } catch (err) {\n    next(new Error('Authentication error'));\n  }\n});\n```\n\n2. Cookie-based:\nEnable cookie sharing between HTTP and Socket.IO:\n```javascript\nio.use((socket, next) => {\n  const session = parseSessionFromCookie(socket.request.headers.cookie);\n  if (session.authenticated) next();\n  else next(new Error('Not authenticated'));\n});\n```\n\n3. Query parameters (less secure):\n```javascript\nconst socket = io('http://localhost:3000?token=xyz');\n```\n\nBest practice: Use middleware to verify authentication before allowing connections, and store user info on the socket object for later use.",
+    category: "socket",
+  },
+  {
+    id: 170,
+    question: "How do you handle socket disconnections and reconnections?",
+    answer:
+      "Handling disconnections and reconnections is crucial for reliable real-time applications:\n\nClient-side:\n```javascript\nconst socket = io('http://localhost:3000', {\n  reconnection: true,\n  reconnectionDelay: 1000,\n  reconnectionAttempts: 5\n});\n\nsocket.on('connect', () => {\n  console.log('Connected:', socket.id);\n  setConnectionStatus('online');\n});\n\nsocket.on('disconnect', (reason) => {\n  console.log('Disconnected:', reason);\n  setConnectionStatus('offline');\n  if (reason === 'io server disconnect') {\n    socket.connect(); // Manual reconnect if server forced disconnect\n  }\n});\n\nsocket.on('reconnect', (attemptNumber) => {\n  console.log('Reconnected after', attemptNumber, 'attempts');\n});\n```\n\nServer-side:\n```javascript\nio.on('connection', (socket) => {\n  socket.on('disconnect', (reason) => {\n    console.log('User disconnected:', reason);\n    // Clean up user-specific data\n  });\n});\n```\n\nBest practices:\n- Show connection status to users\n- Queue messages during disconnection\n- Re-sync state after reconnection\n- Set reasonable reconnection attempts\n- Handle cleanup on server disconnect",
+    category: "socket",
+  },
+  {
+    id: 171,
+    question: "What are the common performance optimization techniques for Socket.IO?",
+    answer:
+      "Socket.IO performance optimizations:\n\n1. Use Rooms Efficiently:\n- Target specific rooms instead of broadcasting to all\n- io.to('room').emit() instead of io.emit()\n\n2. Enable Compression:\n```javascript\nconst io = require('socket.io')(server, {\n  perMessageDeflate: true\n});\n```\n\n3. Use Binary Data:\n- Send ArrayBuffers for large data like images\n- More efficient than Base64 strings\n\n4. Implement Rate Limiting:\n```javascript\nconst rateLimiter = require('socket.io-rate-limit');\nio.use(rateLimiter({ maxSockets: 100 }));\n```\n\n5. Redis Adapter for Scaling:\n```javascript\nconst redisAdapter = require('socket.io-redis');\nio.adapter(redisAdapter({ host: 'localhost', port: 6379 }));\n```\n\n6. Namespace Separation:\n- Separate high and low traffic features\n\n7. Client-side:\n- Debounce frequent events\n- Batch multiple updates\n- Clean up listeners on unmount\n\n8. Monitor and Profile:\n- Use socket.io-admin-ui for monitoring\n- Track connection count and message frequency",
+    category: "socket",
+  },
+  {
+    id: 172,
+    question: "How do you scale Socket.IO across multiple servers?",
+    answer:
+      "Scaling Socket.IO horizontally requires a message broker to sync events across servers:\n\n1. Using Redis Adapter (Most Common):\n```javascript\nconst { createAdapter } = require('@socket.io/redis-adapter');\nconst { createClient } = require('redis');\n\nconst pubClient = createClient({ host: 'localhost', port: 6379 });\nconst subClient = pubClient.duplicate();\n\nPromise.all([pubClient.connect(), subClient.connect()]).then(() => {\n  io.adapter(createAdapter(pubClient, subClient));\n});\n```\n\n2. Sticky Sessions:\nEnsure requests from same client go to same server:\n```javascript\n// Nginx configuration\nupstream io_nodes {\n  ip_hash;\n  server 127.0.0.1:3000;\n  server 127.0.0.1:3001;\n}\n```\n\n3. Using Socket.IO Cluster Adapter:\nFor same-machine scaling across CPU cores\n\n4. Architecture:\n- Multiple Node.js servers\n- Redis pub/sub for message distribution\n- Load balancer with sticky sessions\n- Shared session store (Redis)\n\nBenefits: Increased capacity, fault tolerance, load distribution. Events emitted on one server reach clients on all servers through Redis.",
+    category: "socket",
+  },
+  {
+    id: 173,
+    question: "What are Socket.IO acknowledgements and when should you use them?",
+    answer:
+      "Acknowledgements (or callbacks) in Socket.IO allow you to receive confirmation that a message was received and get a response:\n\nClient to Server:\n```javascript\n// Client\nsocket.emit('create-order', orderData, (response) => {\n  if (response.status === 'ok') {\n    console.log('Order created:', response.orderId);\n  } else {\n    console.error('Error:', response.error);\n  }\n});\n\n// Server\nsocket.on('create-order', (data, callback) => {\n  try {\n    const orderId = createOrder(data);\n    callback({ status: 'ok', orderId });\n  } catch (error) {\n    callback({ status: 'error', error: error.message });\n  }\n});\n```\n\nServer to Client:\n```javascript\n// Server\nsocket.emit('update-status', newStatus, (acknowledged) => {\n  console.log('Client acknowledged:', acknowledged);\n});\n\n// Client\nsocket.on('update-status', (status, callback) => {\n  updateUI(status);\n  callback(true);\n});\n```\n\nUse cases:\n- Confirm critical operations\n- Get data from receiver\n- Implement request-response patterns\n- Error handling\n- Transaction-like operations\n\nBest practice: Set timeouts for acknowledgements to handle non-responsive clients.",
+    category: "socket",
+  },
+  {
+    id: 174,
+    question: "How do you test Socket.IO applications?",
+    answer:
+      "Testing Socket.IO applications involves both unit and integration tests:\n\n1. Client-side Testing (Jest + React Testing Library):\n```javascript\nimport { io } from 'socket.io-client';\nimport { render, waitFor } from '@testing-library/react';\n\njest.mock('socket.io-client');\n\ntest('receives message', async () => {\n  const mockSocket = { on: jest.fn(), emit: jest.fn() };\n  io.mockReturnValue(mockSocket);\n  \n  const { getByText } = render(<Chat />);\n  \n  const messageHandler = mockSocket.on.mock.calls\n    .find(call => call[0] === 'message')[1];\n  \n  messageHandler({ text: 'Hello' });\n  \n  await waitFor(() => {\n    expect(getByText('Hello')).toBeInTheDocument();\n  });\n});\n```\n\n2. Server-side Testing:\n```javascript\nconst { createServer } = require('http');\nconst { Server } = require('socket.io');\nconst Client = require('socket.io-client');\n\ndescribe('chat server', () => {\n  let io, serverSocket, clientSocket;\n  \n  beforeAll((done) => {\n    const httpServer = createServer();\n    io = new Server(httpServer);\n    httpServer.listen(() => {\n      const port = httpServer.address().port;\n      clientSocket = new Client(`http://localhost:${port}`);\n      io.on('connection', (socket) => {\n        serverSocket = socket;\n      });\n      clientSocket.on('connect', done);\n    });\n  });\n  \n  test('should emit message', (done) => {\n    clientSocket.on('message', (data) => {\n      expect(data).toBe('hello');\n      done();\n    });\n    serverSocket.emit('message', 'hello');\n  });\n});\n```\n\n3. E2E Testing: Use Cypress or Playwright to test real-time features in browser.",
+    category: "socket",
+  },
+  {
+    id: 175,
+    question: "What are the security best practices for Socket.IO?",
+    answer:
+      "Socket.IO security best practices:\n\n1. Authentication & Authorization:\n- Always authenticate on connection\n- Verify user permissions before emitting sensitive data\n- Use JWT or session-based auth\n\n2. Validate All Input:\n```javascript\nsocket.on('message', (data) => {\n  if (!isValidMessage(data)) {\n    return socket.disconnect();\n  }\n  // Process message\n});\n```\n\n3. Rate Limiting:\n- Prevent spam and DoS attacks\n- Limit connections per IP\n- Throttle message frequency\n\n4. CORS Configuration:\n```javascript\nconst io = require('socket.io')(server, {\n  cors: {\n    origin: 'https://yourdomain.com',\n    methods: ['GET', 'POST'],\n    credentials: true\n  }\n});\n```\n\n5. Use HTTPS/WSS:\n- Encrypt all socket traffic\n- Prevent man-in-the-middle attacks\n\n6. Namespace Isolation:\n- Separate admin and user connections\n- Different authentication per namespace\n\n7. Room Access Control:\n- Verify user can join/leave rooms\n- Don't trust client-provided room names\n\n8. Sanitize Output:\n- Prevent XSS in chat applications\n- Escape HTML in messages\n\n9. Monitor & Log:\n- Track suspicious activity\n- Log authentication failures\n- Monitor connection rates\n\n10. Keep Dependencies Updated:\n- Regular security patches\n- Update Socket.IO and dependencies",
+    category: "socket",
   },
 ];
 

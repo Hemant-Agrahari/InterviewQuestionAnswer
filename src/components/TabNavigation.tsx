@@ -38,6 +38,16 @@ const tabs: { id: Question["category"]; label: string; color: string }[] = [
     label: "Output Based",
     color: "bg-green-500 hover:bg-green-600 cursor-pointer",
   },
+  {
+    id: "redux",
+    label: "Redux",
+    color: "bg-purple-500 hover:bg-purple-600 cursor-pointer",
+  },
+  {
+    id: "socket",
+    label: "Socket",
+    color: "bg-pink-500 hover:bg-pink-600 cursor-pointer",
+  },
 ];
 
 export default function TabNavigation({
