@@ -2,7 +2,15 @@ export interface Question {
   id: number;
   question: string;
   answer: string;
-  category: "html" | "css" | "javascript" | "nextjs" | "react" | "output-based" | "redux" | "socket";
+  category:
+    | "html"
+    | "css"
+    | "javascript"
+    | "nextjs"
+    | "react"
+    | "output-based"
+    | "redux"
+    | "socket";
 }
 
 export const questions: Question[] = [
@@ -1561,7 +1569,7 @@ export const questions: Question[] = [
     question:
       "What is the difference between usePathname() and useSearchParams()?",
     answer:
-      "In Next.js App Router, both usePathname() and useSearchParams() are hooks from next/navigation used to read information about the current URL. The usePathname() hook returns the current route path (for example, '/dashboard' or '/profile/settings'), making it useful when you need to know which page or route is active. On the other hand, the useSearchParams() hook allows you to read and manage the query parameters in the URL (for example, ?id=123 or ?filter=active). You can use methods like get() on the returned object to access specific parameters. In short, usePathname() is for the path part of the URL, while useSearchParams() is for the query string part.",
+      "In the Next.js App Router, both hooks come from next/navigation but serve different purposes. usePathname() returns the current URL path (like '/dashboard' or '/products/123'), which is useful for highlighting active routes or running logic based on the current page. useSearchParams() is used to read the query parameters from the URL (like ?id=10&filter=active). It provides methods such as get() to access specific values. In short, usePathname() helps you track the active route, while useSearchParams() helps you work with the URL’s query string.",
     category: "nextjs",
   },
   {
@@ -1577,20 +1585,19 @@ export const questions: Question[] = [
     category: "react",
   },
   {
-  id: 14343,
-  question: "When should you use useReducer over useState?",
-  answer:
-    "useReducer is preferred over useState when your state logic becomes complex or involves multiple related values. It helps manage state in a more structured and predictable way using actions and reducers.\n\n" +
-    "You should use useReducer when:\n" +
-    "1. The state has multiple fields that update together.\n" +
-    "2. The state transitions follow clear actions (like increment, decrement, toggle, add, remove).\n" +
-    "3. The logic becomes hard to manage with multiple useState calls.\n" +
-    "4. You want a cleaner state management pattern similar to Redux.\n" +
-    "5. The next state depends on the previous state.\n\n" +
-    "Overall, useReducer is ideal for complex or large components, while useState is better for simple and straightforward state updates.",
-  category: "react"
-}
-,
+    id: 14343,
+    question: "When should you use useReducer over useState?",
+    answer:
+      "useReducer is preferred over useState when your state logic becomes complex or involves multiple related values. It helps manage state in a more structured and predictable way using actions and reducers.\n\n" +
+      "You should use useReducer when:\n" +
+      "1. The state has multiple fields that update together.\n" +
+      "2. The state transitions follow clear actions (like increment, decrement, toggle, add, remove).\n" +
+      "3. The logic becomes hard to manage with multiple useState calls.\n" +
+      "4. You want a cleaner state management pattern similar to Redux.\n" +
+      "5. The next state depends on the previous state.\n\n" +
+      "Overall, useReducer is ideal for complex or large components, while useState is better for simple and straightforward state updates.",
+    category: "react",
+  },
   {
     id: 149,
     question:
@@ -1713,7 +1720,8 @@ export const questions: Question[] = [
   },
   {
     id: 165,
-    question: "What is the difference between useSelector and connect in Redux?",
+    question:
+      "What is the difference between useSelector and connect in Redux?",
     answer:
       "Both useSelector and connect are used to access Redux state in React components, but they have different approaches:\n\nuseSelector (React-Redux Hooks):\n- Function component approach\n- More flexible and concise\n- Allows multiple selectors in one component\n- Returns specific piece of state directly\n- Component re-renders when selected state changes\n- Example: const user = useSelector(state => state.user)\n\nconnect (Higher-Order Component):\n- Class or function component approach\n- More boilerplate with mapStateToProps and mapDispatchToProps\n- Wraps component in HOC\n- Better for connecting multiple props\n- Example: connect(mapStateToProps, mapDispatchToProps)(MyComponent)\n\nModern Redux development favors hooks (useSelector with useDispatch) for their simplicity and better TypeScript support. However, connect is still valid and commonly seen in legacy codebases.",
     category: "redux",
@@ -1757,7 +1765,8 @@ export const questions: Question[] = [
   },
   {
     id: 171,
-    question: "What are the common performance optimization techniques for Socket.IO?",
+    question:
+      "What are the common performance optimization techniques for Socket.IO?",
     answer:
       "Socket.IO performance optimizations:\n\n1. Use Rooms Efficiently:\n- Target specific rooms instead of broadcasting to all\n- io.to('room').emit() instead of io.emit()\n\n2. Enable Compression:\n```javascript\nconst io = require('socket.io')(server, {\n  perMessageDeflate: true\n});\n```\n\n3. Use Binary Data:\n- Send ArrayBuffers for large data like images\n- More efficient than Base64 strings\n\n4. Implement Rate Limiting:\n```javascript\nconst rateLimiter = require('socket.io-rate-limit');\nio.use(rateLimiter({ maxSockets: 100 }));\n```\n\n5. Redis Adapter for Scaling:\n```javascript\nconst redisAdapter = require('socket.io-redis');\nio.adapter(redisAdapter({ host: 'localhost', port: 6379 }));\n```\n\n6. Namespace Separation:\n- Separate high and low traffic features\n\n7. Client-side:\n- Debounce frequent events\n- Batch multiple updates\n- Clean up listeners on unmount\n\n8. Monitor and Profile:\n- Use socket.io-admin-ui for monitoring\n- Track connection count and message frequency",
     category: "socket",
@@ -1771,7 +1780,8 @@ export const questions: Question[] = [
   },
   {
     id: 173,
-    question: "What are Socket.IO acknowledgements and when should you use them?",
+    question:
+      "What are Socket.IO acknowledgements and when should you use them?",
     answer:
       "Acknowledgements (or callbacks) in Socket.IO allow you to receive confirmation that a message was received and get a response:\n\nClient to Server:\n```javascript\n// Client\nsocket.emit('create-order', orderData, (response) => {\n  if (response.status === 'ok') {\n    console.log('Order created:', response.orderId);\n  } else {\n    console.error('Error:', response.error);\n  }\n});\n\n// Server\nsocket.on('create-order', (data, callback) => {\n  try {\n    const orderId = createOrder(data);\n    callback({ status: 'ok', orderId });\n  } catch (error) {\n    callback({ status: 'error', error: error.message });\n  }\n});\n```\n\nServer to Client:\n```javascript\n// Server\nsocket.emit('update-status', newStatus, (acknowledged) => {\n  console.log('Client acknowledged:', acknowledged);\n});\n\n// Client\nsocket.on('update-status', (status, callback) => {\n  updateUI(status);\n  callback(true);\n});\n```\n\nUse cases:\n- Confirm critical operations\n- Get data from receiver\n- Implement request-response patterns\n- Error handling\n- Transaction-like operations\n\nBest practice: Set timeouts for acknowledgements to handle non-responsive clients.",
     category: "socket",
