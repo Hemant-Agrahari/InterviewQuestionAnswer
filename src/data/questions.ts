@@ -1794,7 +1794,7 @@ export const questions: Question[] = [
     category: "socket",
   },
   {
-    id: 175,
+    id: 175.9823,
     question: "What are the security best practices for Socket.IO?",
     answer:
       "Socket.IO security best practices:\n\n1. Authentication & Authorization:\n- Always authenticate on connection\n- Verify user permissions before emitting sensitive data\n- Use JWT or session-based auth\n\n2. Validate All Input:\n```javascript\nsocket.on('message', (data) => {\n  if (!isValidMessage(data)) {\n    return socket.disconnect();\n  }\n  // Process message\n});\n```\n\n3. Rate Limiting:\n- Prevent spam and DoS attacks\n- Limit connections per IP\n- Throttle message frequency\n\n4. CORS Configuration:\n```javascript\nconst io = require('socket.io')(server, {\n  cors: {\n    origin: 'https://yourdomain.com',\n    methods: ['GET', 'POST'],\n    credentials: true\n  }\n});\n```\n\n5. Use HTTPS/WSS:\n- Encrypt all socket traffic\n- Prevent man-in-the-middle attacks\n\n6. Namespace Isolation:\n- Separate admin and user connections\n- Different authentication per namespace\n\n7. Room Access Control:\n- Verify user can join/leave rooms\n- Don't trust client-provided room names\n\n8. Sanitize Output:\n- Prevent XSS in chat applications\n- Escape HTML in messages\n\n9. Monitor & Log:\n- Track suspicious activity\n- Log authentication failures\n- Monitor connection rates\n\n10. Keep Dependencies Updated:\n- Regular security patches\n- Update Socket.IO and dependencies",
