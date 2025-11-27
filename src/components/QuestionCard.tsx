@@ -18,6 +18,8 @@ export default function QuestionCard({ question, index }: QuestionCardProps) {
     nextjs: 'border-black dark:border-gray-400 bg-gray-50 dark:bg-gray-900/20',
     react: 'border-cyan-500 bg-cyan-50 dark:bg-cyan-950/20',
     'output-based': 'border-green-500 bg-green-50 dark:bg-green-950/20',
+    redux: 'border-purple-500 bg-purple-50 dark:bg-purple-950/20',
+    socket: 'border-indigo-500 bg-indigo-50 dark:bg-indigo-950/20',
   };
 
   const categoryTextColors = {
@@ -27,6 +29,8 @@ export default function QuestionCard({ question, index }: QuestionCardProps) {
     nextjs: 'text-gray-900 dark:text-gray-100',
     react: 'text-cyan-700 dark:text-cyan-300',
     'output-based': 'text-green-700 dark:text-green-300',
+    redux: 'text-purple-700 dark:text-purple-300',
+    socket: 'text-indigo-700 dark:text-indigo-300',
   };
 
   return (
