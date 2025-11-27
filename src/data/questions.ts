@@ -434,7 +434,7 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 27,
+    id: 270,
     question: "What are the callback functions in JavaScript?",
     answer:
       "A callback is simply a function that you pass as an argument to another function, and it gets executed later - either after some task completes or when a specific event happens.",
@@ -1117,7 +1117,7 @@ export const questions: Question[] = [
   },
   // Next.js Questions
   {
-    id: 106,
+    id: 271,
     question: "What is Next.js and why use it?",
     answer:
       "Next.js is a React framework that provides features like server-side rendering (SSR), static site generation (SSG), API routes, automatic code splitting, and file-based routing. It improves performance, SEO, and developer experience while simplifying React application development.",
@@ -1487,7 +1487,7 @@ export const questions: Question[] = [
     category: "nextjs",
   },
   {
-    id: 139,
+    id: 272,
     question:
       "How would you handle environment variables in a Next.js application?",
     answer:
@@ -1495,7 +1495,7 @@ export const questions: Question[] = [
     category: "nextjs",
   },
   {
-    id: 140,
+    id: 273,
     question: "How do you handle API routes in a Next.js application?",
     answer:
       "You can use the next/api package to handle API routes in a Next.js application. You can create a custom API route by creating a api.js file in the pages directory. This file will be rendered when a user visits the API route. You can also create a custom API route for specific errors by creating a error.js file in the pages directory. This file will be rendered when a specific error occurs.",
@@ -1818,21 +1818,21 @@ export const questions: Question[] = [
     category: "typescript",
   },
   {
-    id: 201,
+    id: 274,
     question: "What is the difference between 'interface' and 'type' in TypeScript?",
     answer:
       "In my daily work, I use both but for different purposes. Here's how I decide:\n\nI use Interface when:\n- Defining object shapes, especially for classes\n- Working with OOP patterns\n- Need declaration merging (like extending third-party types)\n- Building public APIs\n\nI use Type when:\n- Creating unions or intersections\n- Working with primitives or tuples\n- Need computed properties\n- Creating utility types\n\nReal Examples from my projects:\n```typescript\n// Interface - API response\ninterface User {\n  id: string;\n  name: string;\n  email: string;\n}\n\n// Can extend library types\ninterface User {\n  createdAt: Date; // Declaration merging\n}\n\n// Type - Complex types\ntype Status = 'pending' | 'active' | 'inactive'; // Union\ntype ID = string | number; // Flexible\ntype ApiResponse<T> = {\n  data: T;\n  error?: string;\n};\n\n// Type for function signatures\ntype EventHandler = (event: Event) => void;\n\n// Intersection types\ntype UserWithRole = User & { role: string };\n```\n\nPractical Rule: I default to interface for objects and type for everything else. Both work fine for simple objects, so consistency in the codebase matters more than strict rules.",
     category: "typescript",
   },
   {
-    id: 202,
+    id: 275,
     question: "Explain TypeScript Generics with examples",
     answer:
       "Generics let me write reusable code that works with multiple types while keeping type safety. I use them daily in API calls, React components, and utility functions.\n\nReal-world API example I use:\n```typescript\n// Generic API response handler\ninterface ApiResponse<T> {\n  data: T;\n  status: number;\n  message?: string;\n}\n\nasync function fetchData<T>(url: string): Promise<ApiResponse<T>> {\n  const response = await fetch(url);\n  return response.json();\n}\n\n// Type-safe usage\nconst users = await fetchData<User[]>('/api/users');\nconst product = await fetchData<Product>('/api/product/1');\n```\n\nGeneric React Component I created:\n```typescript\ninterface SelectProps<T> {\n  options: T[];\n  value: T;\n  onChange: (value: T) => void;\n  getLabel: (item: T) => string;\n}\n\nfunction Select<T>({ options, value, onChange, getLabel }: SelectProps<T>) {\n  return (\n    <select value={getLabel(value)} onChange={(e) => { /* ... */ }}>\n      {options.map(opt => <option key={getLabel(opt)}>{getLabel(opt)}</option>)}\n    </select>\n  );\n}\n```\n\nUtility function with constraints:\n```typescript\n// Only accept objects with an 'id' property\nfunction findById<T extends { id: string }>(items: T[], id: string): T | undefined {\n  return items.find(item => item.id === id);\n}\n\nconst user = findById(users, '123'); // Type-safe\n```\n\nThis approach has saved me from many runtime errors when working with different data types.",
     category: "typescript",
   },
   {
-    id: 203,
+    id: 276,
     question: "What are TypeScript Utility Types?",
     answer:
       "Utility types are TypeScript's built-in helpers that I use constantly to transform types. Here are the ones I use most in my daily work:\n\n1. Partial<T> - For update functions:\n```typescript\ninterface User {\n  id: string;\n  name: string;\n  email: string;\n  age: number;\n}\n\n// Update only some fields\nfunction updateUser(id: string, updates: Partial<User>) {\n  // Can pass { name: 'John' } without other fields\n}\n```\n\n2. Pick<T, K> - For DTOs:\n```typescript\n// Only send specific fields to frontend\ntype UserDTO = Pick<User, 'id' | 'name' | 'email'>;\n```\n\n3. Omit<T, K> - For creating new entities:\n```typescript\n// Remove id when creating new user (DB generates it)\ntype CreateUserInput = Omit<User, 'id'>;\n```\n\n4. Record<K, T> - For maps and lookups:\n```typescript\n// Form validation errors\ntype ValidationErrors = Record<string, string>;\nconst errors: ValidationErrors = {\n  email: 'Invalid email',\n  password: 'Too short'\n};\n```\n\n5. ReturnType<T> - Extract function return types:\n```typescript\nfunction fetchUser() {\n  return { id: '1', name: 'John', role: 'admin' };\n}\n\ntype User = ReturnType<typeof fetchUser>;\n// No need to define interface separately!\n```\n\n6. Required<T> & Readonly<T>:\n```typescript\n// Config that can't be modified\ntype Config = Readonly<{\n  apiUrl: string;\n  timeout: number;\n}>;\n```\n\nThese have reduced boilerplate code significantly in my projects.",
