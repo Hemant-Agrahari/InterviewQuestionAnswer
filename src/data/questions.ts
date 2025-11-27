@@ -425,7 +425,13 @@ export const questions: Question[] = [
       "Event Delegation is a technique where instead of attaching event listeners to individual elements, you attach a single listener to a parent element and use event bubbling to handle events from child elements.",
     category: "javascript",
   },
-
+  {
+    id: 3034645677788,
+    question: "What is webpack and turbopack in JavaScript?",
+    answer:
+      "Webpack: Webpack is a module bundler that bundles JavaScript files for usage in a browser. It resolves dependencies and packages them into a single file \n\n Turbopack: Turbopack is a faster alternative to Webpack that uses Rust for faster builds. It is designed to be 20x faster than Webpack and 100x faster than other bundlers.",
+    category: "javascript",
+  },
   {
     id: 27,
     question: "What are the different data types in JavaScript?",
