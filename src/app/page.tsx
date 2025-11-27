@@ -20,7 +20,7 @@ export default function Home() {
             </div>
           </div>
           <h1 className="text-6xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4 drop-shadow-sm" style={{ fontFamily: 'var(--font-poppins)' }}>
-            Interview Questions & Answers
+          Coding Questions & Answers for Frontend Development
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Master frontend development with <span className="font-semibold text-indigo-600 dark:text-indigo-400">115+ curated</span> questions

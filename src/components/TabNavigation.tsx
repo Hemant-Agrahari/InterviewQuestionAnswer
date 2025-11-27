@@ -24,6 +24,11 @@ const tabs: { id: Question["category"]; label: string; color: string }[] = [
     color: "bg-yellow-500 hover:bg-yellow-600 cursor-pointer",
   },
   {
+    id: "typescript",
+    label: "TypeScript",
+    color: "bg-blue-600 hover:bg-blue-700 cursor-pointer",
+  },
+  {
     id: "nextjs",
     label: "Next.js",
     color: "bg-black hover:bg-gray-800 cursor-pointer",
