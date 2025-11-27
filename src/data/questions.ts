@@ -422,7 +422,7 @@ export const questions: Question[] = [
     id: 30346,
     question: "What is Event Delegation in JavaScript?",
     answer:
-      "Event Delegation is a technique where instead of adding event listeners to many child elements, we add a single listener to a common parent. The event bubbles up from the child to the parent, and the parent decides which element triggered it. This improves performance, reduces memory usage, and makes handling dynamic elements easier.",
+      "Event Delegation is a technique where instead of attaching event listeners to individual elements, you attach a single listener to a parent element and use event bubbling to handle events from child elements.",
     category: "javascript",
   },
 
@@ -431,6 +431,13 @@ export const questions: Question[] = [
     question: "What are the different data types in JavaScript?",
     answer:
       "JavaScript has 8 data types divided into Primitive and Non-Primitive. \n\n Primitives (7): \n\n 1.Number (integers and floats), \n\n 2.String (text), \n\n 3.Boolean (true/false), \n\n 4.Undefined (declared but not assigned), \n\n 5.Null (intentional empty value), \n\n 6.Symbol (unique identifiers), \n\n 7.BigInt (large integers). \n\n Non-Primitive \n\n(1): Object (includes objects, arrays, functions, dates). \n\nNote:Primitives are immutable and stored by value, while objects are mutable and stored by reference.",
+    category: "javascript",
+  },
+  {
+    id: 27,
+    question: "What are the callback functions in JavaScript?",
+    answer:
+      "A callback is simply a function that you pass as an argument to another function, and it gets executed later - either after some task completes or when a specific event happens.",
     category: "javascript",
   },
   {
@@ -1421,7 +1428,7 @@ export const questions: Question[] = [
     category: "react",
   },
   {
-    id: 139.904646,
+    id: 139,
     question: "How does caching work in Next.js?",
     answer:
       "Next.js uses a built-in caching system to speed up data fetching, reduce API calls, and improve performance.\n\n" +
