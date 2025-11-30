@@ -31,10 +31,10 @@ export const questions: Question[] = [
     category: "html",
   },
   {
-    id: 3,
+    id: 3.64,
     question: "What is the difference between HTML and HTML5?",
     answer:
-      "Aspect\tHTML\tHTML5\nDoctype\tLong & complex\tSimple: <!DOCTYPE html>\nMultimedia\tNeeds plugins (Flash)\t<audio>, <video>\nGraphics\tNo native support\t<canvas>, <svg>\nForms\tBasic inputs\tNew inputs: email, date, etc.\nSemantic Tags\tUses <div> mostly\t<header>, <footer>, <article>\nAPIs\tNone\tGeolocation, Web Storage, etc.",
+      "HTML is the standard markup language used to structure web pages, while HTML5 is the latest and more advanced version with modern features.\n\n🔵 HTML (Older Version):\n- No support for audio and video tags.\n- Relies on external plugins (Flash, Silverlight) for media.\n- Limited semantic tags.\n- No built-in support for offline storage.\n\n🟣 HTML5 (Latest Version):\n- Introduced new semantic tags like header, footer, nav, article, section.\n- Supports audio and video without plugins.\n- Added new form input types: email, date, number, range.\n- Introduced canvas and svg for graphics and animations.\n- Provides localStorage and sessionStorage for offline data.\n- Better performance and faster loading.\n\n🟡 Key Difference:\nHTML5 is more powerful, supports multimedia, provides semantic structure, and improves performance without relying on external plugins.\n\nIn short: HTML5 is the upgraded, modern version of HTML with new tags, media support, storage APIs, and better browser capabilities.",
     category: "html",
   },
   {
@@ -45,17 +45,17 @@ export const questions: Question[] = [
     category: "html",
   },
   {
-    id: 3.2,
-    question: "What are the new semantic tags in HTML5?",
+    id: 6765,
+    question: "What are Semantic Tags in HTML?",
     answer:
-      "New semantic tags in HTML5 include: \n1.header, \n2.footer, \n3.article, \n4.section, \n5.aside, and \n6.nav. These tags provide more meaning to the structure of the web page and improve accessibility and SEO.",
+      "Semantic tags are HTML elements that clearly describe their meaning and purpose to both the browser and developers. Instead of generic divs, semantic tags provide structure and improve accessibility, SEO, and readability.\n\n🔵 Examples of Semantic Tags:\n- header → Defines the top section of a page.\n- nav → Holds navigation links.\n- section → Represents a section of content.\n- article → Represents self-contained content.\n- aside → Sidebar or related content.\n- footer → Bottom section of the page.\n- main → Represents the main content of the document.\n- figure & figcaption → Used for images with captions.\n\n🟣 Why Semantic Tags Are Important:\n- Improve SEO because search engines understand content better.\n- Improve accessibility for screen readers.\n- Make code cleaner, structured, and easier to maintain.\n- Help browsers understand layout and meaning.\n\nIn short: Semantic tags describe the purpose of content, making webpages more meaningful, accessible, and SEO-friendly.",
     category: "html",
   },
   {
-    id: 3.3,
-    question: "What is HTML tag?",
+    id: 99.66,
+    question: "What are HTML tags?",
     answer:
-      "HTML tag is used to define the structure of the web page. It is a container for the content of the web page. It is a pair of opening and closing tags. The opening tag is used to define the start of the content and the closing tag is used to define the end of the content. The content is the text that is displayed on the web page. \n\nExample: <html> <body> <h1>Hello World</h1> </body> </html>",
+      "HTML tags are predefined keywords enclosed in angle brackets (< >) that tell the browser how to structure and display content on a webpage. Every tag has a specific meaning and purpose.\n\n🔵 Types of HTML Tags:\n1. Structural Tags: <html>, <head>, <body>\n2. Text Formatting Tags: <h1> to <h6>, <p>, <span>, <strong>, <em>\n3. Media Tags: <img>, <video>, <audio>\n4. Link & Navigation Tags: <a>, <nav>\n5. List Tags: <ul>, <ol>, <li>\n6. Table Tags: <table>, <tr>, <td>, <th>\n7. Form Tags: <form>, <input>, <label>, <button>, <select>\n8. Semantic Tags: <header>, <footer>, <section>, <article>, <aside>, <main>\n\n🟣 How HTML Tags Work:\n- Most tags have an opening tag and a closing tag.\n  Example: <p>Content</p>\n- Some are self-closing.\n  Example: <img />, <br />, <input />\n\n🟡 Key Point:\nHTML tags give structure and meaning to content so browsers know how to present it.\n\nIn short: HTML tags are building blocks of a webpage that define structure, layout, and content.",
     category: "html",
   },
   {
@@ -66,10 +66,10 @@ export const questions: Question[] = [
     category: "html",
   },
   {
-    id: 3.5,
-    question: "What is HTML element?",
+    id: 6.877777,
+    question: "What is an HTML Element?",
     answer:
-      "HTML element is used to define the structure of the web page. It is a pair of opening and closing tags. The opening tag is used to define the start of the content and the closing tag is used to define the end of the content. The content is the text that is displayed on the web page. \n\nExample: <html> <body> <h1>Hello World</h1> </body> </html> html, body, h1 are elements of the html tag.",
+      "An HTML element is the complete structure created by an opening tag, its content, and a closing tag. It represents a piece of content on a webpage such as a paragraph, heading, image, link, or button.\n\nExample:\n<p>Hello World</p>\nHere, <p> is the opening tag, 'Hello World' is the content, and </p> is the closing tag. Together they form an HTML element.\n\n🟣 Types of HTML Elements:\n- Block-level elements: <div>, <p>, <h1>, <section>, <article>\n- Inline elements: <span>, <a>, <img>, <strong>, <em>\n\n🟡 Key Points:\n- Elements define the structure and meaning of content.\n- Most elements have opening and closing tags, but some are self-closing like <img />, <br />, <hr />.\n\nIn short: An HTML element is the complete unit of a tag and its content, used to build and structure a webpage.",
     category: "html",
   },
   {
@@ -123,18 +123,26 @@ export const questions: Question[] = [
     category: "html",
   },
   {
-    id: 4,
-    question: "What is the use of head tag?",
+    id: 1000.68,
+    question: "What is the difference between <link> and <a> tag in HTML?",
     answer:
-      "The <head> tag in HTML is used to hold metadata and resources about the web page that are not directly displayed to the user. It can include things like the page <title>, links to CSS stylesheets, JavaScript files, meta tags for SEO and responsiveness, favicons, and other information needed for the browser and search engines. In short, the <head> acts as the configuration section of the web page—helping with styling, behavior, and optimization—while the <body> is for the actual visible content.",
+      'Both <link> and <a> are used for linking, but they serve completely different purposes.\n\n🔵 <link> Tag:\n- Used to link external resources to the HTML document.\n- Does NOT create a clickable link.\n- Commonly used in the <head> section.\n- Used for stylesheets, icons, preloading, fonts, etc.\n\nExample:\n<link rel="stylesheet" href="style.css" />\n\n🟣 <a> Tag:\n- Used to create clickable hyperlinks.\n- Navigates to external pages, internal pages, phone calls, emails, or sections within the same page.\n- Placed inside the body.\n\nExample:\n<a href="https://google.com">Visit Google</a>\n\n🟡 Key Difference:\n- <link> attaches external resources to the page.\n- <a> allows the user to click and navigate.\n\nIn short: <link> is for loading resources, while <a> is for creating clickable links.',
     category: "html",
   },
   {
-    id: 5,
-    question: "What is the difference between async and defer?",
+    id: 69090900999,
+    question: "What is the <head> tag in HTML?",
     answer:
-      "In HTML, both async and defer are attributes used when loading external JavaScript files with the <script> tag, and both help improve page performance by preventing the script from blocking HTML parsing. \n\nasync: The script is downloaded in parallel with the HTML parsing and executes immediately once it's ready, even if the HTML is still being parsed. This means scripts load faster, but execution order is not guaranteed if multiple async scripts are used. \n\ndefer: The script is also downloaded in parallel but executes only after the HTML is fully parsed, and in the order they appear in the document. This ensures scripts don't interfere with rendering and maintain predictable execution order. Use async for independent scripts (like analytics) and defer for scripts that rely on the DOM structure or need to run in sequence.",
+      'The <head> tag is a container that holds important metadata and configuration information about the webpage. It does not display anything on the page but provides instructions to the browser.\n\n🔵 What <head> Contains:\n- <title> → Page title shown in the browser tab.\n- <meta> → SEO, charset, viewport, description, keywords.\n- <link> → External CSS, fonts, icons.\n- <style> → Internal CSS.\n- <script> → JS files (optional when placed in head).\n- <base> → Base URL for all relative links.\n\n🟣 Why <head> Is Important:\n- Helps search engines understand the page (SEO).\n- Helps browsers render content correctly.\n- Loads styles, fonts, and metadata.\n- Controls responsive design using viewport.\n\nExample:\n<head>\n  <title>My Website</title>\n  <meta charset="UTF-8" />\n  <link rel="stylesheet" href="style.css" />\n</head>\n\nIn short: The <head> tag stores metadata and resources required for the webpage but does not show visible content to the user.',
     category: "html",
+  },
+  {
+    id: 70.98754333333,
+    question:
+      "What is the difference between async and defer in JavaScript script loading?",
+    answer:
+      'async and defer are attributes used in the <script> tag to control how external JavaScript files load and execute, improving page performance.\n\n🔵 async:\n- Script downloads in parallel while the HTML is parsing.\n- Script executes immediately after download (execution can interrupt HTML parsing).\n- Order of execution is NOT guaranteed.\n- Best for independent scripts like analytics or ads.\n\nExample:\n<script src="app.js" async></script>\n\n🟣 defer:\n- Script downloads in parallel while the HTML is parsing.\n- Script executes ONLY after the entire HTML is parsed.\n- Execution order IS guaranteed (in the same order as scripts appear).\n- Best for scripts that depend on DOM or need proper sequence.\n\nExample:\n<script src="main.js" defer></script>\n\n🟡 Key Difference:\n- async → Downloads in parallel, executes immediately → no order guarantee.\n- defer → Downloads in parallel, executes after HTML → execution order guaranteed.\n\nIn short: Use async for independent scripts and defer for scripts that rely on proper load order and DOM parsing.',
+    category: "javascript",
   },
   {
     id: 6,
@@ -144,11 +152,10 @@ export const questions: Question[] = [
     category: "html",
   },
   {
-    id: 7,
-    question:
-      "What is the difference between block level and inline element in HTML?",
+    id: 71,
+    question: "What is the difference between inline and block elements?",
     answer:
-      "In HTML, elements are broadly classified as block-level and inline elements based on how they behave in the document flow. \n\nBlock-level elements always start on a new line, take up the full width available (by default), and can contain other block-level and inline elements. Examples: <div>, <p>, <section>, <header>, <article>. \n\nInline elements do not start on a new line, only take up as much width as their content requires, and are usually used for styling or small parts of text. Examples: <span>, <a>, <strong>, <em>, <img>.",
+      "Inline and block elements are two types of HTML elements that behave differently in layout.\n\n🔵 Block Elements:\n- Always start on a new line.\n- Take full width available (100% width).\n- Can have margin, padding, width, and height.\n- Used for structuring page layouts.\n\nExamples: <div>, <p>, <h1> to <h6>, <section>, <article>, <ul>, <li>\n\n🟣 Inline Elements:\n- Do NOT start on a new line.\n- Take only the space required by their content.\n- Width and height cannot be set.\n- Best for styling small parts inside a block.\n\nExamples: <span>, <a>, <img>, <strong>, <em>, <label>\n\n🟡 Key Difference:\n- Block elements create a full-width block; inline elements sit inside a line.\n\nIn short: Block elements start on a new line and take full width, while inline elements stay in the same line and take only required space.",
     category: "html",
   },
   {
@@ -159,39 +166,32 @@ export const questions: Question[] = [
     category: "html",
   },
   {
-    id: 9,
+    id: 123472,
     question: "What is the difference between <div> and <span>?",
     answer:
-      "<div> (Division) is a block-level element used to group larger chunks of content or layout sections. It always starts on a new line and takes full width by default \n\n(example: wrapping a section of a webpage like a header or sidebar). \n\n<span> is an inline element used to style or group small portions of text or inline content. It does not start on a new line and only takes as much width as its content (example: highlighting a single word inside a paragraph). In short: <div> = structural grouping (block), <span> = inline styling or grouping (inline).",
+      "<div> and <span> are two common HTML elements, but they are used for different purposes based on layout behavior.\n\n🔵 <div> (Block Element):\n- A block-level element.\n- Starts on a new line.\n- Takes full width of the container.\n- Used to create large sections, layouts, or container blocks.\n- Can have width, height, margin, padding.\n\nExample:\n<div>This is a block element</div>\n\n🟣 <span> (Inline Element):\n- An inline element.\n- Does NOT start on a new line.\n- Takes only the space required by its content.\n- Used to style or wrap small text portions inside a block.\n- Width and height cannot be applied.\n\nExample:\n<p>This is a <span>highlighted</span> text.</p>\n\n🟡 Key Difference:\n- <div> is for block-level structure and layout.\n- <span> is for inline styling or small text grouping.\n\nIn short: Use <div> for layout blocks and <span> for inline text styling.",
     category: "html",
   },
   {
-    id: 10,
-    question: "What is the difference between HTML tags and attributes?",
-    answer:
-      "Tags define the structure and elements of a webpage, usually coming in pairs with an opening tag and closing tag. Example: <h1>Heading</h1> - here <h1> is the tag that defines a heading element. \n\nAttributes : Attributes provide additional information or properties about an element, always written inside the opening tag as name='value'. Example: <img src='image.jpg' alt='My Image'> - here src and alt are attributes that describe the image. In short: Tags = define the element, Attributes = define the element's behavior or properties.",
-    category: "html",
-  },
-  {
-    id: 11,
-    question: "What is the difference between id and class?",
-    answer:
-      "Id:id is used to uniquely identify a single element on a page and should not be repeated within the same document. It's typically used for targeting specific elements (e.g., with JavaScript or anchor links). Example: <div id='header'></div>. \n\nClass: class is used to group multiple elements with the same style or behavior, can be applied to many elements on the same page, and is commonly used for styling with CSS or applying shared JavaScript functionality. Example: <div class='card'></div> <p class='card'></p>. In short: id = unique identifier (one element), class = reusable style/behavior (many elements).",
-    category: "html",
-  },
-  {
-    id: 12,
+    id: 1234.78973,
     question:
-      "Why do we use meta tags in HTML? (e.g., viewport, charset, description)",
+      "What is the difference between an HTML Tag and an HTML Attribute?",
     answer:
-      "Meta tags in HTML provide metadata - information about the web page that isn't directly visible to users but is important for browsers, search engines, and social platforms.\n\n Common examples: charset defines the character encoding (e.g., UTF-8) so the page displays special characters correctly; viewport controls how the page is displayed on mobile devices, making it responsive; description provides a summary of the page content, often shown in search engine results; keywords (older use, less relevant now) specifies keywords for SEO; author defines the author of the document. Meta tags help with proper rendering, SEO optimization, accessibility, and responsiveness.",
+      'HTML tags and attributes are both essential parts of HTML, but they serve different purposes.\n\n🔵 HTML Tag:\n- Tags define the structure and content of a webpage.\n- They tell the browser what to display.\n- Tags usually come in pairs: opening and closing.\n- Examples: <p>, <h1>, <div>, <img>, <a>\n\nExample:\n<p>Hello World</p>\n\n🟣 HTML Attribute:\n- Attributes provide additional information or behavior to a tag.\n- They are written inside the opening tag.\n- They modify how an element behaves or appears.\n- Examples: id, class, src, href, alt, style\n\nExample:\n<img src="image.jpg" alt="sample image" />\n\n🟡 Key Difference:\n- Tags define elements.\n- Attributes add extra details to those elements.\n\nIn short: A tag creates an element, and an attribute adds more information to that element.',
     category: "html",
   },
   {
-    id: 13,
-    question: "What is the difference between <link> and <a> tag?",
+    id: 7.7664,
+    question: "What is the difference between id and class in HTML?",
     answer:
-      "Link: <link> tag is used to define a relationship between the current HTML document and an external resource, most commonly used to link external stylesheets (<link rel='stylesheet' href='style.css'>). It's always placed inside the <head> and doesn't create clickable links for users - it's for the browser.\n\n <a> tag (anchor) is used to create hyperlinks that users can click to navigate to another page, section, or resource. Example: <a href='about.html'>About Us</a>. It's placed in the <body> since it's part of visible content.",
+      'id and class are both HTML attributes used for identifying and styling elements, but they serve different purposes.\n\n🔵 id:\n- Used to uniquely identify a single element.\n- Must be unique within the entire page (only one element can have a specific id).\n- Used for JavaScript targeting and linking within the page.\n- CSS selector: #idName\n\nExample:\n<div id="header"></div>\n\n🟣 class:\n- Used to style multiple elements with the same design.\n- Can be reused on many elements.\n- One element can have multiple classes.\n- CSS selector: .className\n\nExample:\n<div class="box highlight"></div>\n\n🟡 Key Difference:\n- id = unique identifier for one element.\n- class = reusable styling applied to multiple elements.\n\nIn short: Use id for unique elements, and class for styling or grouping multiple elements.',
+    category: "html",
+  },
+  {
+    id: 9009975,
+    question: "What are Meta Tags in HTML?",
+    answer:
+      'Meta tags are HTML elements placed inside the <head> section to provide metadata (information about the webpage) to browsers and search engines. They do not appear on the page but help with SEO, responsiveness, and browser behavior.\n\n🔵 Common Meta Tags:\n1. <meta charset="UTF-8"> → Defines character encoding.\n2. <meta name="viewport" content="width=device-width, initial-scale=1.0"> → Makes the site responsive on mobile.\n3. <meta name="description" content="This is my website"> → Improves SEO by describing the page.\n4. <meta name="keywords" content="HTML, CSS, JavaScript"> → Provides search keywords (less used now).\n5. <meta name="author" content="Hemant"> → Specifies the page author.\n6. <meta http-equiv="refresh" content="5"> → Refreshes the page after a given time.\n\n🟣 Why Meta Tags Are Important:\n- Improve SEO ranking.\n- Help search engines understand content.\n- Control browser behavior.\n- Make webpages mobile-friendly.\n- Provide metadata for social media previews.\n\nIn short: Meta tags store important information about the webpage for browsers, SEO, and social platforms.',
     category: "html",
   },
   {
@@ -219,18 +219,18 @@ export const questions: Question[] = [
 
   // CSS Questions
   {
-    id: 16,
+    id: 12098776,
     question: "What is the CSS Box Model?",
     answer:
-      "The CSS Box Model describes how elements are rendered on a page. It consists of four parts: \n\n 1.Content (the actual content), \n\n 2.Padding (space around content), \n\n 3.Border (surrounds the padding), and \n\n 4.Margin (space outside the border). The total width/height includes all these layers.",
+      "The CSS Box Model is a fundamental concept that describes how every HTML element is structured and how space is calculated on a webpage. Every element is treated as a rectangular box consisting of four layers.\n\n🔵 Layers of the Box Model:\n1. Content → The actual text or image inside the box.\n2. Padding → Space around the content (inside the box).\n3. Border → The line surrounding the padding and content.\n4. Margin → Space outside the border, separating the element from others.\n\n🟣 Visual Representation:\n[ Margin ]\n  [ Border ]\n    [ Padding ]\n      [ Content ]\n\n🟡 Example:\n.box {\n  width: 200px;\n  padding: 10px;\n  border: 2px solid black;\n  margin: 20px;\n}\n\nTotal width = content + padding + border + margin\nTotal width = 200 + 20 + 4 + 40 = 264px\n\nIn short: The CSS Box Model explains how size and spacing of elements are calculated using content, padding, border, and margin.",
     category: "css",
   },
   {
-    id: 17,
+    id: 12.09977,
     question:
-      "What is the difference between 'position: relative', 'absolute', 'fixed', and 'sticky'?",
+      "What is the difference between static, relative, absolute, and fixed positioning in CSS?",
     answer:
-      "relative: positioned relative to its normal position.\n\n absolute: positioned relative to nearest positioned ancestor.\n\n fixed: positioned relative to viewport, stays in place when scrolling.\n\n sticky: toggles between relative and fixed based on scroll position.",
+      "CSS positioning defines how an element is placed in the document. These four values control how the browser calculates element position.\n\n🔵 static:\n- Default position for all elements.\n- Elements are placed in normal document flow.\n- top, left, right, bottom have no effect.\n\n🟣 relative:\n- Positioned relative to its original place.\n- top, left, right, bottom move the element WITHOUT removing it from the normal flow.\n- Often used as a parent for absolutely positioned children.\n\nExample:\n.relativeBox { position: relative; top: 10px; left: 20px; }\n\n🔴 absolute:\n- Removed from normal flow.\n- Positioned relative to the nearest positioned ancestor (not static).\n- If no positioned parent exists, it uses the body.\n\nExample:\n.absoluteBox { position: absolute; top: 0; right: 0; }\n\n🟡 fixed:\n- Positioned relative to the viewport (browser window).\n- Stays fixed even when the page scrolls.\n- Commonly used for sticky headers, chat buttons, and navbars.\n\nExample:\n.fixedBox { position: fixed; bottom: 20px; right: 20px; }\n\n🟠 Key Differences:\n- static → normal flow, no movement.\n- relative → moves relative to original position.\n- absolute → removed from flow, positioned relative to parent.\n- fixed → stays in same place during scrolling.\n\nIn short: relative moves inside flow, absolute positions outside flow, fixed sticks to the screen, and static is the default position.",
     category: "css",
   },
   {
@@ -242,16 +242,17 @@ export const questions: Question[] = [
     category: "css",
   },
   {
-    id: 18,
-    question: "Explain Flexbox and its main properties.",
+    id: 199078,
+    question: "What is Flexbox in CSS?",
     answer:
-      "Flexbox is a one-dimensional layout method for arranging items in rows or columns. Main properties include: \n\n 1.display: flex (enables flexbox), \n\n 2.flex-direction (row/column), \n\n 3.justify-content (main axis alignment), \n\n 4.align-items (cross axis alignment), \n\n 5.flex-wrap (wrapping behavior), and \n\n 6.gap (spacing between items).",
+      "Flexbox (Flexible Box Layout) is a CSS layout system designed to align, distribute, and position elements easily inside a container. It helps build responsive layouts without using floats or complex positioning.\n\n🔵 How Flexbox Works:\nFlexbox has two main parts:\n1. Flex Container → The parent element (display: flex)\n2. Flex Items → The children inside the container\n\n🟣 Common Flexbox Properties:\nOn the Container:\n- display: flex → Activates flexbox\n- flex-direction → row, row-reverse, column, column-reverse\n- justify-content → Aligns items horizontally (center, space-between, space-around)\n- align-items → Aligns items vertically (center, flex-start, flex-end)\n- flex-wrap → Wrap items onto multiple lines\n\nOn the Items:\n- flex-grow → How much an item expands\n- flex-shrink → How much an item shrinks\n- flex-basis → Initial size of item\n- align-self → Align a single item\n\n🟡 Example:\n.container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n🟠 Why Flexbox Is Useful:\n- Easy horizontal & vertical centering\n- Smooth responsive design\n- Flexible spacing between elements\n- No need for floats or complicated CSS\n\nIn short: Flexbox is a powerful layout system that helps align and position elements easily in both directions and makes responsive design much simpler.",
     category: "css",
   },
   {
-    id: 18.1,
-    question: "Expalin flex shorthand property:\n\n flex:  flex: 1 0 200px;",
-    answer: "flex: <flex-grow> <flex-shrink> <flex-basis>;",
+    id: 79.88888888888,
+    question: "What is the flex shorthand property in CSS?",
+    answer:
+      "The flex shorthand property in CSS is used to set flex-grow, flex-shrink, and flex-basis in a single line. Instead of writing all three properties separately, flex lets you define how an item grows, shrinks, and what its initial size should be.\n\n🔵 Syntax:\nflex: <flex-grow> <flex-shrink> <flex-basis>;\n\n🟣 Example:\nflex: 1 0 200px;\nHere,\n- flex-grow: 1 → Item can grow if space is available.\n- flex-shrink: 0 → Item will not shrink.\n- flex-basis: 200px → Initial size is 200px.\n\n🟡 Common Shorthands:\n1. flex: 1;\n   → flex-grow: 1, flex-shrink: 1, flex-basis: 0\n\n2. flex: 0 1 auto;\n   → Default behavior (item shrinks but does not grow)\n\n3. flex: 1 1 auto;\n   → Item grows and shrinks based on available space\n\n🟠 Why Flex Shorthand Is Useful:\n- Makes code shorter and cleaner\n- Controls item resizing behavior quickly\n- Helps build responsive layouts easily\n\nIn short: flex shorthand sets grow, shrink, and basis in one line, controlling how flex items expand or shrink inside a flex container.",
     category: "css",
   },
   {
@@ -263,31 +264,31 @@ export const questions: Question[] = [
     category: "css",
   },
   {
-    id: 19,
-    question: "What is CSS Grid and when would you use it?",
+    id: 987567876680,
+    question: "What is CSS Grid?",
     answer:
-      "CSS Grid is a powerful two-dimensional layout system in CSS that lets you design layouts using rows and columns at the same time. It provides precise control over spacing, alignment, and complex layouts that are difficult to achieve with Flexbox alone. Grid is ideal for structured page layouts like dashboards, galleries, landing pages, and any UI that requires both row and column alignment.\n\nIn short: use CSS Grid for full-page or complex 2D layouts, and use Flexbox when arranging elements in a single direction.",
+      "CSS Grid is a powerful 2D layout system that allows you to create complex, responsive layouts using rows and columns. It provides full control over both horizontal and vertical alignment, making layout design easier than older methods like floats or tables.\n\n🔵 Key Features of CSS Grid:\n- Two-dimensional control: rows + columns.\n- Precise placement of items.\n- Easy to create responsive layouts.\n- Supports gap property for spacing.\n- Powerful functions like repeat(), minmax(), auto-fit, auto-fill.\n\n🟣 Common Grid Properties:\nContainer (Parent):\n- display: grid\n- grid-template-columns\n- grid-template-rows\n- grid-gap / gap\n- grid-template-areas\n- justify-content, align-content\n\nItems (Children):\n- grid-column / grid-row\n- grid-area\n\n🟡 Example:\n.container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-gap: 20px;\n}\n\n🟠 Why CSS Grid Is Useful:\n- Helps build layouts like dashboards, galleries, cards, and full web structures.\n- Provides more control than flexbox for complex grids.\n- Great for 2D layouts where both row and column alignment matter.\n\nIn short: CSS Grid is a two-dimensional layout system that makes creating advanced and responsive page structures simple and efficient.",
     category: "css",
   },
   {
-    id: 20,
-    question: "What are CSS preprocessors and name some examples?",
+    id: 123344481,
+    question: "What is a CSS Preprocessor?",
     answer:
-      "CSS preprocessors are tools that add advanced features to CSS, such as variables, nesting, mixins, functions, and reusable code patterns. They help write cleaner, more organized, and maintainable styles, especially in large projects. The preprocessor code is compiled into standard CSS before being sent to the browser.\n\nCommon examples include Sass (SCSS), Less, and Stylus. Sass/SCSS is the most widely used due to its powerful features and strong community support.",
+      "A CSS preprocessor is a tool that extends the features of standard CSS by adding powerful functionalities like variables, nesting, mixins, functions, and reusable code. The preprocessor code is written in a special syntax and then compiled into regular CSS that browsers can understand.\n\n🔵 Popular CSS Preprocessors:\n- SASS / SCSS\n- LESS\n- Stylus\n\n🟣 Key Features:\n1. Variables → Store colors, fonts, sizes.\n   Example (SCSS): $primary: #3498db;\n\n2. Nesting → Write CSS inside parent selectors for cleaner code.\n\n3. Mixins → Reusable blocks of CSS.\n\n4. Functions & Operators → Perform calculations inside CSS.\n\n5. Partials & Imports → Split CSS into multiple files.\n\n🟡 Why Use a Preprocessor?\n- Cleaner and more maintainable code.\n- Avoid repetition and duplicate styles.\n- Easy to manage large-scale projects.\n- Supports modular styling.\n\n🟠 Example (SCSS):\n$primary: #ff0000;\n.button {\n  background: $primary;\n  padding: 10px;\n}\n\nIn short: A CSS preprocessor lets you write advanced, cleaner, and more manageable CSS, which then compiles into normal CSS for the browser.",
     category: "css",
   },
   {
-    id: 21,
-    question: "What is the difference between px, em, %, and rem?",
+    id: 198982,
+    question: "What is the difference between px, em, rem, and % in CSS?",
     answer:
-      "px is an absolute unit — its size is fixed and does not scale with the parent or root font size.\n\nem is a relative unit based on the parent element’s font size (e.g., if parent is 16px, then 2em = 32px). It can compound, so nesting affects the final size.\n\n% is relative to the parent’s size and is commonly used for responsive widths, heights, and layout calculations.\n\nrem is relative to the root html font size, making it more predictable than em. It is widely used for responsive typography because it keeps scaling consistent across the whole application.",
+      "px, em, rem, and % are CSS units used to define sizes, but they behave differently based on how they scale.\n\n🔵 px (Pixels):\n- Absolute unit.\n- Does NOT scale based on parent or root.\n- Fixed size.\n- Good for borders, 1px lines, icons.\n\nExample: font-size: 16px;\n\n🟣 em:\n- Relative unit.\n- Depends on the **font-size of the parent element**.\n- 1em = parent's font-size.\n- Can compound (nested em values keep multiplying).\n\nExample:\n.parent { font-size: 20px; }\n.child { font-size: 2em; } → 40px\n\n🟡 rem:\n- Relative unit.\n- Depends on the **root (html) font-size**, not the parent.\n- Default root is 16px → 1rem = 16px.\n- More predictable than em.\n\nExample:\nhtml { font-size: 10px; }\n.box { font-size: 2rem; } → 20px\n\n🟠 % (Percentage):\n- Relative to the parent element.\n- Used for widths, heights, padding, etc.\n\nExample:\n.container { width: 100%; }\n.child { width: 50%; }\n\n🟣 Key Difference:\n- px → fixed size\n- em → relative to parent\n- rem → relative to root\n- % → relative to parent size\n\nIn short: Use rem for consistent scaling, em for flexible nested scaling, px for fixed values, and % for responsive layouts.",
     category: "css",
   },
   {
-    id: 22,
+    id: 199083,
     question: "What is the difference between CSS Grid and Flexbox?",
     answer:
-      "Flexbox is a one-dimensional layout system used to align items in a single row or a single column. It is ideal for UI components like navigation bars, button groups, cards, or centering elements. Flexbox focuses on content flow and alignment.\n\nCSS Grid is a two-dimensional layout system that lets you control rows and columns at the same time. It is better suited for full-page layouts, dashboards, galleries, and complex components where both horizontal and vertical control are needed.\n\nIn short: Flexbox is best for 1D layouts (row OR column), while CSS Grid is best for 2D layouts (rows AND columns).",
+      "CSS Grid and Flexbox are both layout systems, but they are used for different purposes.\n\n🔵 Flexbox:\n- One-dimensional layout system.\n- Works in a single direction at a time (row OR column).\n- Best for aligning items inside a row or column.\n- Great for navbars, buttons, cards, and small components.\n\nKey Properties:\n- display: flex\n- flex-direction\n- justify-content\n- align-items\n- flex-wrap\n\n🟣 CSS Grid:\n- Two-dimensional layout system.\n- Works with both rows AND columns at the same time.\n- Best for full-page layouts, dashboards, galleries, and complex grids.\n\nKey Properties:\n- display: grid\n- grid-template-columns\n- grid-template-rows\n- grid-gap / gap\n- grid-area\n\n🟡 When to Use What:\n- Use Flexbox for simple, one-direction layouts.\n- Use Grid for multi-row, multi-column complex layouts.\n\nIn short: Flexbox is 1D (row OR column), while Grid is 2D (rows AND columns) and better for building full layouts.",
     category: "css",
   },
   {
@@ -336,10 +337,10 @@ export const questions: Question[] = [
     category: "css",
   },
   {
-    id: 23.7,
-    question: "What are the css selectors?",
+    id: 199084,
+    question: "What are CSS Selectors?",
     answer:
-      "1. Class: .class-name \n2. Id: #id-name \n3. Tag: tag-name \n4. Universal: * \n5. Attribute: [attribute-name] \n6. Pseudo-class: :pseudo-class-name \n7. Pseudo-element: ::pseudo-element-name",
+      'CSS selectors are patterns used to select and style specific HTML elements. They tell the browser which elements the CSS rules should apply to.\n\n🔵 Types of CSS Selectors:\n1. **Universal Selector:** * { margin: 0; padding: 0; }\n2. **Element Selector:** p { color: red; }\n3. **Class Selector:** .title { font-size: 20px; }\n4. **ID Selector:** #header { background: black; }\n5. **Group Selector:** h1, h2 { color: blue; }\n6. **Descendant Selector:** .box p { color: green; }\n7. **Child Selector:** .container > p { color: orange; }\n8. **Adjacent Sibling Selector:** h1 + p { margin-top: 0; }\n9. **General Sibling Selector:** h1 ~ p { color: gray; }\n10. **Attribute Selector:** input[type="text"] { border: 1px solid; }\n\n🟣 Why Selectors Are Important:\n- Allow targeting specific elements.\n- Help write clean and structured CSS.\n- Improve reusability and maintainability.\n\nIn short: CSS selectors are used to identify which HTML elements should receive specific styling rules.',
     category: "css",
   },
   {
@@ -359,14 +360,6 @@ export const questions: Question[] = [
     category: "css",
   },
   {
-    id: 230.11,
-    question:
-      "What is the difference between getElementsByTagName and getElementsByClassName?",
-    answer:
-      "getElementsByTagName: getElementsByTagName method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use getElementsByTagName to get all matching elements. \n\n getElementsByClassName: getElementsByClassName method returns all elements that satisfy the condition as a new array, searches entire array, returns empty array if no matches, returns an array. Use getElementsByClassName to get all matching elements.",
-    category: "css",
-  },
-  {
     id: 230.12,
     question: "How many ways do we have to center a div?",
     answer:
@@ -375,17 +368,18 @@ export const questions: Question[] = [
   },
   // JavaScript Questions
   {
-    id: 24,
+    id: 2485,
     question: "What is JavaScript?",
     answer:
-      "JavaScript is a prototype-based, multi-paradigm language that supports functional, object-oriented, and event-driven programming. It executes inside the browser using a single-threaded event loop but handles asynchronous tasks using callbacks, promises, and async/await. JavaScript enables dynamic UI updates, DOM manipulation, API communication, and real-time interactivity, making it essential for building modern web applications. With Node.js, it extends beyond the browser and enables full-stack development.",
+      'JavaScript is a high-level, dynamic, and interpreted programming language used to make web pages interactive and dynamic. It runs in the browser and allows developers to update content, handle events, validate forms, create animations, and interact with APIs.\n\n🔵 Key Features of JavaScript:\n- Lightweight and easy to learn\n- Supports object-oriented, functional, and event-driven programming\n- Runs directly in the browser without compilation\n- Provides DOM manipulation for dynamic UI changes\n- Supports asynchronous operations using callbacks, promises, and async/await\n\n🟣 What JavaScript Is Used For:\n- Interactive UI components (sliders, modals, dropdowns)\n- Form validation and event handling\n- Fetching data using APIs\n- Single Page Applications (React, Angular, Vue)\n- Backend development using Node.js\n\n🟡 Example:\nconsole.log("Hello JavaScript");\n\nIn short: JavaScript is the programming language that brings interactivity, logic, and dynamic behavior to websites.',
     category: "javascript",
   },
   {
-    id: 2345,
-    question: "What does 'interpreted' mean in JavaScript?",
+    id: 2386,
+    question:
+      "What does it mean when JavaScript is called an interpreted language?",
     answer:
-      "Interpreted means the code is executed line by line at runtime by an interpreter (like the browser's JavaScript engine), instead of being fully translated into machine code beforehand like compiled languages such as C++ or Java. This makes JavaScript flexible and platform-independent.",
+      "JavaScript is called an interpreted language because its code is executed line by line by the browser's JavaScript engine without needing a separate compilation step beforehand. The engine reads the code, interprets it, and runs it immediately.\n\n🔵 How Interpreted Languages Work:\n- No separate compile step like C/C++ or Java.\n- Code is executed directly at runtime.\n- Faster development, easier debugging.\n\n🟣 Why JavaScript Is Considered Interpreted:\n- Browser engines (like V8, SpiderMonkey) read and execute code instantly.\n- You can run JavaScript directly in the browser console.\n- Changes reflect immediately without recompiling.\n\n🟡 Modern Note:\n- Modern engines use Just-In-Time (JIT) compilation to improve performance.\n- JIT compiles parts of the code during execution for speed.\n\nIn short: JavaScript is interpreted because it runs line by line directly in the browser without needing a separate compilation step.",
     category: "javascript",
   },
   {
@@ -412,24 +406,24 @@ export const questions: Question[] = [
   },
 
   {
-    id: 41357,
-    question: "Why is JavaScript called single-threaded?",
+    id: 345587,
+    question: "What does it mean that JavaScript is single-threaded?",
     answer:
-      "JavaScript executes code on a single call stack, meaning only one instruction runs at a time. It cannot execute multiple lines simultaneously.",
+      "JavaScript is called single-threaded because it has only one call stack and can execute only one piece of code at a time. It cannot run multiple tasks simultaneously in parallel like multi-threaded languages.\n\n🔵 How Single Threading Works:\n- Only one line of code executes at a time.\n- JavaScript has one call stack to process tasks.\n- If one task takes time, it blocks the others.\n\n🟣 Problem With Single Thread:\n- Long-running tasks (like heavy loops or large calculations) can block the UI.\n- Browser may freeze until the task completes.\n\n🟡 How JavaScript Handles Async Tasks:\nEven though JavaScript is single-threaded, it manages asynchronous tasks using:\n- Event Loop\n- Web APIs\n- Callback Queue\n- Microtask Queue\n\nThese allow JavaScript to appear non-blocking and handle timers, promises, API calls, and DOM events without freezing.\n\nIn short: JavaScript is single-threaded because it has one call stack and executes one task at a time, but it uses async mechanisms to stay non-blocking.",
     category: "javascript",
   },
   {
-    id: 30346,
+    id: 98789888,
     question: "What is Event Delegation in JavaScript?",
     answer:
-      "Event Delegation is a technique where instead of attaching event listeners to individual elements, you attach a single listener to a parent element and use event bubbling to handle events from child elements.",
+      'Event delegation is a technique in JavaScript where instead of adding event listeners to multiple child elements, we add a single event listener to a parent element. The event bubbles up from the child to the parent, and the parent handles the event based on the target element.\n\n🔵 Why Event Delegation Is Useful:\n- Better performance (fewer event listeners).\n- Useful when many child elements need the same event.\n- Handles dynamically added elements without extra listeners.\n\n🟣 How It Works:\n- Events in JavaScript bubble up from the target element to its parents.\n- We use event.target to detect which child triggered the event.\n\n🟡 Example:\ndocument.querySelector("ul").addEventListener("click", function(e) {\n  if (e.target.tagName === "LI") {\n    console.log("Clicked on: " + e.target.textContent);\n  }\n});\n\nHere, clicking any <li> is handled by the <ul> listener.\n\nIn short: Event delegation allows you to handle events efficiently by attaching one listener to a parent instead of multiple listeners to child elements.',
     category: "javascript",
   },
   {
-    id: 3034645677788,
-    question: "What is webpack and turbopack in JavaScript?",
+    id: 834449,
+    question: "What is the difference between Webpack and Turbopack?",
     answer:
-      "Webpack: Webpack is a module bundler that bundles JavaScript files for usage in a browser. It resolves dependencies and packages them into a single file \n\n Turbopack: Turbopack is a faster alternative to Webpack that uses Rust for faster builds. It is designed to be 20x faster than Webpack and 100x faster than other bundlers.",
+      "Webpack and Turbopack are both bundlers used in modern JavaScript applications, but they differ in performance, architecture, and speed.\n\n🔵 Webpack:\n- The most widely used JavaScript bundler.\n- Written in JavaScript.\n- Supports loaders, plugins, code splitting, tree shaking.\n- Very powerful but can be slow on large projects.\n- Used in React, Angular, Vue for years.\n\n🟣 Turbopack:\n- Next-generation bundler created by Vercel.\n- Written in Rust, designed to replace Webpack.\n- Much faster (up to 700× faster in dev mode).\n- Built for modern frameworks like Next.js.\n- Supports incremental builds and instant updates.\n\n🟡 Key Differences:\n- Speed: Turbopack is significantly faster than Webpack.\n- Language: Webpack uses JavaScript, Turbopack uses Rust.\n- Use Case: Webpack works for all JS apps; Turbopack is optimized for Next.js.\n- Performance: Turbopack provides instant hot reload and better dev experience.\n\nIn short: Webpack is the traditional bundler used widely, while Turbopack is a modern, super-fast bundler designed for Next.js and future web apps.",
     category: "javascript",
   },
   {
@@ -440,10 +434,10 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 270,
-    question: "What are the callback functions in JavaScript?",
+    id: 93330,
+    question: "What is a callback in JavaScript?",
     answer:
-      "A callback is simply a function that you pass as an argument to another function, and it gets executed later - either after some task completes or when a specific event happens.",
+      "A callback is a function passed as an argument to another function and executed after the completion of that function. It allows JavaScript to handle asynchronous operations like API calls, timers, and event handling.\n\n🔵 Why Callbacks Are Used:\n- To run code after an async task completes.\n- To avoid blocking the main thread.\n- To control execution order in async programming.\n\n🟣 Example:\nfunction fetchData(callback) {\n  setTimeout(() => {\n    callback('Data loaded');\n  }, 2000);\n}\n\nfetchData(function(message) {\n  console.log(message); // Data loaded\n});\n\n🟡 Real-Time Examples:\n- setTimeout()\n- Event listeners\n- Reading files (Node.js)\n- API calls (older style)\n\n🟠 Problem With Callbacks:\n- Nested callbacks lead to callback hell (pyramid of doom).\n- Hard to read, manage, and debug.\n\nIn short: A callback is a function executed after another function finishes, mostly used in asynchronous operations.",
     category: "javascript",
   },
   {
@@ -462,17 +456,18 @@ export const questions: Question[] = [
   },
 
   {
-    id: 30,
-    question: "What is the difference between declaration and initialization?",
+    id: 2391,
+    question:
+      "What is the difference between function declaration and function initialization (function expression)?",
     answer:
-      "Declaration is telling JavaScript that a variable exists and reserving space in memory (e.g., let name;). \n\n Initialization is assigning a value to the declared variable (e.g., name = 'Alice'). They can happen together (let name = 'Alice') or separately. const requires both declaration and initialization together, while let and var can be declared first and initialized later.",
+      "Function declaration and function initialization (also called function expression) are two ways to define functions in JavaScript, but they behave differently in terms of hoisting and usage.\n\n🔵 Function Declaration:\n- Defined using the 'function' keyword.\n- Fully hoisted, meaning it can be called before it is defined.\n- Easy to read and commonly used.\n\nExample:\nfunction greet() {\n  console.log('Hello');\n}\ngreet(); // Works even if called before declaration\n\n🟣 Function Initialization (Function Expression):\n- Function is stored inside a variable.\n- Not fully hoisted (only the variable is hoisted, not the function).\n- Cannot be called before it is defined.\n- Can be anonymous or named.\n\nExample:\nconst greet = function() {\n  console.log('Hello');\n};\ngreet(); // Must be called after initialization\n\n🟡 Key Difference:\n- Function declarations are hoisted completely.\n- Function expressions are NOT hoisted with their function body.\n\nIn short: Function declaration can be used before it's defined, while function initialization must be defined before calling.",
     category: "javascript",
   },
   {
-    id: 31,
-    question: "What is hoisting in JavaScript?",
+    id: 93192,
+    question: "What is Hoisting in JavaScript?",
     answer:
-      "Hoisting is JavaScript’s behavior where variable and function declarations are moved to the top of their scope during the compilation phase, before the code actually runs. Because of this, variables or functions can technically be accessed before they appear in the code, but with different rules.\n\nvar is hoisted and initialized with undefined.\n\nlet and const are hoisted but stay in the Temporal Dead Zone (TDZ) until they are initialized.\n\nFunction declarations are fully hoisted, so they can be called before their definition.\n\nFunction expressions only hoist the variable, not the function value.\n\nIn simple terms, JavaScript reads declarations first but does not hoist the actual value or initialization.",
+      "Hoisting is JavaScript's behavior of moving variable and function declarations to the top of their scope during the compile phase, before the code is executed. This allows you to use variables and functions before they are written in the code.\n\n🔵 How Hoisting Works:\n- Only declarations are hoisted, not initializations.\n- JavaScript allocates memory for variables and functions before execution.\n\n🟣 Hoisting with var:\n- var is hoisted with default value undefined.\nconsole.log(a); // undefined\nvar a = 10;\n\n🟡 Hoisting with let and const:\n- let and const are hoisted but remain in the Temporal Dead Zone (TDZ) until initialized.\n- Accessing them before initialization causes an error.\n\nExample:\nconsole.log(b); // ReferenceError\nlet b = 20;\n\n🟠 Hoisting with Functions:\n- Function declarations are fully hoisted.\ngreet(); // Works\nfunction greet() { console.log('Hello'); }\n\nIn short: Hoisting means declarations are moved to the top of their scope, allowing functions and vars to be used before they are defined.",
     category: "javascript",
   },
   {
@@ -483,10 +478,10 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 33,
-    question: "What is the difference between == and ===?",
+    id: 2193,
+    question: "What is the difference between == and === in JavaScript?",
     answer:
-      "== (loose equality) Checks only value, not the data type. \n\n === (strict equality) checks both value and data type without conversion (e.g., 5 === '5' is false). \n\n Always prefer === to avoid unexpected behavior and bugs from automatic type conversion.",
+      "In JavaScript, == and === are comparison operators, but they work differently.\n\n🔵 == (Loose Equality):\n- Compares values after performing type conversion.\n- If the types are different, JavaScript converts them into the same type before comparing.\n- Can lead to unexpected results.\n\nExample:\n0 == '0'   // true\n1 == true  // true\nnull == undefined // true\n\n🟣 === (Strict Equality):\n- Compares both value AND type.\n- No type conversion is performed.\n- More predictable and recommended.\n\nExample:\n0 === '0'  // false\n1 === true // false\n10 === 10  // true\n\n🟡 Key Difference:\n- == compares values after type coercion.\n- === compares both value and type without coercion.\n\nIn short: === is strict and safer, while == does type conversion before comparing.",
     category: "javascript",
   },
   {
@@ -497,18 +492,10 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 35,
-    question: "What is a closure and why is it used?",
+    id: 1094,
+    question: "What is a closure in JavaScript?",
     answer:
-      "A closure is a function that remembers and can access variables from its outer function’s scope even after the outer function has finished executing.\n\nIt happens because JavaScript stores both the function and the surrounding lexical environment together.\n\nClosures are used for:\n\n• Data privacy (private variables)\n• State management\n• Function factories\n• Callbacks & event handlers",
-    category: "javascript",
-  },
-  {
-    id: 36,
-    question:
-      "What is the difference between function declaration and function expression?",
-    answer:
-      "A function declaration defines a named function using the 'function' keyword and is hoisted, meaning it can be called before its definition. A function expression assigns a function to a variable and is not hoisted, so it cannot be called before being defined. Function declarations are typically used for reusable named functions, while function expressions are commonly used for callbacks, closures, and anonymous functions.",
+      "A closure is a feature in JavaScript where an inner function remembers and has access to the variables of its outer function even after the outer function has finished executing. This happens because the inner function keeps a reference to the lexical scope in which it was created.\n\n🔵 Why Closures Are Useful:\n- To access outer function variables even after the function ends.\n- To create private variables.\n- Used in callbacks, event handlers, and functional programming.\n\n🟣 Example:\nfunction outer() {\n  let count = 0;\n  return function inner() {\n    count++;\n    console.log(count);\n  };\n}\n\nconst counter = outer();\ncounter(); // 1\ncounter(); // 2 (count is remembered)\n\n🟡 Explanation:\n- The inner function 'inner()' keeps access to 'count' even after 'outer()' has returned.\n\nIn short: A closure allows a function to remember variables from its outer scope, even after the outer function has executed.",
     category: "javascript",
   },
   {
@@ -520,94 +507,111 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 38,
-    question: "What is the difference between map() and forEach()?",
+    id: 6573,
+    question: "What is the difference between map and forEach?",
     answer:
-      "map and forEach are both array iteration methods, but they serve different purposes.\n\nmap returns a new array by transforming each element using the callback function. It does not modify the original array and is used when you need a transformed output.\n\nforEach executes the callback for every element but does not return anything. It’s mainly used for side effects like logging, updating external variables, or modifying existing data. It cannot be chained because it returns undefined.",
+      "map and forEach are both array iteration methods in JavaScript, but they are used for different purposes.\n\n🔵 forEach:\n- Used only for iterating through an array.\n- Does NOT return a new array.\n- Always returns undefined.\n- Best for performing side effects like logging, updating values, API calls.\n\nExample:\nconst arr = [1, 2, 3];\narr.forEach(item => console.log(item));\n// Output: 1 2 3 (no new array created)\n\n🟣 map:\n- Used to transform each element and return a NEW array.\n- Length remains the same as original array.\n- Best when you need to create a modified array.\n\nExample:\nconst arr = [1, 2, 3];\nconst result = arr.map(item => item * 2);\nconsole.log(result); // [2, 4, 6]\n\n🟡 Key Difference:\n- forEach → Executes logic but returns nothing.\n- map → Executes logic and RETURNS a new transformed array.\n\nIn short: use forEach when you just want to loop, use map when you need a new array.",
     category: "javascript",
   },
   {
-    id: 39,
+    id: 609765552,
     question: "What is the difference between null and undefined?",
     answer:
-      "undefined means a variable has been declared but hasn't been assigned any value yet, or a function doesn't return anything. It's JavaScript's default for uninitialized variables. \n\n null is an intentional empty value explicitly set by the developer to represent 'no value' or 'empty object'. \n\n typeof null returns 'object' (a known quirk), while typeof undefined returns 'undefined'.",
+      "In JavaScript, null and undefined both represent 'no value', but they are used differently.\n\n🟣 undefined:\n- A variable is undefined when it is declared but not assigned.\n- Default value of uninitialized variables.\n- Functions return undefined if no return value is given.\n- Property that does not exist on an object is undefined.\n\nExample:\nlet a;\nconsole.log(a); // undefined\n\n🔵 null:\n- null is an assigned value.\n- It represents 'intentional absence' of value.\n- Developer sets it manually when they want to clear or reset a variable.\n\nExample:\nlet b = null;\nconsole.log(b); // null\n\n🟡 Key Difference:\n- undefined means the value is missing unintentionally.\n- null means the value is intentionally empty.\n\nIn short: undefined = not assigned, null = intentionally assigned empty value.",
     category: "javascript",
   },
   {
-    id: 40,
+    id: 4095,
     question:
-      "What is the difference between arrow functions and normal functions?",
+      "What is the difference between arrow function and normal function in JavaScript?",
     answer:
-      "Arrow functions: Arrow function introduce by ES6 don't have their own 'this' (inherit from surrounding scope), no 'arguments' object, cannot be used as constructors (no 'new'), no prototype property, shorter syntax. \n\n Normal functions: have their own 'this' based on how they're called, have 'arguments' object, can be constructors, have prototype. Use arrow functions for callbacks and when you want lexical 'this', use normal functions for methods and constructors.",
+      "Arrow functions and normal functions both help define functions, but they behave differently in terms of syntax, this binding, arguments handling, and usage.\n\n🔵 Normal Function:\n- Has its own 'this' context.\n- 'this' depends on how the function is called.\n- Has 'arguments' object.\n- Can be used as constructors.\n- More flexible but longer syntax.\n\nExample:\nfunction add(a, b) {\n  return a + b;\n}\n\n🟣 Arrow Function:\n- Does NOT have its own 'this'.\n- Inherits 'this' from the parent (lexical this).\n- Does NOT have 'arguments' object.\n- Cannot be used as constructors.\n- Shorter and cleaner syntax.\n\nExample:\nconst add = (a, b) => a + b;\n\n🟡 Key Differences:\n- Normal functions have their own this; arrow functions do not.\n- Arrow functions cannot use arguments or be used with new.\n- Arrow functions are shorter and preferred for callbacks.\n\nIn short: Normal functions have their own this and arguments, while arrow functions use lexical this and are better for concise, callback-style code.",
     category: "javascript",
   },
   {
-    id: 41,
-    question: "What is the difference between for...in and for...of loops?",
-    answer:
-      "for...in iterates over the enumerable property keys of an object. It is mainly used for objects, and when used on arrays it returns the index, not the actual value.\n\nfor...of iterates over the values of an iterable, such as arrays, strings, Maps, and Sets. It cannot iterate over plain objects because they are not iterable.\n\nIn short: use for...in to loop through object keys, and use for...of to loop through iterable values.",
-    category: "javascript",
-  },
-  {
-    id: 42,
-    question: "What is the difference between call(), apply(), and bind()?",
-    answer:
-      "call() invokes a function immediately with 'this' context and arguments passed individually (func.call(thisArg, arg1, arg2)). \n\n apply() invokes immediately with 'this' context and arguments as an array (func.apply(thisArg, [arg1, arg2])). \n\n bind() returns a new function with fixed 'this' context that can be invoked later (const newFunc = func.bind(thisArg)). Use call/apply for immediate invocation, bind for delayed execution.",
-    category: "javascript",
-  },
-  {
-    id: 43,
-    question: "What is the difference between setTimeout() and setInterval()?",
-    answer:
-      "setTimeout() executes a function once after a specified delay in milliseconds. It runs the code one time after waiting. setInterval() repeatedly executes a function at regular intervals until stopped with clearInterval(). Use setTimeout() for single delayed execution (e.g., showing a message after 3 seconds), use setInterval() for repeated execution (e.g., updating a clock every second).",
-    category: "javascript",
-  },
-  {
-    id: 44,
+    id: 10101096,
     question:
-      "What is the difference between localStorage, sessionStorage, and cookies?",
+      "What is the difference between for...in and for...of in JavaScript?",
     answer:
-      "localStorage: stores data with no expiration (persists after browser close), ~5-10MB limit, data not sent to server, used for user preferences. \n\n sessionStorage: stores data for current session only (cleared when tab closes), ~5-10MB limit, not sent to server. \n\n Cookies: ~4KB limit, can set expiration time, sent with every HTTP request to server, used for authentication/tracking. localStorage and sessionStorage are for client-side only, cookies work with server.",
+      "for...in and for...of are both looping statements, but they are used for different types of iteration.\n\n🔵 for...in:\n- Used to iterate over the **keys (property names)** of an object.\n- Works on objects and arrays (but not recommended for arrays).\n- Returns string keys.\n\nExample:\nconst user = { name: 'Alex', age: 25 };\nfor (let key in user) {\n  console.log(key); // name, age\n}\n\n🟣 for...of:\n- Used to iterate over **values** of an iterable.\n- Works on arrays, strings, maps, sets, NodeLists.\n- Returns actual values, not keys.\n\nExample:\nconst arr = [10, 20, 30];\nfor (let value of arr) {\n  console.log(value); // 10, 20, 30\n}\n\n🟡 Key Difference:\n- for...in → iterates keys (used for objects).\n- for...of → iterates values (used for arrays and iterables).\n\nIn short: Use for...in for object properties and for...of for array or iterable values.",
     category: "javascript",
   },
   {
-    id: 45,
-    question: "What is the difference between shallow copy and deep copy?",
+    id: 9744,
+    question:
+      "What is the difference between call, apply, and bind in JavaScript?",
     answer:
-      "A shallow copy creates a new object but only copies the top-level properties. Any nested objects or arrays are still referenced, meaning changes in the nested structure affect both the original and the copy. Common methods include Object.assign(), the spread operator {...obj}, and array.slice().\n\nA deep copy recursively copies all levels of the object, creating a completely independent clone. Changes to the copy do not affect the original. Deep copying can be done using JSON.parse(JSON.stringify(obj)) for simple data, structuredClone() for modern browsers, or utility libraries like Lodash's cloneDeep().",
+      "call, apply, and bind are methods used to control the value of 'this' in JavaScript and to borrow functions from other objects.\n\n🔵 call():\n- Invokes the function immediately.\n- Passes arguments individually.\n\nExample:\nfunction greet(a, b) {\n  console.log(this.name, a, b);\n}\nconst user = { name: 'Hemant' };\ngreet.call(user, 'Hello', 'World');\n\n🟣 apply():\n- Invokes the function immediately.\n- Passes arguments as an array.\n\nExample:\ngreet.apply(user, ['Hello', 'World']);\n\n🟡 bind():\n- Does NOT call the function immediately.\n- Returns a new function with 'this' permanently bound.\n\nExample:\nconst newFunc = greet.bind(user, 'Hello', 'World');\nnewFunc(); // executes later\n\n🟠 Key Difference:\n- call → calls function immediately with comma-separated arguments.\n- apply → calls function immediately with array arguments.\n- bind → returns a new function that can be called later.\n\nIn short: call and apply execute the function instantly, while bind creates a new function with fixed 'this' that you can call later.",
     category: "javascript",
   },
   {
-    id: 46,
+    id: 60.876555,
+    question: "What is the difference between setTimeout and setInterval?",
+    answer:
+      "setTimeout and setInterval are both JavaScript timing functions, but they work differently.\n\n⏳ setTimeout:\n- Executes a function only once after the specified delay.\n- One-time timer.\n- Common use cases: showing alerts, delaying API calls, animations, debouncing.\n\nExample:\nsetTimeout(() => {\n  console.log('Runs once after 2 seconds');\n}, 2000);\n\n🔁 setInterval:\n- Executes a function repeatedly at the specified interval until cleared.\n- Continuous timer.\n- Common use cases: live counters, clocks, repeated API polling, animations.\n\nExample:\nsetInterval(() => {\n  console.log('Runs every 2 seconds');\n}, 2000);\n\nIn short: setTimeout runs once after a delay, while setInterval runs repeatedly at fixed intervals.",
+    category: "javascript",
+  },
+  {
+    id: 59.9099,
+    question:
+      "What is the difference between LocalStorage, SessionStorage, and Cookies?",
+    answer:
+      "LocalStorage, SessionStorage, and Cookies are all used to store data in the browser, but they differ in lifespan, storage size, and usage.\n\n🔵 LocalStorage:\n- Data persists even after the browser or tab is closed.\n- No expiration time.\n- Storage limit: ~5MB.\n- Best for long-term data like theme, cart items, user preferences.\n\n🟣 SessionStorage:\n- Data is removed when the tab or window is closed.\n- Exists only for that specific tab session.\n- Storage limit: ~5MB.\n- Best for temporary data like active tab state, form steps, or session flags.\n\n🟡 Cookies:\n- Data is sent to the server with every HTTP request.\n- Can have an expiration date (set by developer).\n- Storage limit: ~4KB (very small).\n- Used for authentication tokens, tracking, and server communication.\n\nIn short: LocalStorage is long-term, SessionStorage is tab-specific temporary data, and Cookies are small pieces of data mainly used for authentication and server communication.",
+    category: "javascript",
+  },
+  {
+    id: 5.099998,
+    question: "What is the difference between Shallow Copy and Deep Copy?",
+    answer:
+      'In JavaScript, copying an object or array doesn\'t always create a separate copy — sometimes it still points to the same memory. So understanding Shallow vs Deep Copy becomes important.\n\n🔵 Shallow Copy:\nA shallow copy copies only the first level of the object. Nested objects are still referenced, not cloned. So changing nested values affects both objects.\n\nExample:\nconst user1 = {\n  name: "Poonam",\n  skills: { frontend: "Angular", backend: "Java" }\n};\n\nconst user2 = { ...user1 }; // Shallow Copy\nuser2.skills.backend = "NodeJS";\nconsole.log(user1.skills.backend); // Output: NodeJS (changed!)\n\n🟣 Deep Copy:\nA deep copy creates a fully independent clone, including nested objects. Changes do not affect the original object.\n\nExample:\nconst user1 = {\n  name: "Poonam",\n  skills: { frontend: "Angular", backend: "Java" }\n};\n\nconst user2 = JSON.parse(JSON.stringify(user1)); // Deep Copy\nuser2.skills.backend = "NodeJS";\nconsole.log(user1.skills.backend); // Output: Java (safe!)\n\nIn short: Shallow copy copies only the top level, while deep copy clones all levels independently.',
+    category: "javascript",
+  },
+  {
+    id: 12298,
     question:
       "What is the difference between event bubbling and event capturing?",
     answer:
-      "Event capturing and event bubbling describe the two phases of event propagation in the DOM. In event capturing (top-down), the event travels from the window → document → parent elements → target. In event bubbling (bottom-up), the event starts at the target element and moves upward through its ancestors. Bubbling is JavaScript's default propagation phase.\n\nYou can choose the phase when attaching listeners using addEventListener: passing true listens during the capturing phase, and false (default) listens during the bubbling phase.",
+      "Event bubbling and event capturing are two phases of event propagation in JavaScript that define the order in which events travel through the DOM.\n\n🔵 Event Bubbling (Default Phase):\n- The event starts from the innermost (child) element and moves upward to the outer (parent) elements.\n- Most commonly used in JavaScript.\n- Useful for event delegation.\n\nExample flow:\nChild → Parent → Grandparent → Document\n\n🟣 Event Capturing (Trickle Down Phase):\n- The event starts from the outermost (parent) element and moves inward to the target (child).\n- Less commonly used.\n- Enabled by passing 'true' as the third parameter in addEventListener.\n\nExample flow:\nDocument → Grandparent → Parent → Child\n\n🟡 Example:\nparent.addEventListener('click', handler, true);  // capturing\nparent.addEventListener('click', handler, false); // bubbling\n\n🟠 Key Difference:\n- Bubbling: Event moves from child to parent.\n- Capturing: Event moves from parent to child.\n\nIn short: Bubbling goes upward from target to parent, while capturing goes downward from parent to target.",
     category: "javascript",
   },
   {
-    id: 47,
-    question: "What is the difference between slice() and splice() in arrays?",
+    id: 454799,
+    question: "What is the difference between slice and splice in JavaScript?",
     answer:
-      "slice() is used to create a shallow copy of a portion of an array. It does not modify the original array, and the end index is non-inclusive. It is mainly used for extracting or cloning data.\n\nsplice() is used to modify the original array by removing, replacing, or inserting elements at a specific index. It returns the removed elements and is commonly used when you need to update the actual array structure.\n\nIn short: slice() is non-mutating and returns a new array, while splice() is mutating and changes the original array.",
+      "slice and splice are both array methods in JavaScript, but they work very differently.\n\n🔵 slice():\n- Used to copy a portion of an array.\n- Does NOT modify the original array.\n- Returns a new array.\n- Syntax: array.slice(start, end)\n\nExample:\nconst arr = [1, 2, 3, 4];\nconst result = arr.slice(1, 3); // [2, 3]\nconsole.log(arr); // [1, 2, 3, 4] (unchanged)\n\n🟣 splice():\n- Used to add, remove, or replace elements.\n- Modifies the original array.\n- Returns the removed elements.\n- Syntax: array.splice(start, deleteCount, itemsToAdd)\n\nExample:\nconst arr = [1, 2, 3, 4];\narr.splice(1, 2, 9, 9); // removes 2 elements and adds 9, 9\nconsole.log(arr); // [1, 9, 9, 4]\n\n🟡 Key Difference:\n- slice → non-destructive, returns a copy.\n- splice → destructive, changes the original array.\n\nIn short: slice copies, splice edits.",
     category: "javascript",
   },
   {
-    id: 48,
+    id: 463100,
     question:
-      "What is the difference between Object.freeze() and Object.seal()?",
+      "What is the difference between Object.freeze and Object.seal in JavaScript?",
     answer:
-      "Object.freeze(): completely prevents any changes - can't add, delete, or modify properties. Object becomes fully immutable. Objects are shallow frozen. \n\n Object.seal(): prevents adding or deleting properties but allows modifying existing property values. You can change values but not the structure. Use freeze() for complete immutability, seal() when you want to allow value updates but lock the structure.",
+      "Object.freeze and Object.seal are used to control modifications on objects, but they provide different levels of restriction.\n\n🔵 Object.freeze():\n- Makes the object completely immutable.\n- Cannot add new properties.\n- Cannot delete properties.\n- Cannot modify existing property values.\n- The strictest form of object protection.\n\nExample:\nconst obj = Object.freeze({ name: 'Alex' });\nobj.name = 'John'; // No effect\nobj.age = 25; // No effect\n\n🟣 Object.seal():\n- Stops adding or deleting properties.\n- Existing properties CAN be modified.\n- Structure is locked but values are still writable.\n\nExample:\nconst user = Object.seal({ name: 'Alex' });\nuser.name = 'John'; // Works\nuser.age = 25; // No effect (cannot add)\ndelete user.name; // No effect\n\n🟡 Key Difference:\n- freeze → No add, no delete, no change (fully locked).\n- seal → No add, no delete, but values can still change.\n\nIn short: Object.freeze makes an object fully read-only, while Object.seal allows modifying existing values but blocks adding or removing properties.",
     category: "javascript",
   },
   {
-    id: 49,
+    id: 101010102,
+    question: "What is a Promise in JavaScript?",
+    answer:
+      "A Promise in JavaScript is an object that represents the eventual completion or failure of an asynchronous operation. It allows us to handle async tasks like API calls, timers, and file operations in a cleaner and more manageable way compared to callbacks.\n\n🔵 Promise States:\n1. pending → The async operation is still running.\n2. fulfilled → The operation completed successfully.\n3. rejected → The operation failed.\n\n🟣 How a Promise Works:\n- A promise returns a value in the future.\n- Instead of blocking the main thread, it executes asynchronously.\n- We handle results using .then(), .catch(), and .finally().\n\n🟡 Example:\nconst fetchData = new Promise((resolve, reject) => {\n  setTimeout(() => {\n    resolve('Data loaded');\n  }, 2000);\n});\n\nfetchData\n  .then(result => console.log(result)) // Data loaded\n  .catch(error => console.log(error));\n\n🟠 Why Promises Are Useful:\n- Avoid callback hell.\n- Clearer async code structure.\n- Easy chaining using then().\n- Better error handling.\n\nIn short: A Promise is an object that handles asynchronous operations and returns a success or failure value in the future.",
+    category: "javascript",
+  },
+  {
+    id: 45101,
     question:
       "What is the difference between Promise.all(), Promise.race(), and Promise.allSettled()?",
     answer:
-      "Promise.all() runs all promises in parallel and resolves only when every promise succeeds. If any one promise rejects, the entire Promise.all() rejects immediately. It returns an array of resolved values.\n\nPromise.race() settles as soon as the first promise resolves or rejects. It is commonly used for timeout logic or selecting the fastest response.\n\nPromise.allSettled() waits for all promises to finish, regardless of success or failure. It never rejects and returns an array of objects containing each promise's status and value or reason. It is useful when you need the outcome of all promises without stopping on errors.",
+      "These Promise methods are used to handle multiple asynchronous operations together, but each behaves differently.\n\n🔵 Promise.all():\n- Runs all promises in parallel.\n- Resolves only when ALL promises resolve.\n- If ANY promise fails, the entire Promise.all() fails.\n\nExample:\nPromise.all([p1, p2, p3])\n  .then(res => console.log(res))\n  .catch(err => console.log(err));\n\n🟣 Promise.race():\n- Returns the result of the FIRST promise that settles.\n- Whichever promise resolves or rejects first wins.\n\nExample:\nPromise.race([p1, p2, p3])\n  .then(res => console.log(res))\n  .catch(err => console.log(err));\n\n🟡 Promise.allSettled():\n- Waits for ALL promises to finish.\n- Returns an array of results with status: fulfilled or rejected.\n- Never fails, even if some promises fail.\n\nExample:\nPromise.allSettled([p1, p2, p3])\n  .then(result => console.log(result));\n\n🟠 Key Difference:\n- Promise.all → Fails if one fails.\n- Promise.race → Returns whichever completes first.\n- Promise.allSettled → Returns results of all promises, regardless of success or failure.\n\nIn short: Use Promise.all for all-success situations, race for first-result scenarios, and allSettled when you need outcomes of every promise.",
     category: "javascript",
   },
+  {
+    id: 103,
+    question: "What are async and await in JavaScript?",
+    answer:
+      "async and await are modern JavaScript keywords used to handle asynchronous operations in a cleaner and more readable way compared to promises and callbacks.\n\n🔵 async:\n- Used before a function to make it return a Promise.\n- Automatically wraps the return value in a resolved Promise.\n\nExample:\nasync function greet() {\n  return 'Hello';\n}\n\ngreet().then(res => console.log(res)); // Hello\n\n🟣 await:\n- Can only be used inside an async function.\n- Pauses the function execution until the Promise resolves.\n- Makes async code look like synchronous code.\n\nExample:\nasync function getData() {\n  const data = await fetch('https://api.example.com');\n  console.log(data);\n}\n\n🟡 Why async/await Is Useful:\n- Easier to read and write than .then() chaining.\n- Avoids callback hell.\n- Handles errors better using try...catch.\n\n🟠 Error Handling Example:\nasync function loadData() {\n  try {\n    const res = await fetch('/api');\n    return res;\n  } catch (error) {\n    console.log('Error:', error);\n  }\n}\n\nIn short: async makes a function return a Promise, and await pauses execution until the Promise resolves, making asynchronous code cleaner and easier to understand.",
+    category: "javascript",
+  },
+
   {
     id: 50,
     question: "What is the difference between find() and filter()?",
@@ -616,12 +620,13 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 51,
-    question: "What is the Event Loop?",
+    id: 51104,
+    question: "What is the Event Loop in JavaScript?",
     answer:
-      "The Event Loop is the mechanism that enables JavaScript to handle asynchronous operations while remaining single-threaded. It continuously checks the call stack and, when the stack is empty, it processes pending callbacks from the task queues.\n\nJavaScript has two important queues:\n\n• Microtask Queue: contains high-priority tasks like Promise callbacks, queueMicrotask(), and MutationObserver. Microtasks run immediately after the currently executing script, before any rendering or macrotasks.\n\n• Macrotask Queue: contains lower-priority tasks such as setTimeout, setInterval, setImmediate, I/O callbacks, and event callbacks. Macrotasks run after all microtasks finish.\n\nThe Event Loop ensures that JavaScript executes synchronous code first, then processes all microtasks, and finally moves on to macrotasks, enabling non-blocking asynchronous behavior.",
-    category: "javascript",
-  },
+      "The Event Loop is a mechanism in JavaScript that handles asynchronous operations and ensures non-blocking behavior, even though JavaScript is single-threaded. It continuously checks the call stack and callback queues to decide what to execute next.\n\n🔵 How It Works:\n1. JavaScript runs on a single thread with one call stack.\n2. Long tasks (timers, API calls) are handled by Web APIs.\n3. When these tasks finish, their callbacks are moved to queues.\n4. The Event Loop checks if the call stack is empty.\n5. If empty, it pushes queued callbacks into the call stack.\n\n🟣 Types of Queues:\n- **Microtask Queue:** Promise callbacks, MutationObserver, queueMicrotask.\n- **Macrotask Queue:** setTimeout, setInterval, DOM events, API callbacks.\n- **Rule:** Microtasks run before macrotasks.\n\n🟡 Example:\nconsole.log('A');\nsetTimeout(() => console.log('B'), 0);\nPromise.resolve().then(() => console.log('C'));\nconsole.log('D');\n\nOutput:\nA\nD\nC ← (microtask first)\nB ← (macrotask)\n\n🟠 Why Event Loop Is Important:\n- Enables async behavior in a single-threaded language.\n- Prevents the UI from freezing.\n- Handles promises, timers, and events efficiently.\n\nIn short: The Event Loop decides when asynchronous callbacks run, making JavaScript fast, non-blocking, and efficient.",
+    category: "javascript"
+  }
+  ,
   {
     id: 53,
     question: "What is the Temporal Dead Zone (TDZ)?",
@@ -638,11 +643,12 @@ export const questions: Question[] = [
   },
   {
     id: 56,
-    question: "What is the difference between debouncing and throttling?",
+    question: "What is the difference between Debounce and Throttle?",
     answer:
-      "Debouncing ensures a function runs only after a specified delay has passed without the event being triggered again. It waits for the user's pause before executing. This is ideal for actions like search inputs, auto-suggestions, and form validations where you only want to execute after the user stops typing.\n\nThrottling limits how often a function can run by ensuring it executes at most once in a defined interval, even if the event fires repeatedly. This is useful for performance-heavy events like scroll, resize, and mouse movement.\n\nIn short: Debouncing waits for a pause before running the function, while throttling enforces a fixed execution rate.",
+      "In JavaScript, Debounce and Throttle are used to control high-frequency events like scroll, resize, typing, mouse move, and repeated clicks. Running a function on every event causes UI lag, too many API calls, high CPU usage, and poor user experience.\n\nDebounce — Debounce delays the execution of a function until there is a pause in the event. It runs only once after the user stops performing the action. Best use cases: search box suggestions, form validation while typing, and resize end detection. Example: When a user types a → ap → app → apple, debounce waits for 500ms and triggers only one API call.\n\nThrottle — Throttle allows a function to run at fixed time intervals even if the event fires continuously. Best use cases: scroll handling (infinite scroll, analytics), map dragging, and preventing multiple button clicks. Example: Resend OTP button — even if the user clicks 20 times, OTP sends only once in 30 seconds.\n\nIn short: Debounce waits for user inactivity before executing, while Throttle executes at fixed intervals.",
     category: "javascript",
   },
+
   {
     id: 57,
     question: "What is the difference between every() and find()?",
@@ -672,13 +678,6 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 61,
-    question: "What are Promises in JavaScript?",
-    answer:
-      "A Promise is an object representing the eventual completion or failure of an asynchronous operation. It has three states: pending, fulfilled, and rejected. Promises help manage asynchronous code and avoid callback hell.\n\nA Promise is created using new Promise((resolve, reject) => {}). You handle results with .then() for fulfillment, .catch() for errors, and .finally() for cleanup. Promises are also the basis of async/await in modern JavaScript.",
-    category: "javascript",
-  },
-  {
     id: 62,
     question: "What is Promise chaining and how does it work?",
     answer:
@@ -701,12 +700,11 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 65,
-    question:
-      "What is the difference between Promise.all, Promise.allSettled, Promise.any, and Promise.race?",
+    id: 106,
+    question: "What is the difference between call by value and call by reference in JavaScript?",
     answer:
-      "Promise.all waits for all promises to resolve but fails immediately if one rejects. \n\n Promise.allSettled waits for all promises and gives results of both fulfilled and rejected (never rejects). \n\n Promise.any returns the first fulfilled promise and ignores rejections (only fails if all reject). \n\n Promise.race returns the result of the first promise that settles, whether resolved or rejected. Use all() when all must succeed, allSettled() to know all outcomes, any() for first success, race() for first result.",
-    category: "javascript",
+      "In JavaScript, primitive types are passed by value, while objects and arrays are passed by reference.\n\n🔵 Call by Value:\n- Used for primitive data types (number, string, boolean, null, undefined, symbol, bigint).\n- A copy of the actual value is passed to the function.\n- Changes inside the function do NOT affect the original variable.\n\nExample:\nlet a = 10;\nfunction change(x) {\n  x = 20;\n}\nchange(a);\nconsole.log(a); // 10 (unchanged)\n\n🟣 Call by Reference:\n- Used for non-primitive data types (objects, arrays, functions).\n- A reference to the actual memory location is passed.\n- Changes inside the function DO affect the original object.\n\nExample:\nlet obj = { count: 1 };\nfunction update(o) {\n  o.count = 5;\n}\nupdate(obj);\nconsole.log(obj.count); // 5 (changed)\n\n🟡 Key Difference:\n- Call by value → function gets a copy of the value.\n- Call by reference → function gets a reference to the original data.\n\nIn short: Primitives use call by value; objects and arrays use call by reference.",
+    category: "javascript"
   },
   {
     id: 66,
@@ -731,11 +729,11 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 69,
+    id: 57,
     question:
-      "What is the difference between the microtask queue (Promises) and the macrotask queue (setTimeout)?",
+      "What is the difference between Microtask and Macrotask in JavaScript?",
     answer:
-      "The microtask queue contains high-priority tasks such as Promise callbacks, queueMicrotask(), and MutationObserver. The macrotask queue contains lower-priority tasks like setTimeout, setInterval, DOM events, and network callbacks.\n\nMicrotasks always run before macrotasks. After the call stack becomes empty, the event loop first processes all microtasks, and only then picks the next macrotask. This is why Promise.then() executes before setTimeout, even with a 0 ms delay.\n\nOrder of execution: Call Stack → Microtasks → Macrotasks.",
+      'To understand Microtasks and Macrotasks, you must first understand the Event Loop. JavaScript runs on a single thread, so it uses an Event Loop to decide which task runs first. All async tasks are not equal — they go into different queues.\n\n🟦 Macrotask Queue:\nMacrotasks are big tasks that are executed one by one.\nExamples:\n- setTimeout\n- setInterval\n- setImmediate\n- DOM events\n- Network request callbacks\n\n🟪 Microtask Queue:\nMicrotasks are high-priority small tasks that always run before macrotasks.\nExamples:\n- Promise.then()\n- async/await\n- queueMicrotask()\n- MutationObserver\n\n🚀 Important Rule:\nAfter every macrotask, JavaScript empties the microtask queue first. Microtasks have higher priority, so they run earlier.\n\n🧠 Example:\nconsole.log("A");\nsetTimeout(() => console.log("B"), 0);\nPromise.resolve().then(() => console.log("C"));\nconsole.log("D");\n\nOutput:\nA\nD\nC ← (microtask first)\nB ← (macrotask)\n\nIn short: Microtasks run before macrotasks because they have higher priority in the Event Loop.',
     category: "javascript",
   },
   {
@@ -753,13 +751,6 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 72,
-    question: "What is a closure in JavaScript?",
-    answer:
-      "A closure is a feature in JavaScript where an inner function can continue to use variables from its parent function's scope, even after the parent function has finished executing. The inner function 'closes over' the variables it needs. Closures are created every time a function is created. They're used for data privacy (private variables), creating factory functions, maintaining state in callbacks, and implementing module patterns. The inner function maintains a reference to its outer scope.",
-    category: "javascript",
-  },
-  {
     id: 73,
     question: "What is a currying function?",
     answer:
@@ -767,18 +758,11 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 74,
-    question: "What is a higher-order function?",
+    id: 76107,
+    question: "What is a Higher-Order Function in JavaScript?",
     answer:
-      "A higher-order function is a function that either takes another function as an argument, returns a function, or does both. It enables reusable logic, functional composition, and more expressive code. Common examples include array methods like map(), filter(), and reduce(), which accept callback functions. Higher-order functions are widely used in callbacks, event handlers, closures, and functional programming patterns.",
-    category: "javascript",
-  },
-  {
-    id: 75.21,
-    question: "What is a callback function?",
-    answer:
-      "A callback function is a function passed as an argument to another function to be executed later, usually after a task completes. Callbacks allow functions to run asynchronously, letting JavaScript continue executing without blocking. They are commonly used in event handling, timers, and asynchronous operations like network requests. Callbacks form the foundation for Promises and async/await.",
-    category: "javascript",
+      "A Higher-Order Function (HOF) is a function that either takes another function as an argument, returns a function, or does both. It allows functional programming techniques and makes code more reusable and modular.\n\n🔵 Characteristics of Higher-Order Functions:\n- Accepts one or more functions as parameters.\n- Can return another function.\n- Helps in abstraction and cleaner code.\n\n🟣 Examples of Higher-Order Functions:\n1. Built-in HOFs: map(), filter(), reduce(), forEach(), setTimeout().\n2. Custom HOF Example:\n\nfunction greet(message) {\n  return function(name) {\n    return message + ' ' + name;\n  };\n}\n\nconst sayHello = greet('Hello');\nconsole.log(sayHello('Hemant')); // Hello Hemant\n\n🟡 Why Higher-Order Functions Are Useful:\n- Improve reusability.\n- Help write clean and maintainable code.\n- Enable functional programming patterns.\n- Make async operations easier.\n\nIn short: A higher-order function is any function that takes another function as input or returns a new function as output.",
+    category: "javascript"
   },
   {
     id: 75.22,
@@ -788,12 +772,13 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 75,
+    id: 74108,
     question: "What is the difference between React.memo and useMemo?",
     answer:
-      "React.memo is a higher-order component that prevents unnecessary re-rendering of a component by comparing props - if props haven't changed, React skips rendering. It wraps the entire component (export default React.memo(MyComponent)). useMemo is a hook used inside a component to memoize the result of an expensive calculation. It caches the value and only recalculates when dependencies change. Use memo for component-level optimization, useMemo for value/calculation optimization within a component.",
-    category: "javascript",
-  },
+      "React.memo and useMemo are both performance optimization tools in React, but they solve different problems.\n\n🔵 React.memo:\n- A higher-order component.\n- Used to memoize a **whole component**.\n- Prevents re-rendering if props do not change.\n- Useful for functional components receiving the same props repeatedly.\n\nExample:\nconst MyComponent = React.memo(function Child(props) {\n  return <div>{props.value}</div>;\n});\n\n🟣 useMemo:\n- A React hook.\n- Memoizes the **result of a calculation** (not the component itself).\n- Recomputes only when dependencies change.\n- Useful for expensive calculations or derived data.\n\nExample:\nconst result = useMemo(() => heavyCalculation(count), [count]);\n\n🟡 Key Differences:\n- React.memo → Stops unnecessary re-renders of a component.\n- useMemo → Stops unnecessary recalculations inside a component.\n- React.memo is for components; useMemo is for values.\n\nIn short: React.memo memoizes components, while useMemo memoizes computed values.",
+    category: "react"
+  }
+  ,
   {
     id: 76.1,
     question: "Explain ES6 new features?",
@@ -1130,41 +1115,29 @@ export const questions: Question[] = [
     category: "nextjs",
   },
   {
-    id: 201,
-    question: "What is SSR in Next.js?",
+    id: 111,
+    question: "What is the difference between SSR, SSG, and ISR in Next.js?",
     answer:
-      "SSR (Server-Side Rendering) means the page is generated on every request. When a user visits the page, the server fetches the data and sends fresh HTML each time. It’s perfect for personalized pages, dashboards, or content that changes very frequently.",
-    category: "nextjs",
-  },
-  {
-    id: 202,
-    question: "What is SSG in Next.js?",
-    answer:
-      "SSG (Static Site Generation) generates the HTML once at build time. The content is fixed and extremely fast because it’s served from the CDN. It’s great for content that rarely changes, such as marketing pages, documentation, or blogs that don’t update often.",
-    category: "nextjs",
-  },
-  {
-    id: 203,
-    question: "What is ISR in Next.js?",
-    answer:
-      "ISR (Incremental Static Regeneration) sits between SSR and SSG. It creates static pages at build time but can re-generate or update them in the background after a set interval. You get the speed of SSG with the flexibility of dynamic updates. It’s ideal for blogs, product pages, or dashboards where data changes but doesn't need real-time updates.",
-    category: "nextjs",
-  },
-
-  {
-    id: 30156576476,
-    question: "Explain the App Router vs Pages Router in Next.js.",
-    answer:
-      "Next.js has two routing systems: the Pages Router and the App Router. The Pages Router is the older system that uses the /pages folder. It renders everything as client components and uses getStaticProps, getServerSideProps, and getStaticPaths for data fetching. It is simple and stable but does not support modern features like nested layouts or server components.\n\nThe App Router was introduced in Next.js 13 and uses the /app folder. It supports React Server Components by default, which improves performance because heavy logic runs on the server. It also introduces nested layouts, loading states, streaming, and more flexible routing like parallel and intercepting routes. Data fetching becomes simpler using async functions and built-in caching. Overall, the App Router is more modern, scalable, and better for large applications, while the Pages Router is easier for small projects and beginners.",
-    category: "nextjs",
-  },
-  {
-    id: 3022345,
-    question: "What are Server Components and Client Components in Next.js?",
-    answer:
-      "In Next.js, Server Components run on the server by default. They never ship JavaScript to the browser, so they load faster and improve performance. They are perfect for data fetching, heavy calculations, and rendering UI that doesn’t need interactivity.\n\nClient Components run in the browser and include JavaScript. These are used when you need interactivity, such as buttons, forms, modals, inputs, and hooks like useState or useEffect. To make a component a Client Component, we add 'use client' at the top.\n\nIn short: Server Components are fast and ideal for static or data-driven UI, while Client Components handle anything interactive.",
-    category: "nextjs",
-  },
+      "SSR, SSG, and ISR are different rendering methods in Next.js that determine how pages are generated and delivered.\n\n🔵 SSR (Server-Side Rendering):\n- Page is generated on every request.\n- Data is fetched on the server for each visit.\n- Best for dynamic content that changes frequently.\n- Example: dashboards, user profiles, admin panels.\n\nCode Example:\nexport async function getServerSideProps() {\n  const data = await fetch('https://api.example.com');\n  return { props: { data } };\n}\n\n🟣 SSG (Static Site Generation):\n- Page is generated at build time (once).\n- Very fast because pages are pre-rendered.\n- Best for static content that rarely changes.\n- Example: blog pages, documentation, marketing pages.\n\nCode Example:\nexport async function getStaticProps() {\n  const data = await fetch('https://api.example.com');\n  return { props: { data } }; \n}\n\n🟡 ISR (Incremental Static Regeneration):\n- Creates static pages but allows them to update after a set time.\n- Combines benefits of SSG + real-time updates.\n- Best for pages that change but not on every request.\n- Example: product pages, news articles, listings.\n\nCode Example:\nexport async function getStaticProps() {\n  const data = await fetch('https://api.example.com');\n  return { props: { data }, revalidate: 10 };\n}\n\n🟠 Key Differences:\n- SSR → renders on every request.\n- SSG → renders once at build time.\n- ISR → renders once and regenerates in the background after a set time.\n\nIn short: SSR is dynamic per request, SSG is static at build time, and ISR updates static pages automatically after intervals.",
+    category: "nextjs"
+  }
+,  
+{
+  id: 112,
+  question: "What is the difference between App Router and Page Router in Next.js?",
+  answer:
+    "App Router and Page Router are two routing systems in Next.js, but they work differently in terms of structure, rendering, and features.\n\n🔵 Page Router (pages/):\n- Older routing system available before Next.js 13.\n- Uses the pages/ folder.\n- Each file inside pages/ automatically becomes a route.\n- Uses getStaticProps, getServerSideProps, getInitialProps.\n- Mostly client-side components.\n- Less flexible for nested layouts.\n\nExample:\npages/index.js → '/'\npages/about.js → '/about'\n\n🟣 App Router (app/):\n- Introduced in Next.js 13.\n- Uses the app/ folder with React Server Components.\n- Supports layouts, nested routing, parallel routes, loading states.\n- Uses new data-fetching functions like fetch(), not GSSP or GSP.\n- Better performance due to Server Components.\n- More scalable for large applications.\n\nExample:\napp/page.js → '/'\napp/about/page.js → '/about'\n\n🟡 Key Differences:\n- Page Router → older, simpler, no nested layouts.\n- App Router → modern, supports layouts, server components, and advanced routing.\n- App Router gives better performance and flexibility.\n\nIn short: Page Router is the old pages-based routing system, while App Router is the new and powerful routing system with layouts, server components, and modern features.",
+  category: "nextjs"
+}
+,
+{
+  id: 90909700742113,
+  question: "What is the difference between Server Components and Client Components in Next.js?",
+  answer:
+    "In Next.js (App Router), components can be Server Components or Client Components. They have different capabilities and run in different environments.\n\n🔵 Server Components:\n- Run on the server, not in the browser.\n- Default behavior in the app/ directory.\n- Can fetch data directly from the server.\n- Do not include JavaScript in the client bundle (fast performance).\n- Cannot use browser APIs like window, document.\n- Cannot use client-only hooks: useState, useEffect, useRef.\n\nExample:\n// server component (default)\nexport default function Page() {\n  const data = await fetch('https://api.com').then(res => res.json());\n  return <div>{data.title}</div>;\n}\n\n🟣 Client Components:\n- Run in the browser.\n- Must use 'use client' at the top.\n- Needed for interactivity.\n- Can use useState, useEffect, useRef, event listeners.\n- Slightly heavier because they ship JavaScript to the client.\n\nExample:\n'use client';\nexport default function Counter() {\n  const [count, setCount] = useState(0);\n  return <button onClick={() => setCount(count + 1)}>{count}</button>;\n}\n\n🟡 Key Differences:\n- Server Components run on the server; Client Components run in the browser.\n- Server Components cannot use React hooks or browser APIs; Client Components can.\n- Server Components improve performance by sending less JavaScript.\n\nIn short: Use Server Components for data fetching and static UI. Use Client Components for interactivity like buttons, forms, and animations.",
+  category: "nextjs"
+}
+,
   {
     id: 110,
     question: "How does Next.js handle image optimization?",
@@ -1179,6 +1152,14 @@ export const questions: Question[] = [
       "Nextjs advantages:1. Automatic Image Optimization\n2. File-Based Routing\n3. Server-Side Rendering (SSR)\n4. Static Site Generation (SSG)\n5. API Routes\n6. Incremental Static Regeneration (ISR)\n7. TypeScript Support\n8. Automatic Code Splitting\n9. Improved Performance and SEO\n10. Developer Experience \n11. Community and Ecosystem\n\nReact advantages:1. Flexibility\n2. Performance\n3. Ecosystem\n4. Community\n5. Scalability\n6. SEO\n7. Developer Experience\n8. Integration with other libraries and frameworks\n9. Compatibility with existing codebases\n10. Scalability\n11. SEO\n12. Developer Experience\n13. Community and Ecosystem",
     category: "nextjs",
   },
+  {
+    id: 114,
+    question: "What is the difference between router.push and Link href in Next.js?",
+    answer:
+      "router.push and Link href are both used for navigation in Next.js, but they serve different purposes.\n\n🔵 Link (href):\n- Used for client-side navigation in JSX.\n- Best for clickable links.\n- Automatically prefetches pages for faster navigation.\n- Improves performance and SEO.\n\nExample:\n<Link href=\"/about\">Go to About</Link>\n\n🟣 router.push:\n- Used to navigate programmatically inside JavaScript code.\n- Useful after form submissions, button clicks, or conditional redirects.\n- Does not automatically prefetch.\n\nExample:\nrouter.push('/dashboard');\n\n🟡 When to Use What:\n- Use <Link> when the user clicks a link in UI.\n- Use router.push when navigation happens through logic or functions.\n\n🟠 Key Difference:\n- Link → declarative navigation (in UI).\n- router.push → programmatic navigation (in code).\n\nIn short: Link is for clickable navigation in JSX, while router.push is for navigation triggered by functions or events.",
+    category: "nextjs"
+  }
+,  
 
   // React Questions
   {
@@ -1189,29 +1170,21 @@ export const questions: Question[] = [
     category: "react",
   },
   {
-    id: 30453,
+    id: 9878888888888888115,
     question: "What is an Error Boundary in React?",
     answer:
-      "An Error Boundary is a special React component that catches JavaScript errors in the UI during rendering. Instead of the whole app crashing, it shows a fallback UI. Error Boundaries catch errors in child components, lifecycle methods, and rendering, but not in event handlers. They are created using class components with componentDidCatch and getDerivedStateFromError. In short, Error Boundaries help prevent the entire React app from breaking when one part has an error, and allow us to show a safe fallback message.",
-    category: "react",
-  },
+      "An Error Boundary is a special React component that catches JavaScript errors in its child components and prevents the entire application from crashing. It allows you to show a fallback UI instead of breaking the app.\n\n🔵 Key Features of Error Boundaries:\n- Catch errors during rendering.\n- Catch errors in lifecycle methods.\n- Catch errors in constructors of child components.\n- Show a fallback UI gracefully.\n\n🟣 How to Create an Error Boundary:\nError boundaries must be class components because they rely on lifecycle methods.\n\nExample:\nclass ErrorBoundary extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = { hasError: false };\n  }\n\n  static getDerivedStateFromError(error) {\n    return { hasError: true };\n  }\n\n  componentDidCatch(error, info) {\n    console.log('Error:', error);\n  }\n\n  render() {\n    if (this.state.hasError) {\n      return <h2>Something went wrong!</h2>;\n    }\n    return this.props.children;\n  }\n}\n\n🟡 Usage:\n<ErrorBoundary>\n  <MyComponent />\n</ErrorBoundary>\n\n🟠 Important Note:\n- Error boundaries do NOT catch errors from event handlers, async code, or server-side rendering.\n\nIn short: An Error Boundary prevents your React app from crashing by catching UI errors and showing a fallback UI.",
+    category: "react"
+  }
+  ,
   {
-    id: 112,
-    question:
-      "What are React Hooks and name the most common ones and why were they introduced?",
+    id: 198916,
+    question: "What are React Hooks and name the most common ones and why were they introduced?",
     answer:
-      "Hooks are special functions that allow functional components to use state, lifecycle behavior, and other React features without writing class components. They make components easier to read, test, and reuse. \n\n" +
-      "Most common Hooks:\n\n" +
-      "1. useState – manages local component state.\n" +
-      "2. useEffect – handles side effects like API calls and event listeners.\n" +
-      "3. useContext – consumes values from React Context.\n" +
-      "4. useRef – stores mutable values and accesses DOM elements.\n" +
-      "5. useMemo – memoizes expensive computations.\n" +
-      "6. useCallback – memoizes functions to prevent unnecessary re-renders.\n" +
-      "7. useReducer – manages complex state logic using reducers.\n\n" +
-      "Hooks were introduced to solve issues with class components such as complex lifecycle logic, difficulty in reusing stateful logic, and large components becoming hard to maintain. Hooks make React more predictable, modular, and easier to scale.",
-    category: "react",
-  },
+      "React Hooks are special functions that allow functional components to use state, lifecycle features, and other React capabilities without needing class components. They make React code cleaner, simpler, and more reusable.\n\n🔵 Why Hooks Were Introduced:\n1. To avoid the complexity of class components.\n2. To reuse logic easily across components.\n3. To simplify state management and side effects.\n4. To improve readability and maintainability.\n\n🟣 Most Common Hooks:\n- useState → Manage state in functional components.\n- useEffect → Handle side effects like API calls, subscriptions, timers.\n- useContext → Share global state easily.\n- useRef → Access DOM elements or store mutable values.\n- useMemo → Memoize expensive calculations.\n- useCallback → Memoize functions to avoid re-renders.\n- useReducer → Complex state management (alternative to Redux-like logic).\n\n🟡 Example:\nconst [count, setCount] = useState(0);\n\nuseEffect(() => {\n  console.log('Component Mounted');\n}, []);\n\nIn short: React Hooks let functional components use state and lifecycle features, making React development simpler and more efficient.",
+    category: "react"
+  }
+,  
   {
     id: 134513,
     question:
@@ -1232,25 +1205,30 @@ export const questions: Question[] = [
     category: "react",
   },
   {
-    id: 113,
-    question: "Explain the Virtual DOM and how React uses it.",
+    id: 117,
+    question: "What is the Virtual DOM in React?",
     answer:
-      "The Virtual DOM is a lightweight in-memory representation of the real DOM. When a component’s state or props change, React creates a new Virtual DOM tree and compares it with the previous one using a diffing algorithm. Based on this comparison, React calculates the minimal set of changes needed and updates only those specific parts of the real DOM, instead of re-rendering the entire UI.\n\nThis process, known as reconciliation, makes UI updates faster and more efficient because manipulating the real DOM is expensive, while working with the Virtual DOM is much cheaper. React’s Virtual DOM helps achieve high performance by batching updates and applying only the necessary changes.",
-    category: "react",
-  },
+      "The Virtual DOM (VDOM) is a lightweight, in-memory representation of the real DOM. React uses it to update the UI efficiently by minimizing direct changes to the actual DOM, which is slow.\n\n🔵 How the Virtual DOM Works:\n1. React creates a virtual copy of the UI in memory.\n2. When state changes, a new Virtual DOM is created.\n3. React compares the new Virtual DOM with the previous one using a process called 'diffing'.\n4. Only the changed parts are updated in the real DOM.\n\n🟣 Why Virtual DOM Is Faster:\n- Real DOM updates are slow and expensive.\n- Virtual DOM updates are fast because they happen in memory.\n- React batches and optimizes real DOM updates.\n\n🟡 Example:\nIf only one button changes on the page, React updates just that part instead of re-rendering the entire page.\n\n🟠 Benefits:\n- Better performance.\n- Efficient UI updates.\n- Cleaner re-rendering logic.\n- Makes React apps faster and smoother.\n\nIn short: The Virtual DOM is a fast, in-memory representation of the real DOM that helps React update only the necessary parts of the UI efficiently.",
+    category: "react"
+  }
+  ,
   {
-    id: 124.2,
-    question: "What are controlled and uncontrolled components in React?",
+    id: 999118,
+    question: "What is the difference between controlled and uncontrolled components in React?",
     answer:
-      "Controlled components are form inputs whose values are fully managed by React state. Every change triggers an onChange handler, updating state and re-rendering the UI. This makes the input’s value predictable, enables real-time validation, formatting, and ensures React is the single source of truth.\n\nUncontrolled components store their values directly in the DOM instead of React state. Their current values are accessed using refs, typically during form submission. They require less code and behave like traditional HTML form elements but offer less control for validation or dynamic updates.\n\nIn short: controlled components keep form data in React state for maximum control, while uncontrolled components rely on the DOM for simplicity but reduced flexibility.",
-    category: "react",
-  },
+      "Controlled and uncontrolled components refer to how form data is handled in React.\n\n🔵 Controlled Components:\n- React controls the form input value.\n- The value comes from React state.\n- onChange updates the state, and state updates the UI.\n- Provides full control, validation, and predictable behavior.\n\nExample:\nconst [name, setName] = useState('');\n<input value={name} onChange={(e) => setName(e.target.value)} />\n\n🟣 Uncontrolled Components:\n- The DOM controls the form input value.\n- Use refs to read values instead of state.\n- Less code but less control.\n\nExample:\nconst inputRef = useRef();\n<input ref={inputRef} />\n\n🟡 When to Use What:\n- Use controlled components when you need validation, instant UI updates, or strict control.\n- Use uncontrolled components for simple forms or when performance matters.\n\nIn short: Controlled components use React state to manage input values, while uncontrolled components rely on the DOM with refs.",
+    category: "react"
+  }
+  ,
   {
-    id: 114,
-    question: "What is reconciliation in React?",
-    answer: "",
-    category: "react",
-  },
+    id: 233120,
+    question: "What is Reconciliation in React?",
+    answer:
+      "Reconciliation is the process React uses to determine what changes need to be made to the real DOM when the application's state or props update. React compares the new Virtual DOM with the previous one and updates only the parts that changed, making UI updates fast and efficient.\n\n🔵 How Reconciliation Works:\n1. React creates a new Virtual DOM whenever state or props change.\n2. React compares the new Virtual DOM with the old one using a diffing algorithm.\n3. Only the modified elements are updated in the real DOM.\n4. This makes updates faster and avoids unnecessary re-renders.\n\n🟣 Key Rules React Follows:\n- If the element type changes, React destroys the old element and creates a new one.\n- If the type is the same, React updates only the changed attributes.\n- Keys help React identify elements in lists and optimize reconciliation.\n\n🟡 Why Reconciliation Is Important:\n- Improves performance.\n- Minimizes real DOM updates.\n- Provides smooth UI rendering.\n- Makes React apps efficient even with frequent updates.\n\nIn short: Reconciliation is React’s process of comparing Virtual DOM trees and applying only necessary changes to the real DOM for fast and optimized UI updates.",
+    category: "react"
+  }
+
+,  
   {
     id: 115,
     question: "What is prop drilling and how can you avoid it?",
@@ -1814,7 +1792,7 @@ export const questions: Question[] = [
       "Socket.IO security best practices:\n\n1. Authentication & Authorization:\n- Always authenticate on connection\n- Verify user permissions before emitting sensitive data\n- Use JWT or session-based auth\n\n2. Validate All Input:\n```javascript\nsocket.on('message', (data) => {\n  if (!isValidMessage(data)) {\n    return socket.disconnect();\n  }\n  // Process message\n});\n```\n\n3. Rate Limiting:\n- Prevent spam and DoS attacks\n- Limit connections per IP\n- Throttle message frequency\n\n4. CORS Configuration:\n```javascript\nconst io = require('socket.io')(server, {\n  cors: {\n    origin: 'https://yourdomain.com',\n    methods: ['GET', 'POST'],\n    credentials: true\n  }\n});\n```\n\n5. Use HTTPS/WSS:\n- Encrypt all socket traffic\n- Prevent man-in-the-middle attacks\n\n6. Namespace Isolation:\n- Separate admin and user connections\n- Different authentication per namespace\n\n7. Room Access Control:\n- Verify user can join/leave rooms\n- Don't trust client-provided room names\n\n8. Sanitize Output:\n- Prevent XSS in chat applications\n- Escape HTML in messages\n\n9. Monitor & Log:\n- Track suspicious activity\n- Log authentication failures\n- Monitor connection rates\n\n10. Keep Dependencies Updated:\n- Regular security patches\n- Update Socket.IO and dependencies",
     category: "socket",
   },
-  
+
   // TypeScript Questions
   {
     id: 200,
@@ -1825,7 +1803,8 @@ export const questions: Question[] = [
   },
   {
     id: 274,
-    question: "What is the difference between 'interface' and 'type' in TypeScript?",
+    question:
+      "What is the difference between 'interface' and 'type' in TypeScript?",
     answer:
       "In my daily work, I use both but for different purposes. Here's how I decide:\n\nI use Interface when:\n- Defining object shapes, especially for classes\n- Working with OOP patterns\n- Need declaration merging (like extending third-party types)\n- Building public APIs\n\nI use Type when:\n- Creating unions or intersections\n- Working with primitives or tuples\n- Need computed properties\n- Creating utility types\n\nReal Examples from my projects:\n```typescript\n// Interface - API response\ninterface User {\n  id: string;\n  name: string;\n  email: string;\n}\n\n// Can extend library types\ninterface User {\n  createdAt: Date; // Declaration merging\n}\n\n// Type - Complex types\ntype Status = 'pending' | 'active' | 'inactive'; // Union\ntype ID = string | number; // Flexible\ntype ApiResponse<T> = {\n  data: T;\n  error?: string;\n};\n\n// Type for function signatures\ntype EventHandler = (event: Event) => void;\n\n// Intersection types\ntype UserWithRole = User & { role: string };\n```\n\nPractical Rule: I default to interface for objects and type for everything else. Both work fine for simple objects, so consistency in the codebase matters more than strict rules.",
     category: "typescript",
@@ -1846,7 +1825,8 @@ export const questions: Question[] = [
   },
   {
     id: 204,
-    question: "What is the difference between 'any', 'unknown', and 'never' types?",
+    question:
+      "What is the difference between 'any', 'unknown', and 'never' types?",
     answer:
       "These three types confused me initially, but after working with TypeScript for 3 years, here's how I use them:\n\nany - I avoid it unless absolutely necessary:\n```typescript\n// BAD - loses all type safety\nlet data: any = fetchSomeData();\ndata.something.that.doesnt.exist(); // No error until runtime!\n\n// Only use for quick prototyping or third-party libraries with no types\nconst thirdPartyLib: any = require('old-library');\n```\n\nunknown - My go-to for uncertain types:\n```typescript\n// GOOD - Forces type checking\nfunction processApiResponse(response: unknown) {\n  // Must check type before using\n  if (typeof response === 'object' && response !== null) {\n    if ('data' in response) {\n      return response.data;\n    }\n  }\n  throw new Error('Invalid response');\n}\n\n// I use this for try-catch blocks\ntry {\n  doSomething();\n} catch (error: unknown) {\n  if (error instanceof Error) {\n    console.log(error.message);\n  }\n}\n```\n\nnever - For exhaustive checks and errors:\n```typescript\n// Exhaustive type checking (super useful!)\ntype Status = 'pending' | 'success' | 'error';\n\nfunction handleStatus(status: Status) {\n  switch(status) {\n    case 'pending': return 'Loading...';\n    case 'success': return 'Done!';\n    case 'error': return 'Failed!';\n    default:\n      // If I add a new status, TypeScript errors here\n      const exhaustive: never = status;\n      return exhaustive;\n  }\n}\n\n// Functions that always throw\nfunction fail(message: string): never {\n  throw new Error(message);\n}\n```\n\nRule of thumb: unknown > any, always. Never is for special cases.",
     category: "typescript",
