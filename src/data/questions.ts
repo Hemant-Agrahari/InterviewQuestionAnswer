@@ -574,13 +574,6 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 5.099998,
-    question: "What is the difference between Shallow Copy and Deep Copy?",
-    answer:
-      'In JavaScript, copying an object or array doesn\'t always create a separate copy — sometimes it still points to the same memory. So understanding Shallow vs Deep Copy becomes important.\n\n🔵 Shallow Copy:\nA shallow copy copies only the first level of the object. Nested objects are still referenced, not cloned. So changing nested values affects both objects.\n\nExample:\nconst user1 = {\n  name: "Poonam",\n  skills: { frontend: "Angular", backend: "Java" }\n};\n\nconst user2 = { ...user1 }; // Shallow Copy\nuser2.skills.backend = "NodeJS";\nconsole.log(user1.skills.backend); // Output: NodeJS (changed!)\n\n🟣 Deep Copy:\nA deep copy creates a fully independent clone, including nested objects. Changes do not affect the original object.\n\nExample:\nconst user1 = {\n  name: "Poonam",\n  skills: { frontend: "Angular", backend: "Java" }\n};\n\nconst user2 = JSON.parse(JSON.stringify(user1)); // Deep Copy\nuser2.skills.backend = "NodeJS";\nconsole.log(user1.skills.backend); // Output: Java (safe!)\n\nIn short: Shallow copy copies only the top level, while deep copy clones all levels independently.',
-    category: "javascript",
-  },
-  {
     id: 12298,
     question:
       "What is the difference between event bubbling and event capturing?",
@@ -592,8 +585,23 @@ export const questions: Question[] = [
     id: 454799,
     question: "What is the difference between slice and splice in JavaScript?",
     answer:
-      "slice and splice are both array methods in JavaScript, but they work very differently.\n\n🔵 slice():\n- Used to copy a portion of an array.\n- Does NOT modify the original array.\n- Returns a new array.\n- Syntax: array.slice(start, end)\n\nExample:\nconst arr = [1, 2, 3, 4];\nconst result = arr.slice(1, 3); // [2, 3]\nconsole.log(arr); // [1, 2, 3, 4] (unchanged)\n\n🟣 splice():\n- Used to add, remove, or replace elements.\n- Modifies the original array.\n- Returns the removed elements.\n- Syntax: array.splice(start, deleteCount, itemsToAdd)\n\nExample:\nconst arr = [1, 2, 3, 4];\narr.splice(1, 2, 9, 9); // removes 2 elements and adds 9, 9\nconsole.log(arr); // [1, 9, 9, 4]\n\n🟡 Key Difference:\n- slice → non-destructive, returns a copy.\n- splice → destructive, changes the original array.\n\nIn short: slice copies, splice edits.",
+      "In JavaScript, both slice and splice are used to work with arrays, but they behave completely differently.\n\n  slice():slice() is a non-mutating method. It creates a new array by copying a selected portion of the original array. The important thing is that it does not modify the original array. We use slice when we want to extract data without affecting the source array.\n\n splice(): splice(), on the other hand, is a mutating method. It is used to add, remove, or replace elements directly in the original array. Since splice modifies the array in place, it’s commonly used when we need to update array content.",
     category: "javascript",
+  },
+  {
+    id: 10.34556,
+    question: "What is the difference shallow copy and deep copy?",
+    answer:
+      "Shallow Copy: Shallow copy is a way of copying an object where only the top-level properties are copied, and nested objects are still shared by reference.\n\n Deep copy is a way of copying an object where all levels, including nested objects, are completely duplicated, so both objects are fully independent.",
+    category: "javascript",
+  },
+  {
+    id: 454799,
+    question:
+      "What is the difference between debounce and Throttling in JavaScript?",
+    answer:
+      "Throttling:Throttling is a technique used to limit how many times a function can execute over a period of time.Even if an event keeps firing continuously—like scroll, resize, or button clicks—the throttled function will only run at fixed intervals.This helps improve performance and prevents unnecessary function calls.\n\n debounce:Debouncing is a technique that delays the execution of a function until a certain amount of time has passed without the event being triggered again.If the event keeps happening repeatedly, the timer resets each time, and the function runs only once after the user stops triggering the event",
+    category: "react",
   },
   {
     id: 463100,
