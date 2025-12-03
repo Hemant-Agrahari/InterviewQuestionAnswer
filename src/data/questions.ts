@@ -375,6 +375,14 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
+    id: 1256105,
+    question:
+      "What is layout thrashing and how do you prevent forced reflows in the browser?",
+    answer:
+      "Layout thrashing happens when the browser has to repeatedly recalculate layout and re-render the page because JavaScript is constantly reading and writing DOM values in a mixed and inefficient way.\n\nWhen JavaScript asks for layout information (like offsetHeight, scrollHeight, width, etc.) right after changing the DOM, the browser is forced to recalculate styles and layout again and again. This repeated cycle slows down the page and hurts performance.\n\n🔵 What causes layout thrashing?\n- Reading DOM properties immediately after writing them.\n- Making multiple style changes one by one.\n- Frequent DOM manipulations inside loops.\n- Using JavaScript animations instead of CSS.\n\n🔵 How to prevent forced reflows and layout thrashing?\n1. **Batch DOM reads and writes**\n   - Read all layout values together.\n   - Write all DOM changes together.\n\n2. **Use requestAnimationFrame() for smooth updates**\n   - Lets the browser group changes before repainting.\n\n3. **Use CSS classes instead of multiple style updates**\n   - Apply one class instead of setting many inline styles.\n\n4. **Avoid measuring DOM values too often**\n   - Cache values when possible.\n\n5. **Use CSS transitions/animations instead of JavaScript animations**\n   - They run on the GPU and avoid extra layout calculations.\n\n🟡 Simple Summary:\nLayout thrashing happens when we mix DOM reads and writes too fast. To prevent it, batch changes, avoid unnecessary DOM reads, and let the browser handle updates efficiently.",
+    category: "javascript",
+  },
+  {
     id: 2386,
     question:
       "What does it mean when JavaScript is called an interpreted language?",
@@ -611,6 +619,21 @@ export const questions: Question[] = [
     category: "react",
   },
   {
+    id: 1256106,
+    question: "How do you identify memory leaks in a React application?",
+    answer:
+      "In React, memory leaks usually happen when components keep holding references to data even after they are unmounted, or when we don’t clean up side effects properly.\n\n🔵 How I identify memory leaks in React:\n1. **Browser DevTools – Memory Tab**\n   - I take heap snapshots before and after performing some actions (like opening/closing modals, navigating between pages).\n   - If the number of objects or memory usage keeps increasing and never comes down, it’s a sign of a memory leak.\n\n2. **Performance Issues / Warning Signs**\n   - App becomes slower over time.\n   - UI starts lagging after navigating for a while.\n   - React gives warnings like: “Can’t perform a React state update on an unmounted component”.\n\n3. **React DevTools Profiler**\n   - I use the Profiler to check which components are re-rendering too often or staying mounted longer than expected.\n\n🔵 Common causes of memory leaks in React:\n- Not cleaning up `useEffect` subscriptions or listeners.\n- setInterval / setTimeout not cleared.\n- Event listeners added on window or document and never removed.\n- WebSocket or API subscriptions not closed.\n\nExample (Bad – no cleanup):\nuseEffect(() => {\n  const interval = setInterval(() => {\n    setCount(c => c + 1);\n  }, 1000);\n}, []);\n\nExample (Fixed – with cleanup):\nuseEffect(() => {\n  const interval = setInterval(() => {\n    setCount(c => c + 1);\n  }, 1000);\n\n  return () => clearInterval(interval); // cleanup\n}, []);\n\n🟡 How I prevent / fix memory leaks:\n- Always return a cleanup function from useEffect for subscriptions, timers, and event listeners.\n- Cancel in-flight API requests when the component unmounts (using AbortController or library support).\n- Avoid storing huge objects or unnecessary data in state.\n\nIn simple words: I detect memory leaks using DevTools (memory snapshots + profiler), watch for growing memory and warnings, and fix them by properly cleaning up effects, timers, listeners, and subscriptions in React.",
+    category: "react",
+  },
+  {
+    id: 1256107,
+    question:
+      "Explain how garbage collection works in modern JavaScript engines.",
+    answer:
+      "Modern JavaScript engines like V8 use automatic garbage collection to free up memory that is no longer needed. Developers don't manually release memory — the engine does it for us.\n\n🔵 How it works:\nJavaScript uses a model called **mark-and-sweep**.\n1. The garbage collector starts from the root objects (like window, global variables).\n2. It 'marks' all objects that are reachable or still in use.\n3. Any object that is NOT reachable is considered garbage.\n4. The engine removes those unreachable objects from memory.\n\nThis prevents memory leaks by making sure unused data doesn't stay in memory forever.\n\n🔵 What makes an object 'reachable'?  \n- Variables currently in scope\n- Objects referenced by other objects\n- Active closures or event listeners\n- Global objects\n\nIf there is no reference pointing to an object, it becomes unreachable and will be collected.\n\n🔵 Example of losing reachability:\nlet user = { name: 'John' };\nuser = null; // The object is now unreachable → Garbage collected.\n\n🔵 Modern optimizations:\n- **Generational GC**: New objects are stored in a 'young' space for quick cleanup.\n- **Incremental GC**: Splits work into small steps to avoid blocking the main thread.\n- **Concurrent GC**: Runs garbage collection in parallel threads.\n- **Idle-time GC**: Runs when the browser is idle.\n\n🟡 Simple Summary:\nGarbage collection automatically removes objects that your code can no longer reach. Modern engines do this efficiently using mark-and-sweep, generational cleanup, and background threads to keep performance smooth.",
+    category: "javascript",
+  },
+  {
     id: 463100,
     question:
       "What is the difference between Object.freeze and Object.seal in JavaScript?",
@@ -704,6 +727,14 @@ export const questions: Question[] = [
       "shift() and unshift() are array methods used to remove or add elements at the beginning of an array.\n\n🔵 shift():\n- Removes the first element from the array.\n- Returns the removed element.\n- Modifies the original array.\n\nExample:\nconst arr = [10, 20, 30];\narr.shift(); // returns 10\n// arr becomes [20, 30]\n\n🔵 unshift():\n- Adds one or more elements at the beginning of the array.\n- Returns the new length of the array.\n- Modifies the original array.\n\nExample:\nconst arr = [20, 30];\narr.unshift(10); // returns 3\n// arr becomes [10, 20, 30]\n\n🟡 Key Difference:\n- shift removes from the start.\n- unshift adds to the start.\n\nIn short: shift removes the first item, unshift adds an item to the beginning of the array.",
     category: "javascript",
   },
+  {
+    id: 1256104,
+    question: "How does the browser parse and execute JavaScript internally?",
+    answer:
+      "When we write JavaScript code, the browser doesn't run it directly. It goes through a clear process inside the JavaScript engine (like V8 in Chrome).\n\n🔵 1. Reading the Code (Parsing):\nThe browser first reads the entire JavaScript file from top to bottom and checks for syntax errors. If the code is valid, it converts it into a structure called the AST — basically a format the engine understands.\n\n🔵 2. Compiling the Code:\nModern browsers use JIT (Just-In-Time) compilation. This means instead of interpreting everything line by line, they convert hot or frequently used code into machine code to make it faster.\n\n🔵 3. Executing the Code:\nAfter compilation, the code runs inside the JavaScript call stack. JavaScript is single-threaded, so it runs one task at a time.\n\n🔵 4. Handling Async Tasks:\nFor things like setTimeout, fetch, or events, the browser does not block. These tasks go to Web APIs. After they finish, their callbacks are sent to queues, and the Event Loop pushes them to the call stack when it's free.\n\n🔵 5. Memory Management:\nThe browser also manages memory — it allocates memory for variables and automatically cleans up unused objects using garbage collection.\n\n🟡 Simple Summary:\nThe browser reads the code → converts it → compiles it → runs it → handles async work with the event loop → and manages memory in the background.\n\nThis entire process happens extremely fast, which is why JavaScript feels smooth and responsive in the browser.",
+    category: "javascript",
+  },
+
   {
     id: 59,
     question: "What is split() in JavaScript?",
