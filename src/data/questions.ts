@@ -1819,13 +1819,6 @@ So useEffect gives us mount, update, and unmount behavior in a single hook`,
     category: "react",
   },
   {
-    id: 1423413,
-    question: "What is the purpose of React.memo?",
-    answer:
-      "React Router’s context menu refers to the internal context system that stores routing information like current path, navigation methods, and route params. It allows components to access routing data using hooks like useLocation, useNavigate, and useParams without passing props manually.",
-    category: "react",
-  },
-  {
     id: 14343,
     question: "When should you use useReducer over useState?",
     answer:
