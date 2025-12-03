@@ -414,9 +414,16 @@ export const questions: Question[] = [
   },
   {
     id: 98789888,
+    question: "What is Strict Mode?",
+    answer:
+      "StrictMode is a development-only tool that helps identify potential issues in React applications. It highlights unsafe lifecycle methods, accidental side effects, and deprecated APIs by running certain functions twice. It doesn’t affect production; it just helps us write cleaner and more future-proof code.",
+    category: "javascript",
+  },
+  {
+    id: 98789889,
     question: "What is Event Delegation in JavaScript?",
     answer:
-      'Event delegation is a technique in JavaScript where instead of adding event listeners to multiple child elements, we add a single event listener to a parent element. The event bubbles up from the child to the parent, and the parent handles the event based on the target element.\n\n🔵 Why Event Delegation Is Useful:\n- Better performance (fewer event listeners).\n- Useful when many child elements need the same event.\n- Handles dynamically added elements without extra listeners.\n\n🟣 How It Works:\n- Events in JavaScript bubble up from the target element to its parents.\n- We use event.target to detect which child triggered the event.\n\n🟡 Example:\ndocument.querySelector("ul").addEventListener("click", function(e) {\n  if (e.target.tagName === "LI") {\n    console.log("Clicked on: " + e.target.textContent);\n  }\n});\n\nHere, clicking any <li> is handled by the <ul> listener.\n\nIn short: Event delegation allows you to handle events efficiently by attaching one listener to a parent instead of multiple listeners to child elements.',
+      "Event Delegation is a technique in JavaScript where instead of adding event listeners to individual child elements, we attach a single event listener to a parent element. Because events bubble up in the DOM, the parent can catch events from its children.This improves performance, reduces memory usage, and is useful when elements are created dynamically. For example, instead of adding a click event to every button inside a list, we add one click event to the list container and detect which child was clicked using event.target.\n\n Event Delegation is commonly used for lists, tables, menus, and dynamic DOM updates.",
     category: "javascript",
   },
   {
@@ -529,6 +536,13 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
+    id: 109.1,
+    question: "What are the types of exports and imports in JavaScript?",
+    answer:
+      "JavaScript supports two types of exports: default exports and named exports. A default export allows exporting a single main value from a file, and we import it without curly braces. Named exports allow exporting multiple values, and we must import them using curly braces. Default is for primary components or modules, while named exports are useful for utilities and helper functions.",
+    category: "javascript",
+  },
+  {
     id: 10101096,
     question:
       "What is the difference between for...in and for...of in JavaScript?",
@@ -602,6 +616,13 @@ export const questions: Question[] = [
       "What is the difference between Promise.all(), Promise.race(), and Promise.allSettled()?",
     answer:
       "These Promise methods are used to handle multiple asynchronous operations together, but each behaves differently.\n\n🔵 Promise.all():\n- Runs all promises in parallel.\n- Resolves only when ALL promises resolve.\n- If ANY promise fails, the entire Promise.all() fails.\n\nExample:\nPromise.all([p1, p2, p3])\n  .then(res => console.log(res))\n  .catch(err => console.log(err));\n\n🟣 Promise.race():\n- Returns the result of the FIRST promise that settles.\n- Whichever promise resolves or rejects first wins.\n\nExample:\nPromise.race([p1, p2, p3])\n  .then(res => console.log(res))\n  .catch(err => console.log(err));\n\n🟡 Promise.allSettled():\n- Waits for ALL promises to finish.\n- Returns an array of results with status: fulfilled or rejected.\n- Never fails, even if some promises fail.\n\nExample:\nPromise.allSettled([p1, p2, p3])\n  .then(result => console.log(result));\n\n🟠 Key Difference:\n- Promise.all → Fails if one fails.\n- Promise.race → Returns whichever completes first.\n- Promise.allSettled → Returns results of all promises, regardless of success or failure.\n\nIn short: Use Promise.all for all-success situations, race for first-result scenarios, and allSettled when you need outcomes of every promise.",
+    category: "javascript",
+  },
+  {
+    id: 99123,
+    question: "What is the difference between call(), apply() and bind()?",
+    answer:
+      "call() is a method that lets you run a function by explicitly setting what this should refer to and by providing the function arguments one by one.It executes the function instantly with the chosen context.\n\n apply() works just like call(), but it takes the function arguments in the form of an array or array-like object.It also executes the function immediately with the specified this. \n\n bind() creates a new function where the value of this is permanently set to the provided object.It does not run the function immediately — it returns a copy that can be called later with the fixed context.",
     category: "javascript",
   },
   {
@@ -729,7 +750,7 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 57,
+    id: 57.1,
     question:
       "What is the difference between Microtask and Macrotask in JavaScript?",
     answer:
@@ -744,7 +765,7 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 71,
+    id: 71.1,
     question: "What is async/await in JavaScript?",
     answer:
       "Async/await is a way to handle asynchronous operations in JavaScript with cleaner syntax. When you put 'async' before a function, it always returns a Promise. Inside that function, you can use the 'await' keyword to pause execution until a Promise resolves or rejects. It makes asynchronous code look like synchronous code, making it easier to read and maintain compared to chaining .then() methods. Errors can be caught using try/catch blocks.",
@@ -771,13 +792,7 @@ export const questions: Question[] = [
       " \n\n1. Anonymous function example: function() { console.log('Hello'); } \n2. Arrow function example: () => { console.log('Hello'); } \n3. Named function example: function myFunction() { console.log('Hello'); } \n4. Constructor function example: function MyConstructor() { this.name = 'John'; } \n5. Generator function example: function* myGenerator() { yield 1; yield 2; yield 3; } \n6. Async function example: async function myAsyncFunction() { await new Promise(resolve => setTimeout(resolve, 1000)); console.log('Hello'); }",
     category: "javascript",
   },
-  {
-    id: 74108,
-    question: "What is the difference between React.memo and useMemo?",
-    answer:
-      "React.memo and useMemo are both performance optimization tools in React, but they solve different problems.\n\n🔵 React.memo:\n- A higher-order component.\n- Used to memoize a **whole component**.\n- Prevents re-rendering if props do not change.\n- Useful for functional components receiving the same props repeatedly.\n\nExample:\nconst MyComponent = React.memo(function Child(props) {\n  return <div>{props.value}</div>;\n});\n\n🟣 useMemo:\n- A React hook.\n- Memoizes the **result of a calculation** (not the component itself).\n- Recomputes only when dependencies change.\n- Useful for expensive calculations or derived data.\n\nExample:\nconst result = useMemo(() => heavyCalculation(count), [count]);\n\n🟡 Key Differences:\n- React.memo → Stops unnecessary re-renders of a component.\n- useMemo → Stops unnecessary recalculations inside a component.\n- React.memo is for components; useMemo is for values.\n\nIn short: React.memo memoizes components, while useMemo memoizes computed values.",
-    category: "react",
-  },
+
   {
     id: 76.1,
     question: "Explain ES6 new features?",
@@ -1025,7 +1040,7 @@ export const questions: Question[] = [
     category: "output-based",
   },
   {
-    id: 103,
+    id: 103.1,
     question: "What is the output of console.log([1] == '1')?",
     answer:
       "Output: true. Explanation: Array [1] is converted to string '1', then '1' is converted to number 1. So [1] == 1 becomes 1 == 1, which is true.",
@@ -1046,7 +1061,7 @@ export const questions: Question[] = [
     category: "output-based",
   },
   {
-    id: 106,
+    id: 106.1,
     question: "What is the output of console.log(typeof NaN)?",
     answer:
       "Output: 'number'. Explanation: NaN is a special value in JavaScript that represents 'Not a Number'. It's a number type, not a string or boolean.",
@@ -1167,12 +1182,13 @@ export const questions: Question[] = [
   },
   // React Questions
   {
-    id: 111,
+    id: 111.1,
     question: "What is React and what makes it popular?",
     answer:
       "React is a JavaScript library developed by Facebook for building fast, interactive, and scalable user interfaces. It follows a component-based architecture, which means the UI is split into reusable pieces called components. React uses a Virtual DOM to efficiently update only the parts of the UI that change instead of reloading the whole page. It also supports one-way data flow, which makes applications predictable and easier to debug. React’s features like hooks, JSX, and reusable components help developers build modern, performance-optimized web applications. Overall, React makes UI development faster, cleaner, and more maintainable",
     category: "react",
   },
+
   {
     id: 108.2,
     question: "What are the features of React?",
@@ -1188,7 +1204,7 @@ export const questions: Question[] = [
     category: "react",
   },
   {
-    id: 108.4,
+    id: 108.4010938,
     question: "What are fragments in React?",
     answer:
       "Fragments in React allow us to return multiple elements from a component without adding any extra wrapper elements to the DOM. Normally, React components must return a single parent element, but with fragments we can group children without creating unnecessary <div> or <span> tags. This helps keep the DOM clean and avoids layout or styling issues caused by extra nodes. We can use fragments with <React.Fragment> or the short syntax <>...</>. They are especially useful when rendering lists or grouping multiple elements inside a component.",
@@ -1202,10 +1218,31 @@ export const questions: Question[] = [
     category: "react",
   },
   {
-    id: 108.5,
+    id: 74108,
+    question: "What is the difference between React.memo and useMemo?",
+    answer:
+      "React.memo and useMemo are both performance optimization tools in React, but they solve different problems.\n\n🔵 React.memo:\n- A higher-order component.\n- Used to memoize a **whole component**.\n- Prevents re-rendering if props do not change.\n- Useful for functional components receiving the same props repeatedly.\n\nExample:\nconst MyComponent = React.memo(function Child(props) {\n  return <div>{props.value}</div>;\n});\n\n🟣 useMemo:\n- A React hook.\n- Memoizes the **result of a calculation** (not the component itself).\n- Recomputes only when dependencies change.\n- Useful for expensive calculations or derived data.\n\nExample:\nconst result = useMemo(() => heavyCalculation(count), [count]);\n\n🟡 Key Differences:\n- React.memo → Stops unnecessary re-renders of a component.\n- useMemo → Stops unnecessary recalculations inside a component.\n- React.memo is for components; useMemo is for values.\n\nIn short: React.memo memoizes components, while useMemo memoizes computed values.",
+    category: "react",
+  },
+  {
+    id: 108.5010938,
     question: "What are the higher order components in React?",
     answer:
       "A Higher Order Component is a function that takes a component as input and returns an enhanced component as output. It’s a pattern used for reusing logic across multiple components. HOCs are mainly used for things like authentication checks, logging, theming, or fetching data. Before hooks, HOCs were very popular, but now custom hooks provide a cleaner alternative. Still, understanding HOCs is important because many older libraries like react-redux use them..",
+    category: "react",
+  },
+  {
+    id: 108.7,
+    question: "What are React Mixins?",
+    answer:
+      "Mixins were a way to share reusable logic across components before ES6 classes and hooks were introduced. They allowed developers to add shared code into multiple components. However, mixins caused issues like naming conflicts and unclear data flow, so React officially discouraged them. Today, hooks and HOCs are the preferred alternatives for reusing logic.",
+    category: "react",
+  },
+  {
+    id: 108.8,
+    question: "What are Render Props",
+    answer:
+      "Render Props is a pattern where a component receives a function as a prop, and that function returns elements to render. It allows sharing logic between components without using inheritance. Before hooks, render props were widely used for reusable logic like handling hover, toggles, or fetching. Now, custom hooks are the preferred approach but render props are still important to understand.",
     category: "react",
   },
   {
@@ -1236,7 +1273,7 @@ export const questions: Question[] = [
     category: "react",
   },
   {
-    id: 108.6,
+    id: 108.6010938,
     question: "What is useCallback and how it works?",
     answer:
       "useCallback is a React hook that memoizes a function so it doesn’t get re-created on every render. It returns the same function reference until its dependencies change. This is useful when passing functions to child components that are memoized, or when preventing unnecessary re-renders. In simple terms, useCallback improves performance by caching functions.",
@@ -1293,14 +1330,14 @@ This lifecycle helps us perform side effects, optimize performance, and manage r
     category: "react",
   },
   {
-    id: 108.7,
+    id: 108.71,
     question: "What are synthetic events in React?",
     answer:
       "Synthetic events are React’s custom event wrapper around the browser’s native events. They provide a consistent, cross-browser interface so we don’t have to worry about browser differences. Synthetic events work the same way across all browsers because React manages them internally. They also improve performance through event delegation — React attaches one event listener at the root instead of multiple listeners on every element",
     category: "react",
   },
   {
-    id: 108.8,
+    id: 108.81,
     question: "What is state in React?",
     answer:
       "State is a component’s dynamic data that can change over time. Whenever the state updates, React re-renders the component to reflect the new UI. Unlike props, state is internal and controlled by the component itself. State is used for things like form inputs, toggles, counters, API responses, etc.",
@@ -1329,21 +1366,21 @@ This lifecycle helps us perform side effects, optimize performance, and manage r
     category: "react",
   },
   {
-    id: 108.1,
+    id: 108.11,
     question: "What is refs?",
     answer:
       "Refs give us direct access to DOM elements or child components. They are used for tasks like focusing inputs, playing videos, or reading values without re-rendering.",
     category: "react",
   },
   {
-    id: 108.11,
+    id: 108.12,
     question: "What is forwardRef?",
     answer:
       "forwardRef is a React function that lets a parent component pass a ref to a child component. It’s useful when we need to access a DOM element inside a child component from the parent.",
     category: "react",
   },
   {
-    id: 108.12,
+    id: 108.13,
     question: "What are keys in React?",
     answer:
       "Keys are unique identifiers used by React to track list items during rendering. They help React know which items changed, added, or removed. Without proper keys, React may re-render incorrectly or perform slowly. A stable ID is preferred over using the index.",
@@ -1399,7 +1436,7 @@ This lifecycle helps us perform side effects, optimize performance, and manage r
     category: "react",
   },
   {
-    id: 108.2,
+    id: 108.21,
     question: "Lifecycle replacements in functional components??",
     answer: `Functional components use useEffect as a replacement for lifecycle methods.
  
@@ -1418,10 +1455,24 @@ So useEffect gives us mount, update, and unmount behavior in a single hook`,
     category: "react",
   },
   {
-    id: 117,
+    id: 117.1,
     question: "What are the differences between React.memo and useMemo?",
     answer:
       "React.memo is a higher-order component that prevents unnecessary re-rendering of a component by comparing props - if props haven't changed, React skips rendering. It wraps the entire component (export default React.memo(MyComponent)). \n\n useMemo is a hook used inside a component to memoize the result of an expensive calculation. It caches the value and only recalculates when dependencies change. Use memo for component-level optimization, useMemo for value/calculation optimization within a component.",
+    category: "react",
+  },
+  {
+    id: 117.2,
+    question: "Difference between createElement and cloneElement?",
+    answer:
+      "createElement is used to create a new React element from scratch, based on type, props, and children. cloneElement, on the other hand, creates a copy of an existing element and allows us to modify its props or children. cloneElement is useful when we want to pass additional props to children without changing the original component.",
+    category: "react",
+  },
+  {
+    id: 117.3,
+    question: "When to use useState vs useReducer?",
+    answer:
+      "useState is best for simple, independent pieces of state—for example, toggles, input values, or simple counters..\n\n useReducer is better when the state is complex, involves multiple related fields, or when updating logic is more structured. It uses a reducer function similar to Redux, making it ideal for complex forms or multi-step processes",
     category: "react",
   },
   {
@@ -1504,6 +1555,22 @@ So useEffect gives us mount, update, and unmount behavior in a single hook`,
     question: "What is the difference between Next.js and React?",
     answer:
       "Next.js is a framework for building web applications, while React is a library for building user interfaces. Next.js provides a lot of features that are not available in React, such as server-side rendering, static site generation, and API routes. React is a library for building user interfaces, while Next.js is a framework for building web applications.",
+
+    category: "react",
+  },
+  {
+    id: 125.1,
+    question: "How can we pass data from child to parent component?",
+    answer:
+      "The most common way is using callback functions. The parent passes a function as a prop to the child, and the child calls that function with the data. Another method is using refs when the parent wants to directly read values from the child. State management tools like Context or Redux also support upward communication indirectly.",
+
+    category: "react",
+  },
+  {
+    id: 125.2,
+    question: "How can we send data from child to parent with callback??",
+    answer:
+      "The parent component defines a function to handle the incoming data and passes it as a prop to the child. The child triggers that function, usually on a button click or form submit, and sends the value back to the parent. This is the most standard and recommended approach.",
 
     category: "react",
   },
@@ -1752,6 +1819,13 @@ So useEffect gives us mount, update, and unmount behavior in a single hook`,
     category: "react",
   },
   {
+    id: 1423413,
+    question: "What is the purpose of React.memo?",
+    answer:
+      "React Router’s context menu refers to the internal context system that stores routing information like current path, navigation methods, and route params. It allows components to access routing data using hooks like useLocation, useNavigate, and useParams without passing props manually.",
+    category: "react",
+  },
+  {
     id: 14343,
     question: "When should you use useReducer over useState?",
     answer:
@@ -1861,7 +1935,7 @@ So useEffect gives us mount, update, and unmount behavior in a single hook`,
     id: 161,
     question: "What is the difference between Redux and Context API?",
     answer:
-      "Redux and Context API both manage state, but they have key differences:\n\nContext API:\n- Built into React\n- Simpler to set up\n- Good for small to medium apps\n- Can cause unnecessary re-renders if not optimized\n- No built-in middleware or dev tools\n- Best for passing data through component tree\n\nRedux:\n- External library\n- More boilerplate (especially without Redux Toolkit)\n- Better for large, complex applications\n- Optimized performance with selective subscriptions\n- Rich ecosystem (middleware, dev tools, time-travel debugging)\n- Strict unidirectional data flow\n- Better for complex state logic and side effects\n\nUse Context API for simple global state like themes or user info. Use Redux for complex state management with multiple sources of updates, middleware needs, or when you need powerful debugging tools.",
+      "Redux and Context API both manage state Context API is great for small to medium applications where we need to share simple global data like theme, user info, or language. It avoids prop drilling but doesn’t offer advanced features. \n\n Redux, on the other hand, is a full state management library that provides predictable global state control using reducers, actions, and a centralized store. It’s better for large applications with complex state logic. Redux also provides tools like middleware, debugging, and time-travel debugging.",
     category: "redux",
   },
   {
