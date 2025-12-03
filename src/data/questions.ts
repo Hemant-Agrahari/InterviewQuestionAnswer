@@ -441,6 +441,13 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
+    id: 125694,
+    question: "What is Event Handling in JavaScript?",
+    answer:
+      "Event handling in JavaScript refers to the process of listening for user actions (events) like clicks, keypresses, mouse movements, form submissions, and responding to them with specific functions called event handlers.\n\nEvents allow web pages to be interactive and dynamic. JavaScript uses methods like addEventListener() to attach handlers to elements.\n\n🔵 Example using addEventListener:\nconst btn = document.getElementById('btn');\nbtn.addEventListener('click', function() {\n  console.log('Button clicked');\n});\n\n🔵 Why Event Handling is important:\n- Makes the UI interactive.\n- Helps respond to user actions.\n- Supports dynamic content updates.\n\n🟡 Common Events:\n- click\n- keydown / keyup\n- submit\n- mouseover\n- change\n\nIn short: Event handling lets JavaScript respond to user actions by attaching functions (event handlers) to elements.",
+    category: "javascript",
+  },
+  {
     id: 93330,
     question: "What is a callback in JavaScript?",
     answer:
@@ -615,7 +622,7 @@ export const questions: Question[] = [
     id: 101010102,
     question: "What is a Promise in JavaScript?",
     answer:
-      "A Promise in JavaScript is an object that represents the eventual completion or failure of an asynchronous operation. It allows us to handle async tasks like API calls, timers, and file operations in a cleaner and more manageable way compared to callbacks.\n\n🔵 Promise States:\n1. pending → The async operation is still running.\n2. fulfilled → The operation completed successfully.\n3. rejected → The operation failed.\n\n🟣 How a Promise Works:\n- A promise returns a value in the future.\n- Instead of blocking the main thread, it executes asynchronously.\n- We handle results using .then(), .catch(), and .finally().\n\n🟡 Example:\nconst fetchData = new Promise((resolve, reject) => {\n  setTimeout(() => {\n    resolve('Data loaded');\n  }, 2000);\n});\n\nfetchData\n  .then(result => console.log(result)) // Data loaded\n  .catch(error => console.log(error));\n\n🟠 Why Promises Are Useful:\n- Avoid callback hell.\n- Clearer async code structure.\n- Easy chaining using then().\n- Better error handling.\n\nIn short: A Promise is an object that handles asynchronous operations and returns a success or failure value in the future.",
+      "A Promise in JavaScript is an object that represents the eventual completion or failure of an asynchronous operation. It allows us to handle async tasks like API calls, timers, and file operations in a cleaner and more manageable way compared to callbacks.\n\n🔵 Promise States:\n1. pending → The async operation is still running.\n2. fulfilled → The operation completed successfully.\n3. rejected → The operation failed.",
     category: "javascript",
   },
   {
@@ -640,7 +647,13 @@ export const questions: Question[] = [
       "async and await are modern JavaScript keywords used to handle asynchronous operations in a cleaner and more readable way compared to promises and callbacks.\n\n🔵 async:\n- Used before a function to make it return a Promise.\n- Automatically wraps the return value in a resolved Promise.\n\nExample:\nasync function greet() {\n  return 'Hello';\n}\n\ngreet().then(res => console.log(res)); // Hello\n\n🟣 await:\n- Can only be used inside an async function.\n- Pauses the function execution until the Promise resolves.\n- Makes async code look like synchronous code.\n\nExample:\nasync function getData() {\n  const data = await fetch('https://api.example.com');\n  console.log(data);\n}\n\n🟡 Why async/await Is Useful:\n- Easier to read and write than .then() chaining.\n- Avoids callback hell.\n- Handles errors better using try...catch.\n\n🟠 Error Handling Example:\nasync function loadData() {\n  try {\n    const res = await fetch('/api');\n    return res;\n  } catch (error) {\n    console.log('Error:', error);\n  }\n}\n\nIn short: async makes a function return a Promise, and await pauses execution until the Promise resolves, making asynchronous code cleaner and easier to understand.",
     category: "javascript",
   },
-
+  {
+    id: 125687,
+    question: "Which is better: async/await or promises, and why?",
+    answer:
+      "Both async/await and promises are used to handle asynchronous operations in JavaScript, but async/await provides cleaner and more readable code.\n\n🔵 Promises:\n- Uses .then() and .catch() for handling results.\n- Can become messy when multiple asynchronous steps are chained.\n- Still useful for running tasks in parallel using methods like Promise.all().\n\n🟣 Async/Await:\n- Built on top of promises but offers a simpler and more synchronous-style syntax.\n- Makes asynchronous code look cleaner and easier to understand.\n- Error handling becomes easier with try...catch.\n\n🟡 Example With Promises:\nfetch('/api')\n  .then(res => res.json())\n  .then(data => console.log(data))\n  .catch(err => console.log(err));\n\n🟠 Example With Async/Await:\nasync function loadData() {\n  try {\n    const res = await fetch('/api');\n    const data = await res.json();\n    console.log(data);\n  } catch (error) {\n    console.log('Error:', error);\n  }\n}\n\n🟢 Final Conclusion:\n- Promises work well, but async/await is generally better for readability.\n- Async/await avoids long .then() chains, reduces callback hell, and makes code easier to maintain.\n- However, for running multiple async tasks in parallel, promise helpers like Promise.all() are still very useful.",
+    category: "javascript",
+  },
   {
     id: 50,
     question: "What is the difference between find() and filter()?",
@@ -649,10 +662,10 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 51104,
+    id: 125690,
     question: "What is the Event Loop in JavaScript?",
     answer:
-      "The Event Loop is a mechanism in JavaScript that handles asynchronous operations and ensures non-blocking behavior, even though JavaScript is single-threaded. It continuously checks the call stack and callback queues to decide what to execute next.\n\n🔵 How It Works:\n1. JavaScript runs on a single thread with one call stack.\n2. Long tasks (timers, API calls) are handled by Web APIs.\n3. When these tasks finish, their callbacks are moved to queues.\n4. The Event Loop checks if the call stack is empty.\n5. If empty, it pushes queued callbacks into the call stack.\n\n🟣 Types of Queues:\n- **Microtask Queue:** Promise callbacks, MutationObserver, queueMicrotask.\n- **Macrotask Queue:** setTimeout, setInterval, DOM events, API callbacks.\n- **Rule:** Microtasks run before macrotasks.\n\n🟡 Example:\nconsole.log('A');\nsetTimeout(() => console.log('B'), 0);\nPromise.resolve().then(() => console.log('C'));\nconsole.log('D');\n\nOutput:\nA\nD\nC ← (microtask first)\nB ← (macrotask)\n\n🟠 Why Event Loop Is Important:\n- Enables async behavior in a single-threaded language.\n- Prevents the UI from freezing.\n- Handles promises, timers, and events efficiently.\n\nIn short: The Event Loop decides when asynchronous callbacks run, making JavaScript fast, non-blocking, and efficient.",
+      "The Event Loop is the mechanism that allows JavaScript to handle asynchronous operations even though it is single-threaded.\n\nJavaScript runs one task at a time on the call stack, but async tasks like setTimeout, promises, and fetch run in the background using Web APIs. When they finish, their callbacks are placed in queues.\n\nThe Event Loop constantly checks if the call stack is empty. If it is, it moves tasks from the queues into the stack to execute.\n\nThere are two main queues:\n🔵 Microtask Queue (higher priority) → Promises, async/await\n🟠 Callback Queue → setTimeout, setInterval, DOM events\n\nMicrotasks always run before callbacks.\n\nExample:\nconsole.log('Start');\nsetTimeout(() => console.log('Timeout'), 0);\nPromise.resolve().then(() => console.log('Promise'));\nconsole.log('End');\n\nOutput will be:\nStart\nEnd\nPromise\nTimeout\n\nIn short: The Event Loop decides what code runs next and ensures JavaScript remains non-blocking and responsive.",
     category: "javascript",
   },
   {
@@ -663,10 +676,10 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 54,
-    question: "What is the difference between the spread and rest operator?",
+    id: 125691,
+    question: "What are Rest and Spread operators in JavaScript?",
     answer:
-      "Both use the ... syntax but are used for opposite purposes.\n\nThe spread operator expands an array or object into individual elements. It is commonly used for copying or merging arrays and objects, and for passing array values as function arguments.\n\nThe rest operator collects multiple values into a single array or object. It is used in function parameters to gather remaining arguments, and in destructuring to group leftover elements.\n\nIn short: spread expands values, rest gathers values.",
+      "The Rest and Spread operators use the same syntax (three dots ...) but they work in opposite ways.\n\n🔵 Spread Operator:\n- Used to expand or unpack elements from arrays or objects.\n- Commonly used to copy arrays/objects, merge them, or pass values into functions.\n\nExample:\nconst arr = [1, 2, 3];\nconst newArr = [...arr, 4]; // [1,2,3,4]\n\n🔵 Rest Operator:\n- Used to collect or 'gather' multiple elements into a single array.\n- Often used in function parameters or destructuring.\n\nExample:\nfunction sum(...nums) {\n  return nums.reduce((a, b) => a + b, 0);\n}\nsum(1, 2, 3); // 6\n\n🟡 Key Difference:\n- Spread breaks values apart.\n- Rest gathers values together.\n\nIn short: Spread expands data, while Rest collects data, and both make JavaScript more clean and flexible.",
     category: "javascript",
   },
   {
@@ -685,10 +698,10 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 58,
-    question: "What is the difference between shift() and unshift()?",
+    id: 125692,
+    question: "What are shift and unshift in JavaScript?",
     answer:
-      "shift() removes the first element of an array, mutates the original array, and returns the removed element.\n\nunshift() adds one or more elements to the beginning of an array, mutates the original array, and returns the new length.\n\nIn short: shift() removes from the start, unshift() adds to the start. They are the opposite of pop() and push() which work at the end.",
+      "shift() and unshift() are array methods used to remove or add elements at the beginning of an array.\n\n🔵 shift():\n- Removes the first element from the array.\n- Returns the removed element.\n- Modifies the original array.\n\nExample:\nconst arr = [10, 20, 30];\narr.shift(); // returns 10\n// arr becomes [20, 30]\n\n🔵 unshift():\n- Adds one or more elements at the beginning of the array.\n- Returns the new length of the array.\n- Modifies the original array.\n\nExample:\nconst arr = [20, 30];\narr.unshift(10); // returns 3\n// arr becomes [10, 20, 30]\n\n🟡 Key Difference:\n- shift removes from the start.\n- unshift adds to the start.\n\nIn short: shift removes the first item, unshift adds an item to the beginning of the array.",
     category: "javascript",
   },
   {
@@ -1233,6 +1246,14 @@ export const questions: Question[] = [
     category: "react",
   },
   {
+    id: 125696,
+    question: "What is React Router and what is Client-Side Routing?",
+    answer:
+      "React Router is a popular library used in React applications to handle navigation between different pages without reloading the browser. It lets us map URLs to components and create a smooth single-page application (SPA) experience.\n\n🔵 React Router Features:\n- Navigate between pages without full page reloads.\n- Supports dynamic routing.\n- Provides hooks like useNavigate, useParams, useLocation.\n- Helps manage nested routes and protected routes.\n\n🔵 What is Client-Side Routing?\n- Client-side routing means the routing is handled in the browser instead of the server.\n- When the user navigates, React updates the component on the screen without requesting a new page from the server.\n- This makes the app faster and feels more like a desktop application.\n\n🟡 Example of React Router:\nimport { BrowserRouter, Routes, Route } from 'react-router-dom';\n\n<BrowserRouter>\n  <Routes>\n    <Route path='/' element={<Home />} />\n    <Route path='/about' element={<About />} />\n  </Routes>\n</BrowserRouter>\n\n🟠 Key Difference:\n- Traditional routing reloads the entire page.\n- Client-side routing updates the UI instantly without reload.\n\nIn short: React Router enables client-side routing, making navigation faster and smoother in React applications.",
+    category: "react",
+  },
+
+  {
     id: 108.5010938,
     question: "What are the higher order components in React?",
     answer:
@@ -1373,6 +1394,14 @@ This lifecycle helps us perform side effects, optimize performance, and manage r
       "A Pure Component in React automatically implements a shallow comparison of props and state in shouldComponentUpdate. It re-renders only when something actually changes, reducing unnecessary updates and improving performance.\n\n It only works for class components and doesn't work for functional components.\n\n It changes only if the props or state are different from the previous props or state.",
     category: "react",
   },
+  {
+    id: 1256102,
+    question: "What are React.lazy and Suspense in React?",
+    answer:
+      "React.lazy and Suspense are used together to load components only when they are needed, instead of loading everything at once.\n\n🔵 React.lazy:\nReact.lazy lets us import a component lazily. This means the component will load only when the user reaches that page or section. It helps reduce the initial load time and makes the app faster.\n\nExample:\nconst Profile = React.lazy(() => import('./Profile'));\n\n🔵 Suspense:\nSuspense is used to show a fallback UI, like a loader or message, while the lazy component is being loaded. Without Suspense, lazy loading will not work.\n\nExample:\n<Suspense fallback={<h2>Loading...</h2>}>\n  <Profile />\n</Suspense>\n\n🟡 Why we use them:\n- Improve performance by splitting code.\n- Load heavy components only when needed.\n- Give users a smooth experience with a loading screen.\n\nIn simple words: React.lazy loads the component later, and Suspense shows a loader until that component finishes loading.",
+    category: "react",
+  },
+
   {
     id: 108.11,
     question: "What is refs?",
@@ -1597,6 +1626,21 @@ So useEffect gives us mount, update, and unmount behavior in a single hook`,
       "The next.config.js file in a Next.js project is used to customize the default configuration settings of your Next.js application. It allows you to do things like set environment variables, customize webpack configurations, set up redirects and rewrites, and enable experimental features. For example, you might use it to set up support for CSS modules or integrate with a CDN.Some common configurations include setting up custom headers, enabling image optimization settings, and configuring internationalization (i18n) settings. It's quite powerful and flexible, making it an essential part of optimizing and configuring your Next.js app to suit your specific needs.",
     category: "react",
   },
+  {
+    id: 125698,
+    question: "What are Error Boundaries in React?",
+    answer:
+      "Error Boundaries are special React components that catch JavaScript errors in the component tree during rendering, lifecycle methods, or inside child components. Instead of crashing the entire application, error boundaries display a fallback UI.\n\n🔵 Key Points:\n- They prevent the whole UI from breaking due to one component's error.\n- They catch errors during rendering, lifecycle methods, and inside children.\n- They do NOT catch errors in event handlers, async code, or server-side rendering.\n\n🔵 Example of Error Boundary:\nclass ErrorBoundary extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = { hasError: false };\n  }\n\n  static getDerivedStateFromError() {\n    return { hasError: true };\n  }\n\n  componentDidCatch(error, info) {\n    console.log(error, info);\n  }\n\n  render() {\n    if (this.state.hasError) {\n      return <h2>Something went wrong.</h2>;\n    }\n    return this.props.children;\n  }\n}\n\n🔵 Usage:\n<ErrorBoundary>\n  <MyComponent />\n</ErrorBoundary>\n\n🟡 Why Error Boundaries Are Useful:\n- Improve app stability.\n- Prevent full app crashes.\n- Provide better user experience by showing fallback UIs.\n\nIn short: Error Boundaries catch UI errors and show a fallback instead of breaking the entire app.",
+    category: "react",
+  },
+  {
+    id: 1256100,
+    question: "What is React Fiber and Concurrent Mode?",
+    answer:
+      "React Fiber is the new rendering engine introduced in React 16. It changes how React updates the UI. Instead of doing all updates in one big process, Fiber breaks the work into smaller chunks. This allows React to pause, continue, or stop rendering when needed. Because of this, the UI stays smooth even when the app becomes heavy.\n\nConcurrent Mode is a set of features built on top of Fiber that makes React apps feel faster and more responsive. It allows React to prioritize important updates, like user input, over less important work. It also allows React to prepare multiple UI states in the background and update the screen only when ready.\n\nTogether:\n- Fiber improves how React schedules rendering.\n- Concurrent Mode uses Fiber to make rendering non-blocking and much smoother.\n\nIn simple words: Fiber is the engine that makes React faster and smarter, and Concurrent Mode is the feature that uses that engine to give users a smoother experience.",
+    category: "react",
+  },
+
   // {id:56775,question:"What ",answer:"",category:"react"},
   {
     id: 128,
@@ -1840,6 +1884,14 @@ So useEffect gives us mount, update, and unmount behavior in a single hook`,
       "Overall, useReducer is ideal for complex or large components, while useState is better for simple and straightforward state updates.",
     category: "react",
   },
+  {
+    id: 125695,
+    question: "What are default props in React?",
+    answer:
+      "Default props are fallback values for props in React components. They are used when a parent component does not pass a value for a particular prop.\n\nDefault props help prevent errors, ensure components always have valid data, and make components more reusable.\n\n🔵 Example using defaultProps (Class Component):\nMyComponent.defaultProps = {\n  name: 'Guest'\n};\n\n🔵 Example using Default Props (Functional Component):\nfunction Welcome({ name = 'Guest' }) {\n  return <h1>Hello, {name}</h1>;\n}\n\n🟡 Why Default Props are useful:\n- Avoid undefined props.\n- Provide fallback values.\n- Improve component stability.\n\nIn short: Default props ensure a component has a value even if the parent doesn't pass one.",
+    category: "react",
+  },
+
   {
     id: 149,
     question:
