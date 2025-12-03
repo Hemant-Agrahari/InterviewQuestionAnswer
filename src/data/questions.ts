@@ -624,9 +624,8 @@ export const questions: Question[] = [
     question: "What is the Event Loop in JavaScript?",
     answer:
       "The Event Loop is a mechanism in JavaScript that handles asynchronous operations and ensures non-blocking behavior, even though JavaScript is single-threaded. It continuously checks the call stack and callback queues to decide what to execute next.\n\n🔵 How It Works:\n1. JavaScript runs on a single thread with one call stack.\n2. Long tasks (timers, API calls) are handled by Web APIs.\n3. When these tasks finish, their callbacks are moved to queues.\n4. The Event Loop checks if the call stack is empty.\n5. If empty, it pushes queued callbacks into the call stack.\n\n🟣 Types of Queues:\n- **Microtask Queue:** Promise callbacks, MutationObserver, queueMicrotask.\n- **Macrotask Queue:** setTimeout, setInterval, DOM events, API callbacks.\n- **Rule:** Microtasks run before macrotasks.\n\n🟡 Example:\nconsole.log('A');\nsetTimeout(() => console.log('B'), 0);\nPromise.resolve().then(() => console.log('C'));\nconsole.log('D');\n\nOutput:\nA\nD\nC ← (microtask first)\nB ← (macrotask)\n\n🟠 Why Event Loop Is Important:\n- Enables async behavior in a single-threaded language.\n- Prevents the UI from freezing.\n- Handles promises, timers, and events efficiently.\n\nIn short: The Event Loop decides when asynchronous callbacks run, making JavaScript fast, non-blocking, and efficient.",
-    category: "javascript"
-  }
-  ,
+    category: "javascript",
+  },
   {
     id: 53,
     question: "What is the Temporal Dead Zone (TDZ)?",
@@ -701,10 +700,11 @@ export const questions: Question[] = [
   },
   {
     id: 106,
-    question: "What is the difference between call by value and call by reference in JavaScript?",
+    question:
+      "What is the difference between call by value and call by reference in JavaScript?",
     answer:
       "In JavaScript, primitive types are passed by value, while objects and arrays are passed by reference.\n\n🔵 Call by Value:\n- Used for primitive data types (number, string, boolean, null, undefined, symbol, bigint).\n- A copy of the actual value is passed to the function.\n- Changes inside the function do NOT affect the original variable.\n\nExample:\nlet a = 10;\nfunction change(x) {\n  x = 20;\n}\nchange(a);\nconsole.log(a); // 10 (unchanged)\n\n🟣 Call by Reference:\n- Used for non-primitive data types (objects, arrays, functions).\n- A reference to the actual memory location is passed.\n- Changes inside the function DO affect the original object.\n\nExample:\nlet obj = { count: 1 };\nfunction update(o) {\n  o.count = 5;\n}\nupdate(obj);\nconsole.log(obj.count); // 5 (changed)\n\n🟡 Key Difference:\n- Call by value → function gets a copy of the value.\n- Call by reference → function gets a reference to the original data.\n\nIn short: Primitives use call by value; objects and arrays use call by reference.",
-    category: "javascript"
+    category: "javascript",
   },
   {
     id: 66,
@@ -762,7 +762,7 @@ export const questions: Question[] = [
     question: "What is a Higher-Order Function in JavaScript?",
     answer:
       "A Higher-Order Function (HOF) is a function that either takes another function as an argument, returns a function, or does both. It allows functional programming techniques and makes code more reusable and modular.\n\n🔵 Characteristics of Higher-Order Functions:\n- Accepts one or more functions as parameters.\n- Can return another function.\n- Helps in abstraction and cleaner code.\n\n🟣 Examples of Higher-Order Functions:\n1. Built-in HOFs: map(), filter(), reduce(), forEach(), setTimeout().\n2. Custom HOF Example:\n\nfunction greet(message) {\n  return function(name) {\n    return message + ' ' + name;\n  };\n}\n\nconst sayHello = greet('Hello');\nconsole.log(sayHello('Hemant')); // Hello Hemant\n\n🟡 Why Higher-Order Functions Are Useful:\n- Improve reusability.\n- Help write clean and maintainable code.\n- Enable functional programming patterns.\n- Make async operations easier.\n\nIn short: A higher-order function is any function that takes another function as input or returns a new function as output.",
-    category: "javascript"
+    category: "javascript",
   },
   {
     id: 75.22,
@@ -776,9 +776,8 @@ export const questions: Question[] = [
     question: "What is the difference between React.memo and useMemo?",
     answer:
       "React.memo and useMemo are both performance optimization tools in React, but they solve different problems.\n\n🔵 React.memo:\n- A higher-order component.\n- Used to memoize a **whole component**.\n- Prevents re-rendering if props do not change.\n- Useful for functional components receiving the same props repeatedly.\n\nExample:\nconst MyComponent = React.memo(function Child(props) {\n  return <div>{props.value}</div>;\n});\n\n🟣 useMemo:\n- A React hook.\n- Memoizes the **result of a calculation** (not the component itself).\n- Recomputes only when dependencies change.\n- Useful for expensive calculations or derived data.\n\nExample:\nconst result = useMemo(() => heavyCalculation(count), [count]);\n\n🟡 Key Differences:\n- React.memo → Stops unnecessary re-renders of a component.\n- useMemo → Stops unnecessary recalculations inside a component.\n- React.memo is for components; useMemo is for values.\n\nIn short: React.memo memoizes components, while useMemo memoizes computed values.",
-    category: "react"
-  }
-  ,
+    category: "react",
+  },
   {
     id: 76.1,
     question: "Explain ES6 new features?",
@@ -1119,25 +1118,24 @@ export const questions: Question[] = [
     question: "What is the difference between SSR, SSG, and ISR in Next.js?",
     answer:
       "SSR, SSG, and ISR are different rendering methods in Next.js that determine how pages are generated and delivered.\n\n🔵 SSR (Server-Side Rendering):\n- Page is generated on every request.\n- Data is fetched on the server for each visit.\n- Best for dynamic content that changes frequently.\n- Example: dashboards, user profiles, admin panels.\n\nCode Example:\nexport async function getServerSideProps() {\n  const data = await fetch('https://api.example.com');\n  return { props: { data } };\n}\n\n🟣 SSG (Static Site Generation):\n- Page is generated at build time (once).\n- Very fast because pages are pre-rendered.\n- Best for static content that rarely changes.\n- Example: blog pages, documentation, marketing pages.\n\nCode Example:\nexport async function getStaticProps() {\n  const data = await fetch('https://api.example.com');\n  return { props: { data } }; \n}\n\n🟡 ISR (Incremental Static Regeneration):\n- Creates static pages but allows them to update after a set time.\n- Combines benefits of SSG + real-time updates.\n- Best for pages that change but not on every request.\n- Example: product pages, news articles, listings.\n\nCode Example:\nexport async function getStaticProps() {\n  const data = await fetch('https://api.example.com');\n  return { props: { data }, revalidate: 10 };\n}\n\n🟠 Key Differences:\n- SSR → renders on every request.\n- SSG → renders once at build time.\n- ISR → renders once and regenerates in the background after a set time.\n\nIn short: SSR is dynamic per request, SSG is static at build time, and ISR updates static pages automatically after intervals.",
-    category: "nextjs"
-  }
-,  
-{
-  id: 112,
-  question: "What is the difference between App Router and Page Router in Next.js?",
-  answer:
-    "App Router and Page Router are two routing systems in Next.js, but they work differently in terms of structure, rendering, and features.\n\n🔵 Page Router (pages/):\n- Older routing system available before Next.js 13.\n- Uses the pages/ folder.\n- Each file inside pages/ automatically becomes a route.\n- Uses getStaticProps, getServerSideProps, getInitialProps.\n- Mostly client-side components.\n- Less flexible for nested layouts.\n\nExample:\npages/index.js → '/'\npages/about.js → '/about'\n\n🟣 App Router (app/):\n- Introduced in Next.js 13.\n- Uses the app/ folder with React Server Components.\n- Supports layouts, nested routing, parallel routes, loading states.\n- Uses new data-fetching functions like fetch(), not GSSP or GSP.\n- Better performance due to Server Components.\n- More scalable for large applications.\n\nExample:\napp/page.js → '/'\napp/about/page.js → '/about'\n\n🟡 Key Differences:\n- Page Router → older, simpler, no nested layouts.\n- App Router → modern, supports layouts, server components, and advanced routing.\n- App Router gives better performance and flexibility.\n\nIn short: Page Router is the old pages-based routing system, while App Router is the new and powerful routing system with layouts, server components, and modern features.",
-  category: "nextjs"
-}
-,
-{
-  id: 90909700742113,
-  question: "What is the difference between Server Components and Client Components in Next.js?",
-  answer:
-    "In Next.js (App Router), components can be Server Components or Client Components. They have different capabilities and run in different environments.\n\n🔵 Server Components:\n- Run on the server, not in the browser.\n- Default behavior in the app/ directory.\n- Can fetch data directly from the server.\n- Do not include JavaScript in the client bundle (fast performance).\n- Cannot use browser APIs like window, document.\n- Cannot use client-only hooks: useState, useEffect, useRef.\n\nExample:\n// server component (default)\nexport default function Page() {\n  const data = await fetch('https://api.com').then(res => res.json());\n  return <div>{data.title}</div>;\n}\n\n🟣 Client Components:\n- Run in the browser.\n- Must use 'use client' at the top.\n- Needed for interactivity.\n- Can use useState, useEffect, useRef, event listeners.\n- Slightly heavier because they ship JavaScript to the client.\n\nExample:\n'use client';\nexport default function Counter() {\n  const [count, setCount] = useState(0);\n  return <button onClick={() => setCount(count + 1)}>{count}</button>;\n}\n\n🟡 Key Differences:\n- Server Components run on the server; Client Components run in the browser.\n- Server Components cannot use React hooks or browser APIs; Client Components can.\n- Server Components improve performance by sending less JavaScript.\n\nIn short: Use Server Components for data fetching and static UI. Use Client Components for interactivity like buttons, forms, and animations.",
-  category: "nextjs"
-}
-,
+    category: "nextjs",
+  },
+  {
+    id: 112,
+    question:
+      "What is the difference between App Router and Page Router in Next.js?",
+    answer:
+      "App Router and Page Router are two routing systems in Next.js, but they work differently in terms of structure, rendering, and features.\n\n🔵 Page Router (pages/):\n- Older routing system available before Next.js 13.\n- Uses the pages/ folder.\n- Each file inside pages/ automatically becomes a route.\n- Uses getStaticProps, getServerSideProps, getInitialProps.\n- Mostly client-side components.\n- Less flexible for nested layouts.\n\nExample:\npages/index.js → '/'\npages/about.js → '/about'\n\n🟣 App Router (app/):\n- Introduced in Next.js 13.\n- Uses the app/ folder with React Server Components.\n- Supports layouts, nested routing, parallel routes, loading states.\n- Uses new data-fetching functions like fetch(), not GSSP or GSP.\n- Better performance due to Server Components.\n- More scalable for large applications.\n\nExample:\napp/page.js → '/'\napp/about/page.js → '/about'\n\n🟡 Key Differences:\n- Page Router → older, simpler, no nested layouts.\n- App Router → modern, supports layouts, server components, and advanced routing.\n- App Router gives better performance and flexibility.\n\nIn short: Page Router is the old pages-based routing system, while App Router is the new and powerful routing system with layouts, server components, and modern features.",
+    category: "nextjs",
+  },
+  {
+    id: 90909700742113,
+    question:
+      "What is the difference between Server Components and Client Components in Next.js?",
+    answer:
+      "In Next.js (App Router), components can be Server Components or Client Components. They have different capabilities and run in different environments.\n\n🔵 Server Components:\n- Run on the server, not in the browser.\n- Default behavior in the app/ directory.\n- Can fetch data directly from the server.\n- Do not include JavaScript in the client bundle (fast performance).\n- Cannot use browser APIs like window, document.\n- Cannot use client-only hooks: useState, useEffect, useRef.\n\nExample:\n// server component (default)\nexport default function Page() {\n  const data = await fetch('https://api.com').then(res => res.json());\n  return <div>{data.title}</div>;\n}\n\n🟣 Client Components:\n- Run in the browser.\n- Must use 'use client' at the top.\n- Needed for interactivity.\n- Can use useState, useEffect, useRef, event listeners.\n- Slightly heavier because they ship JavaScript to the client.\n\nExample:\n'use client';\nexport default function Counter() {\n  const [count, setCount] = useState(0);\n  return <button onClick={() => setCount(count + 1)}>{count}</button>;\n}\n\n🟡 Key Differences:\n- Server Components run on the server; Client Components run in the browser.\n- Server Components cannot use React hooks or browser APIs; Client Components can.\n- Server Components improve performance by sending less JavaScript.\n\nIn short: Use Server Components for data fetching and static UI. Use Client Components for interactivity like buttons, forms, and animations.",
+    category: "nextjs",
+  },
   {
     id: 110,
     question: "How does Next.js handle image optimization?",
@@ -1154,37 +1152,70 @@ export const questions: Question[] = [
   },
   {
     id: 114,
-    question: "What is the difference between router.push and Link href in Next.js?",
+    question:
+      "What is the difference between router.push and Link href in Next.js?",
     answer:
       "router.push and Link href are both used for navigation in Next.js, but they serve different purposes.\n\n🔵 Link (href):\n- Used for client-side navigation in JSX.\n- Best for clickable links.\n- Automatically prefetches pages for faster navigation.\n- Improves performance and SEO.\n\nExample:\n<Link href=\"/about\">Go to About</Link>\n\n🟣 router.push:\n- Used to navigate programmatically inside JavaScript code.\n- Useful after form submissions, button clicks, or conditional redirects.\n- Does not automatically prefetch.\n\nExample:\nrouter.push('/dashboard');\n\n🟡 When to Use What:\n- Use <Link> when the user clicks a link in UI.\n- Use router.push when navigation happens through logic or functions.\n\n🟠 Key Difference:\n- Link → declarative navigation (in UI).\n- router.push → programmatic navigation (in code).\n\nIn short: Link is for clickable navigation in JSX, while router.push is for navigation triggered by functions or events.",
-    category: "nextjs"
-  }
-,  
-
+    category: "nextjs",
+  },
+  {
+    id: 113,
+    question: "Difference between client-side and server-side rendering?",
+    answer:
+      "In Client-Side Rendering (CSR), the browser loads a minimal HTML file and then downloads JavaScript, which builds the UI on the client. It’s good for dynamic apps but slower for first load.\n\n In Server-Side Rendering (SSR), the UI is rendered on the server and a complete HTML page is sent to the browser. This makes initial loading faster and improves SEO. Frameworks like Next.js handle SSR efficiently",
+    category: "nextjs",
+  },
   // React Questions
   {
     id: 111,
     question: "What is React and what makes it popular?",
     answer:
-      "React is a JavaScript library for building user interfaces, developed by Facebook. Its popularity comes from: component-based architecture, virtual DOM for efficient updates, one-way data flow, strong ecosystem, large community, and ability to build both web and mobile apps (React Native).",
+      "React is a JavaScript library developed by Facebook for building fast, interactive, and scalable user interfaces. It follows a component-based architecture, which means the UI is split into reusable pieces called components. React uses a Virtual DOM to efficiently update only the parts of the UI that change instead of reloading the whole page. It also supports one-way data flow, which makes applications predictable and easier to debug. React’s features like hooks, JSX, and reusable components help developers build modern, performance-optimized web applications. Overall, React makes UI development faster, cleaner, and more maintainable",
     category: "react",
   },
   {
-    id: 9878888888888888115,
+    id: 108.2,
+    question: "What are the features of React?",
+    answer:
+      "React comes with several powerful features that make UI development fast and efficient. The biggest feature is its component-based architecture, which allows us to build UI using small, reusable components. React also uses the Virtual DOM, which helps improve performance by updating only the parts of the real DOM that actually change. It supports one-way data flow, making the application predictable and easier to debug. Another key feature is JSX, which lets us write HTML-like syntax directly inside JavaScript, improving readability. Finally, React offers hooks like useState, useEffect, and useMemo that allow functional components to manage state and side effects. These features together help build scalable, maintainable, and high-performance applications.",
+    category: "react",
+  },
+  {
+    id: 108.3,
+    question: "What is JSX and how it works?",
+    answer:
+      "JSX stands for JavaScript XML. It is a syntax extension in React that allows us to write HTML-like code directly inside JavaScript. JSX makes the UI code more readable and expressive because we can visually see the structure of the component. Behind the scenes, JSX is not HTML; it gets compiled into JavaScript functions like React.createElement. It also supports JavaScript expressions using curly braces, so we can dynamically render data. Overall, JSX makes building UI easier, cleaner, and more maintainable compared to writing large amounts of pure JavaScript.",
+    category: "react",
+  },
+  {
+    id: 108.4,
+    question: "What are fragments in React?",
+    answer:
+      "Fragments in React allow us to return multiple elements from a component without adding any extra wrapper elements to the DOM. Normally, React components must return a single parent element, but with fragments we can group children without creating unnecessary <div> or <span> tags. This helps keep the DOM clean and avoids layout or styling issues caused by extra nodes. We can use fragments with <React.Fragment> or the short syntax <>...</>. They are especially useful when rendering lists or grouping multiple elements inside a component.",
+    category: "react",
+  },
+  {
+    id: 108.1,
     question: "What is an Error Boundary in React?",
     answer:
       "An Error Boundary is a special React component that catches JavaScript errors in its child components and prevents the entire application from crashing. It allows you to show a fallback UI instead of breaking the app.\n\n🔵 Key Features of Error Boundaries:\n- Catch errors during rendering.\n- Catch errors in lifecycle methods.\n- Catch errors in constructors of child components.\n- Show a fallback UI gracefully.\n\n🟣 How to Create an Error Boundary:\nError boundaries must be class components because they rely on lifecycle methods.\n\nExample:\nclass ErrorBoundary extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = { hasError: false };\n  }\n\n  static getDerivedStateFromError(error) {\n    return { hasError: true };\n  }\n\n  componentDidCatch(error, info) {\n    console.log('Error:', error);\n  }\n\n  render() {\n    if (this.state.hasError) {\n      return <h2>Something went wrong!</h2>;\n    }\n    return this.props.children;\n  }\n}\n\n🟡 Usage:\n<ErrorBoundary>\n  <MyComponent />\n</ErrorBoundary>\n\n🟠 Important Note:\n- Error boundaries do NOT catch errors from event handlers, async code, or server-side rendering.\n\nIn short: An Error Boundary prevents your React app from crashing by catching UI errors and showing a fallback UI.",
-    category: "react"
-  }
-  ,
+    category: "react",
+  },
+  {
+    id: 108.5,
+    question: "What are the higher order components in React?",
+    answer:
+      "A Higher Order Component is a function that takes a component as input and returns an enhanced component as output. It’s a pattern used for reusing logic across multiple components. HOCs are mainly used for things like authentication checks, logging, theming, or fetching data. Before hooks, HOCs were very popular, but now custom hooks provide a cleaner alternative. Still, understanding HOCs is important because many older libraries like react-redux use them..",
+    category: "react",
+  },
   {
     id: 198916,
-    question: "What are React Hooks and name the most common ones and why were they introduced?",
+    question:
+      "What are React Hooks and name the most common ones and why were they introduced?",
     answer:
       "React Hooks are special functions that allow functional components to use state, lifecycle features, and other React capabilities without needing class components. They make React code cleaner, simpler, and more reusable.\n\n🔵 Why Hooks Were Introduced:\n1. To avoid the complexity of class components.\n2. To reuse logic easily across components.\n3. To simplify state management and side effects.\n4. To improve readability and maintainability.\n\n🟣 Most Common Hooks:\n- useState → Manage state in functional components.\n- useEffect → Handle side effects like API calls, subscriptions, timers.\n- useContext → Share global state easily.\n- useRef → Access DOM elements or store mutable values.\n- useMemo → Memoize expensive calculations.\n- useCallback → Memoize functions to avoid re-renders.\n- useReducer → Complex state management (alternative to Redux-like logic).\n\n🟡 Example:\nconst [count, setCount] = useState(0);\n\nuseEffect(() => {\n  console.log('Component Mounted');\n}, []);\n\nIn short: React Hooks let functional components use state and lifecycle features, making React development simpler and more efficient.",
-    category: "react"
-  }
-,  
+    category: "react",
+  },
   {
     id: 134513,
     question:
@@ -1205,42 +1236,185 @@ export const questions: Question[] = [
     category: "react",
   },
   {
+    id: 108.6,
+    question: "What is useCallback and how it works?",
+    answer:
+      "useCallback is a React hook that memoizes a function so it doesn’t get re-created on every render. It returns the same function reference until its dependencies change. This is useful when passing functions to child components that are memoized, or when preventing unnecessary re-renders. In simple terms, useCallback improves performance by caching functions.",
+    category: "react",
+  },
+  {
+    id: 108.4,
+    question: "What is DOM?",
+    answer:
+      "DOM stands for Document Object Model. It is a programming interface provided by the browser that represents a webpage as a tree of nodes. Every element—like div, button, or input—is a node in this tree. JavaScript can interact with the DOM to update or manipulate the UI dynamically. For example, changing text, adding elements, or removing elements all happen through the DOM. However, updating the real DOM frequently is slow because the browser must re-render layout, styling, and structure. That’s why libraries like React use a Virtual DOM to make updates faster. In simple words, DOM is the bridge between JavaScript and the UI on the screen.",
+    category: "react",
+  },
+  {
     id: 117,
     question: "What is the Virtual DOM in React?",
     answer:
-      "The Virtual DOM (VDOM) is a lightweight, in-memory representation of the real DOM. React uses it to update the UI efficiently by minimizing direct changes to the actual DOM, which is slow.\n\n🔵 How the Virtual DOM Works:\n1. React creates a virtual copy of the UI in memory.\n2. When state changes, a new Virtual DOM is created.\n3. React compares the new Virtual DOM with the previous one using a process called 'diffing'.\n4. Only the changed parts are updated in the real DOM.\n\n🟣 Why Virtual DOM Is Faster:\n- Real DOM updates are slow and expensive.\n- Virtual DOM updates are fast because they happen in memory.\n- React batches and optimizes real DOM updates.\n\n🟡 Example:\nIf only one button changes on the page, React updates just that part instead of re-rendering the entire page.\n\n🟠 Benefits:\n- Better performance.\n- Efficient UI updates.\n- Cleaner re-rendering logic.\n- Makes React apps faster and smoother.\n\nIn short: The Virtual DOM is a fast, in-memory representation of the real DOM that helps React update only the necessary parts of the UI efficiently.",
-    category: "react"
-  }
-  ,
+      "The Virtual DOM is a lightweight, in-memory representation of the real DOM. Instead of updating the actual browser DOM directly—which is slow—React first updates the Virtual DOM. After that, React compares the new Virtual DOM with the previous one using a process called diffing. Only the parts that changed are updated in the real DOM, not the entire page. This makes UI updates significantly faster and improves performance. The Virtual DOM is one of the biggest reasons React applications feel smooth and responsive.",
+    category: "react",
+  },
+  {
+    id: 108.5,
+    question: "What is the component lifecycle of a React class component?",
+    answer: `A React class component has a defined lifecycle that describes how it is created, updated, and removed from the UI. The lifecycle is divided into three main phases: Mounting, Updating, and Unmounting.
+
+In the Mounting phase, the component is created and inserted into the DOM. Methods like constructor, render, and componentDidMount run here.
+
+In the Updating phase, the component re-renders when state or props change. Methods like shouldComponentUpdate, render, and componentDidUpdate are called.
+
+In the Unmounting phase, the component is removed from the DOM, and componentWillUnmount is used for cleanup tasks like removing event listeners.
+
+This lifecycle helps us perform side effects, optimize performance, and manage resources during a component's existence.`,
+    category: "react",
+  },
   {
     id: 999118,
-    question: "What is the difference between controlled and uncontrolled components in React?",
+    question:
+      "What is the difference between controlled and uncontrolled components in React?",
     answer:
-      "Controlled and uncontrolled components refer to how form data is handled in React.\n\n🔵 Controlled Components:\n- React controls the form input value.\n- The value comes from React state.\n- onChange updates the state, and state updates the UI.\n- Provides full control, validation, and predictable behavior.\n\nExample:\nconst [name, setName] = useState('');\n<input value={name} onChange={(e) => setName(e.target.value)} />\n\n🟣 Uncontrolled Components:\n- The DOM controls the form input value.\n- Use refs to read values instead of state.\n- Less code but less control.\n\nExample:\nconst inputRef = useRef();\n<input ref={inputRef} />\n\n🟡 When to Use What:\n- Use controlled components when you need validation, instant UI updates, or strict control.\n- Use uncontrolled components for simple forms or when performance matters.\n\nIn short: Controlled components use React state to manage input values, while uncontrolled components rely on the DOM with refs.",
-    category: "react"
-  }
-  ,
+      "A controlled component is one where form inputs like input or textarea are controlled by React state. Every change updates state, and the UI is always synced with state\n\nAn uncontrolled component uses the DOM to manage form values, often accessed through refs. It’s similar to traditional HTML form behavior\n\n Use controlled components when you need validation or dynamic control. Use uncontrolled when you want simple, minimal control",
+    category: "react",
+  },
   {
     id: 233120,
     question: "What is Reconciliation in React?",
     answer:
       "Reconciliation is the process React uses to determine what changes need to be made to the real DOM when the application's state or props update. React compares the new Virtual DOM with the previous one and updates only the parts that changed, making UI updates fast and efficient.\n\n🔵 How Reconciliation Works:\n1. React creates a new Virtual DOM whenever state or props change.\n2. React compares the new Virtual DOM with the old one using a diffing algorithm.\n3. Only the modified elements are updated in the real DOM.\n4. This makes updates faster and avoids unnecessary re-renders.\n\n🟣 Key Rules React Follows:\n- If the element type changes, React destroys the old element and creates a new one.\n- If the type is the same, React updates only the changed attributes.\n- Keys help React identify elements in lists and optimize reconciliation.\n\n🟡 Why Reconciliation Is Important:\n- Improves performance.\n- Minimizes real DOM updates.\n- Provides smooth UI rendering.\n- Makes React apps efficient even with frequent updates.\n\nIn short: Reconciliation is React’s process of comparing Virtual DOM trees and applying only necessary changes to the real DOM for fast and optimized UI updates.",
-    category: "react"
-  }
+    category: "react",
+  },
+  {
+    id: 108.6,
+    question: "What are props in React?",
+    answer:
+      "Props in React are read-only inputs passed from a parent component to a child component. They allow data and behavior to flow down the component tree. Props help make components reusable because the same component can behave differently based on the props it receives. Props are immutable, meaning a child component cannot modify them. They are similar to function parameters and help maintain one-way data flow in React, making applications predictable and easy to debug.",
+    category: "react",
+  },
+  {
+    id: 108.7,
+    question: "What are synthetic events in React?",
+    answer:
+      "Synthetic events are React’s custom event wrapper around the browser’s native events. They provide a consistent, cross-browser interface so we don’t have to worry about browser differences. Synthetic events work the same way across all browsers because React manages them internally. They also improve performance through event delegation — React attaches one event listener at the root instead of multiple listeners on every element",
+    category: "react",
+  },
+  {
+    id: 108.8,
+    question: "What is state in React?",
+    answer:
+      "State is a component’s dynamic data that can change over time. Whenever the state updates, React re-renders the component to reflect the new UI. Unlike props, state is internal and controlled by the component itself. State is used for things like form inputs, toggles, counters, API responses, etc.",
+    category: "react",
+  },
+  {
+    id: 108.9,
+    question: "Difference between state and props?",
+    answer:
+      "State is internal, mutable data managed inside a component and can change over time. Props are external inputs passed from parent to child and are read-only.\n\nState triggers re-renders when updated, while props reflect how a component behaves or displays content. State = internal & changeable, Props = external & fixed. State = changeable, Props = fixed.",
+    category: "react",
+  },
 
-,  
   {
     id: 115,
     question: "What is prop drilling and how can you avoid it?",
     answer:
-      "Prop drilling is passing props through multiple component layers to reach deeply nested components. \n\n Solutions: Context API (for global state), composition (children props), custom hooks, or state management libraries (Redux, Zustand). Choose based on application size and complexity.",
+      "Props drilling happens when we pass data through multiple nested components just to reach a deeply nested child. Even components that don’t use the data still receive the props. This makes the code harder to maintain and read \n\n We can avoid props drilling using Context API, Redux, Zustand, or custom hooks. These solutions allow sharing data directly with any component without passing props through every level.We can avoid props drilling using Context API, Redux, Zustand, or custom hooks. These solutions allow sharing data directly with any component without passing props through every level.",
     category: "react",
   },
   {
     id: 116,
     question: "What are pure components in React?",
     answer:
-      "Pure components are React components that only re-render when their props or state change. They are optimized for performance because they avoid unnecessary re-renders. They are created by extending React.PureComponent or using React.memo. Use them when you have a component that only depends on its props and doesn't need to be re-rendered when parent components change.",
+      "A Pure Component in React automatically implements a shallow comparison of props and state in shouldComponentUpdate. It re-renders only when something actually changes, reducing unnecessary updates and improving performance.\n\n It only works for class components and doesn't work for functional components.\n\n It changes only if the props or state are different from the previous props or state.",
+    category: "react",
+  },
+  {
+    id: 108.1,
+    question: "What is refs?",
+    answer:
+      "Refs give us direct access to DOM elements or child components. They are used for tasks like focusing inputs, playing videos, or reading values without re-rendering.",
+    category: "react",
+  },
+  {
+    id: 108.11,
+    question: "What is forwardRef?",
+    answer:
+      "forwardRef is a React function that lets a parent component pass a ref to a child component. It’s useful when we need to access a DOM element inside a child component from the parent.",
+    category: "react",
+  },
+  {
+    id: 108.12,
+    question: "What are keys in React?",
+    answer:
+      "Keys are unique identifiers used by React to track list items during rendering. They help React know which items changed, added, or removed. Without proper keys, React may re-render incorrectly or perform slowly. A stable ID is preferred over using the index.",
+    category: "react",
+  },
+  {
+    id: 108.13,
+    question: "What is lazy loading in React?",
+    answer:
+      "Lazy loading means loading components only when they are needed, instead of at the initial page load. React uses React.lazy() for code splitting so that large components load on demand, improving performance and reducing bundle size..",
+    category: "react",
+  },
+  {
+    id: 108.14,
+    question: "What is Suspense??",
+    answer:
+      "Suspense allows us to show a fallback UI, like a loader, while waiting for lazy-loaded components or data to load. It improves the user experience by preventing blank screens and creating smooth asynchronous loading.",
+    category: "react",
+  },
+  {
+    id: 108.15,
+    question: "What are the custom hooks in React ?",
+    answer:
+      "Custom hooks are reusable functions that use React hooks inside them. They allow us to extract and share logic like fetching data, form handling, or timers across multiple components. They start with the prefix ‘use’ and help reduce code duplication",
+    category: "react",
+  },
+  {
+    id: 108.16,
+    question: "What is the useReducer hook in React?",
+    answer:
+      "useReducer is a hook used for managing complex state logic. Instead of multiple setState calls, you use a reducer function that takes the current state and an action and returns the new state. It’s similar to Redux’s reducer pattern and is great for multi-step or related state updates.",
+    category: "react",
+  },
+  {
+    id: 108.17,
+    question: "What is the Portals in React?",
+    answer:
+      "Portals allow us to render a component into a DOM node that exists outside the main React root. They are used for UI elements like modals, popups, and tooltips to avoid styling or overflow issues.",
+    category: "react",
+  },
+  {
+    id: 108.18,
+    question: "What is context in React?",
+    answer:
+      "Context in React is a way to share data across multiple components without passing props manually at every level. It helps solve the problem of props drilling. With context, we can create a global state that any component can access directly. It’s commonly used for themes, authentication, user data, and language settings. Context improves code readability and reduces unnecessary prop passing.",
+    category: "react",
+  },
+  {
+    id: 108.19,
+    question: "What pass callback in setState?",
+    answer:
+      "setState is asynchronous, meaning React batches updates for performance. Because of this, if we immediately try to use the updated state right after calling setState, we may not get the correct value. Passing a callback to setState ensures that the code inside the callback runs only after the state has been updated and the component has re-rendered. It’s useful for operations that depend on the latest state..",
+    category: "react",
+  },
+  {
+    id: 108.2,
+    question: "Lifecycle replacements in functional components??",
+    answer: `Functional components use useEffect as a replacement for lifecycle methods.
+ 
+• componentDidMount → useEffect with empty dependency array
+• componentDidUpdate → useEffect with dependency array
+• componentWillUnmount → return a cleanup function from useEffect
+
+So useEffect gives us mount, update, and unmount behavior in a single hook`,
+    category: "react",
+  },
+  {
+    id: 124.7,
+    question: "What is useMemo and how it works?",
+    answer:
+      "useMemo is a performance optimization hook in React that memoizes a computed value. It helps prevent expensive calculations from running on every render. Instead, React will only recompute the value when its dependency array changes. This is especially useful when we have heavy computations, filtering large lists, or when a value is passed to a child component that relies on referential equality to avoid unnecessary re-renders. So in simple words: useMemo stores a computed result and returns the cached value unless its dependencies update. This makes the component faster and reduces performance bottlenecks.",
     category: "react",
   },
   {
@@ -1353,7 +1527,8 @@ export const questions: Question[] = [
     id: 128,
     question:
       "What is the difference beetween package.json and package-lock.json?",
-    answer: ".",
+    answer:
+      "package.json is the main configuration file that lists a project's dependencies, scripts, project name, and version. It specifies only the dependency ranges, like ^1.2.0 \n package-lock.json automatically locks the exact versions of every dependency and sub-dependency installed, ensuring that all developers and environments use identical versions. This helps create consistent builds and prevents version conflicts",
     category: "react",
   },
   {
