@@ -615,7 +615,7 @@ export const questions: Question[] = [
       "What is the difference between debounce and Throttling in JavaScript?",
     answer:
       "Throttling:Throttling is a technique used to limit how many times a function can execute over a period of time.Even if an event keeps firing continuously—like scroll, resize, or button clicks—the throttled function will only run at fixed intervals.This helps improve performance and prevents unnecessary function calls.\n\n debounce:Debouncing is a technique that delays the execution of a function until a certain amount of time has passed without the event being triggered again.If the event keeps happening repeatedly, the timer resets each time, and the function runs only once after the user stops triggering the event",
-    category: "react",
+    category: "javascript",
   },
   {
     id: 1256106,
@@ -1181,9 +1181,9 @@ export const questions: Question[] = [
   },
   {
     id: 111,
-    question: "What is the difference between SSR, SSG, and ISR in Next.js?",
+    question: "What is the difference between SSR, SSG,CSR and ISR in Next.js?",
     answer:
-      "SSR, SSG, and ISR are different rendering methods in Next.js that determine how pages are generated and delivered.\n\n🔵 SSR (Server-Side Rendering):\n- Page is generated on every request.\n- Data is fetched on the server for each visit.\n- Best for dynamic content that changes frequently.\n- Example: dashboards, user profiles, admin panels.\n\nCode Example:\nexport async function getServerSideProps() {\n  const data = await fetch('https://api.example.com');\n  return { props: { data } };\n}\n\n🟣 SSG (Static Site Generation):\n- Page is generated at build time (once).\n- Very fast because pages are pre-rendered.\n- Best for static content that rarely changes.\n- Example: blog pages, documentation, marketing pages.\n\nCode Example:\nexport async function getStaticProps() {\n  const data = await fetch('https://api.example.com');\n  return { props: { data } }; \n}\n\n🟡 ISR (Incremental Static Regeneration):\n- Creates static pages but allows them to update after a set time.\n- Combines benefits of SSG + real-time updates.\n- Best for pages that change but not on every request.\n- Example: product pages, news articles, listings.\n\nCode Example:\nexport async function getStaticProps() {\n  const data = await fetch('https://api.example.com');\n  return { props: { data }, revalidate: 10 };\n}\n\n🟠 Key Differences:\n- SSR → renders on every request.\n- SSG → renders once at build time.\n- ISR → renders once and regenerates in the background after a set time.\n\nIn short: SSR is dynamic per request, SSG is static at build time, and ISR updates static pages automatically after intervals.",
+      "SSR (Server-Side Rendering)\n\n\n\nSSR means the page is generated on the server every time a user requests it. The server runs the code, fetches the data, and returns a fully rendered HTML page for each request. It's great when your data changes frequently or you need fresh, real-time content—for example, dashboards, user profiles, or personalized pages.\n\n\n\nSSG (Static Site Generation)\n\n\n\nSSG means the page is generated once at build time, and the same pre-rendered HTML is served to every user. It's extremely fast because the page doesn't regenerate on each request. It works best for content that doesn't change often, like blogs, product pages, or marketing pages.\n\n\n\nISR (Incremental Static Regeneration)\n\n\n\nISR is like a mix of SSG and SSR. The page is generated at build time like SSG, but Next.js can update that page on the server after a set interval without rebuilding the entire project. So you get the speed of static pages with the ability to refresh data automatically. It's great for pages that update occasionally—like news updates, pricing pages, or product listings.\n\n\n\nCSR (Client-Side Rendering)\n\n\n\nThe page loads first, and then JavaScript fetches data on the client side.\n\nUsed for sections that don't need SEO or server rendering, like user dashboards after login.",
     category: "nextjs",
   },
   {
@@ -1191,7 +1191,7 @@ export const questions: Question[] = [
     question:
       "What is the difference between App Router and Page Router in Next.js?",
     answer:
-      "App Router and Page Router are two routing systems in Next.js, but they work differently in terms of structure, rendering, and features.\n\n🔵 Page Router (pages/):\n- Older routing system available before Next.js 13.\n- Uses the pages/ folder.\n- Each file inside pages/ automatically becomes a route.\n- Uses getStaticProps, getServerSideProps, getInitialProps.\n- Mostly client-side components.\n- Less flexible for nested layouts.\n\nExample:\npages/index.js → '/'\npages/about.js → '/about'\n\n🟣 App Router (app/):\n- Introduced in Next.js 13.\n- Uses the app/ folder with React Server Components.\n- Supports layouts, nested routing, parallel routes, loading states.\n- Uses new data-fetching functions like fetch(), not GSSP or GSP.\n- Better performance due to Server Components.\n- More scalable for large applications.\n\nExample:\napp/page.js → '/'\napp/about/page.js → '/about'\n\n🟡 Key Differences:\n- Page Router → older, simpler, no nested layouts.\n- App Router → modern, supports layouts, server components, and advanced routing.\n- App Router gives better performance and flexibility.\n\nIn short: Page Router is the old pages-based routing system, while App Router is the new and powerful routing system with layouts, server components, and modern features.",
+      "The App Router and Page Router are two different routing systems in Next.js, and the main difference is how they structure the application and handle rendering.\n\n\n\nThe Page Router is the older routing system that uses the pages/ folder.\n\nEach file becomes a route, and routing is fully client-side. Data fetching happens using functions like getServerSideProps, getStaticProps, and getInitialProps. It's simple and familiar but has limited flexibility when it comes to layouts and server components.\n\n\n\nThe App Router is the newer system introduced in Next.js 13, using the app/ folder.\n\nIt's built around React Server Components and supports nested layouts, streaming, and more powerful data fetching using async components. It allows mixing server and client components, which reduces bundle size and improves performance. It also gives more control over loading UI, error UI, and route segments",
     category: "nextjs",
   },
   {
@@ -1199,7 +1199,7 @@ export const questions: Question[] = [
     question:
       "What is the difference between Server Components and Client Components in Next.js?",
     answer:
-      "In Next.js (App Router), components can be Server Components or Client Components. They have different capabilities and run in different environments.\n\n🔵 Server Components:\n- Run on the server, not in the browser.\n- Default behavior in the app/ directory.\n- Can fetch data directly from the server.\n- Do not include JavaScript in the client bundle (fast performance).\n- Cannot use browser APIs like window, document.\n- Cannot use client-only hooks: useState, useEffect, useRef.\n\nExample:\n// server component (default)\nexport default function Page() {\n  const data = await fetch('https://api.com').then(res => res.json());\n  return <div>{data.title}</div>;\n}\n\n🟣 Client Components:\n- Run in the browser.\n- Must use 'use client' at the top.\n- Needed for interactivity.\n- Can use useState, useEffect, useRef, event listeners.\n- Slightly heavier because they ship JavaScript to the client.\n\nExample:\n'use client';\nexport default function Counter() {\n  const [count, setCount] = useState(0);\n  return <button onClick={() => setCount(count + 1)}>{count}</button>;\n}\n\n🟡 Key Differences:\n- Server Components run on the server; Client Components run in the browser.\n- Server Components cannot use React hooks or browser APIs; Client Components can.\n- Server Components improve performance by sending less JavaScript.\n\nIn short: Use Server Components for data fetching and static UI. Use Client Components for interactivity like buttons, forms, and animations.",
+      "Server Components run on the server.\n\nThey never ship JavaScript to the browser, so they are faster and lighter. They can directly access the database, call backend APIs, read files, and handle secure logic because they never execute on the client. They are great for static UI, layouts, and data-heavy sections where we don't need interactivity.\n\nAnything rendered on the server is sent as HTML to the browser, which improves performance and SEO.\n\n\n\nClient Components run in the browser.\n\nThese components include interactivity — things like buttons, forms, dropdowns, modals, animations, and anything that needs state or event handlers like useState, useEffect, or onClick. Client Components ship JavaScript to the browser, so they allow the page to be interactive but come with a slightly higher performance cost",
     category: "nextjs",
   },
   {
@@ -1213,7 +1213,7 @@ export const questions: Question[] = [
     id: 110.1,
     question: "What is the advantage of using Next.js over traditional React?",
     answer:
-      "Nextjs advantages:1. Automatic Image Optimization\n2. File-Based Routing\n3. Server-Side Rendering (SSR)\n4. Static Site Generation (SSG)\n5. API Routes\n6. Incremental Static Regeneration (ISR)\n7. TypeScript Support\n8. Automatic Code Splitting\n9. Improved Performance and SEO\n10. Developer Experience \n11. Community and Ecosystem\n\nReact advantages:1. Flexibility\n2. Performance\n3. Ecosystem\n4. Community\n5. Scalability\n6. SEO\n7. Developer Experience\n8. Integration with other libraries and frameworks\n9. Compatibility with existing codebases\n10. Scalability\n11. SEO\n12. Developer Experience\n13. Community and Ecosystem",
+      "The main advantage of using Next.js over traditional React is that Next.js gives us a complete full-stack framework with built-in routing and powerful rendering options like SSR, SSG, and ISR. In plain React, everything runs on the client and we have to set up routing, data fetching, code splitting, and SEO handling manually. Next.js solves all of that out of the box.\n\n\n\nNext.js also improves performance because it can pre-render pages on the server, stream content, and optimize images automatically. It gives better SEO since pages load as HTML instead of waiting for JavaScript. Another big advantage is that Next.js allows us to write server-side logic — like APIs, authentication, and database queries — inside the same project, which makes development much faster and cleaner",
     category: "nextjs",
   },
   {
@@ -1272,14 +1272,21 @@ export const questions: Question[] = [
     id: 74108,
     question: "What is the difference between React.memo and useMemo?",
     answer:
-      "React.memo and useMemo are both performance optimization tools in React, but they solve different problems.\n\n🔵 React.memo:\n- A higher-order component.\n- Used to memoize a **whole component**.\n- Prevents re-rendering if props do not change.\n- Useful for functional components receiving the same props repeatedly.\n\nExample:\nconst MyComponent = React.memo(function Child(props) {\n  return <div>{props.value}</div>;\n});\n\n🟣 useMemo:\n- A React hook.\n- Memoizes the **result of a calculation** (not the component itself).\n- Recomputes only when dependencies change.\n- Useful for expensive calculations or derived data.\n\nExample:\nconst result = useMemo(() => heavyCalculation(count), [count]);\n\n🟡 Key Differences:\n- React.memo → Stops unnecessary re-renders of a component.\n- useMemo → Stops unnecessary recalculations inside a component.\n- React.memo is for components; useMemo is for values.\n\nIn short: React.memo memoizes components, while useMemo memoizes computed values.",
+      "React.memo and useMemo are both optimization tools in React, but they solve different problems.\n\nReact.memo is used to optimize whole components. It prevents a component from re-rendering if its props haven't changed. So it's mainly about avoiding unnecessary renders at the component level.\n\n\n\nuseMemo, on the other hand, is used inside a component to memoize a specific value or a heavy calculation. It only recomputes that value when its dependencies change. So it's not about preventing re-renders — it's about preventing expensive recalculations during a render",
     category: "react",
   },
   {
     id: 125696,
     question: "What is React Router and what is Client-Side Routing?",
     answer:
-      "React Router is a popular library used in React applications to handle navigation between different pages without reloading the browser. It lets us map URLs to components and create a smooth single-page application (SPA) experience.\n\n🔵 React Router Features:\n- Navigate between pages without full page reloads.\n- Supports dynamic routing.\n- Provides hooks like useNavigate, useParams, useLocation.\n- Helps manage nested routes and protected routes.\n\n🔵 What is Client-Side Routing?\n- Client-side routing means the routing is handled in the browser instead of the server.\n- When the user navigates, React updates the component on the screen without requesting a new page from the server.\n- This makes the app faster and feels more like a desktop application.\n\n🟡 Example of React Router:\nimport { BrowserRouter, Routes, Route } from 'react-router-dom';\n\n<BrowserRouter>\n  <Routes>\n    <Route path='/' element={<Home />} />\n    <Route path='/about' element={<About />} />\n  </Routes>\n</BrowserRouter>\n\n🟠 Key Difference:\n- Traditional routing reloads the entire page.\n- Client-side routing updates the UI instantly without reload.\n\nIn short: React Router enables client-side routing, making navigation faster and smoother in React applications.",
+      "React Router is the tool that enables navigation inside React apps, and client-side routing is the concept where the browser handles navigation without refreshing the page",
+    category: "react",
+  },
+  {
+    id: 1259892338697,
+    question: "What is the difference Between Client-Side Routing and Server-Side Routing",
+    answer:
+      "Server-side routing reloads the entire page on each navigation, while client-side routing updates only the needed parts using JavaScript, giving a smoother, SPA-like experience",
     category: "react",
   },
 
@@ -1447,7 +1454,7 @@ This lifecycle helps us perform side effects, optimize performance, and manage r
     category: "react",
   },
   {
-    id: 108.13,
+    id: 108.1003,
     question: "What are keys in React?",
     answer:
       "Keys are unique identifiers used by React to track list items during rendering. They help React know which items changed, added, or removed. Without proper keys, React may re-render incorrectly or perform slowly. A stable ID is preferred over using the index.",
@@ -1590,8 +1597,7 @@ So useEffect gives us mount, update, and unmount behavior in a single hook`,
     id: 124,
     question: "Is nextjs a single page application?",
     answer:
-      "Next.js is not purely an SPA, but it supports SPA behavior after the initial load.\n\n Let me explain —\n\n When we build a Next.js app, the first page is rendered either on the server side (SSR) or statically generated (SSG).\n\n After that first page loads in the browser, Next.js hydrates the React components, and from that point on, it behaves like a Single Page Application.\n\n This means that when we navigate between pages using Next.js routing, the page doesn’t fully reload — it just fetches the required data and updates the view client-side, just like a React SPA",
-
+      "Next.js is not strictly a single-page application. It actually supports both SPA-style behavior and traditional multi-page routing. Next.js uses file-based routing where every file under the pages or app folder becomes a separate route, so technically it behaves like a multi-page application.\n\n\n\nBut at the same time, when we navigate between pages, Next.js uses client-side routing under the hood, which means the page doesn't fully reload — it feels smooth like an SPA. So the best way to say it is: Next.js gives you the SEO and performance benefits of a multi-page application, while still providing the fast, seamless navigation experience of an SPA.",
     category: "react",
   },
   {
@@ -1919,6 +1925,13 @@ So useEffect gives us mount, update, and unmount behavior in a single hook`,
     question: "What are default props in React?",
     answer:
       "Default props are fallback values for props in React components. They are used when a parent component does not pass a value for a particular prop.\n\nDefault props help prevent errors, ensure components always have valid data, and make components more reusable.\n\n🔵 Example using defaultProps (Class Component):\nMyComponent.defaultProps = {\n  name: 'Guest'\n};\n\n🔵 Example using Default Props (Functional Component):\nfunction Welcome({ name = 'Guest' }) {\n  return <h1>Hello, {name}</h1>;\n}\n\n🟡 Why Default Props are useful:\n- Avoid undefined props.\n- Provide fallback values.\n- Improve component stability.\n\nIn short: Default props ensure a component has a value even if the parent doesn't pass one.",
+    category: "react",
+  },
+  {
+    id: 125697,
+    question: "What is React Profiler?",
+    answer:
+      "React Profiler is a tool that helps me analyze the performance of my React application. It shows how long each component takes to render, how often it re-renders, and what caused those re-renders. Using the Profiler, I can identify slow or unnecessary renders, optimize components, and understand how my app behaves under different interactions. It's extremely useful when performance becomes an issue, especially in large applications, because it helps me focus on the exact components that need optimization rather than guessing.",
     category: "react",
   },
 
