@@ -374,6 +374,90 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
+    id: 248501,
+    question: "What is Web Workers",
+    answer:
+      "Web Workers are a way to run JavaScript code in the background, on a separate thread, so that heavy tasks don't block the main UI thread. Normally, JavaScript is single-threaded, which means if we do something expensive — like large calculations, data processing, or image manipulation — the UI can freeze. Web Workers solve this by giving us a background worker thread that handles the heavy work while the main thread stays free to keep the page smooth and responsive.\n\n\n\nThe main point is that Web Workers don't have access to the DOM; they communicate with the main thread using messages. They're especially useful for things like data-heavy operations, real-time calculations, or anything that could make the UI lag.",
+    category: "javascript",
+  },
+  {
+    id: 248502,
+    question: "What is Pure functions",
+    answer:
+      "A pure function is a function that always gives the same output for the same input and does not cause any side effects. That means it doesn't modify anything outside the function — it doesn't change global variables, doesn't update the DOM, and doesn't depend on external changing data",
+    category: "javascript",
+  },
+  {
+    id: 248503,
+    question: "What is Composition",
+    answer:
+      "Composition is a programming concept where we build complex functionality by combining smaller, reusable pieces together. Instead of creating big, complicated functions or components, we compose them from smaller ones that each do one clear job.\n\n\n\nIn React, composition means we build UI by combining components — passing data or UI as children or props. It gives more flexibility than inheritance, makes components easy to reuse, and keeps the code cleaner and easier to maintain.\n\n\n\nSo in simple terms, composition is about building bigger features by putting smaller pieces together, like Lego blocks",
+    category: "javascript",
+  },
+  {
+    id: 248504,
+    question: "What is Event emitter",
+    answer:
+      "An Event Emitter is a pattern used to handle communication between different parts of an application. Instead of calling functions directly, one part of the system 'emits' an event, and any other part that is listening for that event can react to it.\n\n\n\nIt's basically a publish–subscribe model. One side publishes an event, and listeners subscribe to it. This makes the code loosely coupled because the emitter doesn't need to know who is listening — it just emits the event.\n\n\n\nWe commonly use event emitters in Node.js, real-time systems, chat apps, notifications, or anywhere different components need to communicate without being tightly connected.",
+    category: "javascript",
+  },
+  {
+    id: 248505,
+    question: "What's the output of: 1 == \"1\" & 1 === \"1\"?",
+    answer:
+      "The output is 0 (or false).\n\n1 == \"1\" returns true because == does type coercion (loose equality), so the string \"1\" is converted to number 1.\n\n1 === \"1\" returns false because === checks both value and type (strict equality), and number 1 is not the same type as string \"1\".\n\nThe & operator is a bitwise AND operator. When used with booleans, true is converted to 1 and false is converted to 0. So true & false becomes 1 & 0, which equals 0.",
+    category: "output-based",
+  },
+  {
+    id: 248506,
+    question: "What is the output of true == typeof(var a = 10) == number ? true : false",
+    answer:
+      "This code will throw a SyntaxError because you cannot declare a variable inside the typeof operator. The syntax typeof(var a = 10) is invalid.\n\nIf the question was asking about a valid expression like: var a = 10; typeof a == \"number\" ? true : false, then the output would be true because typeof 10 returns the string \"number\", and \"number\" == \"number\" is true, so the ternary operator returns true.",
+    category: "output-based",
+  },
+  {
+    id: 248511,
+    question: "What's the output of this code?\n\nvar a = 10;\nfunction check() {\n  var a = 20;\n  console.log(a);\n  a = a + a;\n}\nconsole.log(a);\ncheck();\nconsole.log(a);",
+    answer:
+      "The output is:\n10\n20\n10\n\nExplanation:\n1. First console.log(a) prints 10 (the global variable a)\n2. Inside the check() function, var a = 20 creates a new local variable that shadows the global a. So console.log(a) inside the function prints 20.\n3. The line a = a + a makes the local a equal to 40, but this doesn't affect the global a.\n4. After the function finishes, the final console.log(a) prints 10 because the global a was never changed.\n\nThis demonstrates variable shadowing with var — the local variable shadows the global one inside the function scope.",
+    category: "output-based",
+  },
+  {
+    id: 248512,
+    question: "What's the output of this code?\n\nconst a = 10;\nfunction check() {\n  a = 20;\n  console.log(a);\n  a = a + a;\n}\nconsole.log(a);\ncheck();\nconsole.log(a);",
+    answer:
+      "The output is:\n10\nThen it throws a TypeError: Assignment to constant variable.\n\nExplanation:\n1. First console.log(a) prints 10.\n2. When check() is called, it tries to reassign a = 20, but a is declared with const, which means it cannot be reassigned.\n3. This causes a TypeError: Assignment to constant variable, and the code stops executing.\n4. The second console.log inside the function never runs, and neither does the final console.log(a) outside.\n\nThis demonstrates that const variables cannot be reassigned. If you try to change a const variable, JavaScript throws an error immediately.",
+    category: "output-based",
+  },
+  {
+    id: 248507,
+    question: "How can you declare a global variable in JavaScript?",
+    answer:
+      "In JavaScript, you can declare a global variable in several ways:\n\n1. Without any keyword (not recommended): Simply assign a value without using var, let, or const. This creates a global variable, but it's bad practice.\n   Example: myVar = 10;\n\n2. Using var outside any function: When you declare a variable with var at the top level (outside functions), it becomes global.\n   Example: var globalVar = 20;\n\n3. Attach to the window object (in browsers): You can explicitly add a property to the window object.\n   Example: window.myGlobal = 30;\n\n4. Using let or const at the top level: While they create global scope, they don't attach to the window object, which is actually better for avoiding global namespace pollution.\n   Example: let globalLet = 40;\n\nBest practice is to avoid global variables when possible, as they can lead to naming conflicts and make code harder to maintain. If you need global state, use modules or proper state management instead.",
+    category: "javascript",
+  },
+  {
+    id: 248508,
+    question: "What is the 'this' keyword? Explain.",
+    answer:
+      "The 'this' keyword in JavaScript refers to the object that is currently executing the code. What 'this' points to depends on how and where the function is called.\n\n\n\n1. In a regular function: 'this' refers to the global object (window in browsers, global in Node.js). In strict mode, it's undefined.\n\n2. In an object method: 'this' refers to the object that owns the method.\n   Example: const obj = { name: 'John', greet() { console.log(this.name); } }; obj.greet(); // 'John'\n\n3. In arrow functions: 'this' is inherited from the surrounding scope (lexical this). Arrow functions don't have their own 'this'.\n\n4. In event handlers: 'this' refers to the element that received the event.\n   Example: button.addEventListener('click', function() { console.log(this); }); // refers to button\n\n5. With call, apply, or bind: You can explicitly set what 'this' refers to.\n\n\n\nThe key thing to remember is that 'this' is determined by how a function is called, not where it's defined.",
+    category: "javascript",
+  },
+  {
+    id: 248509,
+    question: "preventDefault() vs stopPropagation() – What's the difference?",
+    answer:
+      "preventDefault() and stopPropagation() are both event methods, but they do completely different things.\n\n\n\npreventDefault() stops the browser's default action for that event. For example, if you click a link, the default action is to navigate to that URL. If you call preventDefault(), the navigation won't happen, but the event will still propagate (bubble up) to parent elements.\n\nExample: Preventing a form from submitting or a link from navigating.\n\n\n\nstopPropagation() stops the event from bubbling up to parent elements. It doesn't stop the default action — it just prevents the event from reaching other elements in the DOM tree.\n\nExample: If you click a button inside a div, and both have click handlers, calling stopPropagation() on the button prevents the div's handler from running.\n\n\n\nIn short: preventDefault() stops what the browser wants to do, while stopPropagation() stops the event from traveling to other elements.",
+    category: "javascript",
+  },
+  {
+    id: 248510,
+    question: "map, filter, reduce – Explain with example.",
+    answer:
+      "map, filter, and reduce are array methods used to transform and process data.\n\n\n\nmap() transforms each element in an array and returns a new array with the same length.\n\nExample:\nconst numbers = [1, 2, 3, 4];\nconst doubled = numbers.map(num => num * 2);\n// Result: [2, 4, 6, 8]\n\n\n\nfilter() creates a new array with only the elements that pass a test (return true).\n\nExample:\nconst numbers = [1, 2, 3, 4, 5, 6];\nconst evenNumbers = numbers.filter(num => num % 2 === 0);\n// Result: [2, 4, 6]\n\n\n\nreduce() takes all elements in an array and reduces them to a single value by applying a function.\n\nExample:\nconst numbers = [1, 2, 3, 4];\nconst sum = numbers.reduce((total, num) => total + num, 0);\n// Result: 10\n\n\n\nIn summary: map transforms all elements, filter selects certain elements, and reduce combines all elements into one value.",
+    category: "javascript",
+  },
+  {
     id: 1256105,
     question:
       "What is layout thrashing and how do you prevent forced reflows in the browser?",
