@@ -62,9 +62,9 @@ export default function QuestionCard({ question, index }: QuestionCardProps) {
           
           <div className={`
             overflow-hidden transition-all duration-500 ease-in-out
-            ${isExpanded ? 'max-h-[1000px] opacity-100 mt-4' : 'max-h-0 opacity-0'}
+            ${isExpanded ? 'max-h-[600px] opacity-100 mt-4' : 'max-h-0 opacity-0'}
           `}>
-            <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+            <div className="pt-4 border-t border-gray-200 dark:border-gray-700 max-h-[550px] overflow-y-auto answer-scrollbar pr-2">
               <div className="text-gray-700 dark:text-gray-300 leading-relaxed space-y-3 text-[15px]">
                 {(() => {
                   const lines = question.answer.split('\n');

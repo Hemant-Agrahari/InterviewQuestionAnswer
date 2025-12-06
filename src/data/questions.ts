@@ -2241,6 +2241,69 @@ So useEffect gives us mount, update, and unmount behavior in a single hook`,
       "Type Assertion tells TypeScript to treat a value as a specific type. It's like type casting but doesn't perform runtime checks.\n\nSyntax (Two Ways):\n```typescript\n// Angle-bracket syntax\nlet value: any = 'hello';\nlet length1 = (<string>value).length;\n\n// 'as' syntax (preferred, works with JSX)\nlet length2 = (value as string).length;\n```\n\nCommon Use Cases:\n\n1. DOM Manipulation:\n```typescript\nconst input = document.getElementById('email') as HTMLInputElement;\ninput.value = 'test@example.com';\n\n// Or with null check\nconst input = document.getElementById('email');\nif (input instanceof HTMLInputElement) {\n  input.value = 'test@example.com';\n}\n```\n\n2. API Responses:\n```typescript\ninterface User {\n  id: number;\n  name: string;\n}\n\nconst response = await fetch('/api/user');\nconst user = await response.json() as User;\n```\n\n3. Type Narrowing:\n```typescript\ninterface Cat { meow: () => void; }\ninterface Dog { bark: () => void; }\n\nfunction makeSound(animal: Cat | Dog) {\n  if ('meow' in animal) {\n    (animal as Cat).meow();\n  } else {\n    (animal as Dog).bark();\n  }\n}\n```\n\n4. Const Assertions:\n```typescript\nconst config = {\n  apiUrl: 'https://api.example.com',\n  timeout: 5000\n} as const; // readonly properties, literal types\n```\n\n5. Non-null Assertion (!):\n```typescript\nfunction getValue(key: string): string | null {\n  return localStorage.getItem(key);\n}\n\n// When you're certain it's not null\nconst token = getValue('authToken')!;\n```\n\nDouble Assertion (Escape Hatch):\n```typescript\n// TypeScript won't allow incompatible assertions\nconst x = 'hello' as number; // Error\n\n// But you can force it (not recommended)\nconst y = ('hello' as any) as number; // OK, but dangerous\n```\n\nBest Practices:\n- Use sparingly; prefer type guards\n- Prefer 'as' syntax over angle brackets\n- Avoid 'as any' unless absolutely necessary\n- Use ! operator only when you're certain value exists\n- Consider type guards for better type safety",
     category: "typescript",
   },
+  {
+    id: 216,
+    question: "What is the output of: console.log(foo); var foo = 'bar';",
+    answer:
+      "Output: undefined\n\nReason: var is hoisted with value undefined. Assignment happens later.",
+    category: "output-based",
+  },
+  {
+    id: 217,
+    question: "What is the output of: sayHi(); var sayHi = function() { console.log('Hello'); };",
+    answer:
+      "Output: TypeError: sayHi is not a function\n\nReason: var sayHi is hoisted as undefined. Calling undefined() throws an error.",
+    category: "output-based",
+  },
+  {
+    id: 218,
+    question: "What is the output of: for (var i = 0; i < 3; i++) { setTimeout(() => console.log(i), 0); }",
+    answer:
+      "Output: 3, 3, 3\n\nReason: var is function-scoped. All callbacks share same i = 3.",
+    category: "output-based",
+  },
+  {
+    id: 219,
+    question: "What is the output of: for (let i = 0; i < 3; i++) { setTimeout(() => console.log(i), 0); }",
+    answer:
+      "Output: 0, 1, 2\n\nReason: let creates a new i for each iteration (block-scoped).",
+    category: "output-based",
+  },
+  {
+    id: 220,
+    question: "What is the output of: console.log(typeof null);",
+    answer:
+      "Output: 'object'\n\nReason: A historical bug in JavaScript. typeof null incorrectly returns 'object'.",
+    category: "output-based",
+  },
+  {
+    id: 221,
+    question: "What is the output of: console.log([] == ![]);",
+    answer:
+      "Output: true\n\nReason:\n- ![] → false (empty array is truthy, negation makes it false)\n- [] == false → Both get converted to numbers\n- [] → '' (empty string) → 0\n- false → 0\n- So 0 == 0 → true",
+    category: "output-based",
+  },
+  {
+    id: 222,
+    question: "What is the output of: console.log(['10','11','12'].map(parseInt));",
+    answer:
+      "Output: [10, NaN, NaN]\n\nReason: parseInt receives (value, index) as arguments from map. So:\n- parseInt('10', 0) → 10 (radix 0 defaults to 10)\n- parseInt('11', 1) → NaN (radix 1 is invalid)\n- parseInt('12', 2) → NaN ('12' is invalid in base 2)",
+    category: "output-based",
+  },
+  {
+    id: 223,
+    question: "What is the output of: const obj = { num: 10, regular: function() { console.log(this.num); }, arrow: () => console.log(this.num) }; obj.regular(); obj.arrow();",
+    answer:
+      "Output:\n10\nundefined\n\nReason: Regular method has its own 'this' = obj. Arrow function does NOT bind 'this' → inherits from parent scope → undefined.",
+    category: "output-based",
+  },
+  {
+    id: 224,
+    question: "What is the output of: console.log('start'); setTimeout(() => console.log('timeout'), 0); Promise.resolve().then(() => console.log('promise')); console.log('end');",
+    answer:
+      "Output:\nstart\nend\npromise\ntimeout\n\nReason: Synchronous code executes first, then microtasks (Promise), then macrotasks (setTimeout).",
+    category: "output-based",
+  },
 ];
 
 export const getCategoryQuestions = (
