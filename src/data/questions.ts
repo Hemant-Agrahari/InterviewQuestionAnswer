@@ -141,7 +141,7 @@ export const questions: Question[] = [
     question:
       "What is the difference between async and defer in JavaScript script loading?",
     answer:
-      'async and defer are attributes used in the <script> tag to control how external JavaScript files load and execute, improving page performance.\n\n🔵 async:\n- Script downloads in parallel while the HTML is parsing.\n- Script executes immediately after download (execution can interrupt HTML parsing).\n- Order of execution is NOT guaranteed.\n- Best for independent scripts like analytics or ads.\n\nExample:\n<script src="app.js" async></script>\n\n🟣 defer:\n- Script downloads in parallel while the HTML is parsing.\n- Script executes ONLY after the entire HTML is parsed.\n- Execution order IS guaranteed (in the same order as scripts appear).\n- Best for scripts that depend on DOM or need proper sequence.\n\nExample:\n<script src="main.js" defer></script>\n\n🟡 Key Difference:\n- async → Downloads in parallel, executes immediately → no order guarantee.\n- defer → Downloads in parallel, executes after HTML → execution order guaranteed.\n\nIn short: Use async for independent scripts and defer for scripts that rely on proper load order and DOM parsing.',
+      "async and defer are script attributes that control how external JavaScript files are loaded and executed in the browser. Both allow the script to download in parallel while the HTML is still being parsed, but they behave very differently when it comes to execution. When a script uses async, it starts downloading in the background and executes as soon as the download finishes, even if the HTML parsing is still in progress. Because of this, the execution order is not guaranteed, and async is usually used for scripts that work independently, such as analytics or tracking code. On the other hand, defer also downloads the script in parallel, but it waits to execute until the entire HTML document has been fully parsed. This ensures that scripts execute in the same order they appear in the page, making defer the better choice for scripts that depend on DOM elements or rely on a specific execution sequence. In simple terms, async runs the moment it’s ready, while defer waits for the HTML to finish loading before running.",
     category: "javascript",
   },
   {
@@ -370,7 +370,7 @@ export const questions: Question[] = [
     id: 2485,
     question: "What is JavaScript?",
     answer:
-      'JavaScript is a high-level, dynamic, and interpreted programming language used to make web pages interactive and dynamic. It runs in the browser and allows developers to update content, handle events, validate forms, create animations, and interact with APIs.\n\n🔵 Key Features of JavaScript:\n- Lightweight and easy to learn\n- Supports object-oriented, functional, and event-driven programming\n- Runs directly in the browser without compilation\n- Provides DOM manipulation for dynamic UI changes\n- Supports asynchronous operations using callbacks, promises, and async/await\n\n🟣 What JavaScript Is Used For:\n- Interactive UI components (sliders, modals, dropdowns)\n- Form validation and event handling\n- Fetching data using APIs\n- Single Page Applications (React, Angular, Vue)\n- Backend development using Node.js\n\n🟡 Example:\nconsole.log("Hello JavaScript");\n\nIn short: JavaScript is the programming language that brings interactivity, logic, and dynamic behavior to websites.',
+      "JavaScript is a high-level, dynamic programming language that enables interactive and responsive behavior on the web. It runs directly in the browser and allows developers to update the UI in real time, handle user actions, communicate with servers, and manage application logic without requiring a page reload. Over the years, JavaScript has evolved into a powerful ecosystem that supports modern development patterns, including functional, object-oriented, and asynchronous programming using promises and async/await. With its ability to manipulate the DOM, interact with APIs, and run both on the client and server through technologies like Node.js, JavaScript has become the backbone of modern web applications. For example, a simple line like console.log('Hello JavaScript') immediately executes in the browser console, showing how quickly the language responds. In essence, JavaScript is the core language that drives dynamic user experiences and powers everything from small UI interactions to full-scale single-page applications.",
     category: "javascript",
   },
   {
@@ -403,28 +403,31 @@ export const questions: Question[] = [
   },
   {
     id: 248505,
-    question: "What's the output of: 1 == \"1\" & 1 === \"1\"?",
+    question: 'What\'s the output of: 1 == "1" & 1 === "1"?',
     answer:
-      "The output is 0 (or false).\n\n1 == \"1\" returns true because == does type coercion (loose equality), so the string \"1\" is converted to number 1.\n\n1 === \"1\" returns false because === checks both value and type (strict equality), and number 1 is not the same type as string \"1\".\n\nThe & operator is a bitwise AND operator. When used with booleans, true is converted to 1 and false is converted to 0. So true & false becomes 1 & 0, which equals 0.",
+      'The output is 0 (or false).\n\n1 == "1" returns true because == does type coercion (loose equality), so the string "1" is converted to number 1.\n\n1 === "1" returns false because === checks both value and type (strict equality), and number 1 is not the same type as string "1".\n\nThe & operator is a bitwise AND operator. When used with booleans, true is converted to 1 and false is converted to 0. So true & false becomes 1 & 0, which equals 0.',
     category: "output-based",
   },
   {
     id: 248506,
-    question: "What is the output of true == typeof(var a = 10) == number ? true : false",
+    question:
+      "What is the output of true == typeof(var a = 10) == number ? true : false",
     answer:
-      "This code will throw a SyntaxError because you cannot declare a variable inside the typeof operator. The syntax typeof(var a = 10) is invalid.\n\nIf the question was asking about a valid expression like: var a = 10; typeof a == \"number\" ? true : false, then the output would be true because typeof 10 returns the string \"number\", and \"number\" == \"number\" is true, so the ternary operator returns true.",
+      'This code will throw a SyntaxError because you cannot declare a variable inside the typeof operator. The syntax typeof(var a = 10) is invalid.\n\nIf the question was asking about a valid expression like: var a = 10; typeof a == "number" ? true : false, then the output would be true because typeof 10 returns the string "number", and "number" == "number" is true, so the ternary operator returns true.',
     category: "output-based",
   },
   {
     id: 248511,
-    question: "What's the output of this code?\n\nvar a = 10;\nfunction check() {\n  var a = 20;\n  console.log(a);\n  a = a + a;\n}\nconsole.log(a);\ncheck();\nconsole.log(a);",
+    question:
+      "What's the output of this code?\n\nvar a = 10;\nfunction check() {\n  var a = 20;\n  console.log(a);\n  a = a + a;\n}\nconsole.log(a);\ncheck();\nconsole.log(a);",
     answer:
       "The output is:\n10\n20\n10\n\nExplanation:\n1. First console.log(a) prints 10 (the global variable a)\n2. Inside the check() function, var a = 20 creates a new local variable that shadows the global a. So console.log(a) inside the function prints 20.\n3. The line a = a + a makes the local a equal to 40, but this doesn't affect the global a.\n4. After the function finishes, the final console.log(a) prints 10 because the global a was never changed.\n\nThis demonstrates variable shadowing with var — the local variable shadows the global one inside the function scope.",
     category: "output-based",
   },
   {
     id: 248512,
-    question: "What's the output of this code?\n\nconst a = 10;\nfunction check() {\n  a = 20;\n  console.log(a);\n  a = a + a;\n}\nconsole.log(a);\ncheck();\nconsole.log(a);",
+    question:
+      "What's the output of this code?\n\nconst a = 10;\nfunction check() {\n  a = 20;\n  console.log(a);\n  a = a + a;\n}\nconsole.log(a);\ncheck();\nconsole.log(a);",
     answer:
       "The output is:\n10\nThen it throws a TypeError: Assignment to constant variable.\n\nExplanation:\n1. First console.log(a) prints 10.\n2. When check() is called, it tries to reassign a = 20, but a is declared with const, which means it cannot be reassigned.\n3. This causes a TypeError: Assignment to constant variable, and the code stops executing.\n4. The second console.log inside the function never runs, and neither does the final console.log(a) outside.\n\nThis demonstrates that const variables cannot be reassigned. If you try to change a const variable, JavaScript throws an error immediately.",
     category: "output-based",
@@ -433,7 +436,7 @@ export const questions: Question[] = [
     id: 248507,
     question: "How can you declare a global variable in JavaScript?",
     answer:
-      "In JavaScript, you can declare a global variable in several ways:\n\n1. Without any keyword (not recommended): Simply assign a value without using var, let, or const. This creates a global variable, but it's bad practice.\n   Example: myVar = 10;\n\n2. Using var outside any function: When you declare a variable with var at the top level (outside functions), it becomes global.\n   Example: var globalVar = 20;\n\n3. Attach to the window object (in browsers): You can explicitly add a property to the window object.\n   Example: window.myGlobal = 30;\n\n4. Using let or const at the top level: While they create global scope, they don't attach to the window object, which is actually better for avoiding global namespace pollution.\n   Example: let globalLet = 40;\n\nBest practice is to avoid global variables when possible, as they can lead to naming conflicts and make code harder to maintain. If you need global state, use modules or proper state management instead.",
+      "A global variable in JavaScript can be created in a few different ways depending on how the code is written. If you assign a value to a variable without using var, let, or const, JavaScript automatically creates it as a global variable, although this approach is considered unsafe because it can cause accidental overwrites. When you use var at the top level, outside of any function, the variable also becomes global and is attached to the window object in the browser. Another way is to explicitly add a property to the global object, such as window.myVar in a browser environment. You can also declare variables with let or const at the top level, which makes them global within the module, though they are not attached to the window object, making them slightly safer. In practice, relying on global variables is discouraged because they can create naming conflicts and make the application harder to maintain, so it's better to use modules or structured state management whenever possible.",
     category: "javascript",
   },
   {
@@ -454,7 +457,7 @@ export const questions: Question[] = [
     id: 248510,
     question: "map, filter, reduce – Explain with example.",
     answer:
-      "map, filter, and reduce are array methods used to transform and process data.\n\n\n\nmap() transforms each element in an array and returns a new array with the same length.\n\nExample:\nconst numbers = [1, 2, 3, 4];\nconst doubled = numbers.map(num => num * 2);\n// Result: [2, 4, 6, 8]\n\n\n\nfilter() creates a new array with only the elements that pass a test (return true).\n\nExample:\nconst numbers = [1, 2, 3, 4, 5, 6];\nconst evenNumbers = numbers.filter(num => num % 2 === 0);\n// Result: [2, 4, 6]\n\n\n\nreduce() takes all elements in an array and reduces them to a single value by applying a function.\n\nExample:\nconst numbers = [1, 2, 3, 4];\nconst sum = numbers.reduce((total, num) => total + num, 0);\n// Result: 10\n\n\n\nIn summary: map transforms all elements, filter selects certain elements, and reduce combines all elements into one value.",
+      "map, filter, and reduce are array methods in JavaScript that help transform and process data in a clean and functional way. The map method takes each element of an array, applies a transformation, and returns a new array with the same number of elements. For example, if we write: const numbers = [1, 2, 3, 4]; const doubled = numbers.map(num => num * 2); the result will be [2, 4, 6, 8] because each element gets multiplied by two. The filter method is used when we want to keep only certain elements based on a condition. For instance: const numbers = [1, 2, 3, 4, 5, 6]; const evenNumbers = numbers.filter(num => num % 2 === 0); this returns [2, 4, 6] because only the even numbers pass the test. The reduce method is different because it processes the entire array and combines all its elements into a single output value. A simple example is: const numbers = [1, 2, 3, 4]; const sum = numbers.reduce((total, num) => total + num, 0); which gives 10 as the final result. In simple terms, map is used to transform elements, filter is used to select specific elements, and reduce is used to accumulate everything into one final value.",
     category: "javascript",
   },
   {
@@ -465,12 +468,13 @@ export const questions: Question[] = [
       "Layout thrashing happens when the browser has to repeatedly recalculate layout and re-render the page because JavaScript is constantly reading and writing DOM values in a mixed and inefficient way.\n\nWhen JavaScript asks for layout information (like offsetHeight, scrollHeight, width, etc.) right after changing the DOM, the browser is forced to recalculate styles and layout again and again. This repeated cycle slows down the page and hurts performance.\n\n🔵 What causes layout thrashing?\n- Reading DOM properties immediately after writing them.\n- Making multiple style changes one by one.\n- Frequent DOM manipulations inside loops.\n- Using JavaScript animations instead of CSS.\n\n🔵 How to prevent forced reflows and layout thrashing?\n1. **Batch DOM reads and writes**\n   - Read all layout values together.\n   - Write all DOM changes together.\n\n2. **Use requestAnimationFrame() for smooth updates**\n   - Lets the browser group changes before repainting.\n\n3. **Use CSS classes instead of multiple style updates**\n   - Apply one class instead of setting many inline styles.\n\n4. **Avoid measuring DOM values too often**\n   - Cache values when possible.\n\n5. **Use CSS transitions/animations instead of JavaScript animations**\n   - They run on the GPU and avoid extra layout calculations.\n\n🟡 Simple Summary:\nLayout thrashing happens when we mix DOM reads and writes too fast. To prevent it, batch changes, avoid unnecessary DOM reads, and let the browser handle updates efficiently.",
     category: "javascript",
   },
+
   {
     id: 2386,
     question:
       "What does it mean when JavaScript is called an interpreted language?",
     answer:
-      "JavaScript is called an interpreted language because its code is executed line by line by the browser's JavaScript engine without needing a separate compilation step beforehand. The engine reads the code, interprets it, and runs it immediately.\n\n🔵 How Interpreted Languages Work:\n- No separate compile step like C/C++ or Java.\n- Code is executed directly at runtime.\n- Faster development, easier debugging.\n\n🟣 Why JavaScript Is Considered Interpreted:\n- Browser engines (like V8, SpiderMonkey) read and execute code instantly.\n- You can run JavaScript directly in the browser console.\n- Changes reflect immediately without recompiling.\n\n🟡 Modern Note:\n- Modern engines use Just-In-Time (JIT) compilation to improve performance.\n- JIT compiles parts of the code during execution for speed.\n\nIn short: JavaScript is interpreted because it runs line by line directly in the browser without needing a separate compilation step.",
+      "JavaScript is considered an interpreted language because the browser's JavaScript engine reads and executes the code line by line without requiring a separate compilation step beforehand. When you write JavaScript, the engine immediately interprets and runs it during runtime, which allows the language to feel fast and flexible during development. You can write code in the browser console and see results instantly, and any changes you make reflect immediately without needing a formal compile process like languages such as C, C++, or Java. Although JavaScript is traditionally described as interpreted, modern engines actually use techniques like Just-In-Time compilation, which compiles certain parts of the code while it is running to make execution faster. Still, the overall behavior remains the same: JavaScript runs directly in the environment without requiring a separate compile step, which is why it’s described as an interpreted language.",
     category: "javascript",
   },
   {
@@ -500,7 +504,7 @@ export const questions: Question[] = [
     id: 345587,
     question: "What does it mean that JavaScript is single-threaded?",
     answer:
-      "JavaScript is called single-threaded because it has only one call stack and can execute only one piece of code at a time. It cannot run multiple tasks simultaneously in parallel like multi-threaded languages.\n\n🔵 How Single Threading Works:\n- Only one line of code executes at a time.\n- JavaScript has one call stack to process tasks.\n- If one task takes time, it blocks the others.\n\n🟣 Problem With Single Thread:\n- Long-running tasks (like heavy loops or large calculations) can block the UI.\n- Browser may freeze until the task completes.\n\n🟡 How JavaScript Handles Async Tasks:\nEven though JavaScript is single-threaded, it manages asynchronous tasks using:\n- Event Loop\n- Web APIs\n- Callback Queue\n- Microtask Queue\n\nThese allow JavaScript to appear non-blocking and handle timers, promises, API calls, and DOM events without freezing.\n\nIn short: JavaScript is single-threaded because it has one call stack and executes one task at a time, but it uses async mechanisms to stay non-blocking.",
+      "JavaScript is considered single-threaded because it uses one call stack, meaning it can execute only one piece of code at any given moment. It processes tasks sequentially, so if one task is running, no other task can execute until it finishes. This also means that long or heavy operations, such as complex loops or large computations, can block the main thread and temporarily freeze the user interface. However, even though JavaScript itself runs in a single thread, the browser environment provides asynchronous capabilities through Web APIs, the event loop, the callback queue, and the microtask queue. These work together to allow JavaScript to handle operations like timers, network requests, and promises without stopping the main thread. So while JavaScript executes code one step at a time, its async model makes it feel non-blocking and responsive.",
     category: "javascript",
   },
   {
@@ -680,7 +684,7 @@ export const questions: Question[] = [
     category: "javascript",
   },
   {
-    id: 454799,
+    id: 4549799,
     question: "What is the difference between slice and splice in JavaScript?",
     answer:
       "In JavaScript, both slice and splice are used to work with arrays, but they behave completely differently.\n\n  slice():slice() is a non-mutating method. It creates a new array by copying a selected portion of the original array. The important thing is that it does not modify the original array. We use slice when we want to extract data without affecting the source array.\n\n splice(): splice(), on the other hand, is a mutating method. It is used to add, remove, or replace elements directly in the original array. Since splice modifies the array in place, it’s commonly used when we need to update array content.",
@@ -1368,7 +1372,8 @@ export const questions: Question[] = [
   },
   {
     id: 1259892338697,
-    question: "What is the difference Between Client-Side Routing and Server-Side Routing",
+    question:
+      "What is the difference Between Client-Side Routing and Server-Side Routing",
     answer:
       "Server-side routing reloads the entire page on each navigation, while client-side routing updates only the needed parts using JavaScript, giving a smoother, SPA-like experience",
     category: "react",
@@ -2346,21 +2351,24 @@ So useEffect gives us mount, update, and unmount behavior in a single hook`,
   },
   {
     id: 217,
-    question: "What is the output of: sayHi(); var sayHi = function() { console.log('Hello'); };",
+    question:
+      "What is the output of: sayHi(); var sayHi = function() { console.log('Hello'); };",
     answer:
       "Output: TypeError: sayHi is not a function\n\nReason: var sayHi is hoisted as undefined. Calling undefined() throws an error.",
     category: "output-based",
   },
   {
     id: 218,
-    question: "What is the output of: for (var i = 0; i < 3; i++) { setTimeout(() => console.log(i), 0); }",
+    question:
+      "What is the output of: for (var i = 0; i < 3; i++) { setTimeout(() => console.log(i), 0); }",
     answer:
       "Output: 3, 3, 3\n\nReason: var is function-scoped. All callbacks share same i = 3.",
     category: "output-based",
   },
   {
     id: 219,
-    question: "What is the output of: for (let i = 0; i < 3; i++) { setTimeout(() => console.log(i), 0); }",
+    question:
+      "What is the output of: for (let i = 0; i < 3; i++) { setTimeout(() => console.log(i), 0); }",
     answer:
       "Output: 0, 1, 2\n\nReason: let creates a new i for each iteration (block-scoped).",
     category: "output-based",
@@ -2381,21 +2389,24 @@ So useEffect gives us mount, update, and unmount behavior in a single hook`,
   },
   {
     id: 222,
-    question: "What is the output of: console.log(['10','11','12'].map(parseInt));",
+    question:
+      "What is the output of: console.log(['10','11','12'].map(parseInt));",
     answer:
       "Output: [10, NaN, NaN]\n\nReason: parseInt receives (value, index) as arguments from map. So:\n- parseInt('10', 0) → 10 (radix 0 defaults to 10)\n- parseInt('11', 1) → NaN (radix 1 is invalid)\n- parseInt('12', 2) → NaN ('12' is invalid in base 2)",
     category: "output-based",
   },
   {
     id: 223,
-    question: "What is the output of: const obj = { num: 10, regular: function() { console.log(this.num); }, arrow: () => console.log(this.num) }; obj.regular(); obj.arrow();",
+    question:
+      "What is the output of: const obj = { num: 10, regular: function() { console.log(this.num); }, arrow: () => console.log(this.num) }; obj.regular(); obj.arrow();",
     answer:
       "Output:\n10\nundefined\n\nReason: Regular method has its own 'this' = obj. Arrow function does NOT bind 'this' → inherits from parent scope → undefined.",
     category: "output-based",
   },
   {
     id: 224,
-    question: "What is the output of: console.log('start'); setTimeout(() => console.log('timeout'), 0); Promise.resolve().then(() => console.log('promise')); console.log('end');",
+    question:
+      "What is the output of: console.log('start'); setTimeout(() => console.log('timeout'), 0); Promise.resolve().then(() => console.log('promise')); console.log('end');",
     answer:
       "Output:\nstart\nend\npromise\ntimeout\n\nReason: Synchronous code executes first, then microtasks (Promise), then macrotasks (setTimeout).",
     category: "output-based",
